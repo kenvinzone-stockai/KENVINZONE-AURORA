@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KENVINZONE AURORA PRO · Chỉ báo xu hướng với BREAK, SUNNY và SMC cho TradingView</title>
+<meta name="description" content="AURORA PRO: hệ thống giao dịch theo xu hướng trên TradingView với setup BREAK, SUNNY và SMC thuận xu hướng, chấm điểm nhiều tầng, kế hoạch lệnh rõ ràng và thống kê minh bạch.">
+<meta property="og:title" content="KENVINZONE AURORA PRO">
+<meta property="og:description" content="Biết vì sao một setup đáng vào lệnh. BREAK, SUNNY và SMC thuận xu hướng, điểm chất lượng riêng cho từng setup, thống kê minh bạch.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E1626;
+  --bg-2:#121D31;
+  --panel:#17233C;
+  --line:#26344F;
+  --text:#E6EDF5;
+  --muted:#97A7BC;
+  --buy:#34B8D4;
+  --sell:#D0306E;
+  --tier:#B388FF;
+  --amber:#F3BE62;
+  --win:#1FCB8E;
+  --loss:#FF4D6A;
+  --font:'Be Vietnam Pro','Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--buy);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:14px}
+h3{font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+p{margin:0 0 14px}
+.lede{color:#C3CFDD;font-size:18.5px;max-width:62ch}
+.muted{color:var(--muted)}
+strong{color:#fff}
+
+/* Header */
+.top{position:sticky;top:0;z-index:20;background:rgba(14,22,38,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+.logo b{color:var(--buy);font-weight:800}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:15.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--buy);color:#06131D}
+.btn.primary:hover{background:#4FC7DF}
+.btn.ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn.ghost:hover{border-color:#3A4C6E;background:var(--bg-2)}
+.top .btn{padding:9px 16px;font-size:14.5px}
+
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin-bottom:20px}
+.hero .lede{margin-bottom:28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.fineprint{font-size:14px;color:var(--muted);margin:0}
+
+/* Hero instrument: chart + evidence stack */
+.instrument{margin:0;position:relative;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#111C31,#0C1424);overflow:hidden}
+.instrument svg{display:block;width:100%;height:auto}
+.stack{margin:0 14px 14px;background:rgba(18,29,49,.94);border:1px solid #2C3D5C;border-radius:12px;padding:12px 16px 10px;font-size:13.5px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.stack .hd,.stack .verdict{grid-column:1/-1}
+.stack .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-weight:700}
+.stack .hd span{color:var(--buy)}
+.layer{display:grid;grid-template-columns:92px 1fr 26px;align-items:center;gap:8px;margin:6px 0;color:#C9D5E3}
+.bar{height:7px;border-radius:4px;background:#22314C;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--v);border-radius:4px;background:var(--c);transform-origin:left;animation:fill .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.layer b{font-variant-numeric:tabular-nums;text-align:right;color:#fff;font-weight:700}
+.verdict{margin-top:9px;padding-top:9px;border-top:1px solid #2C3D5C;display:flex;justify-content:space-between;font-weight:700}
+.verdict span:last-child{color:var(--win)}
+
+/* Sections */
+section{padding:84px 0}
+.band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{max-width:720px;margin-bottom:40px}
+
+/* Setups */
+.setups{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:18px}
+.setup{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--bg)}
+.setup .sig{display:inline-block;font-weight:700;font-size:14px;padding:5px 10px;border-radius:7px;margin-bottom:16px}
+.sig.b{background:rgba(52,184,212,.78);color:#05121C}
+.sig.s{background:rgba(52,184,212,.38);color:#fff}
+.sig.m{background:rgba(179,136,255,.32);color:#fff}
+.setup p{color:#C3CFDD;font-size:15.5px}
+.setup.smc{border-color:#3B3466;background:linear-gradient(180deg,rgba(179,136,255,.07),transparent 60%),var(--bg)}
+.smc ul{list-style:none;padding:0;margin:12px 0 0}
+.smc li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;color:#C3CFDD}
+.smc li strong{display:block;margin-bottom:2px}
+.shared{margin-top:22px;color:var(--muted);font-size:15.5px;max-width:78ch}
+
+/* Layers (a real hierarchy) */
+.layers{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.ladder{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.ladder li{position:relative;padding:0 0 26px 26px}
+.ladder li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--c,var(--buy));box-shadow:0 0 0 4px var(--bg)}
+.band .ladder li::before{box-shadow:0 0 0 4px var(--bg-2)}
+.ladder h3{font-size:18px;margin-bottom:4px}
+.ladder p{color:#C3CFDD;font-size:15.5px;margin:0}
+.tip{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:20px 22px;font-size:14.5px}
+.tip .t{font-weight:700;margin-bottom:10px}
+.tip pre{margin:0;white-space:pre-wrap;font-family:var(--font);color:#C9D5E3;line-height:1.75}
+.tip .note{margin-top:14px;color:var(--muted);font-size:14px}
+
+/* Presets (interactive) */
+.preset{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px;align-items:start}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);color:#C3CFDD;font-size:14.5px;font-weight:600;cursor:pointer;background:var(--bg)}
+.chips input:checked+span{background:var(--buy);border-color:var(--buy);color:#06131D}
+.chips input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+.result{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
+.result .rh{padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700}
+.result .rh small{display:block;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}
+.result dl{margin:0;display:grid;grid-template-columns:1fr auto}
+.result dt,.result dd{margin:0;padding:10px 20px;border-bottom:1px solid #1E2B44;font-size:15px}
+.result dt{color:#C3CFDD}
+.result dd{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.result dt:nth-last-of-type(1),.result dd:last-of-type{border-bottom:0}
+.result .why{padding:14px 20px;background:var(--bg-2);color:#C3CFDD;font-size:14.5px;border-top:1px solid var(--line)}
+
+/* Transparency */
+.trans{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.dash{border:2px solid var(--buy);border-radius:10px;overflow:hidden;font-size:14px;background:#0F1729}
+.dash .r{display:grid;grid-template-columns:1.15fr 1fr 1.1fr;border-bottom:1px solid #22314C}
+.dash .r:last-child{border-bottom:0}
+.dash span{padding:7px 11px}
+.dash .t{grid-template-columns:1fr;background:rgba(52,184,212,.22);color:var(--buy);font-weight:700}
+.dash .k{color:var(--buy);font-weight:600}
+.dash .g{background:rgba(31,203,142,.26)}
+.dash .l{background:rgba(255,77,106,.22)}
+.dash .n{background:rgba(120,123,134,.18)}
+.cap{font-size:13.5px;color:var(--muted);margin-top:10px}
+.points{list-style:none;padding:0;margin:0}
+.points li{padding:14px 0;border-top:1px solid var(--line)}
+.points li:first-child{border-top:0;padding-top:0}
+.points strong{display:block;margin-bottom:2px}
+.points span{color:#C3CFDD;font-size:15.5px}
+
+/* Plans */
+.plans{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px}
+.plans-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+.plans th,.plans td{padding:13px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.plans thead th{background:var(--bg);font-size:16px}
+.plans thead th small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:2px}
+.plans td:first-child{color:#C3CFDD}
+.plans tr:last-child td{border-bottom:0}
+.plans .pro{background:rgba(52,184,212,.08)}
+.plans thead .pro{background:rgba(52,184,212,.18);color:#fff}
+.yes{color:var(--win);font-weight:700}
+.no{color:#5E6F88}
+.plans .lnk td{padding-top:16px}
+
+/* Automation */
+.auto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+pre.code{margin:0;background:#0A1120;border:1px solid var(--line);border-radius:12px;padding:18px;font-size:13.5px;line-height:1.65;color:#CFE3F0;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.events{list-style:none;padding:0;margin:16px 0 0;font-size:15px;color:#C3CFDD}
+.events li{padding:6px 0}
+.events code{color:#fff;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px}
+
+/* FAQ */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--buy);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{color:#C3CFDD;margin:0 0 18px}
+
+/* Signup */
+.signup{text-align:left}
+.signup .box{border:1px solid #2E4366;border-radius:18px;padding:40px;background:linear-gradient(135deg,rgba(52,184,212,.12),rgba(179,136,255,.08) 70%),var(--bg-2);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px;color:#C3CFDD}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--buy);color:#06131D;font-weight:800;display:grid;place-items:center;font-size:14px}
+.todo{color:var(--amber);font-size:13.5px}
+
+footer{border-top:1px solid var(--line);padding:36px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+footer a{color:#C3CFDD}
+.lines{display:flex;flex-wrap:wrap;gap:8px 18px}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .hero .wrap,.layers,.preset,.trans,.auto,.signup .box,footer .wrap{grid-template-columns:1fr}
+  .setups{grid-template-columns:1fr}
+  .stack{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding:40px 0 48px}
+  .signup .box{padding:26px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .top .btn{display:none}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="KENVINZONE AURORA PRO">
+      <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 21h6v-5h5v-4h5V8h6" fill="none" stroke="#34B8D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      KENVINZONE AURORA <b>PRO</b>
+    </a>
+    <nav class="nav" aria-label="Điều hướng">
+      <a href="#setup">Setup</a>
+      <a href="#cham-diem">Chấm điểm</a>
+      <a href="#cai-dat">Cài đặt</a>
+      <a href="#goi">So sánh gói</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+    </nav>
+    <a class="btn primary" href="#dang-ky">Đăng ký dùng thử</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div>
+      <h1 id="hero-title">Biết vì sao một setup đáng vào lệnh</h1>
+      <p class="lede">AURORA PRO tìm điểm vào theo xu hướng bằng ba nhóm setup: BREAK, SUNNY và SMC. Mỗi tín hiệu đi kèm kế hoạch Entry, Stoploss, chốt lời, cùng điểm nền và điểm chất lượng riêng của từng setup, cho biết setup đó mạnh ở đâu và yếu ở đâu.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#dang-ky">Đăng ký dùng thử</a>
+        <a class="btn ghost" href="huong-dan.html">Đọc hướng dẫn sử dụng</a>
+      </div>
+      <p class="fineprint">Chỉ báo Invite-only trên TradingView. Dùng được với tài khoản TradingView miễn phí.</p>
+    </div>
+
+    <figure class="instrument" aria-label="Minh họa một setup SMC SWEEP với kế hoạch lệnh và điểm đánh giá">
+      <svg viewBox="0 130 640 260" role="img">
+        <defs>
+          <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34B8D4" stop-opacity=".35"/><stop offset="1" stop-color="#34B8D4" stop-opacity="0"/></linearGradient>
+        </defs>
+        <!-- grid -->
+        <g stroke="#1B2740" stroke-width="1">
+          <line x1="0" y1="90" x2="640" y2="90"/><line x1="0" y1="170" x2="640" y2="170"/><line x1="0" y1="250" x2="640" y2="250"/><line x1="0" y1="330" x2="640" y2="330"/>
+        </g>
+        <!-- liquidity level swept -->
+        <line x1="70" y1="300" x2="300" y2="300" stroke="#F3BE62" stroke-dasharray="5 5" stroke-opacity=".8"/>
+        <text x="74" y="293" fill="#F3BE62" font-size="12" font-family="Be Vietnam Pro">swing low bị quét</text>
+        <!-- plan zones -->
+        <rect x="300" y="150" width="320" height="104" fill="#1FCB8E" fill-opacity=".11" stroke="#1FCB8E" stroke-opacity=".35"/>
+        <rect x="300" y="254" width="320" height="62" fill="#FF4D6A" fill-opacity=".12" stroke="#FF4D6A" stroke-opacity=".35"/>
+        <line x1="300" y1="202" x2="620" y2="202" stroke="#1FCB8E" stroke-dasharray="4 4" stroke-opacity=".8"/>
+        <!-- trailing line -->
+        <path d="M0 360 H90 V350 H170 V340 H250 V330 H330 V318 H420 V300 H520 V280 H640" fill="none" stroke="#34B8D4" stroke-width="3"/>
+        <path d="M0 360 H90 V350 H170 V340 H250 V330 H330 V318 H420 V300 H520 V280 H640 V420 H0Z" fill="url(#rb)" opacity=".5"/>
+        <!-- candles -->
+        <g stroke-width="1.6">
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="40" y1="220" x2="40" y2="262"/><rect x="34" y="228" width="12" height="26"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="66" y1="226" x2="66" y2="276"/><rect x="60" y="234" width="12" height="32"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="92" y1="250" x2="92" y2="292"/><rect x="86" y="258" width="12" height="24"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="118" y1="256" x2="118" y2="290"/><rect x="112" y="262" width="12" height="20"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="144" y1="238" x2="144" y2="270"/><rect x="138" y="244" width="12" height="20"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="170" y1="240" x2="170" y2="276"/><rect x="164" y="248" width="12" height="20"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="196" y1="256" x2="196" y2="290"/><rect x="190" y="262" width="12" height="20"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="222" y1="262" x2="222" y2="296"/><rect x="216" y="268" width="12" height="20"/></g>
+          <!-- sweep candle -->
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="248" y1="262" x2="248" y2="314"/><rect x="242" y="270" width="12" height="16"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="274" y1="244" x2="274" y2="278"/><rect x="268" y="250" width="12" height="22"/></g>
+          <!-- MSS candle -->
+          <rect x="294" y="198" width="12" height="54" fill="#F3E04A"/><line x1="300" y1="190" x2="300" y2="258" stroke="#F3E04A"/>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="326" y1="186" x2="326" y2="216"/><rect x="320" y="192" width="12" height="20"/></g>
+          <g stroke="#D0306E" fill="#D0306E"><line x1="352" y1="190" x2="352" y2="222"/><rect x="346" y="196" width="12" height="18"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="378" y1="176" x2="378" y2="212"/><rect x="372" y="182" width="12" height="24"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="404" y1="160" x2="404" y2="192"/><rect x="398" y="166" width="12" height="22"/></g>
+          <g stroke="#34B8D4" fill="#34B8D4"><line x1="430" y1="146" x2="430" y2="176"/><rect x="424" y="152" width="12" height="20"/></g>
+        </g>
+        <!-- MSS level -->
+        <line x1="210" y1="238" x2="300" y2="238" stroke="#B388FF" stroke-dasharray="3 4"/>
+        <text x="212" y="232" fill="#B388FF" font-size="12" font-family="Be Vietnam Pro">MSS</text>
+        <!-- signal label -->
+        <rect x="244" y="330" width="116" height="40" rx="6" fill="#34B8D4" fill-opacity=".85"/>
+        <text x="302" y="346" text-anchor="middle" fill="#06131D" font-size="12" font-weight="700" font-family="Be Vietnam Pro">💧 SMC SWEEP</text>
+        <text x="302" y="362" text-anchor="middle" fill="#06131D" font-size="12" font-weight="700" font-family="Be Vietnam Pro">BUY A · 82 · Q71</text>
+        <!-- plan labels -->
+        <g font-family="Be Vietnam Pro" font-size="11.5" font-weight="600">
+          <text x="612" y="168" text-anchor="end" fill="#1FCB8E">🎯 TP2 · 2R</text>
+          <text x="612" y="218" text-anchor="end" fill="#1FCB8E">🎯 TP1 · 1R</text>
+          <text x="612" y="270" text-anchor="end" fill="#E6EDF5">▶ Entry</text>
+          <text x="612" y="309" text-anchor="end" fill="#FF4D6A">🛑 SL cấu trúc</text>
+        </g>
+      </svg>
+      <div class="stack" aria-hidden="true">
+        <div class="hd">Đánh giá setup SMC SWEEP <span>BUY</span></div>
+        <div class="layer"><span>Base Score</span><div class="bar"><i style="--v:82%;--c:#34B8D4;--d:.15s"></i></div><b>82</b></div>
+        <div class="layer"><span>SMC Quality</span><div class="bar"><i style="--v:71%;--c:#F3BE62;--d:.4s"></i></div><b>71</b></div>
+        <div class="layer"><span>Tier 3</span><div class="bar"><i style="--v:68%;--c:#B388FF;--d:.65s"></i></div><b>68</b></div>
+        <div class="verdict"><span>Volume · Phiên</span><span>✓ đạt</span></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- SETUPS -->
+<section id="setup" class="band" aria-labelledby="setup-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="setup-title">Ba nhóm setup, một cách quản lý lệnh</h2>
+      <p class="lede">Tất cả đều chỉ vào lệnh theo hướng xu hướng chính, được hệ thống xác nhận. Không bắt đỉnh, không bắt đáy.</p>
+    </div>
+    <div class="setups">
+      <article class="setup">
+        <span class="sig b">⚡ 1st BREAK · BUY A</span>
+        <h3>BREAK</h3>
+        <p>Cú phá vỡ đầu tiên và thứ hai của đường Trailing sau khi xu hướng mới hình thành. Nến Break quá dài sẽ được chờ hồi về 50% thay vì đuổi giá.</p>
+      </article>
+      <article class="setup">
+        <span class="sig s">☀ SUNNY · BUY</span>
+        <h3>SUNNY</h3>
+        <p>Tín hiệu mua / bán tiếp diễn thuận xu hướng chính. Bắt nhịp tiếp diễn sau một đợt điều chỉnh.</p>
+      </article>
+      <article class="setup smc">
+        <span class="sig m">💠 SMC · thuận xu hướng</span>
+        <h3>SMC</h3>
+        <ul>
+          <li><strong>🔁 RETEST</strong>Giá hồi về FVG hoặc Order Block của cú bung sau Break rồi bật lại.</li>
+          <li><strong>💧 SWEEP + MSS</strong>Quét đáy nhịp hồi, đóng cửa quay lại, rồi phá đỉnh hồi gần nhất.</li>
+          <li><strong>⇄ IFVG</strong>FVG ngược chiều của nhịp hồi bị phá, đổi vai thành vùng vào lệnh.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="shared">Cả ba nhóm dùng chung điểm tối thiểu, bộ lọc volume, bộ lọc phiên và quy tắc quản lý lệnh. Setup SMC đặt Stoploss tại mức vô hiệu hóa cấu trúc của chính setup đó. Ở chế độ mặc định, tín hiệu chỉ xác nhận khi nến đóng cửa.</p>
+  </div>
+</section>
+
+<!-- SCORING -->
+<section id="cham-diem" aria-labelledby="score-title">
+  <div class="wrap layers">
+    <div>
+      <h2 id="score-title">Điểm nền, cộng điểm riêng của từng setup</h2>
+      <p class="lede">Thay vì gom mọi thứ vào một con số, AURORA PRO tách đánh giá thành các phần riêng. Bạn thấy rõ setup mạnh ở đâu, và thống kê cho biết phần nào thực sự giúp ích trên mã bạn giao dịch.</p>
+      <ol class="ladder">
+        <li style="--c:#34B8D4"><h3>Base Score</h3><p>Môi trường có thuận cho chiều này không: xu hướng, động lượng, đồng thuận khung lớn, dòng tiền.</p></li>
+        <li style="--c:#4FC7DF"><h3>Điểm chất lượng của setup</h3><p>Mỗi loại setup có thước đo riêng. BreakQ: nén rồi bung, đóng cửa dứt khoát, đường đi sạch. SunnyQ: nhịp hồi gọn, xu hướng còn hiệu quả. SMCQ: vùng giá chất lượng, cú bung có lực, còn khoảng trống tới thanh khoản đối diện.</p></li>
+        <li style="--c:#B388FF"><h3>Tier 3 · bối cảnh dòng tiền</h3><p>Áp dụng khi có dữ liệu: FVG còn tươi, quét thanh khoản, CVD tích lũy, hấp thụ lực. Thành phần nào thiếu dữ liệu sẽ được bỏ qua, không tự cộng điểm.</p></li>
+      </ol>
+    </div>
+    <div class="tip" aria-label="Ví dụ tooltip khi rê chuột vào nhãn tín hiệu">
+      <div class="t">Rê chuột vào nhãn tín hiệu, bạn thấy:</div>
+<pre>⚡ KENVIN AURORA · 1st BREAK SETUP · BUY A
+━━━━━━━━━━━━━━━━━━
+⭐ Score        84 / 100
+📊 MTF Vote    ▲ 88% (HTF)
+🔊 Volume   RVOL 1.42 (TOD) · VQ 66
+🧪 BreakQ 78 A  C/A/K/D/V/F 82/76/71/69/84/75
+💎 Tier3 Break 70 B  F/S/C/R 80/65/72/60
+━━━━━━━━━━━━━━━━━━
+▶ Entry        2,412.6
+🛑 F-SL        2,398.1   (−0.60%)
+🎯 TP1 (1R)    2,427.1   (+0.60%)
+🎯 TP2 (2R)    2,441.6   (+1.20%)</pre>
+      <p class="note">Các tầng chất lượng mặc định chỉ chấm điểm và thống kê, không tự chặn lệnh. Bạn quyết định có dùng làm bộ lọc hay không, sau khi đã có dữ liệu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESETS -->
+<section id="cai-dat" class="band" aria-labelledby="preset-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="preset-title">Hai lựa chọn là xong phần cài đặt</h2>
+      <p class="lede">Chọn thị trường và phong cách giao dịch. AURORA PRO tự đặt nguồn volume, độ rộng Stoploss, thời gian giữ lệnh, bộ lọc phiên và ngưỡng điểm phù hợp.</p>
+    </div>
+    <div class="preset">
+      <form id="pf" onsubmit="return false">
+        <fieldset>
+          <legend>Bạn giao dịch</legend>
+          <div class="chips">
+            <label><input type="radio" name="m" value="stock"><span>Cổ phiếu</span></label>
+            <label><input type="radio" name="m" value="forex"><span>Forex</span></label>
+            <label><input type="radio" name="m" value="cfd" checked><span>Vàng · chỉ số CFD</span></label>
+            <label><input type="radio" name="m" value="crypto"><span>Crypto Futures</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Theo phong cách</legend>
+          <div class="chips">
+            <label><input type="radio" name="s" value="scalp"><span>Scalping</span></label>
+            <label><input type="radio" name="s" value="intra"><span>Intraday</span></label>
+            <label><input type="radio" name="s" value="swing"><span>Swing</span></label>
+            <label><input type="radio" name="s" value="prop" checked><span>Prop Firm</span></label>
+          </div>
+        </fieldset>
+        <p class="muted" style="font-size:14.5px">Tương ứng với hai ô ⚙ Market Preset và ⚙ Trading Style trong Settings của chỉ báo.</p>
+      </form>
+      <div class="result" aria-live="polite">
+        <div class="rh" id="rTitle">CFD MODE · Prop Firm<small id="rSub">Vàng, NAS100, US30 · khung M15–H1</small></div>
+        <dl>
+          <dt>Nguồn volume</dt><dd id="rVol">Futures CME/COMEX tự map</dd>
+          <dt>Chiều lệnh</dt><dd id="rDir">BUY & SELL</dd>
+          <dt>Stoploss tối đa của Break</dt><dd id="rSL">2.5 ATR</dd>
+          <dt>Dời SL về hòa vốn sau TP1</dt><dd id="rBE">Có</dd>
+          <dt>Điểm tối thiểu để vào lệnh</dt><dd id="rSc">60</dd>
+          <dt>Phiên giao dịch</dt><dd id="rSes">Chặn giờ giao phiên</dd>
+          <dt>Giữ lệnh tối đa</dt><dd id="rLen">120 nến</dd>
+          <dt>Runner sau TP2</dt><dd id="rRun">Tắt</dd>
+        </dl>
+        <div class="why" id="rWhy">Ưu tiên giữ tài khoản trước giới hạn lỗ ngày: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section aria-labelledby="trans-title">
+  <div class="wrap trans">
+    <div>
+      <h2 id="trans-title">Thống kê ngay trên chart, kể cả phần không đẹp</h2>
+      <p class="lede">Dashboard ghi lại từng lệnh trên dữ liệu đã tải, tách theo từng setup và từng nhóm điểm, để bạn tự kiểm chứng thay vì tin lời quảng cáo.</p>
+      <ul class="points">
+        <li><strong>Lệnh ma cho setup bị lọc</strong><span>Các setup bị bộ lọc chặn vẫn được theo dõi ngầm. Nếu dòng ⛔ Filtered có lãi, bộ lọc đang chặn nhầm và bạn biết để nới ra.</span></li>
+        <li><strong>So sánh trực tiếp</strong><span>Chờ hồi so với vào ngay, có quét thanh khoản so với không có, điểm cao so với điểm thấp, phiên Á so với phiên Mỹ.</span></li>
+        <li><strong>Strategy Validator đi kèm</strong><span>Bản chiến lược chạy trong Strategy Tester với phí và trượt giá, xuất danh sách lệnh ra CSV để phân tích trên nhiều mã.</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="dash" role="img" aria-label="Minh họa Dashboard thống kê">
+        <div class="r t"><span>⚡ KENVINZONE AURORA · CFD · Setups · Prop</span></div>
+        <div class="r"><span class="k">Total R</span><span class="g">+12.4R</span><span class="g">Avg +0.21R</span></div>
+        <div class="r"><span class="k">⚡ Break</span><span>31 · Win 52%</span><span class="g">+8.2R · +0.26R</span></div>
+        <div class="r"><span class="k">☀ SUNNY</span><span>18 · Win 50%</span><span class="g">+2.9R · +0.16R</span></div>
+        <div class="r"><span class="k">💠 SMC</span><span>12 · Win 58%</span><span class="g">+2.6R · +0.22R</span></div>
+        <div class="r"><span class="k">  ↳ 💧 SWEEP</span><span>5 · Win 60%</span><span class="g">+1.4R · +0.28R</span></div>
+        <div class="r"><span class="k">  ↳ ⇄ IFVG</span><span>4 · Win 50%</span><span class="l">−0.3R · −0.08R</span></div>
+        <div class="r"><span class="k">⏳ Pullback</span><span>7/10 fill</span><span class="g">+3.1R vs +1.2R</span></div>
+        <div class="r"><span class="k">⛔ Filtered</span><span>6 · Win 33%</span><span class="n">−1.3R · −0.22R</span></div>
+      </div>
+      <p class="cap">Số liệu minh họa giao diện, không phải kết quả giao dịch thực tế.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="goi" class="band" aria-labelledby="plans-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="plans-title">AURORA PRO trong dòng sản phẩm AURORA</h2>
+      <p class="lede">Ba dòng sản phẩm cho ba nhóm trader. PRO dành cho trader đã có kinh nghiệm, muốn hiểu sâu cấu trúc và chất lượng của từng setup.</p>
+    </div>
+    <div class="plans-wrap">
+      <table class="plans">
+        <thead>
+          <tr>
+            <th scope="col">Tính năng</th>
+            <th scope="col">STANDARD<small>Trader phổ thông</small></th>
+            <th scope="col" class="pro">PRO<small>Trader có kinh nghiệm</small></th>
+            <th scope="col">ELITE<small>Trader Futures chuyên nghiệp</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Setup BREAK · SUNNY · Smart Score</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Kế hoạch lệnh, Pullback Entry, Dashboard thống kê</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Volume Quality, phiên giao dịch, đa khung</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Bảng LIVE trên điện thoại, cảnh báo JSON cho bot</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Setup Quality và Tier 3 Institutional Quality</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Setup SMC: RETEST · SWEEP + MSS · IFVG</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Runner sau TP2, FVG CE cho lệnh chờ</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Market Preset × Trading Style</td><td class="yes">Market Preset</td><td class="pro yes">Đủ cả hai</td><td class="yes">Đủ cả hai</td></tr>
+          <tr><td>Xác nhận bằng Footprint gốc của TradingView</td><td class="no">—</td><td class="pro no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Yêu cầu tài khoản TradingView</td><td>Miễn phí trở lên</td><td class="pro">Miễn phí trở lên</td><td>Premium / Ultimate + dữ liệu sàn Futures</td></tr>
+          <tr class="lnk"><td></td><td><a href="../">Xem STANDARD</a></td><td class="pro"><a href="#dang-ky">Đăng ký PRO</a></td><td><span class="muted">Đang phát triển</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px;color:#94A3B8;font-size:14px">Giá và thời hạn dùng thử gói PRO: liên hệ <a href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Telegram @kenvinhoang</a>. Bảng giá STANDARD xem tại <a href="../#bang-gia">trang AURORA STANDARD</a>.</p>
+  </div>
+</section>
+
+<!-- AUTOMATION -->
+<section aria-labelledby="auto-title">
+  <div class="wrap auto">
+    <div>
+      <h2 id="auto-title">Sẵn sàng cho giao dịch tự động</h2>
+      <p class="lede">Một alert duy nhất cho toàn bộ vòng đời lệnh. Mỗi sự kiện có mã định danh riêng để bot bỏ qua tin nhắn trùng.</p>
+      <ul class="events">
+        <li><code>ENTRY_MARKET</code> vào lệnh kèm SL, TP1, TP2 và tỷ lệ chốt</li>
+        <li><code>PLACE_LIMIT</code> / <code>CANCEL_LIMIT</code> lệnh chờ Pullback</li>
+        <li><code>CLOSE_POSITION</code> đóng lệnh do quản lý: đảo chiều, hết giờ</li>
+        <li><code>RUNNER_ACTIVATED</code> / <code>UPDATE_STOP</code> / <code>RUNNER_EXIT</code> phần lệnh chạy theo xu hướng</li>
+      </ul>
+    </div>
+<pre class="code">{
+  "system": "KENVIN_AURORA",
+  "version": "15.0",
+  "event": "ENTRY_MARKET",
+  "side": "LONG",
+  "setup": "SMC SWEEP",
+  "score": 82,
+  "setup_quality": 71,
+  "tier3_quality": 68,
+  "price": 2412.6,
+  "sl": 2398.1,
+  "tp1": 2427.1,
+  "tp2": 2441.6,
+  "tp1_pct": 50,
+  "tp2_pct": 50
+}</pre>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="hoi-dap" class="band" aria-labelledby="faq-title">
+  <div class="wrap faq">
+    <h2 id="faq-title">Câu hỏi thường gặp</h2>
+    <details><summary>Tín hiệu có vẽ lại không?</summary><p>Ở chế độ mặc định (Confirm signals on bar close bật), tín hiệu chỉ xác nhận khi nến đóng cửa. Nếu bạn tắt tùy chọn này, điều kiện có thể thay đổi trong lúc nến đang chạy. Dữ liệu khung lớn luôn lấy từ nến đã đóng, và các swing của SMC được xác nhận sau 3 nến.</p></details>
+    <details><summary>SMC trong AURORA PRO khác SMC thông thường thế nào?</summary><p>Chỉ vào lệnh thuận chiều xu hướng chính, và mọi khái niệm (swing, vùng FVG, Order Block, MSS) được định nghĩa bằng quy tắc cố định, có thời hạn và điều kiện hủy. Nhờ vậy kết quả thống kê phản ánh đúng cách chỉ báo hoạt động, không phụ thuộc cách mỗi người vẽ.</p></details>
+    <details><summary>Tôi chưa có kinh nghiệm SMC thì nên chọn gói nào?</summary><p>Gói STANDARD tập trung vào BREAK, SUNNY và Smart Score với giao diện đơn giản hơn. Khi đã quen, bạn có thể chuyển lên PRO.</p></details>
+    <details><summary>Có dùng được cho quỹ prop (FTMO, The5ers, Topstep…)?</summary><p>Có. Trading Style Prop Firm giới hạn khoảng Stoploss, dời SL về hòa vốn sau TP1, chặn giờ giao phiên và nâng ngưỡng điểm để giảm chuỗi thua. Bạn vẫn cần tự tuân thủ luật của từng quỹ.</p></details>
+    <details><summary>Dùng trên điện thoại được không?</summary><p>Được. Chế độ Dashboard Mini hiển thị bảng LIVE gọn: xu hướng, setup đang chờ, khoảng cách tới điểm kích hoạt, lệnh đang chạy.</p></details>
+    <details><summary>Có cam kết lợi nhuận không?</summary><p>Không. AURORA PRO là công cụ hỗ trợ phân tích. Thống kê trên Dashboard là kết quả quá khứ trên dữ liệu đã tải, chưa tính phí, và không đảm bảo kết quả tương lai.</p></details>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section id="dang-ky" class="signup" aria-labelledby="signup-title">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <h2 id="signup-title">Dùng thử AURORA PRO</h2>
+        <p class="lede">Quyền truy cập được cấp theo tên tài khoản TradingView của bạn.</p>
+        <ol class="steps">
+          <li>Gửi tên đăng nhập TradingView qua kênh liên hệ bên cạnh.</li>
+          <li>Nhận xác nhận cấp quyền Invite-only.</li>
+          <li>Mở TradingView, vào Indicators, tab Invite-only scripts, chọn KENVINZONE AURORA PRO.</li>
+        </ol>
+      </div>
+      <div>
+        <p style="display:flex;flex-direction:column;gap:12px;margin:0">
+          <a class="btn primary" href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Gửi tên TradingView qua Telegram</a>
+          <a class="btn ghost" href="huong-dan.html">Đọc hướng dẫn trước</a>
+        </p>
+        <p style="margin-top:14px;color:#94A3B8;font-size:14px">Liên hệ: <a href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Telegram @kenvinhoang</a>. Điều khoản sử dụng và hoàn tiền áp dụng chung cho các gói AURORA: <a href="../#chinh-sach">xem chi tiết</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang (Hoàng Văn Hiệu)</p>
+      <p>AURORA là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn. Kết quả quá khứ không đảm bảo kết quả tương lai. TradingView là thương hiệu của TradingView, Inc.</p>
+    </div>
+    <div>
+      <p class="lines">
+        <a href="../">AURORA STANDARD</a>
+        <a href="#top">AURORA PRO</a>
+        <span>AURORA ELITE (đang phát triển)</span>
+      </p>
+      <p class="lines">
+        <a href="huong-dan.html">Hướng dẫn sử dụng</a>
+        <a href="https://kenvinzone.com">kenvinzone.com</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var M={
+    stock:{t:'STOCK MODE',sub:'Cổ phiếu Việt Nam, Crypto Spot',vol:'Volume thật · RVOL · VWAP · CMF',dir:'Chỉ BUY'},
+    forex:{t:'FOREX MODE',sub:'Các cặp tiền',vol:'Chỉ RVOL (tick volume)',dir:'BUY & SELL'},
+    cfd:{t:'CFD MODE',sub:'Vàng, NAS100, US30',vol:'Futures CME/COMEX tự map',dir:'BUY & SELL'},
+    crypto:{t:'CRYPTO MODE',sub:'Crypto Futures (Perpetual)',vol:'Volume sàn + Open Interest',dir:'BUY & SELL'}
+  };
+  var S={
+    scalp:{t:'Scalping',tf:'M1–M15',sl:'3 ATR',be:'Có',sc:'55',ses:'Chặn giờ giao phiên',len:'60 nến',run:'Tắt',why:'Đường Trailing bám sát giá, lệnh ngắn, dời SL về hòa vốn sớm vì khung nhỏ hay quét ngược.'},
+    intra:{t:'Intraday',tf:'M15–H1',sl:'4 ATR',be:'Không',sc:'50',ses:'Chỉ thống kê theo phiên',len:'120 nến',run:'Tắt',why:'Cân bằng giữa số lệnh và độ chọn lọc, phù hợp đa số trader làm việc trong ngày.'},
+    swing:{t:'Swing',tf:'H4–D1',sl:'Không giới hạn',be:'Không',sc:'50',ses:'Tắt',len:'200 nến',run:'Adaptive 25%',why:'Giữ nguyên tham số gốc của hệ thống; xu hướng khung lớn đủ dài để phần Runner chạy theo.'},
+    prop:{t:'Prop Firm',tf:'M15–H1',sl:'2.5 ATR',be:'Có',sc:'60',ses:'Chặn giờ giao phiên',len:'120 nến',run:'Tắt',why:'Ưu tiên giữ tài khoản trước giới hạn lỗ ngày: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn.'}
+  };
+  var f=document.getElementById('pf');
+  function $(id){return document.getElementById(id);}
+  function upd(){
+    var m=M[f.m.value], s=S[f.s.value], stock=f.m.value==='stock';
+    $('rTitle').firstChild.nodeValue=m.t+' · '+s.t;
+    $('rSub').textContent=m.sub+' · khung '+s.tf;
+    $('rVol').textContent=m.vol; $('rDir').textContent=m.dir;
+    $('rSL').textContent=s.sl; $('rBE').textContent=s.be; $('rSc').textContent=s.sc;
+    $('rSes').textContent=stock?'Tắt (cổ phiếu)':s.ses;
+    $('rLen').textContent=s.len; $('rRun').textContent=s.run; $('rWhy').textContent=s.why;
+  }
+  f.addEventListener('change',upd); upd();
+})();
+</script>
+</body>
+</html>
