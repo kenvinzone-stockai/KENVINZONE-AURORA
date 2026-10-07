@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KENVINZONE AURORA STANDARD — Hệ Thống Hỗ Trợ Giao Dịch Trend-Following Trên TradingView</title>
+  <meta name="description" content="Chỉ báo phân tích xu hướng KENVINZONE AURORA STANDARD trên TradingView: Định vị điểm bứt phá 1st/2nd Break, SUNNY, Smart Score và hiển thị kế hoạch Entry - F-SL - TP định sẵn.">
+  
+  <meta name="theme-color" content="#080E1B">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KENVINZONE AURORA STANDARD — Hệ thống Breakout theo xu hướng trên TradingView">
+  <meta property="og:description" content="Setup 1st/2nd Break, SUNNY, kế hoạch Entry – F-SL – TP định sẵn, bảng LIVE trên điện thoại và thống kê tự kiểm chứng ngay trên chart của bạn.">
+  <meta property="og:image" content="https://kenvinzone.com/assets/aurora-live-og.jpg">
+  <meta property="og:url" content="https://kenvinzone.com/aurora">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%23080E1B'/%3E%3Cpath d='M4 21L10 15L15 19L24 7' stroke='%2338D5E7' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS (đã build sẵn — không cần CDN) -->
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Be Vietnam Pro,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-top-3{top:-.75rem}.left-1\/2{left:50%}.right-4{right:1rem}.right-5{right:1.25rem}.top-0{top:0}.top-1\/4{top:25%}.top-4{top:1rem}.-z-10{z-index:-10}.z-10{z-index:10}.z-20{z-index:20}.z-40{z-index:40}.z-50{z-index:50}.col-span-2{grid-column:span 2/span 2}.mx-auto{margin-left:auto;margin-right:auto}.my-5{margin-top:1.25rem;margin-bottom:1.25rem}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:.25rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-1\.5{height:.375rem}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-24{height:6rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-\[350px\]{height:350px}.h-auto{height:auto}.h-full{height:100%}.min-h-\[350px\]{min-height:350px}.w-1\.5{width:.375rem}.w-10{width:2.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-2\.5{width:.625rem}.w-24{width:6rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-\[650px\]{width:650px}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.-translate-y-1\/2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-12{gap:3rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-3\.5{gap:.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-y-2{row-gap:.5rem}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.break-words{overflow-wrap:break-word}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-t{border-top-width:1px}.border-aurora-cyan{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.border-aurora-cyan\/30{border-color:rgba(56,213,231,.3)}.border-aurora-cyan\/40{border-color:rgba(56,213,231,.4)}.border-aurora-gold\/40{border-color:rgba(243,190,98,.4)}.border-emerald-500\/40{border-color:rgba(16,185,129,.4)}.border-purple-500\/30{border-color:rgba(168,85,247,.3)}.border-purple-500\/50{border-color:rgba(168,85,247,.5)}.border-space-750{--tw-border-opacity:1;border-color:rgb(34 51 79/var(--tw-border-opacity,1))}.border-space-800{--tw-border-opacity:1;border-color:rgb(24 37 59/var(--tw-border-opacity,1))}.border-space-850{--tw-border-opacity:1;border-color:rgb(17 27 45/var(--tw-border-opacity,1))}.bg-\[\#0088cc\]{--tw-bg-opacity:1;background-color:rgb(0 136 204/var(--tw-bg-opacity,1))}.bg-\[\#060A14\]{--tw-bg-opacity:1;background-color:rgb(6 10 20/var(--tw-bg-opacity,1))}.bg-aurora-cyan{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.bg-aurora-cyan\/10{background-color:rgba(56,213,231,.1)}.bg-aurora-cyan\/15{background-color:rgba(56,213,231,.15)}.bg-aurora-cyan\/20{background-color:rgba(56,213,231,.2)}.bg-aurora-gold{--tw-bg-opacity:1;background-color:rgb(243 190 98/var(--tw-bg-opacity,1))}.bg-aurora-gold\/15{background-color:rgba(243,190,98,.15)}.bg-aurora-gold\/20{background-color:rgba(243,190,98,.2)}.bg-black\/80{background-color:rgba(0,0,0,.8)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153/var(--tw-bg-opacity,1))}.bg-emerald-500\/15{background-color:rgba(16,185,129,.15)}.bg-emerald-950\/40{background-color:rgba(2,44,34,.4)}.bg-purple-950\/60{background-color:rgba(59,7,100,.6)}.bg-space-750{--tw-bg-opacity:1;background-color:rgb(34 51 79/var(--tw-bg-opacity,1))}.bg-space-800{--tw-bg-opacity:1;background-color:rgb(24 37 59/var(--tw-bg-opacity,1))}.bg-space-850{--tw-bg-opacity:1;background-color:rgb(17 27 45/var(--tw-bg-opacity,1))}.bg-space-900{--tw-bg-opacity:1;background-color:rgb(8 14 27/var(--tw-bg-opacity,1))}.bg-space-900\/90{background-color:rgba(8,14,27,.9)}.bg-space-950{--tw-bg-opacity:1;background-color:rgb(6 11 22/var(--tw-bg-opacity,1))}.bg-space-950\/70{background-color:rgba(6,11,22,.7)}.bg-space-950\/80{background-color:rgba(6,11,22,.8)}.bg-\[radial-gradient\(\#38D5E7_1px\2c transparent_1px\)\]{background-image:radial-gradient(#38d5e7 1px,transparent 0)}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right,var(--tw-gradient-stops))}.from-aurora-cyan{--tw-gradient-from:#38d5e7 var(--tw-gradient-from-position);--tw-gradient-to:rgba(56,213,231,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-aurora-cyan\/10{--tw-gradient-from:rgba(56,213,231,.1) var(--tw-gradient-from-position);--tw-gradient-to:rgba(56,213,231,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-space-850{--tw-gradient-from:#111b2d var(--tw-gradient-from-position);--tw-gradient-to:rgba(17,27,45,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-space-950{--tw-gradient-from:#060b16 var(--tw-gradient-from-position);--tw-gradient-to:rgba(6,11,22,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-blue-500\/5{--tw-gradient-to:rgba(59,130,246,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(59,130,246,.05) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-space-800{--tw-gradient-to:rgba(24,37,59,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#18253b var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-space-900\/80{--tw-gradient-to:rgba(8,14,27,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(8,14,27,.8) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-teal-300{--tw-gradient-to:rgba(94,234,212,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#5eead4 var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-300{--tw-gradient-to:#fcd34d var(--tw-gradient-to-position)}.to-space-850{--tw-gradient-to:#111b2d var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-cover{-o-object-fit:cover;object-fit:cover}.p-1{padding:.25rem}.p-1\.5{padding:.375rem}.p-2{padding:.5rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.pb-20{padding-bottom:5rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pt-1{padding-top:.25rem}.pt-12{padding-top:3rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:JetBrains Mono,monospace}.font-sans{font-family:Be Vietnam Pro,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.2\]{line-height:1.2}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-aurora-cyan{--tw-text-opacity:1;color:rgb(56 213 231/var(--tw-text-opacity,1))}.text-aurora-gold{--tw-text-opacity:1;color:rgb(243 190 98/var(--tw-text-opacity,1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-purple-200{--tw-text-opacity:1;color:rgb(233 213 255/var(--tw-text-opacity,1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-muted{--tw-text-opacity:1;color:rgb(171 185 206/var(--tw-text-opacity,1))}.text-slate-subtle{--tw-text-opacity:1;color:rgb(132 148 173/var(--tw-text-opacity,1))}.text-slate-text{--tw-text-opacity:1;color:rgb(242 246 252/var(--tw-text-opacity,1))}.text-space-950{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-20{opacity:.2}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-card{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-card{--tw-shadow:0 12px 30px -10px rgba(0,0,0,.5);--tw-shadow-colored:0 12px 30px -10px var(--tw-shadow-color)}.shadow-glow-cyan{--tw-shadow:0 0 30px -5px rgba(56,213,231,.3);--tw-shadow-colored:0 0 30px -5px var(--tw-shadow-color)}.shadow-glow-cyan,.shadow-glow-gold{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-glow-gold{--tw-shadow:0 0 30px -5px rgba(243,190,98,.3);--tw-shadow-colored:0 0 30px -5px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur{--tw-blur:blur(8px)}.blur,.blur-\[100px\]{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-\[100px\]{--tw-blur:blur(100px)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.\[background-size\:16px_16px\]{background-size:16px 16px}.selection\:bg-aurora-cyan ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:bg-aurora-cyan ::selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:text-space-950 ::-moz-selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:text-space-950 ::selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:bg-aurora-cyan::-moz-selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:bg-aurora-cyan::selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:text-space-950::-moz-selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:text-space-950::selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.open\:border-aurora-cyan\/40[open]{border-color:rgba(56,213,231,.4)}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-aurora-cyan:hover{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.hover\:border-aurora-gold:hover{--tw-border-opacity:1;border-color:rgb(243 190 98/var(--tw-border-opacity,1))}.hover\:bg-\[\#0077b5\]:hover{--tw-bg-opacity:1;background-color:rgb(0 119 181/var(--tw-bg-opacity,1))}.hover\:bg-amber-300:hover{--tw-bg-opacity:1;background-color:rgb(252 211 77/var(--tw-bg-opacity,1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.hover\:bg-aurora-cyan:hover{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.hover\:bg-purple-900\/60:hover{background-color:rgba(88,28,135,.6)}.hover\:bg-slate-400:hover{--tw-bg-opacity:1;background-color:rgb(148 163 184/var(--tw-bg-opacity,1))}.hover\:bg-space-750:hover{--tw-bg-opacity:1;background-color:rgb(34 51 79/var(--tw-bg-opacity,1))}.hover\:bg-space-800:hover{--tw-bg-opacity:1;background-color:rgb(24 37 59/var(--tw-bg-opacity,1))}.hover\:text-aurora-cyan:hover{--tw-text-opacity:1;color:rgb(56 213 231/var(--tw-text-opacity,1))}.hover\:text-slate-muted:hover{--tw-text-opacity:1;color:rgb(171 185 206/var(--tw-text-opacity,1))}.hover\:text-space-950:hover{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:border-aurora-cyan:focus{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.focus\:ring-1:focus,.focus\:ring-2:focus{box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.focus\:ring-aurora-cyan:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(56 213 231/var(--tw-ring-opacity,1))}.group[open] .group-open\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\:translate-x-1,.group[open] .group-open\:rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem}.group:hover .group-hover\:border-aurora-cyan{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}@media (min-width:640px){.sm\:col-span-1{grid-column:span 1/span 1}.sm\:inline-block{display:inline-block}.sm\:inline{display:inline}.sm\:hidden{display:none}.sm\:h-20{height:5rem}.sm\:min-h-\[390px\]{min-height:390px}.sm\:w-20{width:5rem}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-\[96px_1fr\]{grid-template-columns:96px 1fr}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:p-9{padding:2.25rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:.75rem;line-height:1rem}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:pb-28{padding-bottom:7rem}.md\:pt-16{padding-top:4rem}.md\:text-left{text-align:left}}@media (min-width:1024px){.lg\:col-span-6{grid-column:span 6/span 6}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-5xl{font-size:3rem;line-height:1}}</style>
+
+  <style>
+    /* Custom Utilities & Accessibility Rules */
+    .bg-grid-mesh {
+      background-image: radial-gradient(rgba(56, 213, 231, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .neon-subtle-border {
+      border: 1px solid rgba(56, 213, 231, 0.2);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .neon-subtle-border:hover {
+      border-color: rgba(56, 213, 231, 0.45);
+      box-shadow: 0 0 20px -5px rgba(56, 213, 231, 0.25);
+    }
+    .btn-brand-primary {
+      background: linear-gradient(135deg, #0284C7 0%, #38D5E7 100%);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-brand-primary:hover {
+      box-shadow: 0 0 25px rgba(56, 213, 231, 0.5);
+      transform: translateY(-1px);
+    }
+    /* Slider smooth fade transitions */
+    .hero-slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .hero-slide.active {
+      display: block;
+      opacity: 1;
+    }
+    /* Prevent body scroll when modal is open */
+    .shot-placeholder {
+      background: repeating-linear-gradient(135deg, rgba(56,213,231,0.05) 0 12px, transparent 12px 24px);
+    }
+    body.modal-open {
+      overflow: hidden;
+    }
+  </style>
+<style>
+/* ===== HERO redesign ===== */
+.kzh-title{margin:0 0 14px;font-weight:800;letter-spacing:-.025em;line-height:1.06}
+.kzh-l1{display:block;color:#fff;font-size:clamp(38px,5.6vw,64px)}
+.kzh-l2{display:block;color:#D6E4F5;font-size:clamp(26px,3.6vw,42px);font-weight:700;margin-top:6px;letter-spacing:-.02em}
+.kzh-hl{background:linear-gradient(100deg,#38D5E7 10%,#7DF9D2 55%,#38D5E7 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(56,213,231,.35))}
+.kzh-tag{margin:0 0 22px;font-weight:800;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.kzh-grad{background:linear-gradient(90deg,#38D5E7,#5EEAD4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kzh-grad.kzh-grad2{background-image:linear-gradient(90deg,#FCD34D,#F3BE62 60%,#FB923C)}
+header nav a{white-space:nowrap}
+.kzh-dot{color:#334155}
+.kzh-desc{max-width:580px;margin:0 0 20px;font-size:clamp(15.5px,1.35vw,17.5px);line-height:1.72;color:#A9B8CC;padding-left:16px;border-left:3px solid rgba(56,213,231,.45)}
+.kzh-brand{color:#fff;font-weight:800;letter-spacing:.01em}
+.kzh-c1{color:#38D5E7;font-weight:700}.kzh-c2{color:#F3BE62;font-weight:700}.kzh-c3{color:#5EEAD4;font-weight:700}
+.kzh-chips{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-wrap:wrap;gap:8px}
+.kzh-chips li{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;color:#E2E8F0;background:linear-gradient(180deg,rgba(56,213,231,.10),rgba(56,213,231,.03));border:1px solid rgba(56,213,231,.28)}
+.kzh-chips li span{font-size:14px}
+@media (max-width:640px){.kzh-desc{padding-left:12px}.kzh-chips li{font-size:12px;padding:6px 11px}.kzh-tag{flex-direction:column;align-items:flex-start;gap:2px}.kzh-dot{display:none}header a p{display:none}}
+@media (max-width:420px){header a > div:first-child{display:none}}
+</style>
+</head>
+<body class="bg-space-900 text-slate-text font-sans antialiased overflow-x-hidden relative selection:bg-aurora-cyan selection:text-space-950">
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-40 bg-space-900/90 backdrop-blur-md border-b border-space-750 transition-all">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-aurora-cyan rounded-lg p-1">
+      <div class="w-10 h-10 rounded-xl bg-space-850 border border-aurora-cyan/30 flex items-center justify-center p-2 group-hover:border-aurora-cyan transition-all">
+        <svg viewBox="0 0 28 28" fill="none" class="w-full h-full" aria-hidden="true">
+          <path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="7" r="2.5" fill="#F3BE62"/>
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="font-extrabold tracking-tight text-white text-base sm:text-lg">KENVINZONE</span>
+          <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-aurora-cyan/15 text-aurora-cyan border border-aurora-cyan/30">STANDARD</span>
+        </div>
+        <p class="text-[10px] text-slate-muted font-mono tracking-wider">CHỈ BÁO XU HƯỚNG · TRADINGVIEW</p>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-muted" aria-label="Menu chính">
+      <a href="#tinh-nang" class="hover:text-aurora-cyan transition-colors">Tính năng</a>
+      <a href="#giao-dien" class="hover:text-aurora-cyan transition-colors">Biểu đồ</a>
+      <a href="#quy-trinh" class="hover:text-aurora-cyan transition-colors">Cấp quyền</a>
+      <a href="#bang-gia" class="hover:text-aurora-cyan transition-colors">Bảng giá</a>
+      <a href="#so-sanh" class="hover:text-aurora-cyan transition-colors">So sánh gói</a>
+      <a href="#faq" class="hover:text-aurora-cyan transition-colors">FAQ</a>
+      <a href="huong-dan.html" class="hover:text-aurora-cyan transition-colors">Hướng dẫn</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <button onclick="openRegisterModal('trial')" class="btn-brand-primary text-space-950 font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-aurora-cyan">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span class="whitespace-nowrap sm:hidden">Dùng thử</span><span class="whitespace-nowrap hidden sm:inline">Dùng Thử 3 Ngày</span>
+      </button>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-space-850 border border-space-750 text-slate-muted hover:text-white focus:outline-none focus:ring-2 focus:ring-aurora-cyan" aria-label="Mở danh mục điều hướng" aria-expanded="false">
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-space-750 bg-space-950 px-5 pt-3 pb-6 space-y-3">
+    <a href="#tinh-nang" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Vũ khí cốt lõi</a>
+    <a href="#giao-dien" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Giao diện biểu đồ</a>
+    <a href="#quy-trinh" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Quy trình cấp quyền</a>
+    <a href="#bang-gia" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Bảng giá quyền dùng</a>
+    <a href="#so-sanh" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">So sánh STANDARD / PRO</a>
+    <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium">FAQ thường gặp</a>
+    <a href="huong-dan.html" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium">Hướng dẫn sử dụng</a>
+    <div class="pt-2">
+      <button onclick="toggleMobileMenu(); openRegisterModal('trial');" class="w-full btn-brand-primary text-space-950 font-bold text-sm py-3 rounded-xl flex justify-center items-center gap-2">
+        Nhận Bản Dùng Thử 3 Ngày Miễn Phí
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh">
+  <!-- Subtle ambient glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-aurora-cyan/10 via-blue-500/5 to-transparent blur-[100px] pointer-events-none -z-10"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Value Proposition -->
+      <div class="lg:col-span-6 text-left">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-space-850 border border-aurora-cyan/30 text-xs text-aurora-cyan mb-6 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-aurora-cyan animate-pulse"></span>
+          <span class="font-semibold">Bản Quyền TradingView Invite-Only</span>
+          <span class="text-slate-subtle">· STANDARD Edition</span>
+        </div>
+
+        <!-- HERO HEADLINE (redesign) -->
+        <h1 class="kzh-title">
+          <span class="kzh-l1">Bắt nhịp <span class="kzh-hl">Breakout</span></span>
+          <span class="kzh-l2">đầu tiên của xu hướng mới</span>
+        </h1>
+        <p class="kzh-tag"><span class="kzh-grad">Vào lệnh có kế hoạch</span><span class="kzh-dot">·</span><span class="kzh-grad kzh-grad2">Rủi ro định sẵn</span></p>
+
+        <p class="kzh-desc">
+          <strong class="kzh-brand">KENVINZONE AURORA STANDARD</strong> là hệ thống giao dịch theo xu hướng trên TradingView:
+          tự nhận diện <span class="kzh-c1">tín hiệu vào lệnh</span>, vẽ sẵn <span class="kzh-c2">Entry · Stoploss · Chốt lời</span>
+          và <span class="kzh-c3">thống kê hiệu quả</span> ngay trên biểu đồ, giúp bạn giao dịch kỷ luật, không theo cảm xúc.
+        </p>
+
+        <ul class="kzh-chips" aria-label="Thành phần chính">
+          <li><span>⚡</span>1st / 2nd Break</li>
+          <li><span>☀</span>SUNNY tiếp diễn</li>
+          <li><span>🛡</span>Super Trailing Stop</li>
+          <li><span>🎯</span>Kế hoạch Entry – SL – TP</li>
+        </ul>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
+          <button onclick="openRegisterModal('trial')" class="btn-brand-primary text-space-950 font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-glow-cyan flex items-center justify-center gap-2 group">
+            <span>Dùng Thử 3 Ngày Miễn Phí</span>
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button id="hero-video-btn" onclick="goToSlide(3)" class="bg-space-850 hover:bg-space-800 text-slate-text border border-space-750 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-aurora-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <span>Xem Video Demo 90 Giây</span>
+          </button>
+        </div>
+
+        <!-- Clarification Micro-points -->
+        <div class="pt-5 border-t border-space-800 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-muted font-mono">
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Xác nhận khi nến đóng cửa (No-Repaint)</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Kế hoạch R:R 1:1 & 1:2 định sẵn</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Hỗ trợ tài khoản TradingView Miễn phí</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Multi-Slide / Video Showcase -->
+      <div class="lg:col-span-6" id="giao-dien">
+        <div class="bg-space-950 rounded-2xl border border-aurora-cyan/30 overflow-hidden shadow-2xl relative" id="hero-slider-container">
+          
+          <!-- Terminal Titlebar & Slide Tabs -->
+          <div class="bg-space-850 px-3 sm:px-4 py-2.5 border-b border-space-750 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-white font-bold text-[11px] sm:text-xs" id="slide-ticker-caption">XAUUSD · 15M · 1st BREAK</span>
+            </div>
+            
+            <!-- Quick Slide Select Pills -->
+            <div class="flex items-center gap-1 bg-space-900 p-1 rounded-lg border border-space-750">
+              <button onclick="goToSlide(0)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-cyan bg-space-800 transition" id="tab-0">⚡ 1st Break</button>
+              <button onclick="goToSlide(1)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition" id="tab-1">☀ SUNNY</button>
+              <button onclick="goToSlide(2)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition" id="tab-2">📊 Dashboard</button>
+              <button onclick="goToSlide(3)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-gold hover:text-white transition flex items-center gap-1" id="tab-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-aurora-gold"></span>
+                <span>Video Demo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Slides Viewport Area -->
+          <div class="relative min-h-[350px] sm:min-h-[390px] bg-[#060A14] flex items-center justify-center p-2 sm:p-4">
+            
+            <!-- SLIDE 0: 1st Break BUY Setup (Accurate Geometry Diagram) -->
+            <div class="hero-slide active w-full" id="slide-0">
+              <div class="relative">
+                <svg viewBox="0 0 860 380" class="w-full h-auto block rounded-lg" role="img" aria-label="Minh họa cấu trúc setup 1st Break BUY">
+                  <defs>
+                    <filter id="neon-glow" x="-20%" y="-40%" width="140%" height="180%">
+                      <feGaussianBlur stdDeviation="4" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <linearGradient id="cloud-ribbon" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#38D5E7" stop-opacity="0.3"/>
+                      <stop offset="100%" stop-color="#38D5E7" stop-opacity="0.02"/>
+                    </linearGradient>
+                  </defs>
+
+                  <line x1="0" y1="70" x2="860" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  <line x1="0" y1="130" x2="860" y2="130" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <line x1="0" y1="250" x2="860" y2="250" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+                  <rect x="400" y="0" width="16" height="380" fill="#38D5E7" opacity="0.12"/>
+                  <rect x="408" y="70" width="280" height="120" fill="rgba(16, 185, 129, 0.14)" stroke="#10B981" stroke-width="1" stroke-opacity="0.5" rx="3"/>
+                  <rect x="408" y="190" width="280" height="60" fill="rgba(239, 68, 68, 0.12)" stroke="#EF4444" stroke-width="1" stroke-opacity="0.5" rx="3"/>
+
+                  <line x1="408" y1="70" x2="688" y2="70" stroke="#10B981" stroke-width="1.5"/>
+                  <line x1="408" y1="130" x2="688" y2="130" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 4"/>
+                  <line x1="408" y1="190" x2="688" y2="190" stroke="#F2F6FC" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  <line x1="408" y1="250" x2="688" y2="250" stroke="#EF4444" stroke-width="1.5"/>
+
+                  <path d="M20 100 H110 V120 H190 V140 H280 V155 H380" fill="none" stroke="#D0306E" stroke-width="2.5" filter="url(#neon-glow)"/>
+                  <circle cx="20" cy="100" r="5" fill="#D0306E"/>
+
+                  <path d="M408 250 H500 V230 H560 V205 H620 V185 H710 V165 H840 V180 H710 V200 H620 V220 H560 V245 H500 V265 H408 Z" fill="url(#cloud-ribbon)"/>
+                  <path d="M408 250 H500 V230 H560 V205 H620 V185 H710 V165 H840" fill="none" stroke="#38D5E7" stroke-width="2.5" filter="url(#neon-glow)"/>
+                  <circle cx="408" cy="250" r="5.5" fill="#38D5E7"/>
+
+                  <g stroke-width="1.5">
+                    <g stroke="#EF4444" fill="#EF4444">
+                      <line x1="60" y1="120" x2="60" y2="170"/><rect x="55" y1="130" width="10" height="30"/>
+                      <line x1="120" y1="135" x2="120" y2="185"/><rect x="115" y1="142" width="10" height="32"/>
+                      <line x1="180" y1="150" x2="180" y2="205"/><rect x="175" y="158" width="10" height="35"/>
+                      <line x1="250" y1="170" x2="250" y2="225"/><rect x="245" y="178" width="10" height="35"/>
+                    </g>
+                    <g stroke="#94A3B8" fill="#94A3B8">
+                      <line x1="310" y1="185" x2="310" y2="230"/><rect x="305" y="195" width="10" height="24"/>
+                      <line x1="360" y1="180" x2="360" y2="225"/><rect x="355" y="190" width="10" height="22"/>
+                    </g>
+                    <g stroke="#F3BE62" fill="#F3BE62">
+                      <line x1="408" y1="175" x2="408" y2="220" stroke-width="2"/>
+                      <rect x="402" y="185" width="12" height="25" rx="2" filter="url(#neon-glow)"/>
+                    </g>
+                    <g stroke="#10B981" fill="#10B981">
+                      <line x1="450" y1="165" x2="450" y2="210"/><rect x="445" y="172" width="10" height="28"/>
+                      <line x1="500" y1="145" x2="500" y2="190"/><rect x="495" y="152" width="10" height="28"/>
+                      <line x1="560" y1="125" x2="560" y2="170"/><rect x="555" y="132" width="10" height="28"/>
+                      <line x1="620" y1="95" x2="620" y2="145"/><rect x="615" y="105" width="10" height="30"/>
+                      <line x1="680" y1="65" x2="680" y2="115"/><rect x="675" y="70" width="10" height="32"/>
+                    </g>
+                  </g>
+
+                  <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+                    <rect x="290" y="60" width="110" height="20" rx="3" fill="#10B981"/>
+                    <text x="298" y="74" fill="#06231A">🎯 TP2 · 2R (+0.46%)</text>
+
+                    <rect x="290" y="120" width="110" height="20" rx="3" fill="rgba(16, 185, 129, 0.4)"/>
+                    <text x="298" y="134" fill="#FFFFFF">🎯 TP1 · 1R (+0.23%)</text>
+
+                    <rect x="290" y="180" width="110" height="20" rx="3" fill="#18253B"/>
+                    <text x="298" y="194" fill="#F2F6FC">▶ Entry 4161.02</text>
+
+                    <rect x="290" y="240" width="110" height="20" rx="3" fill="#EF4444"/>
+                    <text x="298" y="254" fill="#FFFFFF">🛑 F-SL (-0.23%)</text>
+
+                    <rect x="335" y="280" width="145" height="42" rx="5" fill="#0284C7"/>
+                    <text x="345" y="297" fill="#FFFFFF" font-size="12">⚡ 1st BREAK BUY</text>
+                    <text x="345" y="313" fill="#E0F2FE" font-size="11">GRADE A · SCORE 84</text>
+
+                    <rect x="560" y="35" width="128" height="22" rx="4" fill="#10B981"/>
+                    <text x="568" y="50" fill="#06231A" font-size="11">✓ +1.5R (TP1+TP2)</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- SLIDE 1: SUNNY Setup (Tiếp diễn sóng xu hướng) -->
+            <div class="hero-slide w-full" id="slide-1">
+              <div class="relative bg-space-900 rounded-xl p-3 border border-space-800">
+                <svg viewBox="0 0 860 380" class="w-full h-auto block rounded-lg" role="img" aria-label="Minh họa setup SUNNY tiếp diễn">
+                  <line x1="0" y1="80" x2="860" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  <line x1="0" y1="150" x2="860" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                  <line x1="0" y1="220" x2="860" y2="220" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                  <line x1="0" y1="280" x2="860" y2="280" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+                  <!-- Uptrend Trailing line -->
+                  <path d="M20 290 H200 V270 H380 V250 H520 V220 H680 V190 H840" fill="none" stroke="#38D5E7" stroke-width="2.5"/>
+
+                  <!-- Base line -->
+                  <path d="M20 250 Q 220 220, 420 180 T 840 120" fill="none" stroke="#6366F1" stroke-width="2" stroke-dasharray="4 4"/>
+
+                  <!-- Fast line -->
+                  <path d="M20 270 Q 200 240, 360 210 T 420 170 T 840 100" fill="none" stroke="#F3BE62" stroke-width="2.5"/>
+
+                  <!-- SUNNY Target Plan Box -->
+                  <rect x="420" y="80" width="260" height="140" fill="rgba(16, 185, 129, 0.12)" stroke="#10B981" stroke-dasharray="4 4" rx="3"/>
+                  <rect x="420" y="220" width="260" height="60" fill="rgba(239, 68, 68, 0.1)" stroke="#EF4444" stroke-dasharray="4 4" rx="3"/>
+
+                  <!-- Candles showing Pullback & Bounce -->
+                  <g stroke-width="1.5">
+                    <!-- Rally 1 -->
+                    <g stroke="#10B981" fill="#10B981">
+                      <rect x="180" y="220" width="10" height="30"/><line x1="185" y1="210" x2="185" y2="260"/>
+                      <rect x="230" y="190" width="10" height="35"/><line x1="235" y1="180" x2="235" y2="235"/>
+                      <rect x="280" y="160" width="10" height="35"/><line x1="285" y1="150" x2="285" y2="205"/>
+                    </g>
+                    <!-- Pullback -->
+                    <g stroke="#EF4444" fill="#EF4444">
+                      <rect x="330" y="180" width="10" height="25"/><line x1="335" y1="170" x2="335" y2="215"/>
+                      <rect x="375" y="200" width="10" height="25"/><line x1="380" y1="190" x2="380" y2="235"/>
+                    </g>
+                    <!-- SUNNY Trigger Green Candle -->
+                    <g stroke="#10B981" fill="#10B981">
+                      <rect x="420" y="175" width="12" height="35" rx="1"/><line x1="426" y1="165" x2="426" y2="225" stroke-width="2"/>
+                      <rect x="480" y="140" width="10" height="35"/><line x1="485" y1="130" x2="485" y2="185"/>
+                      <rect x="540" y="110" width="10" height="35"/><line x1="545" y1="100" x2="545" y2="155"/>
+                      <rect x="610" y="80" width="10" height="35"/><line x1="615" y1="70" x2="615" y2="125"/>
+                    </g>
+                  </g>
+
+                  <!-- Labels -->
+                  <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+                    <rect x="410" y="295" width="150" height="42" rx="5" fill="#F59E0B"/>
+                    <text x="422" y="313" fill="#06131F" font-size="12">☀ SUNNY BUY</text>
+                    <text x="422" y="328" fill="#1E293B" font-size="10">TÍN HIỆU TIẾP DIỄN SÓNG</text>
+
+                    <rect x="600" y="70" width="120" height="22" rx="4" fill="#10B981"/>
+                    <text x="608" y="85" fill="#041F14">🎯 TP2 HIT (+2R)</text>
+
+                    <rect x="290" y="30" width="220" height="24" rx="4" fill="#1E2538"/>
+                    <text x="300" y="46" fill="#93C5FD">Tín hiệu vào lệnh SUNNY xác nhận</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- SLIDE 2: Dashboard HUD (Bảng thống kê định lượng & MTF) -->
+            <div class="hero-slide w-full" id="slide-2">
+              <div class="bg-space-900 rounded-xl p-4 sm:p-5 border border-aurora-cyan/30 text-xs font-mono">
+                <div class="bg-aurora-cyan/15 text-aurora-cyan font-bold p-2.5 rounded-lg text-center mb-3 text-xs sm:text-sm">
+                  ⚡ KENVINZONE AURORA STANDARD · DASHBOARD HUD PANEL
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-3">
+                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750">
+                    <span class="text-slate-subtle block text-[10px]">XU HƯỚNG CHÍNH</span>
+                    <span class="text-emerald-400 font-bold text-sm">▲ UPTREND VỮNG</span>
+                  </div>
+                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750">
+                    <span class="text-slate-subtle block text-[10px]">SMART SCORE</span>
+                    <span class="text-aurora-cyan font-bold text-sm">BUY 84 / 100</span>
+                  </div>
+                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750 col-span-2 sm:col-span-1">
+                    <span class="text-slate-subtle block text-[10px]">ĐỒNG THUẬN MTF</span>
+                    <span class="text-emerald-400 font-bold text-sm">▲ 78% (KHUNG LỚN)</span>
+                  </div>
+                </div>
+
+                <div class="text-[10px] font-mono text-aurora-gold mb-1.5">⚠ Số liệu minh họa giao diện — không phải kết quả giao dịch</div>
+                <div class="space-y-1.5 text-[11px]">
+                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
+                    <span class="text-slate-muted">⚡ Setup 1st/2nd Break</span>
+                    <span class="text-emerald-400 font-bold">68 Lệnh · Winrate 58% · +8.6R</span>
+                  </div>
+                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
+                    <span class="text-slate-muted">☀ Tiếp diễn SUNNY</span>
+                    <span class="text-emerald-400 font-bold">24 Lệnh · Winrate 54% · +3.0R</span>
+                  </div>
+                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
+                    <span class="text-slate-muted">⛔ Bộ lọc lệnh ma (Filtered)</span>
+                    <span class="text-aurora-cyan font-bold">14 lệnh · -3.4R → bộ lọc chặn đúng</span>
+                  </div>
+                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
+                    <span class="text-slate-muted">🔊 Volume Engine Time-Of-Day</span>
+                    <span class="text-emerald-400 font-bold">RVOL 1.74 · Nguồn COMEX:GC1! ✓</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3: Video Demo / Live Screen Record Slot (Ready for Video MP4 / YouTube embed) -->
+            <div class="hero-slide w-full" id="slide-3">
+              <div class="relative bg-space-900 rounded-xl overflow-hidden border border-aurora-gold/40 aspect-video flex flex-col items-center justify-center group shadow-glow-gold">
+                
+                <!-- Video Container (Tương lai chỉ cần thay src video hoặc nhúng iframe) -->
+                <!-- Ví dụ nếu có file video mp4 thật: <video controls class="w-full h-full object-cover" poster="..."><source src="video.mp4" type="video/mp4"></video> -->
+                <div class="absolute inset-0 bg-gradient-to-t from-space-950 via-space-900/80 to-transparent z-10 flex flex-col justify-end p-4 sm:p-6 pointer-events-none">
+                  <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-aurora-gold/20 text-aurora-gold border border-aurora-gold/40 text-[11px] font-mono font-bold w-fit mb-2">
+                    <span>🎬 VIDEO DEMO THỰC CHIẾN</span>
+                  </div>
+                  <h4 class="text-white font-bold text-sm sm:text-base">Xem Aurora STANDARD Bắt Sóng Breakout Trực Tiếp</h4>
+                  <p class="text-slate-muted text-xs">Cách chọn preset, theo dõi nến vàng và tự động hiển thị hộp R:R 1:2.</p>
+                </div>
+
+                <!-- Interactive Placeholder / Play Button -->
+                <div class="relative z-20 flex flex-col items-center gap-3">
+                  <button onclick="playDemoVideoPrompt()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-aurora-gold text-space-950 flex items-center justify-center shadow-lg hover:scale-110 hover:bg-amber-300 transition cursor-pointer" aria-label="Bật video demo">
+                    <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                  <span class="text-xs font-mono text-slate-300 bg-space-950/80 px-3 py-1 rounded-full border border-space-750">
+                    Bấm để xem video mô phỏng (90s)
+                  </span>
+                </div>
+
+                <!-- Simulated chart background pattern -->
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38D5E7_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Navigation Bar: Prev/Next Buttons & Dots Indicator -->
+          <div class="px-4 py-2.5 bg-space-850 border-t border-space-750 flex items-center justify-between text-xs text-slate-muted font-mono">
+            <!-- Prev & Next Controls -->
+            <div class="flex items-center gap-2">
+              <button onclick="prevSlide()" class="p-1.5 rounded-lg bg-space-900 hover:bg-space-800 border border-space-750 text-white transition hover:border-aurora-cyan" aria-label="Slide trước">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button onclick="nextSlide()" class="p-1.5 rounded-lg bg-space-900 hover:bg-space-800 border border-space-750 text-white transition hover:border-aurora-cyan" aria-label="Slide kế tiếp">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+              <span id="slide-counter-badge" class="text-[11px] text-slate-subtle ml-1">1 / 4</span>
+            </div>
+
+            <!-- Slide Dots -->
+            <div class="flex items-center gap-1.5">
+              <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-aurora-cyan transition-all" id="dot-0" aria-label="Chuyển đến Slide 1"></button>
+              <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-1" aria-label="Chuyển đến Slide 2"></button>
+              <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-2" aria-label="Chuyển đến Slide 3"></button>
+              <button onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-3" aria-label="Chuyển đến Slide 4"></button>
+            </div>
+
+            <!-- Caption / Tip -->
+            <span class="text-[10px] text-slate-subtle hidden sm:inline-block">Hình minh họa giao diện · Tự động chuyển slide</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 3 CORE VALUE PILLARS -->
+<section class="py-14 bg-space-950 border-y border-space-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="w-10 h-10 rounded-xl bg-aurora-cyan/15 text-aurora-cyan flex items-center justify-center font-bold mb-4">01</div>
+        <h3 class="text-lg font-bold text-white mb-2">Đọc Bối Cảnh Xu Hướng Đa Khung</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Theo dõi trạng thái mây và xu hướng chính trên 9 khung thời gian trong một Dashboard. Điểm đồng thuận chỉ tính các khung lớn hơn khung đang xem, lấy từ nến đã đóng để tránh nhiễu và vẽ lại.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="w-10 h-10 rounded-xl bg-aurora-gold/15 text-aurora-gold flex items-center justify-center font-bold mb-4">02</div>
+        <h3 class="text-lg font-bold text-white mb-2">Đánh Giá Setup Định Lượng</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Smart Score (0–100) chấm điểm từng cơ hội theo độ đồng thuận giữa xu hướng, động lượng và dòng tiền (Volume Engine), giúp bạn đánh giá mức độ đồng thuận của từng setup trước khi vào lệnh.
+        </p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold mb-4">03</div>
+        <h3 class="text-lg font-bold text-white mb-2">Kế Hoạch R:R Định Sẵn</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Ngay khi nến tín hiệu đóng cửa, hộp lệnh tự động hiển thị Entry, F-SL cố định, TP1 (1R) và TP2 (2R). Giúp bạn tính toán khối lượng lot chuẩn xác trước khi vào lệnh.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CORE SYSTEM COMPONENTS -->
+<section id="tinh-nang" class="py-20 bg-space-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Cấu trúc công cụ</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">Các Thành Phần Tích Hợp Của Aurora STANDARD</p>
+      <p class="text-slate-muted mt-3 text-sm sm:text-base">Mọi thành phần logic được đóng gói gọn trong một chỉ báo duy nhất, tối ưu tài nguyên biểu đồ.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Component 1 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Xương sống vào lệnh</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">1st & 2nd Break Setup</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Nhận diện nhịp phá vỡ đầu tiên ngay khi hệ thống xác nhận một chu kỳ xu hướng mới. Cú 2nd Break hỗ trợ bắt nhịp khi thị trường vừa quét thanh khoản. Ngưỡng lọc mặc định từ 50 điểm.
+        </p>
+      </div>
+
+      <!-- Component 2 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Nhịp tiếp diễn sóng</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">SUNNY Continuation</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Tín hiệu vào lệnh sau nhịp hồi, chỉ xuất hiện khi thuận xu hướng chính và giá nằm đúng phía đường Trailing Stoploss. Giúp bạn không bị lỡ nhịp khi xu hướng đã chạy một đoạn.
+        </p>
+      </div>
+
+      <!-- Component 3 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-emerald-400 uppercase mb-1">Bảo vệ vị thế</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Kenvin Super Trailing Stop</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Đường bậc thang tự thích ứng theo biến động thị trường. Phân biệt rõ: <strong>F-SL cố định</strong> dùng để quản trị rủi ro lúc mở lệnh, và <strong>T-SL động</strong> chạy tịnh tiến theo giá để chủ động bảo vệ lợi nhuận.
+        </p>
+      </div>
+
+      <!-- Component 4 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Định lượng điều kiện</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Smart Score & MTF Vote</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Chấm điểm từ 0–100 cho 2 chiều BUY/SELL. Phân hạng Grade A (≥80) và Grade B (≥70) cho các tín hiệu Smart. Đồng thuận đa khung chỉ lấy nến đã đóng từ khung lớn để đảm bảo ổn định.
+        </p>
+      </div>
+
+      <!-- Component 5 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Khối lượng thông minh</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Volume Engine Time-Of-Day</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          So sánh RVOL theo cùng khung giờ của 10 ngày trước, giảm sai lệch do mở phiên. Hỗ trợ kéo volume chuẩn tương lai (như COMEX:GC1! cho vàng) và cảnh báo hấp thụ (Absorption).
+        </p>
+      </div>
+
+      <!-- Component 6 -->
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Tích hợp mở rộng</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Cảnh Báo Chuẩn Hóa JSON Webhook</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Phát tín hiệu alert có cấu trúc JSON đầy đủ (Entry, SL, TP1, TP2, Score). Thuận tiện gửi thông báo về kênh Telegram, Discord cá nhân hoặc kết nối với các bộ cầu nối webhook ngoài.
+        </p>
+      </div>
+
+
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Vào lệnh thông minh</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Pullback Entry Cho Nến Break Dài</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Khi nến Break quá dài, hệ thống không vào lệnh ở đáy hay đỉnh cây nến mà đặt lệnh chờ tại mức hồi 50%. Stoploss gần hơn, TP1 và TP2 dễ đạt hơn. Lệnh tự hủy nếu giá chạy thẳng hoặc hết thời gian chờ.
+        </p>
+      </div>
+
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Giao dịch trên điện thoại</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Bảng LIVE Cho Mobile</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Một bảng gọn hiển thị xu hướng, setup đang chờ (1st Break / 2nd Break / SUNNY), khoảng cách tới điểm kích hoạt 🔥, các điều kiện lọc và lệnh đang chạy kèm R hiện tại.
+        </p>
+      </div>
+
+      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Thiết lập 1 chạm</div>
+        <h3 class="text-lg font-bold text-white mb-2.5">Market Preset &amp; Phiên Giao Dịch</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Chọn STOCK, FOREX, CFD hoặc CRYPTO là chỉ báo tự cấu hình chiều lệnh và nguồn volume phù hợp. Thống kê theo phiên Á, Âu, Mỹ với giờ tự điều chỉnh theo mùa hè, mùa đông.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY: TỰ KIỂM CHỨNG -->
+<section id="kiem-chung" class="py-20 bg-space-950 border-t border-space-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-gold uppercase mb-2">Minh bạch</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">Đừng Tin Quảng Cáo. Hãy Tự Kiểm Chứng.</p>
+      <p class="text-slate-muted mt-3 text-sm sm:text-base">Aurora STANDARD đi kèm bộ công cụ để bạn tự đo hiệu quả của hệ thống trên đúng mã và khung thời gian bạn giao dịch, thay vì phải tin vào những con số chúng tôi đưa ra.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="text-2xl mb-3">📊</div>
+        <h3 class="text-lg font-bold text-white mb-2">Thống Kê Theo Từng Setup</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">Dashboard ghi lại kết quả của từng nhóm: 1st/2nd Break (tách theo Score cao và thấp), SUNNY, Pullback và từng phiên giao dịch. Có tỷ lệ thắng, tổng R, R trung bình mỗi lệnh và cách các lệnh được đóng.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="text-2xl mb-3">⛔</div>
+        <h3 class="text-lg font-bold text-white mb-2">"Lệnh Ma" Đo Giá Trị Bộ Lọc</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">Mỗi setup bị bộ lọc chặn vẫn được theo dõi ngầm như thể đã vào lệnh. Bạn biết ngay bộ lọc đang loại bỏ lệnh xấu, hay đang chặn nhầm lệnh tốt, và có lý do cụ thể cho từng lần chặn.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+        <div class="text-2xl mb-3">🧪</div>
+        <h3 class="text-lg font-bold text-white mb-2">Strategy Validator Có Tính Phí</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">Phiên bản chiến lược của cùng hệ thống chạy trên Strategy Tester của TradingView: lệnh khớp ở nến kế tiếp, khối lượng theo % rủi ro, có phí và trượt giá. Bạn xem được lợi nhuận, drawdown và từng lệnh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL CHART SCREENSHOTS -->
+<section id="anh-thuc-te" class="py-20 bg-space-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Trên chart thật</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">Aurora STANDARD Trên TradingView</p>
+    </div>
+    <!-- HƯỚNG DẪN: thay mỗi khối <div class="shot-placeholder"> bằng
+         <img src="duong-dan-anh.jpg" alt="Mô tả ảnh" class="w-full h-full object-cover" loading="lazy"> -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: 1st Break + khung kế hoạch</div>
+        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Setup 1st Break</strong> với Entry, F-SL, TP1, TP2 và nhãn kết quả sau khi lệnh đóng.</figcaption>
+      </figure>
+      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: Bảng LIVE trên điện thoại</div>
+        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Bảng LIVE</strong> trên ứng dụng TradingView: setup đang chờ, khoảng cách kích hoạt và điều kiện vào lệnh.</figcaption>
+      </figure>
+      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: Dashboard thống kê</div>
+        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Dashboard Full</strong> với thống kê theo setup, bộ lọc và phiên giao dịch.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT AUTHOR -->
+<section id="tac-gia" class="py-20 bg-space-950 border-t border-space-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-2xl bg-space-900 border border-space-800 p-7 sm:p-9 grid grid-cols-1 sm:grid-cols-[96px_1fr] gap-6 items-start">
+      <!-- Thay khối dưới bằng ảnh đại diện: <img src="avatar.jpg" alt="KenvinHoang" class="w-24 h-24 rounded-2xl object-cover"> -->
+      <div class="w-24 h-24 rounded-2xl bg-space-850 border border-aurora-cyan/30 flex items-center justify-center text-3xl font-extrabold text-aurora-cyan">K</div>
+      <div>
+        <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Về tác giả</h2>
+        <p class="text-xl sm:text-2xl font-extrabold text-white mb-3">Trader KenvinHoang · KenvinZone</p>
+        <p class="text-slate-muted text-sm sm:text-base leading-relaxed mb-3">
+          Aurora STANDARD phát triển từ <strong class="text-white">KENVIN CLOUD TRENDING SYSTEM</strong>, hệ thống giao dịch theo xu hướng mà tôi xây dựng và sử dụng cho chính mình. Setup 1st Break và SUNNY là "linh hồn" của hệ thống gốc, được giữ nguyên luật vào lệnh và nâng cấp thêm phần chấm điểm, quản lý kế hoạch lệnh và thống kê.
+        </p>
+        <p class="text-slate-muted text-sm sm:text-base leading-relaxed">
+          Hệ thống đã qua nhiều vòng kiểm thử trên vàng, crypto và cổ phiếu Việt Nam ở nhiều khung thời gian. Mục tiêu của tôi không phải hứa hẹn lợi nhuận, mà là đưa cho bạn một quy trình giao dịch rõ ràng và công cụ để tự đo lường nó.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3-STEP ACTIVATION WORKFLOW -->
+<section id="quy-trinh" class="py-20 bg-space-950 border-t border-space-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Quy trình cấp quyền</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">3 Bước Bắt Đầu Sử Dụng Chỉ Báo</p>
+      <p class="text-slate-muted mt-2 text-sm">Cấp quyền qua hệ thống Invite-Only chính thức của TradingView.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+        <div class="text-aurora-cyan font-mono font-bold text-2xl mb-4">01</div>
+        <h3 class="text-base font-bold text-white mb-2">Gửi TradingView Username</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Đăng ký gói bạn chọn và cung cấp chính xác Username TradingView của bạn. Yêu cầu sẽ được chuyển đến người quản trị để cấp quyền truy cập.
+        </p>
+      </div>
+
+      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+        <div class="text-aurora-gold font-mono font-bold text-2xl mb-4">02</div>
+        <h3 class="text-base font-bold text-white mb-2">Mở Chỉ Báo Trên Biểu Đồ</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Sau khi được cấp quyền, bạn mở biểu đồ TradingView, vào mục <em>Indicators → Invite-only scripts</em> và nhấp chọn <code>AURORA STANDARD</code>.
+        </p>
+      </div>
+
+      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+        <div class="text-emerald-400 font-mono font-bold text-2xl mb-4">03</div>
+        <h3 class="text-base font-bold text-white mb-2">Chọn Preset & Giao Dịch</h3>
+        <p class="text-slate-muted text-sm leading-relaxed">
+          Vào mục Cài đặt chỉ báo, chọn Market Preset tương ứng (STOCK, FOREX, CFD hoặc CRYPTO). Chỉ báo tự động thiết lập thông số phù hợp.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING / MEMBER SUBSCRIPTION SECTION -->
+<section id="bang-gia" class="py-20 bg-space-900 border-t border-space-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-cyan/10 border border-aurora-cyan/30 text-aurora-cyan text-xs font-mono font-bold uppercase tracking-wider mb-3">
+        MEMBER SUBSCRIPTION PLANS
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Quyền Sử Dụng Chỉ Báo Aurora STANDARD</h2>
+      <p class="text-slate-muted mt-3 text-sm sm:text-base">
+        Chọn gói trải nghiệm phù hợp với nhu cầu. Gia hạn thủ công khi muốn tiếp tục sử dụng, không tự động trừ tiền trong tài khoản.
+      </p>
+      <p class="text-slate-subtle text-xs mt-2">* Mức quy đổi VND tạm tính theo tỷ giá tham khảo 1 USD ~ 26.000 VNĐ.</p>
+    </div>
+
+    <!-- Trial Banner -->
+    <div class="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-space-850 via-space-800 to-space-850 border border-aurora-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-aurora-cyan/20 text-aurora-cyan">MIỄN PHÍ</span>
+          <h3 class="text-lg font-bold text-white">Trial Member — 3 Ngày Dùng Thử</h3>
+        </div>
+        <p class="text-slate-muted text-xs sm:text-sm mt-1">Đầy đủ tính năng cốt lõi trên mọi thị trường để bạn tự kiểm chứng trực tiếp trên biểu đồ cá nhân.</p>
+      </div>
+      <button onclick="openRegisterModal('trial')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl border border-aurora-cyan text-aurora-cyan hover:bg-aurora-cyan hover:text-space-950 font-bold text-xs uppercase tracking-wider transition whitespace-nowrap">
+        Đăng Ký 3 Ngày Miễn Phí
+      </button>
+    </div>
+
+    <!-- Primary 3 Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8 items-stretch">
+      
+      <!-- Tier 1: 1 Month -->
+      <div class="bg-space-850 border border-space-750 hover:border-space-700 rounded-2xl p-6 flex flex-col justify-between shadow-card">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono font-bold text-slate-muted uppercase">Khởi đầu</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-space-800 text-slate-muted">30 Ngày</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">1 Month Member</h3>
+          <p class="text-slate-muted text-xs mt-1">Dành cho bạn muốn theo dõi trọn vẹn 1 chu kỳ sóng thị trường.</p>
+
+          <div class="my-5 pb-5 border-b border-space-800">
+            <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-black text-white">$100</span>
+              <span class="text-slate-subtle text-xs">/ 30 ngày</span>
+            </div>
+            <div class="text-xs text-slate-muted mt-1 font-mono">~ 2.600.000 VNĐ</div>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-slate-muted">
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Cấp quyền Invite-only trong 30 ngày</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Trọn bộ 4 Market Preset (Stock, Forex, CFD, Crypto)</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Cẩm nang hướng dẫn sử dụng chi tiết</li>
+          </ul>
+        </div>
+
+        <button onclick="openRegisterModal('1m')" class="mt-6 w-full py-3 rounded-xl bg-space-800 hover:bg-space-750 border border-space-700 text-white font-bold text-xs uppercase tracking-wider transition">
+          Chọn Gói 1 Tháng
+        </button>
+      </div>
+
+      <!-- Tier 2: 6 Month (Featured Recommendation) -->
+      <div class="bg-space-850 border-2 border-aurora-cyan rounded-2xl p-6 flex flex-col justify-between shadow-glow-cyan relative">
+        <div class="absolute -top-3 right-5 bg-aurora-cyan text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+          Gói Đề Xuất · Giảm 21%
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono font-bold text-aurora-cyan uppercase">Bán chạy nhất</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-aurora-cyan/20 text-aurora-cyan">180 Ngày</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">Pro Member 6 Tháng</h3>
+          <p class="text-slate-muted text-xs mt-1">Đủ thời gian rèn luyện tính kỷ luật và nắm vững quy tắc thoát lệnh.</p>
+
+          <div class="my-5 pb-5 border-b border-space-800">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-3xl font-black text-aurora-cyan">$474</span>
+              <span class="text-slate-subtle text-xs">/ 180 ngày</span>
+            </div>
+            <div class="text-xs text-aurora-cyan mt-1 font-mono">Quy đổi ~$79/tháng (~ 12.300.000 VNĐ)</div>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-slate-text">
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Cấp quyền Invite-only trong 180 ngày</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Tiết kiệm $126 so với gia hạn từng tháng lẻ</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Hỗ trợ cấu hình mã volume ngoài COMEX/CME</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Kênh giải đáp kỹ thuật qua Telegram</li>
+          </ul>
+        </div>
+
+        <button onclick="openRegisterModal('6m')" class="mt-6 w-full py-3.5 rounded-xl btn-brand-primary text-space-950 font-black text-xs uppercase tracking-wider shadow-md transition">
+          Chọn Gói 6 Tháng
+        </button>
+      </div>
+
+      <!-- Tier 3: 1 Year -->
+      <div class="bg-space-850 border border-aurora-gold/40 hover:border-aurora-gold rounded-2xl p-6 flex flex-col justify-between shadow-glow-gold relative">
+        <div class="absolute -top-3 right-5 bg-aurora-gold text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+          Tiết Kiệm 31%
+        </div>
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono font-bold text-aurora-gold uppercase">Dài hạn</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-aurora-gold/20 text-aurora-gold">365 Ngày</span>
+          </div>
+          <h3 class="text-xl font-bold text-white">Pro Member 1 Năm</h3>
+          <p class="text-slate-muted text-xs mt-1">Dành cho trader chuyên tâm theo đuổi hệ thống một cách bài bản.</p>
+
+          <div class="my-5 pb-5 border-b border-space-800">
+            <div class="flex items-baseline gap-1.5">
+              <span class="text-3xl font-black text-aurora-gold">$828</span>
+              <span class="text-slate-subtle text-xs">/ 365 ngày</span>
+            </div>
+            <div class="text-xs text-aurora-gold mt-1 font-mono">Quy đổi ~$69/tháng (~ 21.500.000 VNĐ)</div>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-slate-muted">
+            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Cấp quyền Invite-only trong 365 ngày</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Tiết kiệm $372 so với gia hạn tháng</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Hỗ trợ mẫu cấu hình JSON Alert cá nhân</li>
+            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Ưu tiên hỗ trợ kỹ thuật trực tiếp</li>
+          </ul>
+        </div>
+
+        <button onclick="openRegisterModal('1y')" class="mt-6 w-full py-3 rounded-xl bg-aurora-gold hover:bg-amber-400 text-space-950 font-bold text-xs uppercase tracking-wider transition">
+          Chọn Gói 1 Năm
+        </button>
+      </div>
+
+    </div>
+
+    <!-- More Options Accordion (3 Months & 3 Years) -->
+    <div class="max-w-4xl mx-auto">
+      <details class="group bg-space-850 border border-space-800 rounded-2xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-sm text-slate-muted hover:text-white">
+          <span>Xem thêm các lựa chọn gói khác (Gói Quý 3 Tháng & Gói Tinh Anh 3 Năm)</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 pt-5 border-t border-space-800 text-xs">
+          <!-- 3 Months Option -->
+          <div class="p-4 rounded-xl bg-space-900 border border-space-800 flex flex-col justify-between">
+            <div>
+              <div class="font-bold text-white text-sm">Gói Quý 3 Tháng (Giảm 15%)</div>
+              <div class="text-slate-muted mt-1">Tổng <strong>$255</strong> (~ 6.600.000 VNĐ) · Quy đổi ~$85/tháng</div>
+            </div>
+            <button onclick="openRegisterModal('3m')" class="mt-4 py-2 px-4 rounded-lg bg-space-800 hover:bg-space-750 text-white font-bold text-center">
+              Đăng Ký Gói 3 Tháng
+            </button>
+          </div>
+
+          <!-- 3 Years Option -->
+          <div class="p-4 rounded-xl bg-space-900 border border-purple-500/30 flex flex-col justify-between">
+            <div>
+              <div class="font-bold text-purple-300 text-sm">Gói Tinh Anh 3 Năm (Giảm 50%)</div>
+              <div class="text-slate-muted mt-1">Tổng <strong>$1.800</strong> (~ 46.800.000 VNĐ) · Quy đổi ~$50/tháng</div>
+            </div>
+            <button onclick="openRegisterModal('3y')" class="mt-4 py-2 px-4 rounded-lg bg-purple-950/60 border border-purple-500/50 hover:bg-purple-900/60 text-purple-200 font-bold text-center">
+              Đăng Ký Gói 3 Năm
+            </button>
+          </div>
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<!-- SO SÁNH 3 DÒNG SẢN PHẨM -->
+<style>
+.kzc{padding:80px 16px;background:#060B16;border-top:1px solid #111B2D}
+.kzc .w{max-width:1100px;margin:0 auto}
+.kzc h2{color:#fff;font-weight:800;font-size:clamp(26px,4vw,40px);text-align:center;margin:0 0 10px}
+.kzc .sub{color:#94A3B8;text-align:center;max-width:680px;margin:0 auto 36px;font-size:15px;line-height:1.6}
+.kzc .tw{overflow-x:auto;border:1px solid #1E2A40;border-radius:16px}
+.kzc table{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}
+.kzc th,.kzc td{padding:13px 16px;border-bottom:1px solid #16213A;color:#CBD5E1;text-align:center}
+.kzc td:first-child,.kzc th:first-child{text-align:left;color:#E2E8F0}
+.kzc thead th{background:#0B1324;color:#fff;font-weight:800;font-size:15px}
+.kzc thead th small{display:block;font-weight:500;color:#94A3B8;font-size:12px;margin-top:2px}
+.kzc .me{background:rgba(56,213,231,.07)}
+.kzc thead .me{color:#38D5E7}
+.kzc .y{color:#38D5E7;font-weight:700}.kzc .n{color:#475569}
+.kzc .go td{border-bottom:0}
+.kzc .go a{display:inline-block;padding:9px 16px;border-radius:10px;font-weight:700;font-size:13px;text-decoration:none}
+.kzc .go .cur{color:#38D5E7;border:1px solid rgba(56,213,231,.4)}
+.kzc .go .up{background:#F3BE62;color:#0B0E14}
+.kzc .go .dim{color:#64748B}
+</style>
+<section id="so-sanh" class="kzc" aria-labelledby="so-sanh-title">
+  <div class="w">
+    <h2 id="so-sanh-title">Ba dòng sản phẩm AURORA</h2>
+    <p class="sub">Cùng một lõi nhận diện xu hướng và chấm điểm Smart Score độc quyền. Mỗi gói bổ sung thêm công cụ cho trình độ và loại thị trường khác nhau.</p>
+    <div class="tw"><table>
+      <thead><tr><th>Tính năng</th><th class="me">STANDARD<small>Trader phổ thông</small></th><th>PRO<small>Trader có kinh nghiệm</small></th><th>ELITE<small>Trader Futures chuyên nghiệp</small></th></tr></thead>
+      <tbody>
+        <tr><td>Setup 1st / 2nd BREAK, SUNNY, Smart Score</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Kế hoạch Entry / SL / TP, Pullback Entry, Dashboard LIVE trên điện thoại</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Market Preset (Stock / Forex / CFD / Crypto), Volume Engine, phiên giao dịch</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Strategy Validator có phí và tách In-sample / Out-of-sample</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Setup SMC: RETEST · SWEEP + MSS · IFVG</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Điểm chất lượng riêng từng setup, Tier 3 (FVG · Sweep · CVD)</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Trading Style preset (Scalping / Intraday / Swing / Prop Firm), Runner 25%</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td>Footprint / dữ liệu sàn Futures</td><td class="me n">—</td><td class="n">—</td><td class="y">Đang phát triển</td></tr>
+        <tr class="go"><td></td><td class="me"><a class="cur" href="#bang-gia">Bạn đang xem</a></td><td><a class="up" href="https://pro.kenvinzone.com">Xem AURORA PRO</a></td><td><span class="dim">Sắp ra mắt</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="faq" class="py-20 bg-space-950 border-t border-space-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Hỏi đáp kỹ thuật</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">Câu Hỏi Thường Gặp</p>
+    </div>
+
+    <div class="space-y-4">
+      <!-- FAQ 1 -->
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>1. Chỉ báo có tự động khớp lệnh vào tài khoản MT4/MT5 hay sàn giao dịch không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          <strong>Không.</strong> KENVINZONE AURORA STANDARD là một <strong>chỉ báo phân tích (Indicator)</strong> trên TradingView, không phải bot giao dịch tự động. Chỉ báo có nhiệm vụ tính toán điểm vào, vẽ hộp rủi ro/lợi nhuận định sẵn và phát tín hiệu cảnh báo có cấu trúc JSON. Nếu muốn tự động mở lệnh, bạn cần kết nối qua một phần mềm webhook cầu nối bên thứ ba (như PineConnector hoặc bot webhook tự viết).
+        </p>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>2. Tín hiệu có bị vẽ lại (Repaint) khi giá thị trường đang chạy không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Ở cấu hình mặc định (với tùy chọn <code>Confirm signals on bar close</code> được bật), toàn bộ các setup chính (1st/2nd Break, SUNNY) chỉ được đóng dấu xác nhận và vẽ kế hoạch khi cây nến đã <strong>đóng cửa hoàn tất</strong> (<code>barstate.isconfirmed</code>). Dữ liệu đa khung MTF được truy vấn từ nến đã đóng của khung thời gian lớn hơn. Tuy nhiên, nếu bạn bật chế độ PRO MODE, các nhãn động lượng nội bộ trên nến đang chạy có thể thay đổi cho tới khi nến đóng cửa.
+        </p>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>3. Sự khác nhau giữa ngưỡng điểm của Smart Signal và Setup Break là gì?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Hai loại tín hiệu có cơ chế lọc khác nhau:
+          <br>• <strong>Tín hiệu Smart:</strong> Phân chia chặt chẽ thành Grade A (≥80 điểm) và Grade B (≥70 điểm).
+          <br>• <strong>Setup 1st/2nd Break & SUNNY:</strong> Là các tín hiệu vào lệnh theo cấu trúc xu hướng, có ngưỡng điểm riêng (mặc định từ 50 điểm). Vì vậy những setup đạt từ 50 điểm trở lên vẫn được hiển thị kế hoạch lệnh.
+        </p>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>4. Sau khi gửi yêu cầu, mất bao lâu tôi được cấp quyền sử dụng?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Quy trình cấp quyền Invite-Only được quản trị viên xử lý trực tiếp trên hệ thống TradingView qua tài khoản của bạn. Sau khi nhận được thông tin xác nhận qua Telegram/Zalo, quyền truy cập thường được kích hoạt trong vòng 15–30 phút trong giờ làm việc (08:00 – 22:00 hàng ngày).
+        </p>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>5. Tôi dùng tài khoản TradingView Miễn phí (Basic) có thêm được chỉ báo không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Được. Tài khoản TradingView Basic hiện cho phép gắn tối đa 2 chỉ báo cùng lúc (giới hạn này do TradingView quy định và có thể thay đổi). Vì KENVINZONE AURORA STANDARD đã tích hợp toàn bộ nến, Trailing Stop, mây và Dashboard vào đúng 1 file script, bạn hoàn toàn có thể sử dụng bình thường mà không bắt buộc phải mua gói TradingView trả phí.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>6. Số liệu thống kê trên Dashboard có đáng tin không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Dashboard tính kết quả của từng kế hoạch lệnh trên dữ liệu lịch sử mà TradingView tải về chart của bạn, giả định chốt 50% tại TP1. Số liệu <strong>chưa trừ phí, spread và trượt giá</strong>, và kết quả quá khứ không đảm bảo tương lai. Để kiểm tra có chi phí, hãy dùng bản <strong>Strategy Validator</strong> đi kèm trên Strategy Tester.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>7. Nên dùng chỉ báo trên khung thời gian nào?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Không có khung tốt nhất cho mọi mã. Khung rất nhỏ (dưới 5 phút) nhiều nhiễu và phí chiếm tỷ trọng lớn. Cách tốt nhất là dùng Dashboard so sánh R trung bình mỗi lệnh trên vài khung (M15, H1, H4) của chính mã bạn giao dịch.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>8. Có dùng được trên ứng dụng TradingView điện thoại không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Có. Chọn <strong>Dashboard layout = Mini</strong> để dùng bảng LIVE gọn cho màn hình điện thoại, hiển thị xu hướng, setup đang chờ và lệnh đang chạy.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>9. Pullback Entry hoạt động thế nào?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Khi nến 1st/2nd Break quá dài, thay vì vào lệnh ngay, chỉ báo đặt lệnh chờ tại mức hồi 50% của nến (có thể chỉnh 38.2% hoặc 61.8%), hiệu lực 6 nến. Dòng <strong>⏳ Pullback</strong> trên Dashboard so sánh kết quả chờ hồi với việc vào ngay, để bạn tự quyết định có dùng tính năng này hay không.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>10. Cổ phiếu Việt Nam nên cài đặt thế nào?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
+          Chọn <strong>STOCK MODE</strong>: chỉ hiển thị lệnh BUY (nhà đầu tư cá nhân không bán khống được), dùng volume thật đầy đủ và tắt yếu tố phiên. Khung D1 hoặc H1 phù hợp nhất.
+        </p>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>11. Tôi đang thi hoặc giao dịch quỹ Prop Firm (FTMO, The5ers, Topstep, Bulenox, Earn2Trade), có dùng Aurora được không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
+          <p>Được. Aurora là <strong>chỉ báo phân tích</strong>, không tự đặt lệnh, nên bạn vẫn là người ra quyết định và bấm lệnh trên nền tảng của quỹ. Điểm mạnh của Aurora với trader quỹ là <strong>rủi ro được biết trước</strong>: mỗi setup có sẵn F-SL cố định, nên bạn tính được chính xác khối lượng để mỗi lệnh chỉ rủi ro một phần nhỏ, nằm trong giới hạn lỗ ngày và drawdown tối đa của quỹ.</p>
+          <p>Gợi ý cài đặt: quỹ futures (Topstep, Bulenox, Earn2Trade) giao dịch hợp đồng CME, bạn mở chart trực tiếp mã futures như NQ, GC. Quỹ CFD (FTMO, The5ers) dùng <strong>CFD MODE</strong> kèm mã volume chuẩn (xem câu 12). Bạn có thể bật <strong>Session mode</strong> để xem kết quả theo phiên Âu, Mỹ, và dùng Strategy Validator với mức rủi ro 0.5%–1% mỗi lệnh để kiểm tra drawdown trước khi thi.</p>
+          <p class="text-slate-subtle">Mỗi quỹ có quy định riêng (giao dịch giờ tin, giữ lệnh qua đêm, chiến lược bị cấm…). Hãy đọc kỹ luật của quỹ bạn tham gia; Aurora không đảm bảo việc vượt qua vòng thi.</p>
+        </div>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>12. Có dùng được volume thật của sàn CME, COMEX cho NQ, GC và các hợp đồng hàng hóa Futures không?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
+          <p>Có, theo hai cách:</p>
+          <p><strong>Chart trực tiếp mã Futures</strong> (ví dụ <span class="font-mono text-aurora-cyan">CME_MINI:NQ1!</span>, <span class="font-mono text-aurora-cyan">COMEX:GC1!</span>, <span class="font-mono text-aurora-cyan">NYMEX:CL1!</span>, <span class="font-mono text-aurora-cyan">COMEX:SI1!</span>): volume trên chart đã là khối lượng khớp thật của sàn. Chọn preset <strong>Custom</strong>, bật RVOL, VWAP, CMF, Delta và để tắt nguồn volume ngoài.</p>
+          <p><strong>Chart CFD của broker</strong> (XAUUSD, NAS100, US30…): chọn <strong>CFD MODE</strong>. Ô <em>External volume mapping</em> để <em>Auto</em> là đủ; muốn chọn mã khác thì chuyển sang <em>Manual</em> và nhập mã. Chỉ báo vẫn vẽ trên giá CFD nhưng chấm điểm Volume, RVOL theo giờ trong ngày, Volume Quality bằng khối lượng thật của sàn Futures. Ở chế độ <em>Auto</em>, chỉ báo tự chọn đúng hợp đồng theo mã chart (vàng → GC, NAS100 → NQ, US30 → YM, SPX500 → ES, dầu WTI → CL). Nếu không có dữ liệu, các yếu tố volume tạm tắt và Dashboard báo <span class="font-mono">EXT ✗</span>, thay vì trộn lẫn volume của hai nguồn khác nhau.</p>
+          <p class="text-slate-subtle">Lưu ý: Aurora chỉ đọc được dữ liệu có sẵn trên TradingView, không kết nối trực tiếp được với nguồn dữ liệu bên ngoài như Rithmic hay CQG. Dữ liệu realtime của CME, COMEX, NYMEX trên TradingView có thể cần đăng ký gói dữ liệu riêng; nếu không, dữ liệu bị trễ, ảnh hưởng tới tín hiệu realtime (dữ liệu lịch sử vẫn dùng bình thường).</p>
+        </div>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>13. Tôi giao dịch Crypto Spot (không bán khống được), nên cài đặt thế nào?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
+          <p>Chọn <strong>STOCK MODE</strong>: chỉ hiển thị lệnh BUY, dùng đầy đủ volume thật của sàn và tắt yếu tố phiên. Cấu hình này phù hợp với Spot vì bạn chỉ mua rồi bán ra, không mở vị thế bán. Thống kê trên Dashboard và Strategy Validator cũng chỉ tính lệnh BUY, đúng với cách bạn giao dịch.</p>
+          <p>Với Spot, các khung H1, H4, D1 thường cho tín hiệu ổn định hơn khung nhỏ. Volume là của riêng sàn trên chart bạn mở (ví dụ BINANCE:BTCUSDT), nên ưu tiên mở chart của sàn có thanh khoản lớn.</p>
+        </div>
+      </details>
+
+      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
+          <span>14. Với Crypto Futures (hợp đồng Perpetual, có đòn bẩy), Aurora hỗ trợ những gì?</span>
+          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
+        </summary>
+        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
+          <p>Chọn <strong>CRYPTO MODE</strong>: giao dịch cả BUY và SELL, dùng volume thật kèm <strong>Open Interest</strong>. Giá tăng cùng OI tăng cho thấy tiền mới vào lệnh, được cộng điểm. Với các cặp TradingView không có dữ liệu OI, yếu tố này tự bỏ qua, không bị trừ điểm.</p>
+          <p>Về đòn bẩy: hãy tính khối lượng từ khoảng cách Entry tới <strong>F-SL</strong> trước, rồi mới chọn đòn bẩy, và đảm bảo <strong>giá thanh lý nằm xa hơn F-SL</strong>. Đòn bẩy không làm thay đổi rủi ro của setup nếu bạn tính khối lượng đúng, nhưng đòn bẩy quá cao có thể khiến bạn bị thanh lý trước khi chạm F-SL.</p>
+          <p class="text-slate-subtle">Thống kê trên Dashboard chưa tính phí giao dịch và phí funding. Khi backtest bằng Strategy Validator, hãy đặt mức phí theo sàn bạn dùng.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES / TERMS / DISCLAIMER -->
+<section id="chinh-sach" class="py-20 bg-space-900 border-t border-space-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Điều khoản</h2>
+      <p class="text-2xl sm:text-4xl font-extrabold text-white">Điều Khoản &amp; Chính Sách</p>
+    </div>
+    <div class="space-y-4">
+      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Điều khoản sử dụng</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
+        <ul class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed list-disc pl-5 space-y-1.5">
+          <li>Quyền sử dụng được cấp cho <strong>một TradingView username</strong> theo thời hạn của gói đã đăng ký.</li>
+          <li>Không chia sẻ, cho thuê lại, sao chép hoặc phân phối lại chỉ báo dưới bất kỳ hình thức nào. Quyền truy cập có thể bị thu hồi khi vi phạm.</li>
+          <li>Gói trả phí gia hạn thủ công, không tự động trừ tiền. Hết hạn mà không gia hạn, quyền truy cập sẽ tự kết thúc.</li>
+          <li>Chỉ báo được cập nhật và cải tiến định kỳ. Tên, giao diện và tính năng có thể thay đổi giữa các phiên bản.</li>
+        </ul>
+      </details>
+      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40">
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Chính sách hoàn tiền</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
+        <!-- CẦN XÁC NHẬN: điều chỉnh nội dung dưới đây theo chính sách thực tế của bạn -->
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">Vì bạn được dùng thử miễn phí để tự kiểm chứng trước khi mua, các gói trả phí không hoàn tiền sau khi quyền truy cập đã được kích hoạt. Trường hợp không kích hoạt được do lỗi từ phía chúng tôi sẽ được hoàn tiền đầy đủ.</p>
+      </details>
+      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40" open>
+        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Tuyên bố miễn trừ trách nhiệm</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
+        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">KENVINZONE AURORA STANDARD là công cụ hỗ trợ phân tích kỹ thuật và học tập, <strong>không phải lời khuyên đầu tư</strong>, không phải dịch vụ quản lý tài khoản và không cam kết lợi nhuận. Mọi hình ảnh trên trang là minh họa giao diện. Mọi số liệu thống kê do chỉ báo tính trên dữ liệu quá khứ, chưa bao gồm phí giao dịch, và không đảm bảo kết quả trong tương lai. Giao dịch Forex, vàng CFD, chứng khoán và tiền mã hóa có rủi ro mất vốn. Bạn hoàn toàn chịu trách nhiệm với các quyết định giao dịch của mình.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION / ORDER MODAL (WAI-ARIA COMPLIANT) -->
+<div id="register-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden place-items-center p-4">
+  <div class="bg-space-850 border border-aurora-cyan/40 rounded-2xl w-full max-w-lg p-6 sm:p-7 relative shadow-2xl">
+    
+    <!-- Close Button -->
+    <button onclick="closeRegisterModal()" class="absolute top-4 right-4 text-slate-muted hover:text-white p-2 rounded-lg hover:bg-space-800 transition focus:outline-none focus:ring-2 focus:ring-aurora-cyan" aria-label="Đóng cửa sổ">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+    <div class="flex items-center gap-3 mb-5">
+      <div class="w-10 h-10 rounded-xl bg-aurora-cyan/20 text-aurora-cyan flex items-center justify-center font-bold">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div>
+        <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-white">Yêu Cầu Cấp Quyền Aurora STANDARD</h3>
+        <p class="text-slate-muted text-xs">Cấp quyền qua TradingView Invite-Only Script</p>
+      </div>
+    </div>
+
+    <!-- Active Form View -->
+    <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="tradingview-id">
+          TradingView Username <span class="text-rose-400">*</span>
+        </label>
+        <input type="text" id="tradingview-id" required placeholder="Ví dụ: kenvin_trader_88" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition font-mono">
+        <p class="text-[11px] text-slate-subtle mt-1">Vào TradingView → Bấm avatar góc trên bên trái để lấy chính xác Username.</p>
+      </div>
+
+      <div>
+        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="customer-contact">
+          Số Điện Thoại / Zalo / Telegram <span class="text-rose-400">*</span>
+        </label>
+        <input type="text" id="customer-contact" required placeholder="0912 xxx xxx hoặc @username_telegram" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition">
+      </div>
+
+      <div>
+        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="plan-select">
+          Gói Đăng Ký
+        </label>
+        <select id="plan-select" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition">
+          <option value="trial">1. Trial Member — 3 Ngày Miễn Phí (0$ / 0đ)</option>
+          <option value="1m">2. 1 Month Member — 100$ (~ 2.600.000 VNĐ / 30 ngày)</option>
+          <option value="3m">3. Pro Member 3 Tháng — 255$ (~ 6.600.000 VNĐ / 90 ngày)</option>
+          <option value="6m">4. Pro Member 6 Tháng (Đề xuất) — 474$ (~ 12.300.000 VNĐ)</option>
+          <option value="1y">5. Pro Member 1 Năm — 828$ (~ 21.500.000 VNĐ / 365 ngày)</option>
+          <option value="3y">6. Tinh Anh Pro 3 Năm — 1.800$ (~ 46.800.000 VNĐ)</option>
+        </select>
+      </div>
+
+      <div class="pt-2">
+        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl btn-brand-primary text-space-950 font-bold text-sm uppercase tracking-wider shadow-md transition">
+          Tạo Yêu Cầu & Gửi Xác Nhận
+        </button>
+      </div>
+    </form>
+
+    <!-- Success / Safe Dispatch View (Shown after form submit) -->
+    <div id="order-success-view" class="hidden space-y-4 pt-2">
+      <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed">
+        <div class="font-bold text-sm mb-1 text-white flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          <span>Đã tạo nội dung đăng ký thành công!</span>
+        </div>
+        Vui lòng chuyển tiếp tin nhắn đã soạn đến quản trị viên để hoàn tất cấp quyền trên TradingView.
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-space-900 border border-space-750 font-mono text-xs text-slate-muted">
+        <div class="text-[10px] text-slate-subtle uppercase mb-1">Nội dung xác nhận:</div>
+        <p id="generated-payload" class="text-white break-words"></p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a id="telegram-dispatch-btn" href="#" target="_blank" rel="noopener" class="py-2.5 px-4 rounded-xl bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-xs flex items-center justify-center gap-2 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Gửi Qua Telegram</span>
+        </a>
+        <button onclick="copyPayloadToClipboard()" class="py-2.5 px-4 rounded-xl bg-space-800 hover:bg-space-750 border border-space-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition">
+          <span id="copy-btn-text">Sao Chép Nội Dung</span>
+        </button>
+      </div>
+
+      <button onclick="resetModalView()" class="w-full text-center text-xs text-slate-subtle hover:text-slate-muted pt-1">
+        ← Tạo yêu cầu khác
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-space-950 border-t border-space-800 py-12 text-slate-subtle text-xs">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-space-850">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-space-850 border border-aurora-cyan/30 flex items-center justify-center p-1">
+          <svg viewBox="0 0 28 28" fill="none" class="w-full h-full">
+            <path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="font-extrabold text-white text-sm">KENVINZONE AURORA STANDARD</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 font-medium text-slate-muted">
+        <a href="#tinh-nang" class="hover:text-aurora-cyan transition">Tính năng</a>
+        <a href="#giao-dien" class="hover:text-aurora-cyan transition">Biểu đồ</a>
+        <a href="#bang-gia" class="hover:text-aurora-cyan transition">Bảng giá</a>
+        <a href="#faq" class="hover:text-aurora-cyan transition">FAQ</a>
+        <a href="huong-dan.html" class="hover:text-aurora-cyan transition">Hướng dẫn</a>
+        <a href="#chinh-sach" class="hover:text-aurora-cyan transition">Điều khoản</a>
+        <a href="https://pro.kenvinzone.com" class="hover:text-aurora-cyan transition">AURORA PRO</a>
+        <a href="https://t.me/kenvinhoang" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition flex items-center gap-1">
+          <span>Telegram @kenvinhoang</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <p>© 2026 KenvinZone Systems · Tác giả mã nguồn: Trader KenvinHoang.</p>
+      <p class="max-w-xl text-[11px] leading-relaxed text-slate-subtle">
+        Cảnh báo rủi ro: Giao dịch tài chính (Forex, Vàng CFD, Chứng khoán, Crypto) tiềm ẩn nguy cơ thua lỗ vốn. KENVINZONE AURORA STANDARD là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư tài chính hay cam kết lợi nhuận.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile Menu Controller
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.getElementById('hamburger-icon');
+    const close = document.getElementById('close-icon');
+    const btn = document.getElementById('mobile-menu-btn');
+    
+    const isHidden = menu.classList.contains('hidden');
+    if (isHidden) {
+      menu.classList.remove('hidden');
+      hamburger.classList.add('hidden');
+      close.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      menu.classList.add('hidden');
+      hamburger.classList.remove('hidden');
+      close.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  // HERO MULTI-SLIDE CONTROLLER (Image/SVG/Video Showcase)
+  // ===== CẤU HÌNH VIDEO DEMO =====
+  // Dán link video mp4 (hoặc để trống ''). Khi trống: nút "Xem Video Demo" và slide video tự ẩn.
+  const DEMO_VIDEO_SRC = '';
+  const DEMO_VIDEO_POSTER = '';
+  let currentSlideIndex = 0;
+  let totalSlides = DEMO_VIDEO_SRC ? 4 : 3;
+  let slideInterval = null;
+
+  const slideCaptions = [
+    "XAUUSD · 15M · 1st BREAK BUY (TỶ LỆ 1R / 2R)",
+    "EURUSD · 15M · SUNNY TIẾP DIỄN SÓNG",
+    "LIVE HUD · THỐNG KÊ ĐỒNG THUẬN 9 KHUNG MTF",
+    "VIDEO DEMO THỰC CHIẾN · QUY TRÌNH GIAO DỊCH AURORA STANDARD"
+  ];
+
+  function updateSlideUI() {
+    // Hide all slides
+    for (let i = 0; i < totalSlides; i++) {
+      const slide = document.getElementById(`slide-${i}`);
+      const dot = document.getElementById(`dot-${i}`);
+      const tab = document.getElementById(`tab-${i}`);
+      
+      if (slide) slide.classList.remove('active');
+      if (dot) {
+        dot.className = "w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400";
+      }
+      if (tab) {
+        tab.className = "slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition";
+      }
+    }
+
+    // Activate current
+    const activeSlide = document.getElementById(`slide-${currentSlideIndex}`);
+    const activeDot = document.getElementById(`dot-${currentSlideIndex}`);
+    const activeTab = document.getElementById(`tab-${currentSlideIndex}`);
+    const captionEl = document.getElementById('slide-ticker-caption');
+    const counterBadge = document.getElementById('slide-counter-badge');
+
+    if (activeSlide) activeSlide.classList.add('active');
+    if (activeDot) {
+      activeDot.className = "w-3 h-2.5 rounded-full bg-aurora-cyan transition-all";
+    }
+    if (activeTab) {
+      activeTab.className = "slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-cyan bg-space-800 transition";
+    }
+    if (captionEl) {
+      captionEl.innerText = slideCaptions[currentSlideIndex];
+    }
+    if (counterBadge) {
+      counterBadge.innerText = `${currentSlideIndex + 1} / ${totalSlides}`;
+    }
+  }
+
+  function goToSlide(index) {
+    currentSlideIndex = (index + totalSlides) % totalSlides;
+    updateSlideUI();
+    restartSlideTimer();
+  }
+
+  function nextSlide() {
+    goToSlide(currentSlideIndex + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentSlideIndex - 1);
+  }
+
+  function startSlideTimer() {
+    if (slideInterval) clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+      updateSlideUI();
+    }, 6000); // 6s per slide
+  }
+
+  function restartSlideTimer() {
+    startSlideTimer();
+  }
+
+  // Pause on hover
+  const sliderBox = document.getElementById('hero-slider-container');
+  if (sliderBox) {
+    sliderBox.addEventListener('mouseenter', () => {
+      if (slideInterval) clearInterval(slideInterval);
+    });
+    sliderBox.addEventListener('mouseleave', () => {
+      startSlideTimer();
+    });
+  }
+
+  // Interactive Video Demo Prompt
+  function playDemoVideoPrompt() {
+    const v = document.getElementById('demo-video');
+    if (v) { v.play(); } else { openRegisterModal('trial'); }
+  }
+  function setupDemoVideo() {
+    const slide = document.getElementById('slide-3');
+    if (!DEMO_VIDEO_SRC) {
+      ['hero-video-btn', 'tab-3', 'dot-3', 'slide-3'].forEach(id => { const el = document.getElementById(id); if (el) el.style.display = 'none'; });
+      return;
+    }
+    const box = slide ? slide.querySelector('.aspect-video') : null;
+    if (box) {
+      box.innerHTML = '<video id="demo-video" controls playsinline preload="metadata" class="w-full h-full object-cover"' + (DEMO_VIDEO_POSTER ? ' poster="' + DEMO_VIDEO_POSTER + '"' : '') + '><source src="' + DEMO_VIDEO_SRC + '" type="video/mp4"></video>';
+    }
+  }
+
+  // Start timer on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    setupDemoVideo();
+    updateSlideUI();
+    startSlideTimer();
+  });
+
+  // Active Trigger Element Memory for Accessibility
+  let lastActiveTriggerElement = null;
+
+  // Modal Controller with explicit tier selection and focus trap
+  function openRegisterModal(tierKey) {
+    lastActiveTriggerElement = document.activeElement;
+    const modal = document.getElementById('register-modal');
+    const select = document.getElementById('plan-select');
+    
+    // Explicitly update select value based on trigger
+    if (tierKey && select) {
+      select.value = tierKey;
+    }
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('grid');
+    document.body.classList.add('modal-open');
+    
+    // Focus first input
+    setTimeout(() => {
+      document.getElementById('tradingview-id').focus();
+    }, 50);
+  }
+
+  function closeRegisterModal() {
+    const modal = document.getElementById('register-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('grid');
+    document.body.classList.remove('modal-open');
+    resetModalView();
+
+    // Restore focus to trigger element
+    if (lastActiveTriggerElement) {
+      lastActiveTriggerElement.focus();
+    }
+  }
+
+  // Keyboard navigation for Modal (Escape key + Backdrop click)
+  document.getElementById('register-modal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('register-modal')) {
+      closeRegisterModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('register-modal');
+      if (!modal.classList.contains('hidden')) {
+        closeRegisterModal();
+      }
+    }
+  });
+
+  // Handle Form Submission Without Fake Toasts or Lost Leads
+  let currentOrderPayload = '';
+
+  function handleOrderSubmit(e) {
+    e.preventDefault();
+    const tvIdInput = document.getElementById('tradingview-id');
+    const contactInput = document.getElementById('customer-contact');
+    const planSelect = document.getElementById('plan-select');
+
+    const tvId = tvIdInput.value.trim();
+    const contact = contactInput.value.trim();
+    const planLabel = planSelect.options[planSelect.selectedIndex].text;
+
+    if (!tvId || !contact) return;
+
+    // Structured lead payload
+    currentOrderPayload = `[ĐĂNG KÝ AURORA STANDARD]\n• TV ID: ${tvId}\n• Gói: ${planLabel}\n• Liên hệ: ${contact}`;
+
+    // Update dispatch view
+    document.getElementById('generated-payload').innerText = currentOrderPayload;
+
+    // Encode for Telegram direct link
+    const telegramUrl = `https://t.me/kenvinhoang?text=${encodeURIComponent(currentOrderPayload)}`;
+    document.getElementById('telegram-dispatch-btn').setAttribute('href', telegramUrl);
+
+    // Switch view
+    document.getElementById('order-form').classList.add('hidden');
+    document.getElementById('order-success-view').classList.remove('hidden');
+  }
+
+  function resetModalView() {
+    document.getElementById('order-form').classList.remove('hidden');
+    document.getElementById('order-success-view').classList.add('hidden');
+    document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
+  }
+
+  function copyPayloadToClipboard() {
+    if (!currentOrderPayload) return;
+    
+    // Safe clipboard fallback
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(currentOrderPayload).then(() => {
+        document.getElementById('copy-btn-text').innerText = '✓ Đã Sao Chép!';
+        setTimeout(() => {
+          document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
+        }, 2500);
+      });
+    } else {
+      const tempArea = document.createElement('textarea');
+      tempArea.value = currentOrderPayload;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempArea);
+      document.getElementById('copy-btn-text').innerText = '✓ Đã Sao Chép!';
+      setTimeout(() => {
+        document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
+      }, 2500);
+    }
+  }
+</script>
+</body>
+</html>
