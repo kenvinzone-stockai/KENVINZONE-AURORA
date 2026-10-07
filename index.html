@@ -82,74 +82,132 @@ header nav a{white-space:nowrap}
 @media (max-width:640px){.kzh-desc{padding-left:12px}.kzh-chips li{font-size:12px;padding:6px 11px}.kzh-tag{flex-direction:column;align-items:flex-start;gap:2px}.kzh-dot{display:none}header a p{display:none}}
 @media (max-width:420px){header a > div:first-child{display:none}}
 </style>
+<script>/* KZ theme: dùng chung cho kenvinzone.com và aurora.kenvinzone.com */(function(){try{var m=document.cookie.match(/(?:^|; )kz-theme=(light|dark)/),t=m?m[1]:localStorage.getItem("kz-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<style id="kz-unified">
+/* =====================================================================
+   KENVINZONE UNIFIED LAYER v1 — đồng bộ với kenvinzone.com
+   Bảng màu, header, giao diện Sáng / Tối và hiệu ứng dùng chung
+   ===================================================================== */
+:root{
+  --kz-ink:#0A1426; --kz-deep:#070F1D; --kz-surface:#101D35; --kz-surface2:#0C182D; --kz-line:#1E2E4D; --kz-line2:#2A3D62;
+  --kz-text:#E6EEF8; --kz-text2:#C9D5E4; --kz-muted:#8FA3BF; --kz-strong:#FFFFFF; --kz-cyan:#38D5E7; --kz-gold:#F3BE62;
+  --kz-green:#34D399; --kz-violet:#B9A8F5; --kz-hd-bg:rgba(10,20,38,.82); --kz-glow:.55; --kz-code:#070F1D;
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --kz-ink:#F5F8FC; --kz-deep:#EBF0F7; --kz-surface:#FFFFFF; --kz-surface2:#F3F6FB; --kz-line:#D8E1EE; --kz-line2:#C3CFE0;
+  --kz-text:#0E1B30; --kz-text2:#334760; --kz-muted:#5A6C86; --kz-strong:#0E1B30; --kz-cyan:#0E8FA8; --kz-gold:#A86A06;
+  --kz-green:#05875F; --kz-violet:#6D4FD0; --kz-hd-bg:rgba(245,248,252,.85); --kz-glow:.28; --kz-code:#0E1B30;
+  color-scheme:light;
+}
+html{scroll-padding-top:84px}
+body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+
+/* ---------- Header dùng chung ---------- */
+.kz-hd{position:sticky;top:0;z-index:60;background:var(--kz-hd-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--kz-line);padding-top:env(safe-area-inset-top,0)}
+.kz-hd::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(56,213,231,calc(var(--kz-glow)*.9)) 30%,rgba(243,190,98,calc(var(--kz-glow)*.8)) 70%,transparent);pointer-events:none}
+.kz-hd-in{max-width:1220px;margin:0 auto;padding:0 22px;height:68px;display:flex;align-items:center;gap:20px}
+.kz-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.kz-logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--kz-text);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.kz-logo svg{width:30px;height:30px}
+.kz-prod{text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:5px 10px;border-radius:8px;border:1px solid var(--kz-line);color:var(--kz-muted);white-space:nowrap}
+.kz-prod b{font-weight:800}
+.kz-hd .kz-prod.std b{color:var(--kz-cyan)} .kz-prod.std{border-color:rgba(56,213,231,.35)}
+.kz-hd .kz-prod.pro b{color:var(--kz-gold)} .kz-prod.pro{border-color:rgba(243,190,98,.45)}
+.kz-nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px}
+.kz-nav a{color:var(--kz-muted);text-decoration:none;white-space:nowrap;font-weight:500}
+.kz-nav a:hover,.kz-nav a[aria-current="page"]{color:var(--kz-text)}
+.kz-nav a.x{color:var(--kz-gold)}
+.kz-hd-r{display:flex;align-items:center;gap:10px}
+.kz-theme,.kz-menu{width:40px;height:40px;border-radius:10px;border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text);cursor:pointer;display:inline-grid;place-items:center;font-size:19px;line-height:1}
+.kz-theme:hover,.kz-menu:hover{border-color:var(--kz-line2)}
+.kz-theme svg{width:18px;height:18px}
+.kz-theme .sun{display:none} html[data-theme="light"] .kz-theme .sun{display:block} html[data-theme="light"] .kz-theme .moon{display:none}
+.kz-menu{display:none}
+.kz-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:11px;border:0;font:700 14px/1 'Be Vietnam Pro',system-ui,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;position:relative;overflow:hidden;transition:box-shadow .3s,background .15s}
+.kz-cta.std{background:linear-gradient(135deg,#0284C7,#38D5E7);color:#04131C}
+.kz-cta.pro{background:#F3BE62;color:#2A1B00}
+.kz-cta:hover{box-shadow:0 8px 26px -8px rgba(56,213,231,calc(var(--kz-glow)*1.2))}
+.kz-cta.pro:hover{box-shadow:0 8px 26px -8px rgba(243,190,98,calc(var(--kz-glow)*1.3))}
+@media (max-width:1100px){
+  .kz-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;margin:0;background:var(--kz-deep);border-bottom:1px solid var(--kz-line);padding:6px 22px 14px}
+  .kz-nav.open{display:flex}
+  .kz-nav a{padding:12px 0;border-bottom:1px solid var(--kz-line);font-size:16px;color:var(--kz-text)}
+  .kz-nav a:last-child{border-bottom:0}
+  .kz-menu{display:inline-grid}
+  .kz-hd-r{margin-left:auto}
+}
+@media (max-width:560px){.kz-cta{display:none}.kz-logo span{display:none}.kz-hd-in{gap:10px;padding:0 14px}}
+
+/* ---------- Hiệu ứng dùng chung ---------- */
+.kz-aurora{position:absolute;inset:-80px 0 auto 0;max-width:100%;height:720px;pointer-events:none;filter:blur(70px);opacity:var(--kz-glow);z-index:0;overflow:hidden}
+.kz-aurora i{position:absolute;border-radius:50%;mix-blend-mode:screen}
+html[data-theme="light"] .kz-aurora i{mix-blend-mode:multiply}
+.kz-aurora i:nth-child(1){width:520px;height:420px;left:55%;top:-40px;background:radial-gradient(circle,#38D5E7,transparent 65%);animation:kzd1 22s ease-in-out infinite alternate}
+.kz-aurora i:nth-child(2){width:460px;height:380px;left:75%;top:140px;background:radial-gradient(circle,#8B7CF6,transparent 65%);animation:kzd2 26s ease-in-out infinite alternate}
+.kz-aurora i:nth-child(3){width:420px;height:340px;left:4%;top:60px;background:radial-gradient(circle,#F3BE62,transparent 68%);opacity:.6;animation:kzd3 30s ease-in-out infinite alternate}
+@keyframes kzd1{to{transform:translate(-90px,70px) scale(1.12)}}
+@keyframes kzd2{to{transform:translate(-140px,-40px) scale(.9)}}
+@keyframes kzd3{to{transform:translate(120px,60px) scale(1.15)}}
+.kz-has-aurora{position:relative;isolation:isolate}
+.kz-has-aurora>.kz-aurora{z-index:-1}
+.kz-spot{position:relative;isolation:isolate}
+.kz-spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;z-index:-1;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(56,213,231,calc(var(--kz-glow)*.22)),transparent 60%)}
+.kz-spot:hover::after{opacity:1}
+.kz-sheen{position:relative;overflow:hidden}
+.kz-sheen::after,.kz-cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.kz-sheen:hover::after,.kz-cta:hover::after{left:130%}
+@media (prefers-reduced-motion:reduce){.kz-aurora i{animation:none}.kz-sheen::after,.kz-cta::after{display:none}}
+:root{--kz-c950:7 15 29;--kz-c900:10 20 38;--kz-c850:16 29 53;--kz-c800:21 37 66;--kz-c750:30 46 77;--kz-c700:42 61 98;--kz-white:255 255 255;--kz-sltext:242 246 252;--kz-sl300:201 213 228;--kz-slmuted:165 180 202;--kz-slsubtle:143 163 191;--kz-cyan:56 213 231;--kz-gold:243 190 98;--kz-em4:52 211 153;--kz-em3:110 231 183;--kz-rose4:251 113 133;--kz-p2:233 213 255;--kz-p3:216 180 254;}
+html[data-theme="light"]{--kz-c950:235 240 247;--kz-c900:245 248 252;--kz-c850:255 255 255;--kz-c800:243 246 251;--kz-c750:216 225 238;--kz-c700:195 207 224;--kz-white:14 27 48;--kz-sltext:14 27 48;--kz-sl300:51 71 96;--kz-slmuted:72 90 115;--kz-slsubtle:90 108 134;--kz-cyan:14 143 168;--kz-gold:168 106 6;--kz-em4:5 135 95;--kz-em3:5 120 85;--kz-rose4:200 40 80;--kz-p2:109 79 208;--kz-p3:109 79 208;}
+.bg-space-950{background-color:rgb(var(--kz-c950)/var(--tw-bg-opacity,1))}.border-space-950{border-color:rgb(var(--kz-c950)/var(--tw-border-opacity,1))}
+.bg-space-950\/10{background-color:rgb(var(--kz-c950)/.10)}.bg-space-950\/20{background-color:rgb(var(--kz-c950)/.20)}.bg-space-950\/30{background-color:rgb(var(--kz-c950)/.30)}.bg-space-950\/40{background-color:rgb(var(--kz-c950)/.40)}.bg-space-950\/50{background-color:rgb(var(--kz-c950)/.50)}.bg-space-950\/60{background-color:rgb(var(--kz-c950)/.60)}.bg-space-950\/70{background-color:rgb(var(--kz-c950)/.70)}.bg-space-950\/80{background-color:rgb(var(--kz-c950)/.80)}.bg-space-950\/90{background-color:rgb(var(--kz-c950)/.90)}.bg-space-950\/95{background-color:rgb(var(--kz-c950)/.95)}.from-space-950{--tw-gradient-from:rgb(var(--kz-c950)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c950)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-950{--tw-gradient-to:rgb(var(--kz-c950)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c950)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-950{--tw-gradient-to:rgb(var(--kz-c950)) var(--tw-gradient-to-position)}
+.bg-space-900{background-color:rgb(var(--kz-c900)/var(--tw-bg-opacity,1))}.border-space-900{border-color:rgb(var(--kz-c900)/var(--tw-border-opacity,1))}
+.bg-space-900\/10{background-color:rgb(var(--kz-c900)/.10)}.bg-space-900\/20{background-color:rgb(var(--kz-c900)/.20)}.bg-space-900\/30{background-color:rgb(var(--kz-c900)/.30)}.bg-space-900\/40{background-color:rgb(var(--kz-c900)/.40)}.bg-space-900\/50{background-color:rgb(var(--kz-c900)/.50)}.bg-space-900\/60{background-color:rgb(var(--kz-c900)/.60)}.bg-space-900\/70{background-color:rgb(var(--kz-c900)/.70)}.bg-space-900\/80{background-color:rgb(var(--kz-c900)/.80)}.bg-space-900\/90{background-color:rgb(var(--kz-c900)/.90)}.bg-space-900\/95{background-color:rgb(var(--kz-c900)/.95)}.from-space-900{--tw-gradient-from:rgb(var(--kz-c900)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c900)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-900{--tw-gradient-to:rgb(var(--kz-c900)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c900)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-900{--tw-gradient-to:rgb(var(--kz-c900)) var(--tw-gradient-to-position)}
+.bg-space-850{background-color:rgb(var(--kz-c850)/var(--tw-bg-opacity,1))}.border-space-850{border-color:rgb(var(--kz-c850)/var(--tw-border-opacity,1))}
+.bg-space-850\/10{background-color:rgb(var(--kz-c850)/.10)}.bg-space-850\/20{background-color:rgb(var(--kz-c850)/.20)}.bg-space-850\/30{background-color:rgb(var(--kz-c850)/.30)}.bg-space-850\/40{background-color:rgb(var(--kz-c850)/.40)}.bg-space-850\/50{background-color:rgb(var(--kz-c850)/.50)}.bg-space-850\/60{background-color:rgb(var(--kz-c850)/.60)}.bg-space-850\/70{background-color:rgb(var(--kz-c850)/.70)}.bg-space-850\/80{background-color:rgb(var(--kz-c850)/.80)}.bg-space-850\/90{background-color:rgb(var(--kz-c850)/.90)}.bg-space-850\/95{background-color:rgb(var(--kz-c850)/.95)}.from-space-850{--tw-gradient-from:rgb(var(--kz-c850)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c850)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-850{--tw-gradient-to:rgb(var(--kz-c850)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c850)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-850{--tw-gradient-to:rgb(var(--kz-c850)) var(--tw-gradient-to-position)}
+.bg-space-800{background-color:rgb(var(--kz-c800)/var(--tw-bg-opacity,1))}.border-space-800{border-color:rgb(var(--kz-c800)/var(--tw-border-opacity,1))}
+.bg-space-800\/10{background-color:rgb(var(--kz-c800)/.10)}.bg-space-800\/20{background-color:rgb(var(--kz-c800)/.20)}.bg-space-800\/30{background-color:rgb(var(--kz-c800)/.30)}.bg-space-800\/40{background-color:rgb(var(--kz-c800)/.40)}.bg-space-800\/50{background-color:rgb(var(--kz-c800)/.50)}.bg-space-800\/60{background-color:rgb(var(--kz-c800)/.60)}.bg-space-800\/70{background-color:rgb(var(--kz-c800)/.70)}.bg-space-800\/80{background-color:rgb(var(--kz-c800)/.80)}.bg-space-800\/90{background-color:rgb(var(--kz-c800)/.90)}.bg-space-800\/95{background-color:rgb(var(--kz-c800)/.95)}.from-space-800{--tw-gradient-from:rgb(var(--kz-c800)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c800)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-800{--tw-gradient-to:rgb(var(--kz-c800)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c800)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-800{--tw-gradient-to:rgb(var(--kz-c800)) var(--tw-gradient-to-position)}
+.bg-space-750{background-color:rgb(var(--kz-c750)/var(--tw-bg-opacity,1))}.border-space-750{border-color:rgb(var(--kz-c750)/var(--tw-border-opacity,1))}
+.bg-space-750\/10{background-color:rgb(var(--kz-c750)/.10)}.bg-space-750\/20{background-color:rgb(var(--kz-c750)/.20)}.bg-space-750\/30{background-color:rgb(var(--kz-c750)/.30)}.bg-space-750\/40{background-color:rgb(var(--kz-c750)/.40)}.bg-space-750\/50{background-color:rgb(var(--kz-c750)/.50)}.bg-space-750\/60{background-color:rgb(var(--kz-c750)/.60)}.bg-space-750\/70{background-color:rgb(var(--kz-c750)/.70)}.bg-space-750\/80{background-color:rgb(var(--kz-c750)/.80)}.bg-space-750\/90{background-color:rgb(var(--kz-c750)/.90)}.bg-space-750\/95{background-color:rgb(var(--kz-c750)/.95)}.from-space-750{--tw-gradient-from:rgb(var(--kz-c750)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c750)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-750{--tw-gradient-to:rgb(var(--kz-c750)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c750)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-750{--tw-gradient-to:rgb(var(--kz-c750)) var(--tw-gradient-to-position)}
+.bg-space-700{background-color:rgb(var(--kz-c700)/var(--tw-bg-opacity,1))}.border-space-700{border-color:rgb(var(--kz-c700)/var(--tw-border-opacity,1))}
+.bg-space-700\/10{background-color:rgb(var(--kz-c700)/.10)}.bg-space-700\/20{background-color:rgb(var(--kz-c700)/.20)}.bg-space-700\/30{background-color:rgb(var(--kz-c700)/.30)}.bg-space-700\/40{background-color:rgb(var(--kz-c700)/.40)}.bg-space-700\/50{background-color:rgb(var(--kz-c700)/.50)}.bg-space-700\/60{background-color:rgb(var(--kz-c700)/.60)}.bg-space-700\/70{background-color:rgb(var(--kz-c700)/.70)}.bg-space-700\/80{background-color:rgb(var(--kz-c700)/.80)}.bg-space-700\/90{background-color:rgb(var(--kz-c700)/.90)}.bg-space-700\/95{background-color:rgb(var(--kz-c700)/.95)}.from-space-700{--tw-gradient-from:rgb(var(--kz-c700)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c700)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-700{--tw-gradient-to:rgb(var(--kz-c700)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c700)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-700{--tw-gradient-to:rgb(var(--kz-c700)) var(--tw-gradient-to-position)}
+.text-white{color:rgb(var(--kz-white)/var(--tw-text-opacity,1))}.text-slate-text{color:rgb(var(--kz-sltext)/var(--tw-text-opacity,1))}.text-slate-300{color:rgb(var(--kz-sl300)/var(--tw-text-opacity,1))}.text-slate-muted{color:rgb(var(--kz-slmuted)/var(--tw-text-opacity,1))}.text-slate-subtle{color:rgb(var(--kz-slsubtle)/var(--tw-text-opacity,1))}.text-aurora-cyan{color:rgb(var(--kz-cyan)/var(--tw-text-opacity,1))}.text-aurora-gold{color:rgb(var(--kz-gold)/var(--tw-text-opacity,1))}.text-emerald-400{color:rgb(var(--kz-em4)/var(--tw-text-opacity,1))}.text-emerald-300{color:rgb(var(--kz-em3)/var(--tw-text-opacity,1))}.text-rose-400{color:rgb(var(--kz-rose4)/var(--tw-text-opacity,1))}.text-purple-200{color:rgb(var(--kz-p2)/var(--tw-text-opacity,1))}.text-purple-300{color:rgb(var(--kz-p3)/var(--tw-text-opacity,1))}
+
+/* STANDARD: các khối dùng màu cố định */
+html[data-theme="light"] body{background:var(--kz-ink);color:var(--kz-text)}
+html[data-theme="light"] .kzh-l1,html[data-theme="light"] .kzh-brand{color:var(--kz-text)}
+html[data-theme="light"] .kzh-l2{color:var(--kz-text2)}
+html[data-theme="light"] .kzh-desc{color:var(--kz-text2)}
+html[data-theme="light"] .kzh-hl{background-image:linear-gradient(100deg,#0284C7,#0E8FA8 50%,#0D9488);filter:none}
+html[data-theme="light"] .kzh-grad{background-image:linear-gradient(90deg,#0E8FA8,#0F766E)}
+html[data-theme="light"] .kzh-grad.kzh-grad2{background-image:linear-gradient(90deg,#B45309,#D97706)}
+html[data-theme="light"] .kzh-c1{color:#0E8FA8}html[data-theme="light"] .kzh-c2{color:#A86A06}html[data-theme="light"] .kzh-c3{color:#05875F}
+html[data-theme="light"] .kzh-chips li{color:var(--kz-text);background:#FFFFFF;border-color:rgba(14,143,168,.35)}
+html[data-theme="light"] .kzc{background:var(--kz-deep);border-top-color:var(--kz-line)}
+html[data-theme="light"] .kzc h2,html[data-theme="light"] .kzc thead th,html[data-theme="light"] .kzc td:first-child,html[data-theme="light"] .kzc th:first-child{color:var(--kz-text)}
+html[data-theme="light"] .kzc .sub,html[data-theme="light"] .kzc thead th small{color:var(--kz-muted)}
+html[data-theme="light"] .kzc .tw{border-color:var(--kz-line)}
+html[data-theme="light"] .kzc th,html[data-theme="light"] .kzc td{color:var(--kz-text2);border-bottom-color:var(--kz-line)}
+html[data-theme="light"] .kzc thead th{background:var(--kz-surface2)}
+html[data-theme="light"] .kzc .y,html[data-theme="light"] .kzc thead .me,html[data-theme="light"] .kzc .go .cur{color:#0E8FA8}
+html[data-theme="light"] .bg-grid-mesh{background-image:radial-gradient(rgba(14,143,168,.10) 1px,transparent 1px)}
+html[data-theme="light"] .neon-subtle-border{box-shadow:0 1px 2px rgba(14,27,48,.05),0 10px 30px -14px rgba(14,27,48,.18)}
+</style>
 </head>
 <body class="bg-space-900 text-slate-text font-sans antialiased overflow-x-hidden relative selection:bg-aurora-cyan selection:text-space-950">
 
 <!-- STICKY HEADER -->
-<header class="sticky top-0 z-40 bg-space-900/90 backdrop-blur-md border-b border-space-750 transition-all">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-    <!-- Brand Logo -->
-    <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-aurora-cyan rounded-lg p-1">
-      <div class="w-10 h-10 rounded-xl bg-space-850 border border-aurora-cyan/30 flex items-center justify-center p-2 group-hover:border-aurora-cyan transition-all">
-        <svg viewBox="0 0 28 28" fill="none" class="w-full h-full" aria-hidden="true">
-          <path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="24" cy="7" r="2.5" fill="#F3BE62"/>
-        </svg>
-      </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="font-extrabold tracking-tight text-white text-base sm:text-lg">KENVINZONE</span>
-          <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-aurora-cyan/15 text-aurora-cyan border border-aurora-cyan/30">STANDARD</span>
-        </div>
-        <p class="text-[10px] text-slate-muted font-mono tracking-wider">CHỈ BÁO XU HƯỚNG · TRADINGVIEW</p>
-      </div>
-    </a>
-
-    <!-- Desktop Navigation Links -->
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-muted" aria-label="Menu chính">
-      <a href="#tinh-nang" class="hover:text-aurora-cyan transition-colors">Tính năng</a>
-      <a href="#giao-dien" class="hover:text-aurora-cyan transition-colors">Biểu đồ</a>
-      <a href="#quy-trinh" class="hover:text-aurora-cyan transition-colors">Cấp quyền</a>
-      <a href="#bang-gia" class="hover:text-aurora-cyan transition-colors">Bảng giá</a>
-      <a href="#so-sanh" class="hover:text-aurora-cyan transition-colors">So sánh gói</a>
-      <a href="#faq" class="hover:text-aurora-cyan transition-colors">FAQ</a>
-      <a href="huong-dan.html" class="hover:text-aurora-cyan transition-colors">Hướng dẫn</a>
-    </nav>
-
-    <!-- Header Actions -->
-    <div class="flex items-center gap-3">
-      <button onclick="openRegisterModal('trial')" class="btn-brand-primary text-space-950 font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-md flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-aurora-cyan">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <span class="whitespace-nowrap sm:hidden">Dùng thử</span><span class="whitespace-nowrap hidden sm:inline">Dùng Thử 3 Ngày</span>
-      </button>
-      
-      <!-- Mobile Menu Toggle Button -->
-      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-space-850 border border-space-750 text-slate-muted hover:text-white focus:outline-none focus:ring-2 focus:ring-aurora-cyan" aria-label="Mở danh mục điều hướng" aria-expanded="false">
-        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-space-750 bg-space-950 px-5 pt-3 pb-6 space-y-3">
-    <a href="#tinh-nang" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Vũ khí cốt lõi</a>
-    <a href="#giao-dien" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Giao diện biểu đồ</a>
-    <a href="#quy-trinh" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Quy trình cấp quyền</a>
-    <a href="#bang-gia" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">Bảng giá quyền dùng</a>
-    <a href="#so-sanh" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium border-b border-space-850">So sánh STANDARD / PRO</a>
-    <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium">FAQ thường gặp</a>
-    <a href="huong-dan.html" class="block py-2 text-slate-muted hover:text-aurora-cyan text-sm font-medium">Hướng dẫn sử dụng</a>
-    <div class="pt-2">
-      <button onclick="toggleMobileMenu(); openRegisterModal('trial');" class="w-full btn-brand-primary text-space-950 font-bold text-sm py-3 rounded-xl flex justify-center items-center gap-2">
-        Nhận Bản Dùng Thử 3 Ngày Miễn Phí
-      </button>
-    </div>
-  </div>
+<header class="kz-hd" id="kzHeader">
+<div class="kz-hd-in">
+<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" href="https://kenvinzone.com/"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#101D35"/><path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="7" r="2.4" fill="#F3BE62"/></svg><span>KenvinZone</span></a><a class="kz-prod std" href="#">AURORA <b>STANDARD</b></a></div>
+<nav aria-label="Menu chính" class="kz-nav" id="kzNav"><a href="#tinh-nang">Tính năng</a><a href="#giao-dien">Biểu đồ</a><a href="#quy-trinh">Cấp quyền</a><a href="#bang-gia">Bảng giá</a><a href="#so-sanh">So sánh gói</a><a href="#faq">FAQ</a><a href="huong-dan.html">Hướng dẫn</a><a href="pro/" class="x">AURORA PRO</a></nav>
+<div class="kz-hd-r"><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="kz-cta std" onclick="openRegisterModal('trial')" type="button">Dùng thử 3 ngày</button><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" id="kzMenu" type="button">☰</button></div>
+</div>
 </header>
 
 <!-- HERO SECTION -->
-<section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh">
+<section class="kz-has-aurora relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
   <!-- Subtle ambient glow -->
   <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-aurora-cyan/10 via-blue-500/5 to-transparent blur-[100px] pointer-events-none -z-10"></div>
   
@@ -187,7 +245,7 @@ header nav a{white-space:nowrap}
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
-          <button onclick="openRegisterModal('trial')" class="btn-brand-primary text-space-950 font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-glow-cyan flex items-center justify-center gap-2 group">
+          <button onclick="openRegisterModal('trial')" class="btn-brand-primary kz-sheen text-space-950 font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-glow-cyan flex items-center justify-center gap-2 group">
             <span>Dùng Thử 3 Ngày Miễn Phí</span>
             <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
@@ -818,7 +876,7 @@ header nav a{white-space:nowrap}
           </ul>
         </div>
 
-        <button onclick="openRegisterModal('6m')" class="mt-6 w-full py-3.5 rounded-xl btn-brand-primary text-space-950 font-black text-xs uppercase tracking-wider shadow-md transition">
+        <button onclick="openRegisterModal('6m')" class="mt-6 w-full py-3.5 rounded-xl btn-brand-primary kz-sheen text-space-950 font-black text-xs uppercase tracking-wider shadow-md transition">
           Chọn Gói 6 Tháng
         </button>
       </div>
@@ -1186,7 +1244,7 @@ header nav a{white-space:nowrap}
       </div>
 
       <div class="pt-2">
-        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl btn-brand-primary text-space-950 font-bold text-sm uppercase tracking-wider shadow-md transition">
+        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl btn-brand-primary kz-sheen text-space-950 font-bold text-sm uppercase tracking-wider shadow-md transition">
           Tạo Yêu Cầu & Gửi Xác Nhận
         </button>
       </div>
@@ -1510,6 +1568,32 @@ header nav a{white-space:nowrap}
       }, 2500);
     }
   }
+</script>
+
+<script>
+/* ===== KENVINZONE UNIFIED LAYER: theme, menu, hiệu ứng ===== */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('kzTheme');
+  function sync(){var l=root.getAttribute('data-theme')==='light';if(btn)btn.setAttribute('aria-pressed',String(l));}
+  if(btn)btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('kz-theme',next)}catch(e){}
+    /* cookie trên .kenvinzone.com để kenvinzone.com và aurora.kenvinzone.com dùng chung lựa chọn */
+    document.cookie='kz-theme='+next+'; path=/; max-age=31536000; SameSite=Lax'+(location.hostname.endsWith('kenvinzone.com')?'; domain=.kenvinzone.com':'');
+    sync();
+  });
+  sync();
+  var mb=document.getElementById('kzMenu'), nav=document.getElementById('kzNav');
+  if(mb&&nav){
+    mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o));mb.textContent=o?'✕':'☰';});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='☰';});});
+  }
+  document.addEventListener('pointermove',function(e){
+    var el=e.target.closest&&e.target.closest('.kz-spot'); if(!el)return;
+    var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
+  },{passive:true});
+})();
 </script>
 </body>
 </html>
