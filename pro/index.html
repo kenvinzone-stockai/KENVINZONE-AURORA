@@ -40,9 +40,9 @@ h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.12}
 h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:14px}
 h3{font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
 p{margin:0 0 14px}
-.lede{color:#C3CFDD;font-size:18.5px;max-width:62ch}
+.lede{color:var(--kz-text2);font-size:18.5px;max-width:62ch}
 .muted{color:var(--muted)}
-strong{color:#fff}
+strong{color:var(--kz-strong)}
 
 /* Header */
 .top{position:sticky;top:0;z-index:20;background:rgba(14,22,38,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -56,7 +56,7 @@ strong{color:#fff}
 .btn.primary{background:var(--buy);color:#06131D}
 .btn.primary:hover{background:#4FC7DF}
 .btn.ghost{border-color:var(--line);color:var(--text);background:transparent}
-.btn.ghost:hover{border-color:#3A4C6E;background:var(--bg-2)}
+.btn.ghost:hover{border-color:var(--kz-line2);background:var(--bg-2)}
 .top .btn{padding:9px 16px;font-size:14.5px}
 
 /* Hero */
@@ -70,16 +70,16 @@ strong{color:#fff}
 /* Hero instrument: chart + evidence stack */
 .instrument{margin:0;position:relative;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#111C31,#0C1424);overflow:hidden}
 .instrument svg{display:block;width:100%;height:auto}
-.stack{margin:0 14px 14px;background:rgba(18,29,49,.94);border:1px solid #2C3D5C;border-radius:12px;padding:12px 16px 10px;font-size:13.5px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.stack{margin:0 14px 14px;background:rgba(18,29,49,.94);border:1px solid var(--kz-line2);border-radius:12px;padding:12px 16px 10px;font-size:13.5px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
 .stack .hd,.stack .verdict{grid-column:1/-1}
 .stack .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-weight:700}
 .stack .hd span{color:var(--buy)}
-.layer{display:grid;grid-template-columns:92px 1fr 26px;align-items:center;gap:8px;margin:6px 0;color:#C9D5E3}
+.layer{display:grid;grid-template-columns:92px 1fr 26px;align-items:center;gap:8px;margin:6px 0;color:var(--kz-text2)}
 .bar{height:7px;border-radius:4px;background:#22314C;overflow:hidden}
 .bar i{display:block;height:100%;width:var(--v);border-radius:4px;background:var(--c);transform-origin:left;animation:fill .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
 @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .layer b{font-variant-numeric:tabular-nums;text-align:right;color:#fff;font-weight:700}
-.verdict{margin-top:9px;padding-top:9px;border-top:1px solid #2C3D5C;display:flex;justify-content:space-between;font-weight:700}
+.verdict{margin-top:9px;padding-top:9px;border-top:1px solid var(--kz-line2);display:flex;justify-content:space-between;font-weight:700}
 .verdict span:last-child{color:var(--win)}
 
 /* Sections */
@@ -94,10 +94,10 @@ section{padding:84px 0}
 .sig.b{background:rgba(52,184,212,.78);color:#05121C}
 .sig.s{background:rgba(52,184,212,.38);color:#fff}
 .sig.m{background:rgba(179,136,255,.32);color:#fff}
-.setup p{color:#C3CFDD;font-size:15.5px}
+.setup p{color:var(--kz-text2);font-size:15.5px}
 .setup.smc{border-color:#3B3466;background:linear-gradient(180deg,rgba(179,136,255,.07),transparent 60%),var(--bg)}
 .smc ul{list-style:none;padding:0;margin:12px 0 0}
-.smc li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;color:#C3CFDD}
+.smc li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;color:var(--kz-text2)}
 .smc li strong{display:block;margin-bottom:2px}
 .shared{margin-top:22px;color:var(--muted);font-size:15.5px;max-width:78ch}
 
@@ -108,10 +108,10 @@ section{padding:84px 0}
 .ladder li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--c,var(--buy));box-shadow:0 0 0 4px var(--bg)}
 .band .ladder li::before{box-shadow:0 0 0 4px var(--bg-2)}
 .ladder h3{font-size:18px;margin-bottom:4px}
-.ladder p{color:#C3CFDD;font-size:15.5px;margin:0}
+.ladder p{color:var(--kz-text2);font-size:15.5px;margin:0}
 .tip{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:20px 22px;font-size:14.5px}
 .tip .t{font-weight:700;margin-bottom:10px}
-.tip pre{margin:0;white-space:pre-wrap;font-family:var(--font);color:#C9D5E3;line-height:1.75}
+.tip pre{margin:0;white-space:pre-wrap;font-family:var(--font);color:var(--kz-text2);line-height:1.75}
 .tip .note{margin-top:14px;color:var(--muted);font-size:14px}
 
 /* Presets (interactive) */
@@ -121,18 +121,18 @@ legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips label{position:relative}
 .chips input{position:absolute;opacity:0;pointer-events:none}
-.chips span{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);color:#C3CFDD;font-size:14.5px;font-weight:600;cursor:pointer;background:var(--bg)}
+.chips span{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);color:var(--kz-text2);font-size:14.5px;font-weight:600;cursor:pointer;background:var(--bg)}
 .chips input:checked+span{background:var(--buy);border-color:var(--buy);color:#06131D}
 .chips input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
 .result{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
 .result .rh{padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700}
 .result .rh small{display:block;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}
 .result dl{margin:0;display:grid;grid-template-columns:1fr auto}
-.result dt,.result dd{margin:0;padding:10px 20px;border-bottom:1px solid #1E2B44;font-size:15px}
-.result dt{color:#C3CFDD}
+.result dt,.result dd{margin:0;padding:10px 20px;border-bottom:1px solid var(--kz-line);font-size:15px}
+.result dt{color:var(--kz-text2)}
 .result dd{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
 .result dt:nth-last-of-type(1),.result dd:last-of-type{border-bottom:0}
-.result .why{padding:14px 20px;background:var(--bg-2);color:#C3CFDD;font-size:14.5px;border-top:1px solid var(--line)}
+.result .why{padding:14px 20px;background:var(--bg-2);color:var(--kz-text2);font-size:14.5px;border-top:1px solid var(--line)}
 
 /* Transparency */
 .trans{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
@@ -150,7 +150,7 @@ legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
 .points li{padding:14px 0;border-top:1px solid var(--line)}
 .points li:first-child{border-top:0;padding-top:0}
 .points strong{display:block;margin-bottom:2px}
-.points span{color:#C3CFDD;font-size:15.5px}
+.points span{color:var(--kz-text2);font-size:15.5px}
 
 /* Plans */
 .plans{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px}
@@ -158,7 +158,7 @@ legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
 .plans th,.plans td{padding:13px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .plans thead th{background:var(--bg);font-size:16px}
 .plans thead th small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:2px}
-.plans td:first-child{color:#C3CFDD}
+.plans td:first-child{color:var(--kz-text2)}
 .plans tr:last-child td{border-bottom:0}
 .plans .pro{background:rgba(52,184,212,.08)}
 .plans thead .pro{background:rgba(52,184,212,.18);color:#fff}
@@ -169,7 +169,7 @@ legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
 /* Automation */
 .auto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
 pre.code{margin:0;background:#0A1120;border:1px solid var(--line);border-radius:12px;padding:18px;font-size:13.5px;line-height:1.65;color:#CFE3F0;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.events{list-style:none;padding:0;margin:16px 0 0;font-size:15px;color:#C3CFDD}
+.events{list-style:none;padding:0;margin:16px 0 0;font-size:15px;color:var(--kz-text2)}
 .events li{padding:6px 0}
 .events code{color:#fff;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px}
 
@@ -180,19 +180,19 @@ summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--buy);font-weight:800}
 details[open] summary::after{content:"–"}
-details p{color:#C3CFDD;margin:0 0 18px}
+details p{color:var(--kz-text2);margin:0 0 18px}
 
 /* Signup */
 .signup{text-align:left}
 .signup .box{border:1px solid #2E4366;border-radius:18px;padding:40px;background:linear-gradient(135deg,rgba(52,184,212,.12),rgba(179,136,255,.08) 70%),var(--bg-2);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
 .steps{margin:0;padding:0;list-style:none;counter-reset:s}
-.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px;color:#C3CFDD}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px;color:var(--kz-text2)}
 .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--buy);color:#06131D;font-weight:800;display:grid;place-items:center;font-size:14px}
 .todo{color:var(--amber);font-size:13.5px}
 
 footer{border-top:1px solid var(--line);padding:36px 0 56px;color:var(--muted);font-size:14px}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
-footer a{color:#C3CFDD}
+footer a{color:var(--kz-text2)}
 .lines{display:flex;flex-wrap:wrap;gap:8px 18px}
 
 @media (max-width:980px){
@@ -209,37 +209,117 @@ footer a{color:#C3CFDD}
   .top .btn{display:none}
   body{font-size:16px}
 }
+
+.instrument,.instrument .stack,.dash{color:#E6EEF8}.instrument .layer{color:#C9D5E4}.instrument .layer b{color:#fff}
+</style>
+<script>/* KZ theme: dùng chung cho kenvinzone.com và aurora.kenvinzone.com */(function(){try{var m=document.cookie.match(/(?:^|; )kz-theme=(light|dark)/),t=m?m[1]:localStorage.getItem("kz-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+<style id="kz-unified">
+/* =====================================================================
+   KENVINZONE UNIFIED LAYER v1 — đồng bộ với kenvinzone.com
+   Bảng màu, header, giao diện Sáng / Tối và hiệu ứng dùng chung
+   ===================================================================== */
+:root{
+  --kz-ink:#0A1426; --kz-deep:#070F1D; --kz-surface:#101D35; --kz-surface2:#0C182D; --kz-line:#1E2E4D; --kz-line2:#2A3D62;
+  --kz-text:#E6EEF8; --kz-text2:#C9D5E4; --kz-muted:#8FA3BF; --kz-strong:#FFFFFF; --kz-cyan:#38D5E7; --kz-gold:#F3BE62;
+  --kz-green:#34D399; --kz-violet:#B9A8F5; --kz-hd-bg:rgba(10,20,38,.82); --kz-glow:.55; --kz-code:#070F1D;
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --kz-ink:#F5F8FC; --kz-deep:#EBF0F7; --kz-surface:#FFFFFF; --kz-surface2:#F3F6FB; --kz-line:#D8E1EE; --kz-line2:#C3CFE0;
+  --kz-text:#0E1B30; --kz-text2:#334760; --kz-muted:#5A6C86; --kz-strong:#0E1B30; --kz-cyan:#0E8FA8; --kz-gold:#A86A06;
+  --kz-green:#05875F; --kz-violet:#6D4FD0; --kz-hd-bg:rgba(245,248,252,.85); --kz-glow:.28; --kz-code:#0E1B30;
+  color-scheme:light;
+}
+html{scroll-padding-top:84px}
+body{font-family:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+
+/* ---------- Header dùng chung ---------- */
+.kz-hd{position:sticky;top:0;z-index:60;background:var(--kz-hd-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--kz-line);padding-top:env(safe-area-inset-top,0)}
+.kz-hd::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(56,213,231,calc(var(--kz-glow)*.9)) 30%,rgba(243,190,98,calc(var(--kz-glow)*.8)) 70%,transparent);pointer-events:none}
+.kz-hd-in{max-width:1220px;margin:0 auto;padding:0 22px;height:68px;display:flex;align-items:center;gap:20px}
+.kz-brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.kz-logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--kz-text);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.kz-logo svg{width:30px;height:30px}
+.kz-prod{text-decoration:none;font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:5px 10px;border-radius:8px;border:1px solid var(--kz-line);color:var(--kz-muted);white-space:nowrap}
+.kz-prod b{font-weight:800}
+.kz-hd .kz-prod.std b{color:var(--kz-cyan)} .kz-prod.std{border-color:rgba(56,213,231,.35)}
+.kz-hd .kz-prod.pro b{color:var(--kz-gold)} .kz-prod.pro{border-color:rgba(243,190,98,.45)}
+.kz-nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px}
+.kz-nav a{color:var(--kz-muted);text-decoration:none;white-space:nowrap;font-weight:500}
+.kz-nav a:hover,.kz-nav a[aria-current="page"]{color:var(--kz-text)}
+.kz-nav a.x{color:var(--kz-gold)}
+.kz-hd-r{display:flex;align-items:center;gap:10px}
+.kz-theme,.kz-menu{width:40px;height:40px;border-radius:10px;border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text);cursor:pointer;display:inline-grid;place-items:center;font-size:19px;line-height:1}
+.kz-theme:hover,.kz-menu:hover{border-color:var(--kz-line2)}
+.kz-theme svg{width:18px;height:18px}
+.kz-theme .sun{display:none} html[data-theme="light"] .kz-theme .sun{display:block} html[data-theme="light"] .kz-theme .moon{display:none}
+.kz-menu{display:none}
+.kz-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:11px;border:0;font:700 14px/1 'Be Vietnam Pro',system-ui,sans-serif;text-decoration:none;cursor:pointer;white-space:nowrap;position:relative;overflow:hidden;transition:box-shadow .3s,background .15s}
+.kz-cta.std{background:linear-gradient(135deg,#0284C7,#38D5E7);color:#04131C}
+.kz-cta.pro{background:#F3BE62;color:#2A1B00}
+.kz-cta:hover{box-shadow:0 8px 26px -8px rgba(56,213,231,calc(var(--kz-glow)*1.2))}
+.kz-cta.pro:hover{box-shadow:0 8px 26px -8px rgba(243,190,98,calc(var(--kz-glow)*1.3))}
+@media (max-width:1100px){
+  .kz-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;margin:0;background:var(--kz-deep);border-bottom:1px solid var(--kz-line);padding:6px 22px 14px}
+  .kz-nav.open{display:flex}
+  .kz-nav a{padding:12px 0;border-bottom:1px solid var(--kz-line);font-size:16px;color:var(--kz-text)}
+  .kz-nav a:last-child{border-bottom:0}
+  .kz-menu{display:inline-grid}
+  .kz-hd-r{margin-left:auto}
+}
+@media (max-width:560px){.kz-cta{display:none}.kz-logo span{display:none}.kz-hd-in{gap:10px;padding:0 14px}}
+
+/* ---------- Hiệu ứng dùng chung ---------- */
+.kz-aurora{position:absolute;inset:-80px 0 auto 0;max-width:100%;height:720px;pointer-events:none;filter:blur(70px);opacity:var(--kz-glow);z-index:0;overflow:hidden}
+.kz-aurora i{position:absolute;border-radius:50%;mix-blend-mode:screen}
+html[data-theme="light"] .kz-aurora i{mix-blend-mode:multiply}
+.kz-aurora i:nth-child(1){width:520px;height:420px;left:55%;top:-40px;background:radial-gradient(circle,#38D5E7,transparent 65%);animation:kzd1 22s ease-in-out infinite alternate}
+.kz-aurora i:nth-child(2){width:460px;height:380px;left:75%;top:140px;background:radial-gradient(circle,#8B7CF6,transparent 65%);animation:kzd2 26s ease-in-out infinite alternate}
+.kz-aurora i:nth-child(3){width:420px;height:340px;left:4%;top:60px;background:radial-gradient(circle,#F3BE62,transparent 68%);opacity:.6;animation:kzd3 30s ease-in-out infinite alternate}
+@keyframes kzd1{to{transform:translate(-90px,70px) scale(1.12)}}
+@keyframes kzd2{to{transform:translate(-140px,-40px) scale(.9)}}
+@keyframes kzd3{to{transform:translate(120px,60px) scale(1.15)}}
+.kz-has-aurora{position:relative;isolation:isolate}
+.kz-has-aurora>.kz-aurora{z-index:-1}
+.kz-spot{position:relative;isolation:isolate}
+.kz-spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;z-index:-1;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%),rgba(56,213,231,calc(var(--kz-glow)*.22)),transparent 60%)}
+.kz-spot:hover::after{opacity:1}
+.kz-sheen{position:relative;overflow:hidden}
+.kz-sheen::after,.kz-cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
+.kz-sheen:hover::after,.kz-cta:hover::after{left:130%}
+@media (prefers-reduced-motion:reduce){.kz-aurora i{animation:none}.kz-sheen::after,.kz-cta::after{display:none}}
+
+/* PRO: ánh xạ bảng màu cũ về bảng màu chung */
+:root,html[data-theme="light"]{--bg:var(--kz-ink);--bg-2:var(--kz-deep);--panel:var(--kz-surface);--line:var(--kz-line);--text:var(--kz-text);--muted:var(--kz-muted);--buy:var(--kz-cyan);--amber:var(--kz-gold);--tier:var(--kz-violet)}
+.btn.primary{background:#38D5E7;color:#04131C}
+.btn.primary:hover{background:#6BE3F0;box-shadow:0 8px 26px -8px rgba(56,213,231,calc(var(--kz-glow)*1.2))}
+.setup,.layer-card,.plan,.faq details{transition:transform .25s,border-color .25s}
+.setup:hover{transform:translateY(-3px);border-color:var(--kz-line2)}
+html[data-theme="light"] .setup.smc{border-color:rgba(109,79,208,.35);background:linear-gradient(180deg,rgba(109,79,208,.06),transparent 60%),var(--bg)}
+html[data-theme="light"] .sig.s,html[data-theme="light"] .sig.m{color:#0E1B30}
+html[data-theme="light"] .setup,html[data-theme="light"] .band{box-shadow:none}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="KENVINZONE AURORA PRO">
-      <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 21h6v-5h5v-4h5V8h6" fill="none" stroke="#34B8D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      KENVINZONE AURORA <b>PRO</b>
-    </a>
-    <nav class="nav" aria-label="Điều hướng">
-      <a href="#setup">Setup</a>
-      <a href="#cham-diem">Chấm điểm</a>
-      <a href="#cai-dat">Cài đặt</a>
-      <a href="#goi">So sánh gói</a>
-      <a href="#hoi-dap">Hỏi đáp</a>
-    </nav>
-    <a class="btn primary" href="#dang-ky">Đăng ký dùng thử</a>
-  </div>
+<header class="kz-hd" id="kzHeader">
+<div class="kz-hd-in">
+<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" href="https://kenvinzone.com/"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#101D35"/><path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="7" r="2.4" fill="#F3BE62"/></svg><span>KenvinZone</span></a><a class="kz-prod pro" href="#top">AURORA <b>PRO</b></a></div>
+<nav aria-label="Menu chính" class="kz-nav" id="kzNav"><a href="#setup">Setup</a><a href="#cham-diem">Chấm điểm</a><a href="#cai-dat">Cài đặt</a><a href="#goi">So sánh gói</a><a href="#hoi-dap">Hỏi đáp</a><a href="huong-dan.html">Hướng dẫn</a><a href="../">AURORA STANDARD</a></nav>
+<div class="kz-hd-r"><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><a class="kz-cta pro" href="#dang-ky">Đăng ký dùng thử</a><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" id="kzMenu" type="button">☰</button></div>
+</div>
 </header>
 
 <main id="top">
 
 <!-- HERO -->
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero kz-has-aurora" aria-labelledby="hero-title"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div>
       <h1 id="hero-title">Biết vì sao một setup đáng vào lệnh</h1>
       <p class="lede">AURORA PRO tìm điểm vào theo xu hướng bằng ba nhóm setup: BREAK, SUNNY và SMC. Mỗi tín hiệu đi kèm kế hoạch Entry, Stoploss, chốt lời, cùng điểm nền và điểm chất lượng riêng của từng setup, cho biết setup đó mạnh ở đâu và yếu ở đâu.</p>
       <div class="ctas">
-        <a class="btn primary" href="#dang-ky">Đăng ký dùng thử</a>
+        <a class="btn primary kz-sheen" href="#dang-ky">Đăng ký dùng thử</a>
         <a class="btn ghost" href="huong-dan.html">Đọc hướng dẫn sử dụng</a>
       </div>
       <p class="fineprint">Chỉ báo Invite-only trên TradingView. Dùng được với tài khoản TradingView miễn phí.</p>
@@ -319,17 +399,17 @@ footer a{color:#C3CFDD}
       <p class="lede">Tất cả đều chỉ vào lệnh theo hướng xu hướng chính, được hệ thống xác nhận. Không bắt đỉnh, không bắt đáy.</p>
     </div>
     <div class="setups">
-      <article class="setup">
+      <article class="setup kz-spot">
         <span class="sig b">⚡ 1st BREAK · BUY A</span>
         <h3>BREAK</h3>
         <p>Cú phá vỡ đầu tiên và thứ hai của đường Trailing sau khi xu hướng mới hình thành. Nến Break quá dài sẽ được chờ hồi về 50% thay vì đuổi giá.</p>
       </article>
-      <article class="setup">
+      <article class="setup kz-spot">
         <span class="sig s">☀ SUNNY · BUY</span>
         <h3>SUNNY</h3>
         <p>Tín hiệu mua / bán tiếp diễn thuận xu hướng chính. Bắt nhịp tiếp diễn sau một đợt điều chỉnh.</p>
       </article>
-      <article class="setup smc">
+      <article class="setup smc kz-spot">
         <span class="sig m">💠 SMC · thuận xu hướng</span>
         <h3>SMC</h3>
         <ul>
@@ -546,7 +626,7 @@ footer a{color:#C3CFDD}
       </div>
       <div>
         <p style="display:flex;flex-direction:column;gap:12px;margin:0">
-          <a class="btn primary" href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Gửi tên TradingView qua Telegram</a>
+          <a class="btn primary kz-sheen" href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Gửi tên TradingView qua Telegram</a>
           <a class="btn ghost" href="huong-dan.html">Đọc hướng dẫn trước</a>
         </p>
         <p style="margin-top:14px;color:#94A3B8;font-size:14px">Liên hệ: <a href="https://t.me/kenvinhoang" target="_blank" rel="noopener">Telegram @kenvinhoang</a>. Điều khoản sử dụng và hoàn tiền áp dụng chung cho các gói AURORA: <a href="../#chinh-sach">xem chi tiết</a>.</p>
@@ -560,7 +640,7 @@ footer a{color:#C3CFDD}
 <footer>
   <div class="wrap">
     <div>
-      <p><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang (@KenvinHoang)</p>
+      <p><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang (Hoàng Văn Hiệu)</p>
       <p>AURORA là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn. Kết quả quá khứ không đảm bảo kết quả tương lai. TradingView là thương hiệu của TradingView, Inc.</p>
     </div>
     <div>
@@ -603,6 +683,32 @@ footer a{color:#C3CFDD}
     $('rLen').textContent=s.len; $('rRun').textContent=s.run; $('rWhy').textContent=s.why;
   }
   f.addEventListener('change',upd); upd();
+})();
+</script>
+
+<script>
+/* ===== KENVINZONE UNIFIED LAYER: theme, menu, hiệu ứng ===== */
+(function(){
+  var root=document.documentElement, btn=document.getElementById('kzTheme');
+  function sync(){var l=root.getAttribute('data-theme')==='light';if(btn)btn.setAttribute('aria-pressed',String(l));}
+  if(btn)btn.addEventListener('click',function(){
+    var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('kz-theme',next)}catch(e){}
+    /* cookie trên .kenvinzone.com để kenvinzone.com và aurora.kenvinzone.com dùng chung lựa chọn */
+    document.cookie='kz-theme='+next+'; path=/; max-age=31536000; SameSite=Lax'+(location.hostname.endsWith('kenvinzone.com')?'; domain=.kenvinzone.com':'');
+    sync();
+  });
+  sync();
+  var mb=document.getElementById('kzMenu'), nav=document.getElementById('kzNav');
+  if(mb&&nav){
+    mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o));mb.textContent=o?'✕':'☰';});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.textContent='☰';});});
+  }
+  document.addEventListener('pointermove',function(e){
+    var el=e.target.closest&&e.target.closest('.kz-spot'); if(!el)return;
+    var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
+  },{passive:true});
 })();
 </script>
 </body>
