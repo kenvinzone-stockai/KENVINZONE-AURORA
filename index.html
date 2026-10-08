@@ -1,86 +1,218 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>KENVINZONE AURORA STANDARD — Hệ Thống Hỗ Trợ Giao Dịch Trend-Following Trên TradingView</title>
-  <meta name="description" content="Chỉ báo phân tích xu hướng KENVINZONE AURORA STANDARD trên TradingView: Định vị điểm bứt phá 1st/2nd Break, SUNNY, Smart Score và hiển thị kế hoạch Entry - F-SL - TP định sẵn.">
-  
-  <meta name="theme-color" content="#080E1B">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="KENVINZONE AURORA STANDARD — Hệ thống Breakout theo xu hướng trên TradingView">
-  <meta property="og:description" content="Setup 1st/2nd Break, SUNNY, kế hoạch Entry – F-SL – TP định sẵn, bảng LIVE trên điện thoại và thống kê tự kiểm chứng ngay trên chart của bạn.">
-  <meta property="og:image" content="https://kenvinzone.com/assets/aurora-live-og.jpg">
-  <meta property="og:url" content="https://aurora.kenvinzone.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%23080E1B'/%3E%3Cpath d='M4 21L10 15L15 19L24 7' stroke='%2338D5E7' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS (đã build sẵn — không cần CDN) -->
-  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Be Vietnam Pro,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0}.-top-3{top:-.75rem}.left-1\/2{left:50%}.right-4{right:1rem}.right-5{right:1.25rem}.top-0{top:0}.top-1\/4{top:25%}.top-4{top:1rem}.-z-10{z-index:-10}.z-10{z-index:10}.z-20{z-index:20}.z-40{z-index:40}.z-50{z-index:50}.col-span-2{grid-column:span 2/span 2}.mx-auto{margin-left:auto;margin-right:auto}.my-5{margin-top:1.25rem;margin-bottom:1.25rem}.mb-1{margin-bottom:.25rem}.mb-1\.5{margin-bottom:.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-1{margin-left:.25rem}.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16/9}.h-1\.5{height:.375rem}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-20{height:5rem}.h-24{height:6rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-\[350px\]{height:350px}.h-auto{height:auto}.h-full{height:100%}.min-h-\[350px\]{min-height:350px}.w-1\.5{width:.375rem}.w-10{width:2.5rem}.w-16{width:4rem}.w-2{width:.5rem}.w-2\.5{width:.625rem}.w-24{width:6rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-\[650px\]{width:650px}.w-fit{width:-moz-fit-content;width:fit-content}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.-translate-x-1\/2{--tw-translate-x:-50%}.-translate-x-1\/2,.-translate-y-1\/2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}.cursor-pointer{cursor:pointer}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-12{gap:3rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.gap-3\.5{gap:.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-x-5{-moz-column-gap:1.25rem;column-gap:1.25rem}.gap-y-2{row-gap:.5rem}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.space-y-2\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.625rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.625rem*var(--tw-space-y-reverse))}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.break-words{overflow-wrap:break-word}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-t{border-top-width:1px}.border-aurora-cyan{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.border-aurora-cyan\/30{border-color:rgba(56,213,231,.3)}.border-aurora-cyan\/40{border-color:rgba(56,213,231,.4)}.border-aurora-gold\/40{border-color:rgba(243,190,98,.4)}.border-emerald-500\/40{border-color:rgba(16,185,129,.4)}.border-purple-500\/30{border-color:rgba(168,85,247,.3)}.border-purple-500\/50{border-color:rgba(168,85,247,.5)}.border-space-750{--tw-border-opacity:1;border-color:rgb(34 51 79/var(--tw-border-opacity,1))}.border-space-800{--tw-border-opacity:1;border-color:rgb(24 37 59/var(--tw-border-opacity,1))}.border-space-850{--tw-border-opacity:1;border-color:rgb(17 27 45/var(--tw-border-opacity,1))}.bg-\[\#0088cc\]{--tw-bg-opacity:1;background-color:rgb(0 136 204/var(--tw-bg-opacity,1))}.bg-\[\#060A14\]{--tw-bg-opacity:1;background-color:rgb(6 10 20/var(--tw-bg-opacity,1))}.bg-aurora-cyan{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.bg-aurora-cyan\/10{background-color:rgba(56,213,231,.1)}.bg-aurora-cyan\/15{background-color:rgba(56,213,231,.15)}.bg-aurora-cyan\/20{background-color:rgba(56,213,231,.2)}.bg-aurora-gold{--tw-bg-opacity:1;background-color:rgb(243 190 98/var(--tw-bg-opacity,1))}.bg-aurora-gold\/15{background-color:rgba(243,190,98,.15)}.bg-aurora-gold\/20{background-color:rgba(243,190,98,.2)}.bg-black\/80{background-color:rgba(0,0,0,.8)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153/var(--tw-bg-opacity,1))}.bg-emerald-500\/15{background-color:rgba(16,185,129,.15)}.bg-emerald-950\/40{background-color:rgba(2,44,34,.4)}.bg-purple-950\/60{background-color:rgba(59,7,100,.6)}.bg-space-750{--tw-bg-opacity:1;background-color:rgb(34 51 79/var(--tw-bg-opacity,1))}.bg-space-800{--tw-bg-opacity:1;background-color:rgb(24 37 59/var(--tw-bg-opacity,1))}.bg-space-850{--tw-bg-opacity:1;background-color:rgb(17 27 45/var(--tw-bg-opacity,1))}.bg-space-900{--tw-bg-opacity:1;background-color:rgb(8 14 27/var(--tw-bg-opacity,1))}.bg-space-900\/90{background-color:rgba(8,14,27,.9)}.bg-space-950{--tw-bg-opacity:1;background-color:rgb(6 11 22/var(--tw-bg-opacity,1))}.bg-space-950\/70{background-color:rgba(6,11,22,.7)}.bg-space-950\/80{background-color:rgba(6,11,22,.8)}.bg-\[radial-gradient\(\#38D5E7_1px\2c transparent_1px\)\]{background-image:radial-gradient(#38d5e7 1px,transparent 0)}.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.bg-gradient-to-tr{background-image:linear-gradient(to top right,var(--tw-gradient-stops))}.from-aurora-cyan{--tw-gradient-from:#38d5e7 var(--tw-gradient-from-position);--tw-gradient-to:rgba(56,213,231,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-aurora-cyan\/10{--tw-gradient-from:rgba(56,213,231,.1) var(--tw-gradient-from-position);--tw-gradient-to:rgba(56,213,231,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-space-850{--tw-gradient-from:#111b2d var(--tw-gradient-from-position);--tw-gradient-to:rgba(17,27,45,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-space-950{--tw-gradient-from:#060b16 var(--tw-gradient-from-position);--tw-gradient-to:rgba(6,11,22,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-blue-500\/5{--tw-gradient-to:rgba(59,130,246,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(59,130,246,.05) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-space-800{--tw-gradient-to:rgba(24,37,59,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#18253b var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-space-900\/80{--tw-gradient-to:rgba(8,14,27,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(8,14,27,.8) var(--tw-gradient-via-position),var(--tw-gradient-to)}.via-teal-300{--tw-gradient-to:rgba(94,234,212,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#5eead4 var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-amber-300{--tw-gradient-to:#fcd34d var(--tw-gradient-to-position)}.to-space-850{--tw-gradient-to:#111b2d var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.object-cover{-o-object-fit:cover;object-fit:cover}.p-1{padding:.25rem}.p-1\.5{padding:.375rem}.p-2{padding:.5rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-1\.5{padding-top:.375rem;padding-bottom:.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.pb-20{padding-bottom:5rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pb-8{padding-bottom:2rem}.pl-5{padding-left:1.25rem}.pt-1{padding-top:.25rem}.pt-12{padding-top:3rem}.pt-2{padding-top:.5rem}.pt-3{padding-top:.75rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:JetBrains Mono,monospace}.font-sans{font-family:Be Vietnam Pro,sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.2\]{line-height:1.2}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-.025em}.tracking-wider{letter-spacing:.05em}.tracking-widest{letter-spacing:.1em}.text-aurora-cyan{--tw-text-opacity:1;color:rgb(56 213 231/var(--tw-text-opacity,1))}.text-aurora-gold{--tw-text-opacity:1;color:rgb(243 190 98/var(--tw-text-opacity,1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183/var(--tw-text-opacity,1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153/var(--tw-text-opacity,1))}.text-purple-200{--tw-text-opacity:1;color:rgb(233 213 255/var(--tw-text-opacity,1))}.text-purple-300{--tw-text-opacity:1;color:rgb(216 180 254/var(--tw-text-opacity,1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133/var(--tw-text-opacity,1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225/var(--tw-text-opacity,1))}.text-slate-muted{--tw-text-opacity:1;color:rgb(171 185 206/var(--tw-text-opacity,1))}.text-slate-subtle{--tw-text-opacity:1;color:rgb(132 148 173/var(--tw-text-opacity,1))}.text-slate-text{--tw-text-opacity:1;color:rgb(242 246 252/var(--tw-text-opacity,1))}.text-space-950{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-20{opacity:.2}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color)}.shadow-2xl,.shadow-card{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-card{--tw-shadow:0 12px 30px -10px rgba(0,0,0,.5);--tw-shadow-colored:0 12px 30px -10px var(--tw-shadow-color)}.shadow-glow-cyan{--tw-shadow:0 0 30px -5px rgba(56,213,231,.3);--tw-shadow-colored:0 0 30px -5px var(--tw-shadow-color)}.shadow-glow-cyan,.shadow-glow-gold{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-glow-gold{--tw-shadow:0 0 30px -5px rgba(243,190,98,.3);--tw-shadow-colored:0 0 30px -5px var(--tw-shadow-color)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)}.shadow-lg,.shadow-md{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur{--tw-blur:blur(8px)}.blur,.blur-\[100px\]{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-\[100px\]{--tw-blur:blur(100px)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.\[background-size\:16px_16px\]{background-size:16px 16px}.selection\:bg-aurora-cyan ::-moz-selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:bg-aurora-cyan ::selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:text-space-950 ::-moz-selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:text-space-950 ::selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:bg-aurora-cyan::-moz-selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:bg-aurora-cyan::selection{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.selection\:text-space-950::-moz-selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.selection\:text-space-950::selection{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.open\:border-aurora-cyan\/40[open]{border-color:rgba(56,213,231,.4)}.hover\:scale-110:hover{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-aurora-cyan:hover{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.hover\:border-aurora-gold:hover{--tw-border-opacity:1;border-color:rgb(243 190 98/var(--tw-border-opacity,1))}.hover\:bg-\[\#0077b5\]:hover{--tw-bg-opacity:1;background-color:rgb(0 119 181/var(--tw-bg-opacity,1))}.hover\:bg-amber-300:hover{--tw-bg-opacity:1;background-color:rgb(252 211 77/var(--tw-bg-opacity,1))}.hover\:bg-amber-400:hover{--tw-bg-opacity:1;background-color:rgb(251 191 36/var(--tw-bg-opacity,1))}.hover\:bg-aurora-cyan:hover{--tw-bg-opacity:1;background-color:rgb(56 213 231/var(--tw-bg-opacity,1))}.hover\:bg-purple-900\/60:hover{background-color:rgba(88,28,135,.6)}.hover\:bg-slate-400:hover{--tw-bg-opacity:1;background-color:rgb(148 163 184/var(--tw-bg-opacity,1))}.hover\:bg-space-750:hover{--tw-bg-opacity:1;background-color:rgb(34 51 79/var(--tw-bg-opacity,1))}.hover\:bg-space-800:hover{--tw-bg-opacity:1;background-color:rgb(24 37 59/var(--tw-bg-opacity,1))}.hover\:text-aurora-cyan:hover{--tw-text-opacity:1;color:rgb(56 213 231/var(--tw-text-opacity,1))}.hover\:text-slate-muted:hover{--tw-text-opacity:1;color:rgb(171 185 206/var(--tw-text-opacity,1))}.hover\:text-space-950:hover{--tw-text-opacity:1;color:rgb(6 11 22/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.focus\:border-aurora-cyan:focus{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.focus\:ring-1:focus,.focus\:ring-2:focus{box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)}.focus\:ring-aurora-cyan:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(56 213 231/var(--tw-ring-opacity,1))}.group[open] .group-open\:rotate-180{--tw-rotate:180deg}.group:hover .group-hover\:translate-x-1,.group[open] .group-open\:rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem}.group:hover .group-hover\:border-aurora-cyan{--tw-border-opacity:1;border-color:rgb(56 213 231/var(--tw-border-opacity,1))}@media (min-width:640px){.sm\:col-span-1{grid-column:span 1/span 1}.sm\:inline-block{display:inline-block}.sm\:inline{display:inline}.sm\:hidden{display:none}.sm\:h-20{height:5rem}.sm\:min-h-\[390px\]{min-height:390px}.sm\:w-20{width:5rem}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:grid-cols-\[96px_1fr\]{grid-template-columns:96px 1fr}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-4{padding:1rem}.sm\:p-5{padding:1.25rem}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:p-9{padding:2.25rem}.sm\:px-4{padding-left:1rem;padding-right:1rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:.875rem;line-height:1.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}.sm\:text-xs{font-size:.75rem;line-height:1rem}}@media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:flex-row{flex-direction:row}.md\:pb-28{padding-bottom:7rem}.md\:pt-16{padding-top:4rem}.md\:text-left{text-align:left}}@media (min-width:1024px){.lg\:col-span-6{grid-column:span 6/span 6}.lg\:grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-3xl{font-size:1.875rem;line-height:2.25rem}.lg\:text-5xl{font-size:3rem;line-height:1}}</style>
 
-  <style>
-    /* Custom Utilities & Accessibility Rules */
-    .bg-grid-mesh {
-      background-image: radial-gradient(rgba(56, 213, 231, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-    .neon-subtle-border {
-      border: 1px solid rgba(56, 213, 231, 0.2);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-    .neon-subtle-border:hover {
-      border-color: rgba(56, 213, 231, 0.45);
-      box-shadow: 0 0 20px -5px rgba(56, 213, 231, 0.25);
-    }
-    .btn-brand-primary {
-      background: linear-gradient(135deg, #0284C7 0%, #38D5E7 100%);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn-brand-primary:hover {
-      box-shadow: 0 0 25px rgba(56, 213, 231, 0.5);
-      transform: translateY(-1px);
-    }
-    /* Slider smooth fade transitions */
-    .hero-slide {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    .hero-slide.active {
-      display: block;
-      opacity: 1;
-    }
-    /* Prevent body scroll when modal is open */
-    .shot-placeholder {
-      background: repeating-linear-gradient(135deg, rgba(56,213,231,0.05) 0 12px, transparent 12px 24px);
-    }
-    body.modal-open {
-      overflow: hidden;
-    }
-  </style>
+<html lang="vi">
+<head>
+<script>/* KZ language: ?lang= > cookie chung .kenvinzone.com > lựa chọn đã lưu > múi giờ VN / trình duyệt */window.KZ_JS_EN={"Cổ phiếu Việt Nam, Crypto Spot": "Vietnamese stocks, crypto spot", "Volume thật · RVOL · VWAP · CMF": "Real volume · RVOL · VWAP · CMF", "Chỉ BUY": "BUY only", "Các cặp tiền": "Currency pairs", "Chỉ RVOL (tick volume)": "RVOL only (tick volume)", "Vàng, NAS100, US30": "Gold, NAS100, US30", "Futures CME/COMEX tự map": "CME/COMEX futures, auto-mapped", "Volume sàn + Open Interest": "Exchange volume + open interest", "Có": "Yes", "Không": "No", "Chặn giờ giao phiên": "Block session transitions", "Chỉ thống kê theo phiên": "Session statistics only", "60 nến": "60 bars", "120 nến": "120 bars", "200 nến": "200 bars", "Tắt": "Off", "Không giới hạn": "No limit", "Tắt (cổ phiếu)": "Off (stocks)", " · khung ": " · timeframe ", "Lệnh ngắn, dời SL về hòa vốn sớm vì khung nhỏ hay quét ngược.": "Short trades, early move to breakeven because low timeframes often sweep back.", "Cân bằng giữa số lệnh và độ chọn lọc, phù hợp đa số trader làm việc trong ngày.": "Balances trade count and selectivity; suits most intraday traders.", "Giữ nguyên tham số gốc của hệ thống; xu hướng khung lớn đủ dài để phần Runner chạy theo.": "Keeps the system’s original parameters; higher-timeframe trends run long enough for the Runner to follow.", "Ưu tiên giữ tài khoản trước giới hạn lỗ ngày: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn.": "Protecting the account comes before the daily loss limit: risk per trade is easy to control, with fewer but more selective trades.", "Crypto Futures (Perpetual)": "Crypto futures (perpetual)"};(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang")}catch(e){}var c=(document.cookie.match(/(?:^|; )kz-lang=(en|vi)/)||[])[1],s=null;try{s=localStorage.getItem("kz-lang")}catch(e){}var l=(q==="en"||q==="vi")?q:(c||s);if(l!=="en"&&l!=="vi"){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"]).map(function(x){return String(x).toLowerCase()});l=(/^Asia\/(Ho_Chi_Minh|Saigon)$/.test(tz)||ls.some(function(x){return x.indexOf("vi")===0}))?"vi":"en"}document.documentElement.lang=l;})();window.kzT=function(s){return (document.documentElement.lang==="en"&&window.KZ_JS_EN[s])||s};</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>KENVINZONE AURORA PRO · Chỉ báo xu hướng với BREAK, SUNNY và SMC cho TradingView</title>
+<meta content="AURORA PRO: hệ thống giao dịch theo xu hướng trên TradingView với setup BREAK, SUNNY và SMC thuận xu hướng, chấm điểm nhiều tầng, kế hoạch lệnh rõ ràng và thống kê minh bạch." name="description"/>
+<meta content="KENVINZONE AURORA PRO" property="og:title"/>
+<meta content="Biết vì sao một setup đáng vào lệnh. BREAK, SUNNY và SMC thuận xu hướng, điểm chất lượng riêng cho từng setup, thống kê minh bạch." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="#0E1626" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
-/* ===== HERO redesign ===== */
-.kzh-title{margin:0 0 14px;font-weight:800;letter-spacing:-.025em;line-height:1.06}
-.kzh-l1{display:block;color:#fff;font-size:clamp(38px,5.6vw,64px)}
-.kzh-l2{display:block;color:#D6E4F5;font-size:clamp(26px,3.6vw,42px);font-weight:700;margin-top:6px;letter-spacing:-.02em}
-.kzh-hl{background:linear-gradient(100deg,#38D5E7 10%,#7DF9D2 55%,#38D5E7 90%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(56,213,231,.35))}
-.kzh-tag{margin:0 0 22px;font-weight:800;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.01em;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
-.kzh-grad{background:linear-gradient(90deg,#38D5E7,#5EEAD4);-webkit-background-clip:text;background-clip:text;color:transparent}
-.kzh-grad.kzh-grad2{background-image:linear-gradient(90deg,#FCD34D,#F3BE62 60%,#FB923C)}
-header nav a{white-space:nowrap}
-.kzh-dot{color:#334155}
-.kzh-desc{max-width:580px;margin:0 0 20px;font-size:clamp(15.5px,1.35vw,17.5px);line-height:1.72;color:#A9B8CC;padding-left:16px;border-left:3px solid rgba(56,213,231,.45)}
-.kzh-brand{color:#fff;font-weight:800;letter-spacing:.01em}
-.kzh-c1{color:#38D5E7;font-weight:700}.kzh-c2{color:#F3BE62;font-weight:700}.kzh-c3{color:#5EEAD4;font-weight:700}
-.kzh-chips{list-style:none;padding:0;margin:0 0 30px;display:flex;flex-wrap:wrap;gap:8px}
-.kzh-chips li{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;color:#E2E8F0;background:linear-gradient(180deg,rgba(56,213,231,.10),rgba(56,213,231,.03));border:1px solid rgba(56,213,231,.28)}
-.kzh-chips li span{font-size:14px}
-@media (max-width:640px){.kzh-desc{padding-left:12px}.kzh-chips li{font-size:12px;padding:6px 11px}.kzh-tag{flex-direction:column;align-items:flex-start;gap:2px}.kzh-dot{display:none}header a p{display:none}}
-@media (max-width:420px){header a > div:first-child{display:none}}
+:root{
+  --bg:#0E1626;
+  --bg-2:#121D31;
+  --panel:#17233C;
+  --line:#26344F;
+  --text:#E6EDF5;
+  --muted:#97A7BC;
+  --buy:#34B8D4;
+  --sell:#D0306E;
+  --tier:#B388FF;
+  --amber:#F3BE62;
+  --win:#1FCB8E;
+  --loss:#FF4D6A;
+  --font:'Be Vietnam Pro','Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--buy);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+img,svg{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.12}
+h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:14px}
+h3{font-size:20px;letter-spacing:-.01em;margin-bottom:8px}
+p{margin:0 0 14px}
+.lede{color:var(--kz-text2);font-size:18.5px;max-width:62ch}
+.muted{color:var(--muted)}
+strong{color:var(--kz-strong)}
+
+/* Header */
+.top{position:sticky;top:0;z-index:20;background:rgba(14,22,38,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+.logo b{color:var(--buy);font-weight:800}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+.nav a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:15.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit}
+.btn.primary{background:var(--buy);color:#06131D}
+.btn.primary:hover{background:#4FC7DF}
+.btn.ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn.ghost:hover{border-color:var(--kz-line2);background:var(--bg-2)}
+.top .btn{padding:9px 16px;font-size:14.5px}
+
+/* Hero */
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,64px);margin-bottom:20px}
+.hero .lede{margin-bottom:28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.fineprint{font-size:14px;color:var(--muted);margin:0}
+
+/* Hero instrument: chart + evidence stack */
+.instrument{margin:0;position:relative;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#111C31,#0C1424);overflow:hidden}
+.instrument svg{display:block;width:100%;height:auto}
+.stack{margin:0 14px 14px;background:rgba(18,29,49,.94);border:1px solid var(--kz-line2);border-radius:12px;padding:12px 16px 10px;font-size:13.5px;display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.stack .hd,.stack .verdict{grid-column:1/-1}
+.stack .hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;font-weight:700}
+.stack .hd span{color:var(--buy)}
+.layer{display:grid;grid-template-columns:92px 1fr 26px;align-items:center;gap:8px;margin:6px 0;color:var(--kz-text2)}
+.bar{height:7px;border-radius:4px;background:#22314C;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--v);border-radius:4px;background:var(--c);transform-origin:left;animation:fill .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d)}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.layer b{font-variant-numeric:tabular-nums;text-align:right;color:#fff;font-weight:700}
+.verdict{margin-top:9px;padding-top:9px;border-top:1px solid var(--kz-line2);display:flex;justify-content:space-between;font-weight:700}
+.verdict span:last-child{color:var(--win)}
+
+/* Sections */
+section{padding:84px 0}
+.band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{max-width:720px;margin-bottom:40px}
+
+/* Setups */
+.setups{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:18px}
+.setup{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--bg)}
+.setup .sig{display:inline-block;font-weight:700;font-size:14px;padding:5px 10px;border-radius:7px;margin-bottom:16px}
+.sig.b{background:rgba(52,184,212,.78);color:#05121C}
+.sig.s{background:rgba(52,184,212,.38);color:#fff}
+.sig.m{background:rgba(179,136,255,.32);color:#fff}
+.setup p{color:var(--kz-text2);font-size:15.5px}
+.setup.smc{border-color:#3B3466;background:linear-gradient(180deg,rgba(179,136,255,.07),transparent 60%),var(--bg)}
+.smc ul{list-style:none;padding:0;margin:12px 0 0}
+.smc li{padding:10px 0;border-top:1px solid var(--line);font-size:15px;color:var(--kz-text2)}
+.smc li strong{display:block;margin-bottom:2px}
+.shared{margin-top:22px;color:var(--muted);font-size:15.5px;max-width:78ch}
+
+/* Layers (a real hierarchy) */
+.layers{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
+.ladder{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.ladder li{position:relative;padding:0 0 26px 26px}
+.ladder li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--c,var(--buy));box-shadow:0 0 0 4px var(--bg)}
+.band .ladder li::before{box-shadow:0 0 0 4px var(--bg-2)}
+.ladder h3{font-size:18px;margin-bottom:4px}
+.ladder p{color:var(--kz-text2);font-size:15.5px;margin:0}
+.tip{border:1px solid var(--line);border-radius:14px;background:var(--bg);padding:20px 22px;font-size:14.5px}
+.tip .t{font-weight:700;margin-bottom:10px}
+.tip pre{margin:0;white-space:pre-wrap;font-family:var(--font);color:var(--kz-text2);line-height:1.75}
+.tip .note{margin-top:14px;color:var(--muted);font-size:14px}
+
+/* Presets (interactive) */
+.preset{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:36px;align-items:start}
+fieldset{border:0;padding:0;margin:0 0 22px}
+legend{font-weight:700;margin-bottom:10px;font-size:15.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-block;padding:9px 14px;border-radius:999px;border:1px solid var(--line);color:var(--kz-text2);font-size:14.5px;font-weight:600;cursor:pointer;background:var(--bg)}
+.chips input:checked+span{background:var(--buy);border-color:var(--buy);color:#06131D}
+.chips input:focus-visible+span{outline:2px solid var(--amber);outline-offset:2px}
+.result{border:1px solid var(--line);border-radius:14px;background:var(--bg);overflow:hidden}
+.result .rh{padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700}
+.result .rh small{display:block;font-weight:500;color:var(--muted);font-size:14px;margin-top:2px}
+.result dl{margin:0;display:grid;grid-template-columns:1fr auto}
+.result dt,.result dd{margin:0;padding:10px 20px;border-bottom:1px solid var(--kz-line);font-size:15px}
+.result dt{color:var(--kz-text2)}
+.result dd{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.result dt:nth-last-of-type(1),.result dd:last-of-type{border-bottom:0}
+.result .why{padding:14px 20px;background:var(--bg-2);color:var(--kz-text2);font-size:14.5px;border-top:1px solid var(--line)}
+
+/* Transparency */
+.trans{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.dash{border:2px solid var(--buy);border-radius:10px;overflow:hidden;font-size:14px;background:#0F1729}
+.dash .r{display:grid;grid-template-columns:1.15fr 1fr 1.1fr;border-bottom:1px solid #22314C}
+.dash .r:last-child{border-bottom:0}
+.dash span{padding:7px 11px}
+.dash .t{grid-template-columns:1fr;background:rgba(52,184,212,.22);color:var(--buy);font-weight:700}
+.dash .k{color:var(--buy);font-weight:600}
+.dash .g{background:rgba(31,203,142,.26)}
+.dash .l{background:rgba(255,77,106,.22)}
+.dash .n{background:rgba(120,123,134,.18)}
+.cap{font-size:13.5px;color:var(--muted);margin-top:10px}
+.points{list-style:none;padding:0;margin:0}
+.points li{padding:14px 0;border-top:1px solid var(--line)}
+.points li:first-child{border-top:0;padding-top:0}
+.points strong{display:block;margin-bottom:2px}
+.points span{color:var(--kz-text2);font-size:15.5px}
+
+/* Plans */
+.plans{width:100%;border-collapse:separate;border-spacing:0;font-size:15.5px}
+.plans-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+.plans th,.plans td{padding:13px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.plans thead th{background:var(--bg);font-size:16px}
+.plans thead th small{display:block;font-weight:500;color:var(--muted);font-size:13.5px;margin-top:2px}
+.plans td:first-child{color:var(--kz-text2)}
+.plans tr:last-child td{border-bottom:0}
+.plans .pro{background:rgba(52,184,212,.08)}
+.plans thead .pro{background:rgba(52,184,212,.18);color:#fff}
+.yes{color:var(--win);font-weight:700}
+.no{color:#5E6F88}
+.plans .lnk td{padding-top:16px}
+
+/* Automation */
+.auto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+pre.code{margin:0;background:#0A1120;border:1px solid var(--line);border-radius:12px;padding:18px;font-size:13.5px;line-height:1.65;color:#CFE3F0;overflow:auto;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.events{list-style:none;padding:0;margin:16px 0 0;font-size:15px;color:var(--kz-text2)}
+.events li{padding:6px 0}
+.events code{color:#fff;font-weight:600;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px}
+
+/* FAQ */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--buy);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{color:var(--kz-text2);margin:0 0 18px}
+
+/* Signup */
+.signup{text-align:left}
+.signup .box{border:1px solid #2E4366;border-radius:18px;padding:40px;background:linear-gradient(135deg,rgba(52,184,212,.12),rgba(179,136,255,.08) 70%),var(--bg-2);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 14px 40px;color:var(--kz-text2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--buy);color:#06131D;font-weight:800;display:grid;place-items:center;font-size:14px}
+.todo{color:var(--amber);font-size:13.5px}
+
+footer{border-top:1px solid var(--line);padding:36px 0 56px;color:var(--muted);font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
+footer a{color:var(--kz-text2)}
+.lines{display:flex;flex-wrap:wrap;gap:8px 18px}
+
+@media (max-width:980px){
+  .nav{display:none}
+  .hero .wrap,.layers,.preset,.trans,.auto,.signup .box,footer .wrap{grid-template-columns:1fr}
+  .setups{grid-template-columns:1fr}
+  .stack{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding:40px 0 48px}
+  .signup .box{padding:26px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .top .btn{display:none}
+  body{font-size:16px}
+}
+
+.instrument,.instrument .stack,.dash{color:#E6EEF8}.instrument .layer{color:#C9D5E4}.instrument .layer b{color:#fff}
 </style>
 <script>/* KZ theme: dùng chung cho kenvinzone.com và aurora.kenvinzone.com */(function(){try{var m=document.cookie.match(/(?:^|; )kz-theme=(light|dark)/),t=m?m[1]:localStorage.getItem("kz-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
 <style id="kz-unified">
@@ -158,1418 +290,404 @@ html[data-theme="light"] .kz-aurora i{mix-blend-mode:multiply}
 .kz-sheen::after,.kz-cta::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s ease;pointer-events:none}
 .kz-sheen:hover::after,.kz-cta:hover::after{left:130%}
 @media (prefers-reduced-motion:reduce){.kz-aurora i{animation:none}.kz-sheen::after,.kz-cta::after{display:none}}
-:root{--kz-c950:7 15 29;--kz-c900:10 20 38;--kz-c850:16 29 53;--kz-c800:21 37 66;--kz-c750:30 46 77;--kz-c700:42 61 98;--kz-white:255 255 255;--kz-sltext:242 246 252;--kz-sl300:201 213 228;--kz-slmuted:165 180 202;--kz-slsubtle:143 163 191;--kz-cyan:56 213 231;--kz-gold:243 190 98;--kz-em4:52 211 153;--kz-em3:110 231 183;--kz-rose4:251 113 133;--kz-p2:233 213 255;--kz-p3:216 180 254;}
-html[data-theme="light"]{--kz-c950:235 240 247;--kz-c900:245 248 252;--kz-c850:255 255 255;--kz-c800:243 246 251;--kz-c750:216 225 238;--kz-c700:195 207 224;--kz-white:14 27 48;--kz-sltext:14 27 48;--kz-sl300:51 71 96;--kz-slmuted:72 90 115;--kz-slsubtle:90 108 134;--kz-cyan:14 143 168;--kz-gold:168 106 6;--kz-em4:5 135 95;--kz-em3:5 120 85;--kz-rose4:200 40 80;--kz-p2:109 79 208;--kz-p3:109 79 208;}
-.bg-space-950{background-color:rgb(var(--kz-c950)/var(--tw-bg-opacity,1))}.border-space-950{border-color:rgb(var(--kz-c950)/var(--tw-border-opacity,1))}
-.bg-space-950\/10{background-color:rgb(var(--kz-c950)/.10)}.bg-space-950\/20{background-color:rgb(var(--kz-c950)/.20)}.bg-space-950\/30{background-color:rgb(var(--kz-c950)/.30)}.bg-space-950\/40{background-color:rgb(var(--kz-c950)/.40)}.bg-space-950\/50{background-color:rgb(var(--kz-c950)/.50)}.bg-space-950\/60{background-color:rgb(var(--kz-c950)/.60)}.bg-space-950\/70{background-color:rgb(var(--kz-c950)/.70)}.bg-space-950\/80{background-color:rgb(var(--kz-c950)/.80)}.bg-space-950\/90{background-color:rgb(var(--kz-c950)/.90)}.bg-space-950\/95{background-color:rgb(var(--kz-c950)/.95)}.from-space-950{--tw-gradient-from:rgb(var(--kz-c950)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c950)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-950{--tw-gradient-to:rgb(var(--kz-c950)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c950)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-950{--tw-gradient-to:rgb(var(--kz-c950)) var(--tw-gradient-to-position)}
-.bg-space-900{background-color:rgb(var(--kz-c900)/var(--tw-bg-opacity,1))}.border-space-900{border-color:rgb(var(--kz-c900)/var(--tw-border-opacity,1))}
-.bg-space-900\/10{background-color:rgb(var(--kz-c900)/.10)}.bg-space-900\/20{background-color:rgb(var(--kz-c900)/.20)}.bg-space-900\/30{background-color:rgb(var(--kz-c900)/.30)}.bg-space-900\/40{background-color:rgb(var(--kz-c900)/.40)}.bg-space-900\/50{background-color:rgb(var(--kz-c900)/.50)}.bg-space-900\/60{background-color:rgb(var(--kz-c900)/.60)}.bg-space-900\/70{background-color:rgb(var(--kz-c900)/.70)}.bg-space-900\/80{background-color:rgb(var(--kz-c900)/.80)}.bg-space-900\/90{background-color:rgb(var(--kz-c900)/.90)}.bg-space-900\/95{background-color:rgb(var(--kz-c900)/.95)}.from-space-900{--tw-gradient-from:rgb(var(--kz-c900)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c900)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-900{--tw-gradient-to:rgb(var(--kz-c900)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c900)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-900{--tw-gradient-to:rgb(var(--kz-c900)) var(--tw-gradient-to-position)}
-.bg-space-850{background-color:rgb(var(--kz-c850)/var(--tw-bg-opacity,1))}.border-space-850{border-color:rgb(var(--kz-c850)/var(--tw-border-opacity,1))}
-.bg-space-850\/10{background-color:rgb(var(--kz-c850)/.10)}.bg-space-850\/20{background-color:rgb(var(--kz-c850)/.20)}.bg-space-850\/30{background-color:rgb(var(--kz-c850)/.30)}.bg-space-850\/40{background-color:rgb(var(--kz-c850)/.40)}.bg-space-850\/50{background-color:rgb(var(--kz-c850)/.50)}.bg-space-850\/60{background-color:rgb(var(--kz-c850)/.60)}.bg-space-850\/70{background-color:rgb(var(--kz-c850)/.70)}.bg-space-850\/80{background-color:rgb(var(--kz-c850)/.80)}.bg-space-850\/90{background-color:rgb(var(--kz-c850)/.90)}.bg-space-850\/95{background-color:rgb(var(--kz-c850)/.95)}.from-space-850{--tw-gradient-from:rgb(var(--kz-c850)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c850)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-850{--tw-gradient-to:rgb(var(--kz-c850)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c850)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-850{--tw-gradient-to:rgb(var(--kz-c850)) var(--tw-gradient-to-position)}
-.bg-space-800{background-color:rgb(var(--kz-c800)/var(--tw-bg-opacity,1))}.border-space-800{border-color:rgb(var(--kz-c800)/var(--tw-border-opacity,1))}
-.bg-space-800\/10{background-color:rgb(var(--kz-c800)/.10)}.bg-space-800\/20{background-color:rgb(var(--kz-c800)/.20)}.bg-space-800\/30{background-color:rgb(var(--kz-c800)/.30)}.bg-space-800\/40{background-color:rgb(var(--kz-c800)/.40)}.bg-space-800\/50{background-color:rgb(var(--kz-c800)/.50)}.bg-space-800\/60{background-color:rgb(var(--kz-c800)/.60)}.bg-space-800\/70{background-color:rgb(var(--kz-c800)/.70)}.bg-space-800\/80{background-color:rgb(var(--kz-c800)/.80)}.bg-space-800\/90{background-color:rgb(var(--kz-c800)/.90)}.bg-space-800\/95{background-color:rgb(var(--kz-c800)/.95)}.from-space-800{--tw-gradient-from:rgb(var(--kz-c800)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c800)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-800{--tw-gradient-to:rgb(var(--kz-c800)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c800)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-800{--tw-gradient-to:rgb(var(--kz-c800)) var(--tw-gradient-to-position)}
-.bg-space-750{background-color:rgb(var(--kz-c750)/var(--tw-bg-opacity,1))}.border-space-750{border-color:rgb(var(--kz-c750)/var(--tw-border-opacity,1))}
-.bg-space-750\/10{background-color:rgb(var(--kz-c750)/.10)}.bg-space-750\/20{background-color:rgb(var(--kz-c750)/.20)}.bg-space-750\/30{background-color:rgb(var(--kz-c750)/.30)}.bg-space-750\/40{background-color:rgb(var(--kz-c750)/.40)}.bg-space-750\/50{background-color:rgb(var(--kz-c750)/.50)}.bg-space-750\/60{background-color:rgb(var(--kz-c750)/.60)}.bg-space-750\/70{background-color:rgb(var(--kz-c750)/.70)}.bg-space-750\/80{background-color:rgb(var(--kz-c750)/.80)}.bg-space-750\/90{background-color:rgb(var(--kz-c750)/.90)}.bg-space-750\/95{background-color:rgb(var(--kz-c750)/.95)}.from-space-750{--tw-gradient-from:rgb(var(--kz-c750)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c750)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-750{--tw-gradient-to:rgb(var(--kz-c750)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c750)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-750{--tw-gradient-to:rgb(var(--kz-c750)) var(--tw-gradient-to-position)}
-.bg-space-700{background-color:rgb(var(--kz-c700)/var(--tw-bg-opacity,1))}.border-space-700{border-color:rgb(var(--kz-c700)/var(--tw-border-opacity,1))}
-.bg-space-700\/10{background-color:rgb(var(--kz-c700)/.10)}.bg-space-700\/20{background-color:rgb(var(--kz-c700)/.20)}.bg-space-700\/30{background-color:rgb(var(--kz-c700)/.30)}.bg-space-700\/40{background-color:rgb(var(--kz-c700)/.40)}.bg-space-700\/50{background-color:rgb(var(--kz-c700)/.50)}.bg-space-700\/60{background-color:rgb(var(--kz-c700)/.60)}.bg-space-700\/70{background-color:rgb(var(--kz-c700)/.70)}.bg-space-700\/80{background-color:rgb(var(--kz-c700)/.80)}.bg-space-700\/90{background-color:rgb(var(--kz-c700)/.90)}.bg-space-700\/95{background-color:rgb(var(--kz-c700)/.95)}.from-space-700{--tw-gradient-from:rgb(var(--kz-c700)) var(--tw-gradient-from-position);--tw-gradient-to:rgb(var(--kz-c700)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.via-space-700{--tw-gradient-to:rgb(var(--kz-c700)/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgb(var(--kz-c700)) var(--tw-gradient-via-position),var(--tw-gradient-to)}.to-space-700{--tw-gradient-to:rgb(var(--kz-c700)) var(--tw-gradient-to-position)}
-.text-white{color:rgb(var(--kz-white)/var(--tw-text-opacity,1))}.text-slate-text{color:rgb(var(--kz-sltext)/var(--tw-text-opacity,1))}.text-slate-300{color:rgb(var(--kz-sl300)/var(--tw-text-opacity,1))}.text-slate-muted{color:rgb(var(--kz-slmuted)/var(--tw-text-opacity,1))}.text-slate-subtle{color:rgb(var(--kz-slsubtle)/var(--tw-text-opacity,1))}.text-aurora-cyan{color:rgb(var(--kz-cyan)/var(--tw-text-opacity,1))}.text-aurora-gold{color:rgb(var(--kz-gold)/var(--tw-text-opacity,1))}.text-emerald-400{color:rgb(var(--kz-em4)/var(--tw-text-opacity,1))}.text-emerald-300{color:rgb(var(--kz-em3)/var(--tw-text-opacity,1))}.text-rose-400{color:rgb(var(--kz-rose4)/var(--tw-text-opacity,1))}.text-purple-200{color:rgb(var(--kz-p2)/var(--tw-text-opacity,1))}.text-purple-300{color:rgb(var(--kz-p3)/var(--tw-text-opacity,1))}
 
-/* STANDARD: các khối dùng màu cố định */
-html[data-theme="light"] body{background:var(--kz-ink);color:var(--kz-text)}
-html[data-theme="light"] .kzh-l1,html[data-theme="light"] .kzh-brand{color:var(--kz-text)}
-html[data-theme="light"] .kzh-l2{color:var(--kz-text2)}
-html[data-theme="light"] .kzh-desc{color:var(--kz-text2)}
-html[data-theme="light"] .kzh-hl{background-image:linear-gradient(100deg,#0284C7,#0E8FA8 50%,#0D9488);filter:none}
-html[data-theme="light"] .kzh-grad{background-image:linear-gradient(90deg,#0E8FA8,#0F766E)}
-html[data-theme="light"] .kzh-grad.kzh-grad2{background-image:linear-gradient(90deg,#B45309,#D97706)}
-html[data-theme="light"] .kzh-c1{color:#0E8FA8}html[data-theme="light"] .kzh-c2{color:#A86A06}html[data-theme="light"] .kzh-c3{color:#05875F}
-html[data-theme="light"] .kzh-chips li{color:var(--kz-text);background:#FFFFFF;border-color:rgba(14,143,168,.35)}
-html[data-theme="light"] .kzc{background:var(--kz-deep);border-top-color:var(--kz-line)}
-html[data-theme="light"] .kzc h2,html[data-theme="light"] .kzc thead th,html[data-theme="light"] .kzc td:first-child,html[data-theme="light"] .kzc th:first-child{color:var(--kz-text)}
-html[data-theme="light"] .kzc .sub,html[data-theme="light"] .kzc thead th small{color:var(--kz-muted)}
-html[data-theme="light"] .kzc .tw{border-color:var(--kz-line)}
-html[data-theme="light"] .kzc th,html[data-theme="light"] .kzc td{color:var(--kz-text2);border-bottom-color:var(--kz-line)}
-html[data-theme="light"] .kzc thead th{background:var(--kz-surface2)}
-html[data-theme="light"] .kzc .y,html[data-theme="light"] .kzc thead .me,html[data-theme="light"] .kzc .go .cur{color:#0E8FA8}
-html[data-theme="light"] .bg-grid-mesh{background-image:radial-gradient(rgba(14,143,168,.10) 1px,transparent 1px)}
-html[data-theme="light"] .neon-subtle-border{box-shadow:0 1px 2px rgba(14,27,48,.05),0 10px 30px -14px rgba(14,27,48,.18)}
+/* PRO: ánh xạ bảng màu cũ về bảng màu chung */
+:root,html[data-theme="light"]{--bg:var(--kz-ink);--bg-2:var(--kz-deep);--panel:var(--kz-surface);--line:var(--kz-line);--text:var(--kz-text);--muted:var(--kz-muted);--buy:var(--kz-cyan);--amber:var(--kz-gold);--tier:var(--kz-violet)}
+.btn.primary{background:#38D5E7;color:#04131C}
+.btn.primary:hover{background:#6BE3F0;box-shadow:0 8px 26px -8px rgba(56,213,231,calc(var(--kz-glow)*1.2))}
+.setup,.layer-card,.plan,.faq details{transition:transform .25s,border-color .25s}
+.setup:hover{transform:translateY(-3px);border-color:var(--kz-line2)}
+html[data-theme="light"] .setup.smc{border-color:rgba(109,79,208,.35);background:linear-gradient(180deg,rgba(109,79,208,.06),transparent 60%),var(--bg)}
+html[data-theme="light"] .sig.s,html[data-theme="light"] .sig.m{color:#0E1B30}
+html[data-theme="light"] .setup,html[data-theme="light"] .band{box-shadow:none}
+
+.kz-lang{display:inline-flex;padding:3px;border:1px solid var(--kz-line);border-radius:10px;background:var(--kz-surface)}
+.kz-lang button{border:0;background:none;color:var(--kz-muted);font:700 13px/1 'Be Vietnam Pro',system-ui,sans-serif;padding:8px 10px;border-radius:7px;cursor:pointer;letter-spacing:.02em}
+.kz-lang button:hover{color:var(--kz-text)}
+.kz-lang button[aria-pressed="true"]{background:var(--kz-ink);color:var(--kz-cyan);box-shadow:inset 0 0 0 1px var(--kz-line)}
+@media (max-width:420px){.kz-lang button{padding:8px 7px}.kz-hd-in{gap:8px}}
+/* ảnh thực tế tự nạp */
+.kz-img-ok{cursor:zoom-in}
+.kz-img-ok img.kz-real{display:block;width:100%;height:100%;object-fit:var(--kz-fit,cover);object-position:top}
+img.kz-real.self{display:block;width:100%;height:auto;cursor:zoom-in}
+dialog.kz-lb{max-width:min(1200px,94vw);max-height:92vh;padding:0;border:1px solid var(--kz-line);border-radius:16px;background:var(--kz-deep);color:var(--kz-text)}
+dialog.kz-lb::backdrop{background:rgba(3,7,15,.82);backdrop-filter:blur(4px)}
+dialog.kz-lb img{display:block;max-width:100%;max-height:84vh;margin:0 auto}
+dialog.kz-lb .h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--kz-line);font-size:14px;color:var(--kz-muted)}
+dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text);border-radius:8px;padding:6px 10px;cursor:pointer}
 </style>
 </head>
-<body class="bg-space-900 text-slate-text font-sans antialiased overflow-x-hidden relative selection:bg-aurora-cyan selection:text-space-950">
-
-<!-- STICKY HEADER -->
+<body>
 <header class="kz-hd" id="kzHeader">
 <div class="kz-hd-in">
-<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" href="https://kenvinzone.com/"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#101D35"/><path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="7" r="2.4" fill="#F3BE62"/></svg><span>KenvinZone</span></a><a class="kz-prod std" href="#">AURORA <b>STANDARD</b></a></div>
-<nav aria-label="Menu chính" class="kz-nav" id="kzNav"><a href="#tinh-nang">Tính năng</a><a href="#giao-dien">Biểu đồ</a><a href="#quy-trinh">Cấp quyền</a><a href="#bang-gia">Bảng giá</a><a href="#so-sanh">So sánh gói</a><a href="#faq">FAQ</a><a href="huong-dan.html">Hướng dẫn</a><a href="pro/" class="x">AURORA PRO</a></nav>
-<div class="kz-hd-r"><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="kz-cta std" onclick="openRegisterModal('trial')" type="button">Dùng thử 3 ngày</button><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" id="kzMenu" type="button">☰</button></div>
+<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" data-i18n-aria="KenvinZone, ecosystem home" href="https://kenvinzone.com/"><svg aria-hidden="true" viewbox="0 0 28 28"><rect fill="#101D35" height="28" rx="8" width="28"></rect><path d="M4 21L10 15L15 19L24 7" fill="none" stroke="#38D5E7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></path><circle cx="24" cy="7" fill="#F3BE62" r="2.4"></circle></svg><span>KenvinZone</span></a><a class="kz-prod pro" href="#top">AURORA <b>PRO</b></a></div>
+<nav aria-label="Menu chính" class="kz-nav" data-i18n-aria="Main menu" id="kzNav"><a href="#setup">Setup</a><a data-i18n="k0" href="#cham-diem">Chấm điểm</a><a data-i18n="k1" href="#cai-dat">Cài đặt</a><a data-i18n="k2" href="#goi">So sánh gói</a><a data-i18n="k3" href="#hoi-dap">Hỏi đáp</a><a data-i18n="k4" href="huong-dan.html">Hướng dẫn</a><a href="../">AURORA STANDARD</a></nav>
+<div class="kz-hd-r"><div aria-label="Chọn ngôn ngữ" class="kz-lang" data-i18n-aria="Choose language" role="group"><button aria-pressed="true" data-lang="vi" lang="vi" type="button">VI</button><button aria-pressed="false" data-lang="en" lang="en" type="button">EN</button></div><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" data-i18n-aria="Toggle light / dark theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button><a class="kz-cta pro" data-i18n="k5" href="#dang-ky">Đăng ký dùng thử</a><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" data-i18n-aria="Open menu" id="kzMenu" type="button">☰</button></div>
 </div>
 </header>
-
-<!-- HERO SECTION -->
-<section class="kz-has-aurora relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
-  <!-- Subtle ambient glow -->
-  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-aurora-cyan/10 via-blue-500/5 to-transparent blur-[100px] pointer-events-none -z-10"></div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Left Column: Value Proposition -->
-      <div class="lg:col-span-6 text-left">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-space-850 border border-aurora-cyan/30 text-xs text-aurora-cyan mb-6 backdrop-blur-md">
-          <span class="w-2 h-2 rounded-full bg-aurora-cyan animate-pulse"></span>
-          <span class="font-semibold">Bản Quyền TradingView Invite-Only</span>
-          <span class="text-slate-subtle">· STANDARD Edition</span>
-        </div>
-
-        <!-- HERO HEADLINE (redesign) -->
-        <h1 class="kzh-title">
-          <span class="kzh-l1">Bắt nhịp <span class="kzh-hl">Breakout</span></span>
-          <span class="kzh-l2">đầu tiên của xu hướng mới</span>
-        </h1>
-        <p class="kzh-tag"><span class="kzh-grad">Vào lệnh có kế hoạch</span><span class="kzh-dot">·</span><span class="kzh-grad kzh-grad2">Rủi ro định sẵn</span></p>
-
-        <p class="kzh-desc">
-          <strong class="kzh-brand">KENVINZONE AURORA STANDARD</strong> là hệ thống giao dịch theo xu hướng trên TradingView:
-          tự nhận diện <span class="kzh-c1">tín hiệu vào lệnh</span>, vẽ sẵn <span class="kzh-c2">Entry · Stoploss · Chốt lời</span>
-          và <span class="kzh-c3">thống kê hiệu quả</span> ngay trên biểu đồ, giúp bạn giao dịch kỷ luật, không theo cảm xúc.
-        </p>
-
-        <ul class="kzh-chips" aria-label="Thành phần chính">
-          <li><span>⚡</span>1st / 2nd Break</li>
-          <li><span>☀</span>SUNNY tiếp diễn</li>
-          <li><span>🛡</span>Super Trailing Stop</li>
-          <li><span>🎯</span>Kế hoạch Entry – SL – TP</li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
-          <button onclick="openRegisterModal('trial')" class="btn-brand-primary kz-sheen text-space-950 font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-glow-cyan flex items-center justify-center gap-2 group">
-            <span>Dùng Thử 3 Ngày Miễn Phí</span>
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <button id="hero-video-btn" onclick="goToSlide(3)" class="bg-space-850 hover:bg-space-800 text-slate-text border border-space-750 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2">
-            <svg class="w-4 h-4 text-aurora-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <span>Xem Video Demo 90 Giây</span>
-          </button>
-        </div>
-
-        <!-- Clarification Micro-points -->
-        <div class="pt-5 border-t border-space-800 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-muted font-mono">
-          <div class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Xác nhận khi nến đóng cửa (No-Repaint)</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Kế hoạch R:R 1:1 & 1:2 định sẵn</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <svg class="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Hỗ trợ tài khoản TradingView Miễn phí</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: Interactive Multi-Slide / Video Showcase -->
-      <div class="lg:col-span-6" id="giao-dien">
-        <div class="bg-space-950 rounded-2xl border border-aurora-cyan/30 overflow-hidden shadow-2xl relative" id="hero-slider-container">
-          
-          <!-- Terminal Titlebar & Slide Tabs -->
-          <div class="bg-space-850 px-3 sm:px-4 py-2.5 border-b border-space-750 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-            <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-white font-bold text-[11px] sm:text-xs" id="slide-ticker-caption">XAUUSD · 15M · 1st BREAK</span>
-            </div>
-            
-            <!-- Quick Slide Select Pills -->
-            <div class="flex items-center gap-1 bg-space-900 p-1 rounded-lg border border-space-750">
-              <button onclick="goToSlide(0)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-cyan bg-space-800 transition" id="tab-0">⚡ 1st Break</button>
-              <button onclick="goToSlide(1)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition" id="tab-1">☀ SUNNY</button>
-              <button onclick="goToSlide(2)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition" id="tab-2">📊 Dashboard</button>
-              <button onclick="goToSlide(3)" class="slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-gold hover:text-white transition flex items-center gap-1" id="tab-3">
-                <span class="w-1.5 h-1.5 rounded-full bg-aurora-gold"></span>
-                <span>Video Demo</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Slides Viewport Area -->
-          <div class="relative min-h-[350px] sm:min-h-[390px] bg-[#060A14] flex items-center justify-center p-2 sm:p-4">
-            
-            <!-- SLIDE 0: 1st Break BUY Setup (Accurate Geometry Diagram) -->
-            <div class="hero-slide active w-full" id="slide-0">
-              <div class="relative">
-                <svg viewBox="0 0 860 380" class="w-full h-auto block rounded-lg" role="img" aria-label="Minh họa cấu trúc setup 1st Break BUY">
-                  <defs>
-                    <filter id="neon-glow" x="-20%" y="-40%" width="140%" height="180%">
-                      <feGaussianBlur stdDeviation="4" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                    <linearGradient id="cloud-ribbon" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#38D5E7" stop-opacity="0.3"/>
-                      <stop offset="100%" stop-color="#38D5E7" stop-opacity="0.02"/>
-                    </linearGradient>
-                  </defs>
-
-                  <line x1="0" y1="70" x2="860" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                  <line x1="0" y1="130" x2="860" y2="130" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                  <line x1="0" y1="190" x2="860" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                  <line x1="0" y1="250" x2="860" y2="250" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-
-                  <rect x="400" y="0" width="16" height="380" fill="#38D5E7" opacity="0.12"/>
-                  <rect x="408" y="70" width="280" height="120" fill="rgba(16, 185, 129, 0.14)" stroke="#10B981" stroke-width="1" stroke-opacity="0.5" rx="3"/>
-                  <rect x="408" y="190" width="280" height="60" fill="rgba(239, 68, 68, 0.12)" stroke="#EF4444" stroke-width="1" stroke-opacity="0.5" rx="3"/>
-
-                  <line x1="408" y1="70" x2="688" y2="70" stroke="#10B981" stroke-width="1.5"/>
-                  <line x1="408" y1="130" x2="688" y2="130" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 4"/>
-                  <line x1="408" y1="190" x2="688" y2="190" stroke="#F2F6FC" stroke-width="1.5" stroke-dasharray="3 3"/>
-                  <line x1="408" y1="250" x2="688" y2="250" stroke="#EF4444" stroke-width="1.5"/>
-
-                  <path d="M20 100 H110 V120 H190 V140 H280 V155 H380" fill="none" stroke="#D0306E" stroke-width="2.5" filter="url(#neon-glow)"/>
-                  <circle cx="20" cy="100" r="5" fill="#D0306E"/>
-
-                  <path d="M408 250 H500 V230 H560 V205 H620 V185 H710 V165 H840 V180 H710 V200 H620 V220 H560 V245 H500 V265 H408 Z" fill="url(#cloud-ribbon)"/>
-                  <path d="M408 250 H500 V230 H560 V205 H620 V185 H710 V165 H840" fill="none" stroke="#38D5E7" stroke-width="2.5" filter="url(#neon-glow)"/>
-                  <circle cx="408" cy="250" r="5.5" fill="#38D5E7"/>
-
-                  <g stroke-width="1.5">
-                    <g stroke="#EF4444" fill="#EF4444">
-                      <line x1="60" y1="120" x2="60" y2="170"/><rect x="55" y1="130" width="10" height="30"/>
-                      <line x1="120" y1="135" x2="120" y2="185"/><rect x="115" y1="142" width="10" height="32"/>
-                      <line x1="180" y1="150" x2="180" y2="205"/><rect x="175" y="158" width="10" height="35"/>
-                      <line x1="250" y1="170" x2="250" y2="225"/><rect x="245" y="178" width="10" height="35"/>
-                    </g>
-                    <g stroke="#94A3B8" fill="#94A3B8">
-                      <line x1="310" y1="185" x2="310" y2="230"/><rect x="305" y="195" width="10" height="24"/>
-                      <line x1="360" y1="180" x2="360" y2="225"/><rect x="355" y="190" width="10" height="22"/>
-                    </g>
-                    <g stroke="#F3BE62" fill="#F3BE62">
-                      <line x1="408" y1="175" x2="408" y2="220" stroke-width="2"/>
-                      <rect x="402" y="185" width="12" height="25" rx="2" filter="url(#neon-glow)"/>
-                    </g>
-                    <g stroke="#10B981" fill="#10B981">
-                      <line x1="450" y1="165" x2="450" y2="210"/><rect x="445" y="172" width="10" height="28"/>
-                      <line x1="500" y1="145" x2="500" y2="190"/><rect x="495" y="152" width="10" height="28"/>
-                      <line x1="560" y1="125" x2="560" y2="170"/><rect x="555" y="132" width="10" height="28"/>
-                      <line x1="620" y1="95" x2="620" y2="145"/><rect x="615" y="105" width="10" height="30"/>
-                      <line x1="680" y1="65" x2="680" y2="115"/><rect x="675" y="70" width="10" height="32"/>
-                    </g>
-                  </g>
-
-                  <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
-                    <rect x="290" y="60" width="110" height="20" rx="3" fill="#10B981"/>
-                    <text x="298" y="74" fill="#06231A">🎯 TP2 · 2R (+0.46%)</text>
-
-                    <rect x="290" y="120" width="110" height="20" rx="3" fill="rgba(16, 185, 129, 0.4)"/>
-                    <text x="298" y="134" fill="#FFFFFF">🎯 TP1 · 1R (+0.23%)</text>
-
-                    <rect x="290" y="180" width="110" height="20" rx="3" fill="#18253B"/>
-                    <text x="298" y="194" fill="#F2F6FC">▶ Entry 4161.02</text>
-
-                    <rect x="290" y="240" width="110" height="20" rx="3" fill="#EF4444"/>
-                    <text x="298" y="254" fill="#FFFFFF">🛑 F-SL (-0.23%)</text>
-
-                    <rect x="335" y="280" width="145" height="42" rx="5" fill="#0284C7"/>
-                    <text x="345" y="297" fill="#FFFFFF" font-size="12">⚡ 1st BREAK BUY</text>
-                    <text x="345" y="313" fill="#E0F2FE" font-size="11">GRADE A · SCORE 84</text>
-
-                    <rect x="560" y="35" width="128" height="22" rx="4" fill="#10B981"/>
-                    <text x="568" y="50" fill="#06231A" font-size="11">✓ +1.5R (TP1+TP2)</text>
-                  </g>
-                </svg>
-              </div>
-            </div>
-
-            <!-- SLIDE 1: SUNNY Setup (Tiếp diễn sóng xu hướng) -->
-            <div class="hero-slide w-full" id="slide-1">
-              <div class="relative bg-space-900 rounded-xl p-3 border border-space-800">
-                <svg viewBox="0 0 860 380" class="w-full h-auto block rounded-lg" role="img" aria-label="Minh họa setup SUNNY tiếp diễn">
-                  <line x1="0" y1="80" x2="860" y2="80" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                  <line x1="0" y1="150" x2="860" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                  <line x1="0" y1="220" x2="860" y2="220" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                  <line x1="0" y1="280" x2="860" y2="280" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-
-                  <!-- Uptrend Trailing line -->
-                  <path d="M20 290 H200 V270 H380 V250 H520 V220 H680 V190 H840" fill="none" stroke="#38D5E7" stroke-width="2.5"/>
-
-                  <!-- Base line -->
-                  <path d="M20 250 Q 220 220, 420 180 T 840 120" fill="none" stroke="#6366F1" stroke-width="2" stroke-dasharray="4 4"/>
-
-                  <!-- Fast line -->
-                  <path d="M20 270 Q 200 240, 360 210 T 420 170 T 840 100" fill="none" stroke="#F3BE62" stroke-width="2.5"/>
-
-                  <!-- SUNNY Target Plan Box -->
-                  <rect x="420" y="80" width="260" height="140" fill="rgba(16, 185, 129, 0.12)" stroke="#10B981" stroke-dasharray="4 4" rx="3"/>
-                  <rect x="420" y="220" width="260" height="60" fill="rgba(239, 68, 68, 0.1)" stroke="#EF4444" stroke-dasharray="4 4" rx="3"/>
-
-                  <!-- Candles showing Pullback & Bounce -->
-                  <g stroke-width="1.5">
-                    <!-- Rally 1 -->
-                    <g stroke="#10B981" fill="#10B981">
-                      <rect x="180" y="220" width="10" height="30"/><line x1="185" y1="210" x2="185" y2="260"/>
-                      <rect x="230" y="190" width="10" height="35"/><line x1="235" y1="180" x2="235" y2="235"/>
-                      <rect x="280" y="160" width="10" height="35"/><line x1="285" y1="150" x2="285" y2="205"/>
-                    </g>
-                    <!-- Pullback -->
-                    <g stroke="#EF4444" fill="#EF4444">
-                      <rect x="330" y="180" width="10" height="25"/><line x1="335" y1="170" x2="335" y2="215"/>
-                      <rect x="375" y="200" width="10" height="25"/><line x1="380" y1="190" x2="380" y2="235"/>
-                    </g>
-                    <!-- SUNNY Trigger Green Candle -->
-                    <g stroke="#10B981" fill="#10B981">
-                      <rect x="420" y="175" width="12" height="35" rx="1"/><line x1="426" y1="165" x2="426" y2="225" stroke-width="2"/>
-                      <rect x="480" y="140" width="10" height="35"/><line x1="485" y1="130" x2="485" y2="185"/>
-                      <rect x="540" y="110" width="10" height="35"/><line x1="545" y1="100" x2="545" y2="155"/>
-                      <rect x="610" y="80" width="10" height="35"/><line x1="615" y1="70" x2="615" y2="125"/>
-                    </g>
-                  </g>
-
-                  <!-- Labels -->
-                  <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
-                    <rect x="410" y="295" width="150" height="42" rx="5" fill="#F59E0B"/>
-                    <text x="422" y="313" fill="#06131F" font-size="12">☀ SUNNY BUY</text>
-                    <text x="422" y="328" fill="#1E293B" font-size="10">TÍN HIỆU TIẾP DIỄN SÓNG</text>
-
-                    <rect x="600" y="70" width="120" height="22" rx="4" fill="#10B981"/>
-                    <text x="608" y="85" fill="#041F14">🎯 TP2 HIT (+2R)</text>
-
-                    <rect x="290" y="30" width="220" height="24" rx="4" fill="#1E2538"/>
-                    <text x="300" y="46" fill="#93C5FD">Tín hiệu vào lệnh SUNNY xác nhận</text>
-                  </g>
-                </svg>
-              </div>
-            </div>
-
-            <!-- SLIDE 2: Dashboard HUD (Bảng thống kê định lượng & MTF) -->
-            <div class="hero-slide w-full" id="slide-2">
-              <div class="bg-space-900 rounded-xl p-4 sm:p-5 border border-aurora-cyan/30 text-xs font-mono">
-                <div class="bg-aurora-cyan/15 text-aurora-cyan font-bold p-2.5 rounded-lg text-center mb-3 text-xs sm:text-sm">
-                  ⚡ KENVINZONE AURORA STANDARD · DASHBOARD HUD PANEL
-                </div>
-                
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-3">
-                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750">
-                    <span class="text-slate-subtle block text-[10px]">XU HƯỚNG CHÍNH</span>
-                    <span class="text-emerald-400 font-bold text-sm">▲ UPTREND VỮNG</span>
-                  </div>
-                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750">
-                    <span class="text-slate-subtle block text-[10px]">SMART SCORE</span>
-                    <span class="text-aurora-cyan font-bold text-sm">BUY 84 / 100</span>
-                  </div>
-                  <div class="bg-space-950 p-2.5 rounded-lg border border-space-750 col-span-2 sm:col-span-1">
-                    <span class="text-slate-subtle block text-[10px]">ĐỒNG THUẬN MTF</span>
-                    <span class="text-emerald-400 font-bold text-sm">▲ 78% (KHUNG LỚN)</span>
-                  </div>
-                </div>
-
-                <div class="text-[10px] font-mono text-aurora-gold mb-1.5">⚠ Số liệu minh họa giao diện — không phải kết quả giao dịch</div>
-                <div class="space-y-1.5 text-[11px]">
-                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
-                    <span class="text-slate-muted">⚡ Setup 1st/2nd Break</span>
-                    <span class="text-emerald-400 font-bold">68 Lệnh · Winrate 58% · +8.6R</span>
-                  </div>
-                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
-                    <span class="text-slate-muted">☀ Tiếp diễn SUNNY</span>
-                    <span class="text-emerald-400 font-bold">24 Lệnh · Winrate 54% · +3.0R</span>
-                  </div>
-                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
-                    <span class="text-slate-muted">⛔ Bộ lọc lệnh ma (Filtered)</span>
-                    <span class="text-aurora-cyan font-bold">14 lệnh · -3.4R → bộ lọc chặn đúng</span>
-                  </div>
-                  <div class="flex items-center justify-between p-2 rounded bg-space-950/70 border border-space-800">
-                    <span class="text-slate-muted">🔊 Volume Engine Time-Of-Day</span>
-                    <span class="text-emerald-400 font-bold">RVOL 1.74 · Nguồn COMEX:GC1! ✓</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 3: Video Demo / Live Screen Record Slot (Ready for Video MP4 / YouTube embed) -->
-            <div class="hero-slide w-full" id="slide-3">
-              <div class="relative bg-space-900 rounded-xl overflow-hidden border border-aurora-gold/40 aspect-video flex flex-col items-center justify-center group shadow-glow-gold">
-                
-                <!-- Video Container (Tương lai chỉ cần thay src video hoặc nhúng iframe) -->
-                <!-- Ví dụ nếu có file video mp4 thật: <video controls class="w-full h-full object-cover" poster="..."><source src="video.mp4" type="video/mp4"></video> -->
-                <div class="absolute inset-0 bg-gradient-to-t from-space-950 via-space-900/80 to-transparent z-10 flex flex-col justify-end p-4 sm:p-6 pointer-events-none">
-                  <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-aurora-gold/20 text-aurora-gold border border-aurora-gold/40 text-[11px] font-mono font-bold w-fit mb-2">
-                    <span>🎬 VIDEO DEMO THỰC CHIẾN</span>
-                  </div>
-                  <h4 class="text-white font-bold text-sm sm:text-base">Xem Aurora STANDARD Bắt Sóng Breakout Trực Tiếp</h4>
-                  <p class="text-slate-muted text-xs">Cách chọn preset, theo dõi nến vàng và tự động hiển thị hộp R:R 1:2.</p>
-                </div>
-
-                <!-- Interactive Placeholder / Play Button -->
-                <div class="relative z-20 flex flex-col items-center gap-3">
-                  <button onclick="playDemoVideoPrompt()" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-aurora-gold text-space-950 flex items-center justify-center shadow-lg hover:scale-110 hover:bg-amber-300 transition cursor-pointer" aria-label="Bật video demo">
-                    <svg class="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                  </button>
-                  <span class="text-xs font-mono text-slate-300 bg-space-950/80 px-3 py-1 rounded-full border border-space-750">
-                    Bấm để xem video mô phỏng (90s)
-                  </span>
-                </div>
-
-                <!-- Simulated chart background pattern -->
-                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38D5E7_1px,transparent_1px)] [background-size:16px_16px]"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Bottom Navigation Bar: Prev/Next Buttons & Dots Indicator -->
-          <div class="px-4 py-2.5 bg-space-850 border-t border-space-750 flex items-center justify-between text-xs text-slate-muted font-mono">
-            <!-- Prev & Next Controls -->
-            <div class="flex items-center gap-2">
-              <button onclick="prevSlide()" class="p-1.5 rounded-lg bg-space-900 hover:bg-space-800 border border-space-750 text-white transition hover:border-aurora-cyan" aria-label="Slide trước">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-              </button>
-              <button onclick="nextSlide()" class="p-1.5 rounded-lg bg-space-900 hover:bg-space-800 border border-space-750 text-white transition hover:border-aurora-cyan" aria-label="Slide kế tiếp">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              </button>
-              <span id="slide-counter-badge" class="text-[11px] text-slate-subtle ml-1">1 / 4</span>
-            </div>
-
-            <!-- Slide Dots -->
-            <div class="flex items-center gap-1.5">
-              <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-aurora-cyan transition-all" id="dot-0" aria-label="Chuyển đến Slide 1"></button>
-              <button onclick="goToSlide(1)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-1" aria-label="Chuyển đến Slide 2"></button>
-              <button onclick="goToSlide(2)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-2" aria-label="Chuyển đến Slide 3"></button>
-              <button onclick="goToSlide(3)" class="w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400" id="dot-3" aria-label="Chuyển đến Slide 4"></button>
-            </div>
-
-            <!-- Caption / Tip -->
-            <span class="text-[10px] text-slate-subtle hidden sm:inline-block">Hình minh họa giao diện · Tự động chuyển slide</span>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 3 CORE VALUE PILLARS -->
-<section class="py-14 bg-space-950 border-y border-space-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="w-10 h-10 rounded-xl bg-aurora-cyan/15 text-aurora-cyan flex items-center justify-center font-bold mb-4">01</div>
-        <h3 class="text-lg font-bold text-white mb-2">Đọc Bối Cảnh Xu Hướng Đa Khung</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Theo dõi trạng thái mây và xu hướng chính trên 9 khung thời gian trong một Dashboard. Điểm đồng thuận chỉ tính các khung lớn hơn khung đang xem, lấy từ nến đã đóng để tránh nhiễu và vẽ lại.
-        </p>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="w-10 h-10 rounded-xl bg-aurora-gold/15 text-aurora-gold flex items-center justify-center font-bold mb-4">02</div>
-        <h3 class="text-lg font-bold text-white mb-2">Đánh Giá Setup Định Lượng</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Smart Score (0–100) chấm điểm từng cơ hội theo độ đồng thuận giữa xu hướng, động lượng và dòng tiền (Volume Engine), giúp bạn đánh giá mức độ đồng thuận của từng setup trước khi vào lệnh.
-        </p>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold mb-4">03</div>
-        <h3 class="text-lg font-bold text-white mb-2">Kế Hoạch R:R Định Sẵn</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Ngay khi nến tín hiệu đóng cửa, hộp lệnh tự động hiển thị Entry, F-SL cố định, TP1 (1R) và TP2 (2R). Giúp bạn tính toán khối lượng lot chuẩn xác trước khi vào lệnh.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CORE SYSTEM COMPONENTS -->
-<section id="tinh-nang" class="py-20 bg-space-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Cấu trúc công cụ</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">Các Thành Phần Tích Hợp Của Aurora STANDARD</p>
-      <p class="text-slate-muted mt-3 text-sm sm:text-base">Mọi thành phần logic được đóng gói gọn trong một chỉ báo duy nhất, tối ưu tài nguyên biểu đồ.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- Component 1 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Xương sống vào lệnh</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">1st & 2nd Break Setup</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Nhận diện nhịp phá vỡ đầu tiên ngay khi hệ thống xác nhận một chu kỳ xu hướng mới. Cú 2nd Break hỗ trợ bắt nhịp khi thị trường vừa quét thanh khoản. Ngưỡng lọc mặc định từ 50 điểm.
-        </p>
-      </div>
-
-      <!-- Component 2 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Nhịp tiếp diễn sóng</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">SUNNY Continuation</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Tín hiệu vào lệnh sau nhịp hồi, chỉ xuất hiện khi thuận xu hướng chính và giá nằm đúng phía đường Trailing Stoploss. Giúp bạn không bị lỡ nhịp khi xu hướng đã chạy một đoạn.
-        </p>
-      </div>
-
-      <!-- Component 3 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-emerald-400 uppercase mb-1">Bảo vệ vị thế</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Kenvin Super Trailing Stop</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Đường bậc thang tự thích ứng theo biến động thị trường. Phân biệt rõ: <strong>F-SL cố định</strong> dùng để quản trị rủi ro lúc mở lệnh, và <strong>T-SL động</strong> chạy tịnh tiến theo giá để chủ động bảo vệ lợi nhuận.
-        </p>
-      </div>
-
-      <!-- Component 4 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Định lượng điều kiện</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Smart Score & MTF Vote</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Chấm điểm từ 0–100 cho 2 chiều BUY/SELL. Phân hạng Grade A (≥80) và Grade B (≥70) cho các tín hiệu Smart. Đồng thuận đa khung chỉ lấy nến đã đóng từ khung lớn để đảm bảo ổn định.
-        </p>
-      </div>
-
-      <!-- Component 5 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Khối lượng thông minh</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Volume Engine Time-Of-Day</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          So sánh RVOL theo cùng khung giờ của 10 ngày trước, giảm sai lệch do mở phiên. Hỗ trợ kéo volume chuẩn tương lai (như COMEX:GC1! cho vàng) và cảnh báo hấp thụ (Absorption).
-        </p>
-      </div>
-
-      <!-- Component 6 -->
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Tích hợp mở rộng</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Cảnh Báo Chuẩn Hóa JSON Webhook</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Phát tín hiệu alert có cấu trúc JSON đầy đủ (Entry, SL, TP1, TP2, Score). Thuận tiện gửi thông báo về kênh Telegram, Discord cá nhân hoặc kết nối với các bộ cầu nối webhook ngoài.
-        </p>
-      </div>
-
-
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Vào lệnh thông minh</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Pullback Entry Cho Nến Break Dài</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Khi nến Break quá dài, hệ thống không vào lệnh ở đáy hay đỉnh cây nến mà đặt lệnh chờ tại mức hồi 50%. Stoploss gần hơn, TP1 và TP2 dễ đạt hơn. Lệnh tự hủy nếu giá chạy thẳng hoặc hết thời gian chờ.
-        </p>
-      </div>
-
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1">Giao dịch trên điện thoại</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Bảng LIVE Cho Mobile</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Một bảng gọn hiển thị xu hướng, setup đang chờ (1st Break / 2nd Break / SUNNY), khoảng cách tới điểm kích hoạt 🔥, các điều kiện lọc và lệnh đang chạy kèm R hiện tại.
-        </p>
-      </div>
-
-      <div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
-        <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1">Thiết lập 1 chạm</div>
-        <h3 class="text-lg font-bold text-white mb-2.5">Market Preset &amp; Phiên Giao Dịch</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Chọn STOCK, FOREX, CFD hoặc CRYPTO là chỉ báo tự cấu hình chiều lệnh và nguồn volume phù hợp. Thống kê theo phiên Á, Âu, Mỹ với giờ tự điều chỉnh theo mùa hè, mùa đông.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRANSPARENCY: TỰ KIỂM CHỨNG -->
-<section id="kiem-chung" class="py-20 bg-space-950 border-t border-space-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-gold uppercase mb-2">Minh bạch</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">Đừng Tin Quảng Cáo. Hãy Tự Kiểm Chứng.</p>
-      <p class="text-slate-muted mt-3 text-sm sm:text-base">Aurora STANDARD đi kèm bộ công cụ để bạn tự đo hiệu quả của hệ thống trên đúng mã và khung thời gian bạn giao dịch, thay vì phải tin vào những con số chúng tôi đưa ra.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="text-2xl mb-3">📊</div>
-        <h3 class="text-lg font-bold text-white mb-2">Thống Kê Theo Từng Setup</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">Dashboard ghi lại kết quả của từng nhóm: 1st/2nd Break (tách theo Score cao và thấp), SUNNY, Pullback và từng phiên giao dịch. Có tỷ lệ thắng, tổng R, R trung bình mỗi lệnh và cách các lệnh được đóng.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="text-2xl mb-3">⛔</div>
-        <h3 class="text-lg font-bold text-white mb-2">"Lệnh Ma" Đo Giá Trị Bộ Lọc</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">Mỗi setup bị bộ lọc chặn vẫn được theo dõi ngầm như thể đã vào lệnh. Bạn biết ngay bộ lọc đang loại bỏ lệnh xấu, hay đang chặn nhầm lệnh tốt, và có lý do cụ thể cho từng lần chặn.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-space-900 border border-space-800">
-        <div class="text-2xl mb-3">🧪</div>
-        <h3 class="text-lg font-bold text-white mb-2">Strategy Validator Có Tính Phí</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">Phiên bản chiến lược của cùng hệ thống chạy trên Strategy Tester của TradingView: lệnh khớp ở nến kế tiếp, khối lượng theo % rủi ro, có phí và trượt giá. Bạn xem được lợi nhuận, drawdown và từng lệnh.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REAL CHART SCREENSHOTS -->
-<section id="anh-thuc-te" class="py-20 bg-space-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Trên chart thật</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">Aurora STANDARD Trên TradingView</p>
-    </div>
-    <!-- HƯỚNG DẪN: thay mỗi khối <div class="shot-placeholder"> bằng
-         <img src="duong-dan-anh.jpg" alt="Mô tả ảnh" class="w-full h-full object-cover" loading="lazy"> -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
-        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: 1st Break + khung kế hoạch</div>
-        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Setup 1st Break</strong> với Entry, F-SL, TP1, TP2 và nhãn kết quả sau khi lệnh đóng.</figcaption>
-      </figure>
-      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
-        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: Bảng LIVE trên điện thoại</div>
-        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Bảng LIVE</strong> trên ứng dụng TradingView: setup đang chờ, khoảng cách kích hoạt và điều kiện vào lệnh.</figcaption>
-      </figure>
-      <figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
-        <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono">Ảnh: Dashboard thống kê</div>
-        <figcaption class="p-4 text-sm text-slate-muted"><strong class="text-white">Dashboard Full</strong> với thống kê theo setup, bộ lọc và phiên giao dịch.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT AUTHOR -->
-<section id="tac-gia" class="py-20 bg-space-950 border-t border-space-800">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="rounded-2xl bg-space-900 border border-space-800 p-7 sm:p-9 grid grid-cols-1 sm:grid-cols-[96px_1fr] gap-6 items-start">
-      <!-- Thay khối dưới bằng ảnh đại diện: <img src="avatar.jpg" alt="KenvinHoang" class="w-24 h-24 rounded-2xl object-cover"> -->
-      <div class="w-24 h-24 rounded-2xl bg-space-850 border border-aurora-cyan/30 flex items-center justify-center text-3xl font-extrabold text-aurora-cyan">K</div>
-      <div>
-        <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Về tác giả</h2>
-        <p class="text-xl sm:text-2xl font-extrabold text-white mb-3">Trader KenvinHoang · KenvinZone</p>
-        <p class="text-slate-muted text-sm sm:text-base leading-relaxed mb-3">
-          Aurora STANDARD phát triển từ <strong class="text-white">KENVIN CLOUD TRENDING SYSTEM</strong>, hệ thống giao dịch theo xu hướng mà tôi xây dựng và sử dụng cho chính mình. Setup 1st Break và SUNNY là "linh hồn" của hệ thống gốc, được giữ nguyên luật vào lệnh và nâng cấp thêm phần chấm điểm, quản lý kế hoạch lệnh và thống kê.
-        </p>
-        <p class="text-slate-muted text-sm sm:text-base leading-relaxed">
-          Hệ thống đã qua nhiều vòng kiểm thử trên vàng, crypto và cổ phiếu Việt Nam ở nhiều khung thời gian. Mục tiêu của tôi không phải hứa hẹn lợi nhuận, mà là đưa cho bạn một quy trình giao dịch rõ ràng và công cụ để tự đo lường nó.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 3-STEP ACTIVATION WORKFLOW -->
-<section id="quy-trinh" class="py-20 bg-space-950 border-t border-space-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Quy trình cấp quyền</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">3 Bước Bắt Đầu Sử Dụng Chỉ Báo</p>
-      <p class="text-slate-muted mt-2 text-sm">Cấp quyền qua hệ thống Invite-Only chính thức của TradingView.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
-        <div class="text-aurora-cyan font-mono font-bold text-2xl mb-4">01</div>
-        <h3 class="text-base font-bold text-white mb-2">Gửi TradingView Username</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Đăng ký gói bạn chọn và cung cấp chính xác Username TradingView của bạn. Yêu cầu sẽ được chuyển đến người quản trị để cấp quyền truy cập.
-        </p>
-      </div>
-
-      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
-        <div class="text-aurora-gold font-mono font-bold text-2xl mb-4">02</div>
-        <h3 class="text-base font-bold text-white mb-2">Mở Chỉ Báo Trên Biểu Đồ</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Sau khi được cấp quyền, bạn mở biểu đồ TradingView, vào mục <em>Indicators → Invite-only scripts</em> và nhấp chọn <code>AURORA STANDARD</code>.
-        </p>
-      </div>
-
-      <div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
-        <div class="text-emerald-400 font-mono font-bold text-2xl mb-4">03</div>
-        <h3 class="text-base font-bold text-white mb-2">Chọn Preset & Giao Dịch</h3>
-        <p class="text-slate-muted text-sm leading-relaxed">
-          Vào mục Cài đặt chỉ báo, chọn Market Preset tương ứng (STOCK, FOREX, CFD hoặc CRYPTO). Chỉ báo tự động thiết lập thông số phù hợp.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING / MEMBER SUBSCRIPTION SECTION -->
-<section id="bang-gia" class="py-20 bg-space-900 border-t border-space-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-cyan/10 border border-aurora-cyan/30 text-aurora-cyan text-xs font-mono font-bold uppercase tracking-wider mb-3">
-        MEMBER SUBSCRIPTION PLANS
-      </div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Quyền Sử Dụng Chỉ Báo Aurora STANDARD</h2>
-      <p class="text-slate-muted mt-3 text-sm sm:text-base">
-        Chọn gói trải nghiệm phù hợp với nhu cầu. Gia hạn thủ công khi muốn tiếp tục sử dụng, không tự động trừ tiền trong tài khoản.
-      </p>
-      <p class="text-slate-subtle text-xs mt-2">* Mức quy đổi VND tạm tính theo tỷ giá tham khảo 1 USD ~ 26.000 VNĐ.</p>
-    </div>
-
-    <!-- Trial Banner -->
-    <div class="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-space-850 via-space-800 to-space-850 border border-aurora-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-aurora-cyan/20 text-aurora-cyan">MIỄN PHÍ</span>
-          <h3 class="text-lg font-bold text-white">Trial Member — 3 Ngày Dùng Thử</h3>
-        </div>
-        <p class="text-slate-muted text-xs sm:text-sm mt-1">Đầy đủ tính năng cốt lõi trên mọi thị trường để bạn tự kiểm chứng trực tiếp trên biểu đồ cá nhân.</p>
-      </div>
-      <button onclick="openRegisterModal('trial')" class="w-full sm:w-auto px-6 py-2.5 rounded-xl border border-aurora-cyan text-aurora-cyan hover:bg-aurora-cyan hover:text-space-950 font-bold text-xs uppercase tracking-wider transition whitespace-nowrap">
-        Đăng Ký 3 Ngày Miễn Phí
-      </button>
-    </div>
-
-    <!-- Primary 3 Pricing Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8 items-stretch">
-      
-      <!-- Tier 1: 1 Month -->
-      <div class="bg-space-850 border border-space-750 hover:border-space-700 rounded-2xl p-6 flex flex-col justify-between shadow-card">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold text-slate-muted uppercase">Khởi đầu</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-space-800 text-slate-muted">30 Ngày</span>
-          </div>
-          <h3 class="text-xl font-bold text-white">1 Month Member</h3>
-          <p class="text-slate-muted text-xs mt-1">Dành cho bạn muốn theo dõi trọn vẹn 1 chu kỳ sóng thị trường.</p>
-
-          <div class="my-5 pb-5 border-b border-space-800">
-            <div class="flex items-baseline gap-1">
-              <span class="text-3xl font-black text-white">$100</span>
-              <span class="text-slate-subtle text-xs">/ 30 ngày</span>
-            </div>
-            <div class="text-xs text-slate-muted mt-1 font-mono">~ 2.600.000 VNĐ</div>
-          </div>
-
-          <ul class="space-y-2.5 text-xs text-slate-muted">
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Cấp quyền Invite-only trong 30 ngày</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Trọn bộ 4 Market Preset (Stock, Forex, CFD, Crypto)</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan">✓</span> Cẩm nang hướng dẫn sử dụng chi tiết</li>
-          </ul>
-        </div>
-
-        <button onclick="openRegisterModal('1m')" class="mt-6 w-full py-3 rounded-xl bg-space-800 hover:bg-space-750 border border-space-700 text-white font-bold text-xs uppercase tracking-wider transition">
-          Chọn Gói 1 Tháng
-        </button>
-      </div>
-
-      <!-- Tier 2: 6 Month (Featured Recommendation) -->
-      <div class="bg-space-850 border-2 border-aurora-cyan rounded-2xl p-6 flex flex-col justify-between shadow-glow-cyan relative">
-        <div class="absolute -top-3 right-5 bg-aurora-cyan text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-          Gói Đề Xuất · Giảm 21%
-        </div>
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold text-aurora-cyan uppercase">Bán chạy nhất</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-aurora-cyan/20 text-aurora-cyan">180 Ngày</span>
-          </div>
-          <h3 class="text-xl font-bold text-white">Pro Member 6 Tháng</h3>
-          <p class="text-slate-muted text-xs mt-1">Đủ thời gian rèn luyện tính kỷ luật và nắm vững quy tắc thoát lệnh.</p>
-
-          <div class="my-5 pb-5 border-b border-space-800">
-            <div class="flex items-baseline gap-1.5">
-              <span class="text-3xl font-black text-aurora-cyan">$474</span>
-              <span class="text-slate-subtle text-xs">/ 180 ngày</span>
-            </div>
-            <div class="text-xs text-aurora-cyan mt-1 font-mono">Quy đổi ~$79/tháng (~ 12.300.000 VNĐ)</div>
-          </div>
-
-          <ul class="space-y-2.5 text-xs text-slate-text">
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Cấp quyền Invite-only trong 180 ngày</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Tiết kiệm $126 so với gia hạn từng tháng lẻ</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Hỗ trợ cấu hình mã volume ngoài COMEX/CME</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-cyan font-bold">✓</span> Kênh giải đáp kỹ thuật qua Telegram</li>
-          </ul>
-        </div>
-
-        <button onclick="openRegisterModal('6m')" class="mt-6 w-full py-3.5 rounded-xl btn-brand-primary kz-sheen text-space-950 font-black text-xs uppercase tracking-wider shadow-md transition">
-          Chọn Gói 6 Tháng
-        </button>
-      </div>
-
-      <!-- Tier 3: 1 Year -->
-      <div class="bg-space-850 border border-aurora-gold/40 hover:border-aurora-gold rounded-2xl p-6 flex flex-col justify-between shadow-glow-gold relative">
-        <div class="absolute -top-3 right-5 bg-aurora-gold text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-          Tiết Kiệm 31%
-        </div>
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs font-mono font-bold text-aurora-gold uppercase">Dài hạn</span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded bg-aurora-gold/20 text-aurora-gold">365 Ngày</span>
-          </div>
-          <h3 class="text-xl font-bold text-white">Pro Member 1 Năm</h3>
-          <p class="text-slate-muted text-xs mt-1">Dành cho trader chuyên tâm theo đuổi hệ thống một cách bài bản.</p>
-
-          <div class="my-5 pb-5 border-b border-space-800">
-            <div class="flex items-baseline gap-1.5">
-              <span class="text-3xl font-black text-aurora-gold">$828</span>
-              <span class="text-slate-subtle text-xs">/ 365 ngày</span>
-            </div>
-            <div class="text-xs text-aurora-gold mt-1 font-mono">Quy đổi ~$69/tháng (~ 21.500.000 VNĐ)</div>
-          </div>
-
-          <ul class="space-y-2.5 text-xs text-slate-muted">
-            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Cấp quyền Invite-only trong 365 ngày</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Tiết kiệm $372 so với gia hạn tháng</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Hỗ trợ mẫu cấu hình JSON Alert cá nhân</li>
-            <li class="flex items-center gap-2"><span class="text-aurora-gold">★</span> Ưu tiên hỗ trợ kỹ thuật trực tiếp</li>
-          </ul>
-        </div>
-
-        <button onclick="openRegisterModal('1y')" class="mt-6 w-full py-3 rounded-xl bg-aurora-gold hover:bg-amber-400 text-space-950 font-bold text-xs uppercase tracking-wider transition">
-          Chọn Gói 1 Năm
-        </button>
-      </div>
-
-    </div>
-
-    <!-- More Options Accordion (3 Months & 3 Years) -->
-    <div class="max-w-4xl mx-auto">
-      <details class="group bg-space-850 border border-space-800 rounded-2xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer">
-        <summary class="flex items-center justify-between font-bold text-sm text-slate-muted hover:text-white">
-          <span>Xem thêm các lựa chọn gói khác (Gói Quý 3 Tháng & Gói Tinh Anh 3 Năm)</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5 pt-5 border-t border-space-800 text-xs">
-          <!-- 3 Months Option -->
-          <div class="p-4 rounded-xl bg-space-900 border border-space-800 flex flex-col justify-between">
-            <div>
-              <div class="font-bold text-white text-sm">Gói Quý 3 Tháng (Giảm 15%)</div>
-              <div class="text-slate-muted mt-1">Tổng <strong>$255</strong> (~ 6.600.000 VNĐ) · Quy đổi ~$85/tháng</div>
-            </div>
-            <button onclick="openRegisterModal('3m')" class="mt-4 py-2 px-4 rounded-lg bg-space-800 hover:bg-space-750 text-white font-bold text-center">
-              Đăng Ký Gói 3 Tháng
-            </button>
-          </div>
-
-          <!-- 3 Years Option -->
-          <div class="p-4 rounded-xl bg-space-900 border border-purple-500/30 flex flex-col justify-between">
-            <div>
-              <div class="font-bold text-purple-300 text-sm">Gói Tinh Anh 3 Năm (Giảm 50%)</div>
-              <div class="text-slate-muted mt-1">Tổng <strong>$1.800</strong> (~ 46.800.000 VNĐ) · Quy đổi ~$50/tháng</div>
-            </div>
-            <button onclick="openRegisterModal('3y')" class="mt-4 py-2 px-4 rounded-lg bg-purple-950/60 border border-purple-500/50 hover:bg-purple-900/60 text-purple-200 font-bold text-center">
-              Đăng Ký Gói 3 Năm
-            </button>
-          </div>
-        </div>
-      </details>
-    </div>
-
-  </div>
-</section>
-
-<!-- FAQ SECTION -->
-<!-- SO SÁNH 3 DÒNG SẢN PHẨM -->
-<style>
-.kzc{padding:80px 16px;background:#060B16;border-top:1px solid #111B2D}
-.kzc .w{max-width:1100px;margin:0 auto}
-.kzc h2{color:#fff;font-weight:800;font-size:clamp(26px,4vw,40px);text-align:center;margin:0 0 10px}
-.kzc .sub{color:#94A3B8;text-align:center;max-width:680px;margin:0 auto 36px;font-size:15px;line-height:1.6}
-.kzc .tw{overflow-x:auto;border:1px solid #1E2A40;border-radius:16px}
-.kzc table{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}
-.kzc th,.kzc td{padding:13px 16px;border-bottom:1px solid #16213A;color:#CBD5E1;text-align:center}
-.kzc td:first-child,.kzc th:first-child{text-align:left;color:#E2E8F0}
-.kzc thead th{background:#0B1324;color:#fff;font-weight:800;font-size:15px}
-.kzc thead th small{display:block;font-weight:500;color:#94A3B8;font-size:12px;margin-top:2px}
-.kzc .me{background:rgba(56,213,231,.07)}
-.kzc thead .me{color:#38D5E7}
-.kzc .y{color:#38D5E7;font-weight:700}.kzc .n{color:#475569}
-.kzc .go td{border-bottom:0}
-.kzc .go a{display:inline-block;padding:9px 16px;border-radius:10px;font-weight:700;font-size:13px;text-decoration:none}
-.kzc .go .cur{color:#38D5E7;border:1px solid rgba(56,213,231,.4)}
-.kzc .go .up{background:#F3BE62;color:#0B0E14}
-.kzc .go .dim{color:#64748B}
-</style>
-<section id="so-sanh" class="kzc" aria-labelledby="so-sanh-title">
-  <div class="w">
-    <h2 id="so-sanh-title">Ba dòng sản phẩm AURORA</h2>
-    <p class="sub">Cùng một lõi nhận diện xu hướng và chấm điểm Smart Score độc quyền. Mỗi gói bổ sung thêm công cụ cho trình độ và loại thị trường khác nhau.</p>
-    <div class="tw"><table>
-      <thead><tr><th>Tính năng</th><th class="me">STANDARD<small>Trader phổ thông</small></th><th>PRO<small>Trader có kinh nghiệm</small></th><th>ELITE<small>Trader Futures chuyên nghiệp</small></th></tr></thead>
-      <tbody>
-        <tr><td>Setup 1st / 2nd BREAK, SUNNY, Smart Score</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Kế hoạch Entry / SL / TP, Pullback Entry, Dashboard LIVE trên điện thoại</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Market Preset (Stock / Forex / CFD / Crypto), Volume Engine, phiên giao dịch</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Strategy Validator có phí và tách In-sample / Out-of-sample</td><td class="me y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Setup SMC: RETEST · SWEEP + MSS · IFVG</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Điểm chất lượng riêng từng setup, Tier 3 (FVG · Sweep · CVD)</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Trading Style preset (Scalping / Intraday / Swing / Prop Firm), Runner 25%</td><td class="me n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
-        <tr><td>Footprint / dữ liệu sàn Futures</td><td class="me n">—</td><td class="n">—</td><td class="y">Đang phát triển</td></tr>
-        <tr class="go"><td></td><td class="me"><a class="cur" href="#bang-gia">Bạn đang xem</a></td><td><a class="up" href="pro/">Xem AURORA PRO</a></td><td><span class="dim">Sắp ra mắt</span></td></tr>
-      </tbody>
-    </table></div>
-  </div>
-</section>
-
-<section id="faq" class="py-20 bg-space-950 border-t border-space-800">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Hỏi đáp kỹ thuật</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">Câu Hỏi Thường Gặp</p>
-    </div>
-
-    <div class="space-y-4">
-      <!-- FAQ 1 -->
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>1. Chỉ báo có tự động khớp lệnh vào tài khoản MT4/MT5 hay sàn giao dịch không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          <strong>Không.</strong> KENVINZONE AURORA STANDARD là một <strong>chỉ báo phân tích (Indicator)</strong> trên TradingView, không phải bot giao dịch tự động. Chỉ báo có nhiệm vụ tính toán điểm vào, vẽ hộp rủi ro/lợi nhuận định sẵn và phát tín hiệu cảnh báo có cấu trúc JSON. Nếu muốn tự động mở lệnh, bạn cần kết nối qua một phần mềm webhook cầu nối bên thứ ba (như PineConnector hoặc bot webhook tự viết).
-        </p>
-      </details>
-
-      <!-- FAQ 2 -->
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>2. Tín hiệu có bị vẽ lại (Repaint) khi giá thị trường đang chạy không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Ở cấu hình mặc định (với tùy chọn <code>Confirm signals on bar close</code> được bật), toàn bộ các setup chính (1st/2nd Break, SUNNY) chỉ được đóng dấu xác nhận và vẽ kế hoạch khi cây nến đã <strong>đóng cửa hoàn tất</strong> (<code>barstate.isconfirmed</code>). Dữ liệu đa khung MTF được truy vấn từ nến đã đóng của khung thời gian lớn hơn. Tuy nhiên, nếu bạn bật chế độ PRO MODE, các nhãn động lượng nội bộ trên nến đang chạy có thể thay đổi cho tới khi nến đóng cửa.
-        </p>
-      </details>
-
-      <!-- FAQ 3 -->
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>3. Sự khác nhau giữa ngưỡng điểm của Smart Signal và Setup Break là gì?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Hai loại tín hiệu có cơ chế lọc khác nhau:
-          <br>• <strong>Tín hiệu Smart:</strong> Phân chia chặt chẽ thành Grade A (≥80 điểm) và Grade B (≥70 điểm).
-          <br>• <strong>Setup 1st/2nd Break & SUNNY:</strong> Là các tín hiệu vào lệnh theo cấu trúc xu hướng, có ngưỡng điểm riêng (mặc định từ 50 điểm). Vì vậy những setup đạt từ 50 điểm trở lên vẫn được hiển thị kế hoạch lệnh.
-        </p>
-      </details>
-
-      <!-- FAQ 4 -->
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>4. Sau khi gửi yêu cầu, mất bao lâu tôi được cấp quyền sử dụng?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Quy trình cấp quyền Invite-Only được quản trị viên xử lý trực tiếp trên hệ thống TradingView qua tài khoản của bạn. Sau khi nhận được thông tin xác nhận qua Telegram/Zalo, quyền truy cập thường được kích hoạt trong vòng 15–30 phút trong giờ làm việc (08:00 – 22:00 hàng ngày).
-        </p>
-      </details>
-
-      <!-- FAQ 5 -->
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>5. Tôi dùng tài khoản TradingView Miễn phí (Basic) có thêm được chỉ báo không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Được. Tài khoản TradingView Basic hiện cho phép gắn tối đa 2 chỉ báo cùng lúc (giới hạn này do TradingView quy định và có thể thay đổi). Vì KENVINZONE AURORA STANDARD đã tích hợp toàn bộ nến, Trailing Stop, mây và Dashboard vào đúng 1 file script, bạn hoàn toàn có thể sử dụng bình thường mà không bắt buộc phải mua gói TradingView trả phí.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>6. Số liệu thống kê trên Dashboard có đáng tin không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Dashboard tính kết quả của từng kế hoạch lệnh trên dữ liệu lịch sử mà TradingView tải về chart của bạn, giả định chốt 50% tại TP1. Số liệu <strong>chưa trừ phí, spread và trượt giá</strong>, và kết quả quá khứ không đảm bảo tương lai. Để kiểm tra có chi phí, hãy dùng bản <strong>Strategy Validator</strong> đi kèm trên Strategy Tester.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>7. Nên dùng chỉ báo trên khung thời gian nào?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Không có khung tốt nhất cho mọi mã. Khung rất nhỏ (dưới 5 phút) nhiều nhiễu và phí chiếm tỷ trọng lớn. Cách tốt nhất là dùng Dashboard so sánh R trung bình mỗi lệnh trên vài khung (M15, H1, H4) của chính mã bạn giao dịch.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>8. Có dùng được trên ứng dụng TradingView điện thoại không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Có. Chọn <strong>Dashboard layout = Mini</strong> để dùng bảng LIVE gọn cho màn hình điện thoại, hiển thị xu hướng, setup đang chờ và lệnh đang chạy.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>9. Pullback Entry hoạt động thế nào?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Khi nến 1st/2nd Break quá dài, thay vì vào lệnh ngay, chỉ báo đặt lệnh chờ tại mức hồi 50% của nến (có thể chỉnh 38.2% hoặc 61.8%), hiệu lực 6 nến. Dòng <strong>⏳ Pullback</strong> trên Dashboard so sánh kết quả chờ hồi với việc vào ngay, để bạn tự quyết định có dùng tính năng này hay không.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>10. Cổ phiếu Việt Nam nên cài đặt thế nào?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">
-          Chọn <strong>STOCK MODE</strong>: chỉ hiển thị lệnh BUY (nhà đầu tư cá nhân không bán khống được), dùng volume thật đầy đủ và tắt yếu tố phiên. Khung D1 hoặc H1 phù hợp nhất.
-        </p>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>11. Tôi đang thi hoặc giao dịch quỹ Prop Firm (FTMO, The5ers, Topstep, Bulenox, Earn2Trade), có dùng Aurora được không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
-          <p>Được. Aurora là <strong>chỉ báo phân tích</strong>, không tự đặt lệnh, nên bạn vẫn là người ra quyết định và bấm lệnh trên nền tảng của quỹ. Điểm mạnh của Aurora với trader quỹ là <strong>rủi ro được biết trước</strong>: mỗi setup có sẵn F-SL cố định, nên bạn tính được chính xác khối lượng để mỗi lệnh chỉ rủi ro một phần nhỏ, nằm trong giới hạn lỗ ngày và drawdown tối đa của quỹ.</p>
-          <p>Gợi ý cài đặt: quỹ futures (Topstep, Bulenox, Earn2Trade) giao dịch hợp đồng CME, bạn mở chart trực tiếp mã futures như NQ, GC. Quỹ CFD (FTMO, The5ers) dùng <strong>CFD MODE</strong> kèm mã volume chuẩn (xem câu 12). Bạn có thể bật <strong>Session mode</strong> để xem kết quả theo phiên Âu, Mỹ, và dùng Strategy Validator với mức rủi ro 0.5%–1% mỗi lệnh để kiểm tra drawdown trước khi thi.</p>
-          <p class="text-slate-subtle">Mỗi quỹ có quy định riêng (giao dịch giờ tin, giữ lệnh qua đêm, chiến lược bị cấm…). Hãy đọc kỹ luật của quỹ bạn tham gia; Aurora không đảm bảo việc vượt qua vòng thi.</p>
-        </div>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>12. Có dùng được volume thật của sàn CME, COMEX cho NQ, GC và các hợp đồng hàng hóa Futures không?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
-          <p>Có, theo hai cách:</p>
-          <p><strong>Chart trực tiếp mã Futures</strong> (ví dụ <span class="font-mono text-aurora-cyan">CME_MINI:NQ1!</span>, <span class="font-mono text-aurora-cyan">COMEX:GC1!</span>, <span class="font-mono text-aurora-cyan">NYMEX:CL1!</span>, <span class="font-mono text-aurora-cyan">COMEX:SI1!</span>): volume trên chart đã là khối lượng khớp thật của sàn. Chọn preset <strong>Custom</strong>, bật RVOL, VWAP, CMF, Delta và để tắt nguồn volume ngoài.</p>
-          <p><strong>Chart CFD của broker</strong> (XAUUSD, NAS100, US30…): chọn <strong>CFD MODE</strong>. Ô <em>External volume mapping</em> để <em>Auto</em> là đủ; muốn chọn mã khác thì chuyển sang <em>Manual</em> và nhập mã. Chỉ báo vẫn vẽ trên giá CFD nhưng chấm điểm Volume, RVOL theo giờ trong ngày, Volume Quality bằng khối lượng thật của sàn Futures. Ở chế độ <em>Auto</em>, chỉ báo tự chọn đúng hợp đồng theo mã chart (vàng → GC, NAS100 → NQ, US30 → YM, SPX500 → ES, dầu WTI → CL). Nếu không có dữ liệu, các yếu tố volume tạm tắt và Dashboard báo <span class="font-mono">EXT ✗</span>, thay vì trộn lẫn volume của hai nguồn khác nhau.</p>
-          <p class="text-slate-subtle">Lưu ý: Aurora chỉ đọc được dữ liệu có sẵn trên TradingView, không kết nối trực tiếp được với nguồn dữ liệu bên ngoài như Rithmic hay CQG. Dữ liệu realtime của CME, COMEX, NYMEX trên TradingView có thể cần đăng ký gói dữ liệu riêng; nếu không, dữ liệu bị trễ, ảnh hưởng tới tín hiệu realtime (dữ liệu lịch sử vẫn dùng bình thường).</p>
-        </div>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>13. Tôi giao dịch Crypto Spot (không bán khống được), nên cài đặt thế nào?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
-          <p>Chọn <strong>STOCK MODE</strong>: chỉ hiển thị lệnh BUY, dùng đầy đủ volume thật của sàn và tắt yếu tố phiên. Cấu hình này phù hợp với Spot vì bạn chỉ mua rồi bán ra, không mở vị thế bán. Thống kê trên Dashboard và Strategy Validator cũng chỉ tính lệnh BUY, đúng với cách bạn giao dịch.</p>
-          <p>Với Spot, các khung H1, H4, D1 thường cho tín hiệu ổn định hơn khung nhỏ. Volume là của riêng sàn trên chart bạn mở (ví dụ BINANCE:BTCUSDT), nên ưu tiên mở chart của sàn có thanh khoản lớn.</p>
-        </div>
-      </details>
-
-      <details class="group bg-space-900 border border-space-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:none cursor-pointer transition open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base">
-          <span>14. Với Crypto Futures (hợp đồng Perpetual, có đòn bẩy), Aurora hỗ trợ những gì?</span>
-          <span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span>
-        </summary>
-        <div class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed space-y-2">
-          <p>Chọn <strong>CRYPTO MODE</strong>: giao dịch cả BUY và SELL, dùng volume thật kèm <strong>Open Interest</strong>. Giá tăng cùng OI tăng cho thấy tiền mới vào lệnh, được cộng điểm. Với các cặp TradingView không có dữ liệu OI, yếu tố này tự bỏ qua, không bị trừ điểm.</p>
-          <p>Về đòn bẩy: hãy tính khối lượng từ khoảng cách Entry tới <strong>F-SL</strong> trước, rồi mới chọn đòn bẩy, và đảm bảo <strong>giá thanh lý nằm xa hơn F-SL</strong>. Đòn bẩy không làm thay đổi rủi ro của setup nếu bạn tính khối lượng đúng, nhưng đòn bẩy quá cao có thể khiến bạn bị thanh lý trước khi chạm F-SL.</p>
-          <p class="text-slate-subtle">Thống kê trên Dashboard chưa tính phí giao dịch và phí funding. Khi backtest bằng Strategy Validator, hãy đặt mức phí theo sàn bạn dùng.</p>
-        </div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- POLICIES / TERMS / DISCLAIMER -->
-<section id="chinh-sach" class="py-20 bg-space-900 border-t border-space-800">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10">
-      <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2">Điều khoản</h2>
-      <p class="text-2xl sm:text-4xl font-extrabold text-white">Điều Khoản &amp; Chính Sách</p>
-    </div>
-    <div class="space-y-4">
-      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Điều khoản sử dụng</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
-        <ul class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed list-disc pl-5 space-y-1.5">
-          <li>Quyền sử dụng được cấp cho <strong>một TradingView username</strong> theo thời hạn của gói đã đăng ký.</li>
-          <li>Không chia sẻ, cho thuê lại, sao chép hoặc phân phối lại chỉ báo dưới bất kỳ hình thức nào. Quyền truy cập có thể bị thu hồi khi vi phạm.</li>
-          <li>Gói trả phí gia hạn thủ công, không tự động trừ tiền. Hết hạn mà không gia hạn, quyền truy cập sẽ tự kết thúc.</li>
-          <li>Chỉ báo được cập nhật và cải tiến định kỳ. Tên, giao diện và tính năng có thể thay đổi giữa các phiên bản.</li>
-        </ul>
-      </details>
-      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40">
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Chính sách hoàn tiền</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
-        <!-- CẦN XÁC NHẬN: điều chỉnh nội dung dưới đây theo chính sách thực tế của bạn -->
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">Vì bạn được dùng thử miễn phí để tự kiểm chứng trước khi mua, các gói trả phí không hoàn tiền sau khi quyền truy cập đã được kích hoạt. Trường hợp không kích hoạt được do lỗi từ phía chúng tôi sẽ được hoàn tiền đầy đủ.</p>
-      </details>
-      <details class="group bg-space-850 border border-space-750 rounded-xl p-5 cursor-pointer open:border-aurora-cyan/40" open>
-        <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base"><span>Tuyên bố miễn trừ trách nhiệm</span><span class="text-aurora-cyan group-open:rotate-180 transition-transform">↓</span></summary>
-        <p class="text-slate-muted text-xs sm:text-sm mt-3 leading-relaxed">KENVINZONE AURORA STANDARD là công cụ hỗ trợ phân tích kỹ thuật và học tập, <strong>không phải lời khuyên đầu tư</strong>, không phải dịch vụ quản lý tài khoản và không cam kết lợi nhuận. Mọi hình ảnh trên trang là minh họa giao diện. Mọi số liệu thống kê do chỉ báo tính trên dữ liệu quá khứ, chưa bao gồm phí giao dịch, và không đảm bảo kết quả trong tương lai. Giao dịch Forex, vàng CFD, chứng khoán và tiền mã hóa có rủi ro mất vốn. Bạn hoàn toàn chịu trách nhiệm với các quyết định giao dịch của mình.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- REGISTRATION / ORDER MODAL (WAI-ARIA COMPLIANT) -->
-<div id="register-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden place-items-center p-4">
-  <div class="bg-space-850 border border-aurora-cyan/40 rounded-2xl w-full max-w-lg p-6 sm:p-7 relative shadow-2xl">
-    
-    <!-- Close Button -->
-    <button onclick="closeRegisterModal()" class="absolute top-4 right-4 text-slate-muted hover:text-white p-2 rounded-lg hover:bg-space-800 transition focus:outline-none focus:ring-2 focus:ring-aurora-cyan" aria-label="Đóng cửa sổ">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-
-    <div class="flex items-center gap-3 mb-5">
-      <div class="w-10 h-10 rounded-xl bg-aurora-cyan/20 text-aurora-cyan flex items-center justify-center font-bold">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-      </div>
-      <div>
-        <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-white">Yêu Cầu Cấp Quyền Aurora STANDARD</h3>
-        <p class="text-slate-muted text-xs">Cấp quyền qua TradingView Invite-Only Script</p>
-      </div>
-    </div>
-
-    <!-- Active Form View -->
-    <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4">
-      <div>
-        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="tradingview-id">
-          TradingView Username <span class="text-rose-400">*</span>
-        </label>
-        <input type="text" id="tradingview-id" required placeholder="Ví dụ: kenvin_trader_88" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition font-mono">
-        <p class="text-[11px] text-slate-subtle mt-1">Vào TradingView → Bấm avatar góc trên bên trái để lấy chính xác Username.</p>
-      </div>
-
-      <div>
-        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="customer-contact">
-          Số Điện Thoại / Zalo / Telegram <span class="text-rose-400">*</span>
-        </label>
-        <input type="text" id="customer-contact" required placeholder="0912 xxx xxx hoặc @username_telegram" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition">
-      </div>
-
-      <div>
-        <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="plan-select">
-          Gói Đăng Ký
-        </label>
-        <select id="plan-select" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition">
-          <option value="trial">1. Trial Member — 3 Ngày Miễn Phí (0$ / 0đ)</option>
-          <option value="1m">2. 1 Month Member — 100$ (~ 2.600.000 VNĐ / 30 ngày)</option>
-          <option value="3m">3. Pro Member 3 Tháng — 255$ (~ 6.600.000 VNĐ / 90 ngày)</option>
-          <option value="6m">4. Pro Member 6 Tháng (Đề xuất) — 474$ (~ 12.300.000 VNĐ)</option>
-          <option value="1y">5. Pro Member 1 Năm — 828$ (~ 21.500.000 VNĐ / 365 ngày)</option>
-          <option value="3y">6. Tinh Anh Pro 3 Năm — 1.800$ (~ 46.800.000 VNĐ)</option>
-        </select>
-      </div>
-
-      <div class="pt-2">
-        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl btn-brand-primary kz-sheen text-space-950 font-bold text-sm uppercase tracking-wider shadow-md transition">
-          Tạo Yêu Cầu & Gửi Xác Nhận
-        </button>
-      </div>
-    </form>
-
-    <!-- Success / Safe Dispatch View (Shown after form submit) -->
-    <div id="order-success-view" class="hidden space-y-4 pt-2">
-      <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed">
-        <div class="font-bold text-sm mb-1 text-white flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-          <span>Đã tạo nội dung đăng ký thành công!</span>
-        </div>
-        Vui lòng chuyển tiếp tin nhắn đã soạn đến quản trị viên để hoàn tất cấp quyền trên TradingView.
-      </div>
-
-      <div class="p-3.5 rounded-xl bg-space-900 border border-space-750 font-mono text-xs text-slate-muted">
-        <div class="text-[10px] text-slate-subtle uppercase mb-1">Nội dung xác nhận:</div>
-        <p id="generated-payload" class="text-white break-words"></p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <a id="telegram-dispatch-btn" href="#" target="_blank" rel="noopener" class="py-2.5 px-4 rounded-xl bg-[#0088cc] hover:bg-[#0077b5] text-white font-bold text-xs flex items-center justify-center gap-2 transition">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          <span>Gửi Qua Telegram</span>
-        </a>
-        <button onclick="copyPayloadToClipboard()" class="py-2.5 px-4 rounded-xl bg-space-800 hover:bg-space-750 border border-space-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition">
-          <span id="copy-btn-text">Sao Chép Nội Dung</span>
-        </button>
-      </div>
-
-      <button onclick="resetModalView()" class="w-full text-center text-xs text-slate-subtle hover:text-slate-muted pt-1">
-        ← Tạo yêu cầu khác
-      </button>
-    </div>
-
-  </div>
+<main id="top">
+<!-- HERO -->
+<section aria-labelledby="hero-title" class="hero kz-has-aurora"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
+<div class="wrap">
+<div>
+<h1 data-i18n="k6" id="hero-title">Biết vì sao một setup đáng vào lệnh</h1>
+<p class="lede" data-i18n="k7">AURORA PRO tìm điểm vào theo xu hướng bằng ba nhóm setup: BREAK, SUNNY và SMC. Mỗi tín hiệu đi kèm kế hoạch Entry, Stoploss, chốt lời, cùng điểm nền và điểm chất lượng riêng của từng setup, cho biết setup đó mạnh ở đâu và yếu ở đâu.</p>
+<div class="ctas">
+<a class="btn primary kz-sheen" data-i18n="k5" href="#dang-ky">Đăng ký dùng thử</a>
+<a class="btn ghost" data-i18n="k8" href="huong-dan.html">Đọc hướng dẫn sử dụng</a>
 </div>
-
-<!-- FOOTER -->
-<footer class="bg-space-950 border-t border-space-800 py-12 text-slate-subtle text-xs">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-space-850">
-      <div class="flex items-center gap-2.5">
-        <div class="w-7 h-7 rounded-lg bg-space-850 border border-aurora-cyan/30 flex items-center justify-center p-1">
-          <svg viewBox="0 0 28 28" fill="none" class="w-full h-full">
-            <path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <span class="font-extrabold text-white text-sm">KENVINZONE AURORA STANDARD</span>
-      </div>
-      <div class="flex flex-wrap items-center gap-6 font-medium text-slate-muted">
-        <a href="#tinh-nang" class="hover:text-aurora-cyan transition">Tính năng</a>
-        <a href="#giao-dien" class="hover:text-aurora-cyan transition">Biểu đồ</a>
-        <a href="#bang-gia" class="hover:text-aurora-cyan transition">Bảng giá</a>
-        <a href="#faq" class="hover:text-aurora-cyan transition">FAQ</a>
-        <a href="huong-dan.html" class="hover:text-aurora-cyan transition">Hướng dẫn</a>
-        <a href="#chinh-sach" class="hover:text-aurora-cyan transition">Điều khoản</a>
-        <a href="pro/" class="hover:text-aurora-cyan transition">AURORA PRO</a>
-        <a href="https://t.me/kenvinhoang" target="_blank" rel="noopener" class="hover:text-aurora-cyan transition flex items-center gap-1">
-          <span>Telegram @kenvinhoang</span>
-        </a>
-      </div>
-    </div>
-    
-    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-      <p>© 2026 KenvinZone Systems · Tác giả mã nguồn: Trader KenvinHoang.</p>
-      <p class="max-w-xl text-[11px] leading-relaxed text-slate-subtle">
-        Cảnh báo rủi ro: Giao dịch tài chính (Forex, Vàng CFD, Chứng khoán, Crypto) tiềm ẩn nguy cơ thua lỗ vốn. KENVINZONE AURORA STANDARD là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư tài chính hay cam kết lợi nhuận.
-      </p>
-    </div>
-  </div>
+<p class="fineprint" data-i18n="k9">Chỉ báo Invite-only trên TradingView. Dùng được với tài khoản TradingView miễn phí.</p>
+</div>
+<figure aria-label="Minh họa một setup SMC SWEEP với kế hoạch lệnh và điểm đánh giá" class="instrument" data-i18n-aria="Illustration of an SMC SWEEP setup with trade plan and ratings">
+<svg data-kz-alt-en="SMC SWEEP setup on a real chart" data-kz-alt-vi="Setup SMC SWEEP trên chart thật" data-kz-img="../assets/shots/pro-hero.webp" data-kz-replace="self" role="img" viewbox="0 130 640 260">
+<defs>
+<lineargradient id="rb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#34B8D4" stop-opacity=".35"></stop><stop offset="1" stop-color="#34B8D4" stop-opacity="0"></stop></lineargradient>
+</defs>
+<!-- grid -->
+<g stroke="#1B2740" stroke-width="1">
+<line x1="0" x2="640" y1="90" y2="90"></line><line x1="0" x2="640" y1="170" y2="170"></line><line x1="0" x2="640" y1="250" y2="250"></line><line x1="0" x2="640" y1="330" y2="330"></line>
+</g>
+<!-- liquidity level swept -->
+<line stroke="#F3BE62" stroke-dasharray="5 5" stroke-opacity=".8" x1="70" x2="300" y1="300" y2="300"></line>
+<text data-i18n="k112" fill="#F3BE62" font-family="Be Vietnam Pro" font-size="12" x="74" y="293">swing low bị quét</text>
+<!-- plan zones -->
+<rect fill="#1FCB8E" fill-opacity=".11" height="104" stroke="#1FCB8E" stroke-opacity=".35" width="320" x="300" y="150"></rect>
+<rect fill="#FF4D6A" fill-opacity=".12" height="62" stroke="#FF4D6A" stroke-opacity=".35" width="320" x="300" y="254"></rect>
+<line stroke="#1FCB8E" stroke-dasharray="4 4" stroke-opacity=".8" x1="300" x2="620" y1="202" y2="202"></line>
+<!-- trailing line -->
+<path d="M0 360 H90 V350 H170 V340 H250 V330 H330 V318 H420 V300 H520 V280 H640" fill="none" stroke="#34B8D4" stroke-width="3"></path>
+<path d="M0 360 H90 V350 H170 V340 H250 V330 H330 V318 H420 V300 H520 V280 H640 V420 H0Z" fill="url(#rb)" opacity=".5"></path>
+<!-- candles -->
+<g stroke-width="1.6">
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="40" x2="40" y1="220" y2="262"></line><rect height="26" width="12" x="34" y="228"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="66" x2="66" y1="226" y2="276"></line><rect height="32" width="12" x="60" y="234"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="92" x2="92" y1="250" y2="292"></line><rect height="24" width="12" x="86" y="258"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="118" x2="118" y1="256" y2="290"></line><rect height="20" width="12" x="112" y="262"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="144" x2="144" y1="238" y2="270"></line><rect height="20" width="12" x="138" y="244"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="170" x2="170" y1="240" y2="276"></line><rect height="20" width="12" x="164" y="248"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="196" x2="196" y1="256" y2="290"></line><rect height="20" width="12" x="190" y="262"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="222" x2="222" y1="262" y2="296"></line><rect height="20" width="12" x="216" y="268"></rect></g>
+<!-- sweep candle -->
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="248" x2="248" y1="262" y2="314"></line><rect height="16" width="12" x="242" y="270"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="274" x2="274" y1="244" y2="278"></line><rect height="22" width="12" x="268" y="250"></rect></g>
+<!-- MSS candle -->
+<rect fill="#F3E04A" height="54" width="12" x="294" y="198"></rect><line stroke="#F3E04A" x1="300" x2="300" y1="190" y2="258"></line>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="326" x2="326" y1="186" y2="216"></line><rect height="20" width="12" x="320" y="192"></rect></g>
+<g fill="#D0306E" stroke="#D0306E"><line x1="352" x2="352" y1="190" y2="222"></line><rect height="18" width="12" x="346" y="196"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="378" x2="378" y1="176" y2="212"></line><rect height="24" width="12" x="372" y="182"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="404" x2="404" y1="160" y2="192"></line><rect height="22" width="12" x="398" y="166"></rect></g>
+<g fill="#34B8D4" stroke="#34B8D4"><line x1="430" x2="430" y1="146" y2="176"></line><rect height="20" width="12" x="424" y="152"></rect></g>
+</g>
+<!-- MSS level -->
+<line stroke="#B388FF" stroke-dasharray="3 4" x1="210" x2="300" y1="238" y2="238"></line>
+<text fill="#B388FF" font-family="Be Vietnam Pro" font-size="12" x="212" y="232">MSS</text>
+<!-- signal label -->
+<rect fill="#34B8D4" fill-opacity=".85" height="40" rx="6" width="116" x="244" y="330"></rect>
+<text fill="#06131D" font-family="Be Vietnam Pro" font-size="12" font-weight="700" text-anchor="middle" x="302" y="346">💧 SMC SWEEP</text>
+<text fill="#06131D" font-family="Be Vietnam Pro" font-size="12" font-weight="700" text-anchor="middle" x="302" y="362">BUY A · 82 · Q71</text>
+<!-- plan labels -->
+<g font-family="Be Vietnam Pro" font-size="11.5" font-weight="600">
+<text fill="#1FCB8E" text-anchor="end" x="612" y="168">🎯 TP2 · 2R</text>
+<text fill="#1FCB8E" text-anchor="end" x="612" y="218">🎯 TP1 · 1R</text>
+<text fill="#E6EDF5" text-anchor="end" x="612" y="270">▶ Entry</text>
+<text data-i18n="k113" fill="#FF4D6A" text-anchor="end" x="612" y="309">🛑 SL cấu trúc</text>
+</g>
+</svg>
+<div aria-hidden="true" class="stack">
+<div class="hd" data-i18n="k10">Đánh giá setup SMC SWEEP <span>BUY</span></div>
+<div class="layer"><span>Base Score</span><div class="bar"><i style="--v:82%;--c:#34B8D4;--d:.15s"></i></div><b>82</b></div>
+<div class="layer"><span>SMC Quality</span><div class="bar"><i style="--v:71%;--c:#F3BE62;--d:.4s"></i></div><b>71</b></div>
+<div class="layer"><span>Tier 3</span><div class="bar"><i style="--v:68%;--c:#B388FF;--d:.65s"></i></div><b>68</b></div>
+<div class="verdict"><span data-i18n="k11">Volume · Phiên</span><span data-i18n="k12">✓ đạt</span></div>
+</div>
+</figure>
+</div>
+</section>
+<!-- SETUPS -->
+<section aria-labelledby="setup-title" class="band" id="setup">
+<div class="wrap">
+<div class="head">
+<h2 data-i18n="k13" id="setup-title">Ba nhóm setup, một cách quản lý lệnh</h2>
+<p class="lede" data-i18n="k14">Tất cả đều chỉ vào lệnh theo hướng xu hướng chính, được hệ thống xác nhận. Không bắt đỉnh, không bắt đáy.</p>
+</div>
+<div class="setups">
+<article class="setup kz-spot">
+<span class="sig b">⚡ 1st BREAK · BUY A</span>
+<h3>BREAK</h3>
+<p data-i18n="k15">Cú phá vỡ đầu tiên và thứ hai của đường Trailing sau khi xu hướng mới hình thành. Nến Break quá dài sẽ được chờ hồi về 50% thay vì đuổi giá.</p>
+</article>
+<article class="setup kz-spot">
+<span class="sig s">☀ SUNNY · BUY</span>
+<h3>SUNNY</h3>
+<p data-i18n="k16">Tín hiệu mua / bán tiếp diễn thuận xu hướng chính. Bắt nhịp tiếp diễn sau một đợt điều chỉnh.</p>
+</article>
+<article class="setup smc kz-spot">
+<span class="sig m" data-i18n="k17">💠 SMC · thuận xu hướng</span>
+<h3>SMC</h3>
+<ul>
+<li data-i18n="k18"><strong>🔁 RETEST</strong>Giá hồi về FVG hoặc Order Block của cú bung sau Break rồi bật lại.</li>
+<li data-i18n="k19"><strong>💧 SWEEP + MSS</strong>Quét đáy nhịp hồi, đóng cửa quay lại, rồi phá đỉnh hồi gần nhất.</li>
+<li data-i18n="k20"><strong>⇄ IFVG</strong>FVG ngược chiều của nhịp hồi bị phá, đổi vai thành vùng vào lệnh.</li>
+</ul>
+</article>
+</div>
+<p class="shared" data-i18n="k21">Cả ba nhóm dùng chung điểm tối thiểu, bộ lọc volume, bộ lọc phiên và quy tắc quản lý lệnh. Setup SMC đặt Stoploss tại mức vô hiệu hóa cấu trúc của chính setup đó. Ở chế độ mặc định, tín hiệu chỉ xác nhận khi nến đóng cửa.</p>
+</div>
+</section>
+<!-- SCORING -->
+<section aria-labelledby="score-title" id="cham-diem">
+<div class="wrap layers">
+<div>
+<h2 data-i18n="k22" id="score-title">Điểm nền, cộng điểm riêng của từng setup</h2>
+<p class="lede" data-i18n="k23">Thay vì gom mọi thứ vào một con số, AURORA PRO tách đánh giá thành các phần riêng. Bạn thấy rõ setup mạnh ở đâu, và thống kê cho biết phần nào thực sự giúp ích trên mã bạn giao dịch.</p>
+<ol class="ladder">
+<li style="--c:#34B8D4"><h3>Base Score</h3><p data-i18n="k24">Môi trường có thuận cho chiều này không: xu hướng, động lượng, đồng thuận khung lớn, dòng tiền.</p></li>
+<li style="--c:#4FC7DF"><h3 data-i18n="k25">Điểm chất lượng của setup</h3><p data-i18n="k26">Mỗi loại setup có thước đo riêng. BreakQ: nén rồi bung, đóng cửa dứt khoát, đường đi sạch. SunnyQ: nhịp hồi gọn, xu hướng còn hiệu quả. SMCQ: vùng giá chất lượng, cú bung có lực, còn khoảng trống tới thanh khoản đối diện.</p></li>
+<li style="--c:#B388FF"><h3 data-i18n="k27">Tier 3 · bối cảnh dòng tiền</h3><p data-i18n="k28">Áp dụng khi có dữ liệu: FVG còn tươi, quét thanh khoản, CVD tích lũy, hấp thụ lực. Thành phần nào thiếu dữ liệu sẽ được bỏ qua, không tự cộng điểm.</p></li>
+</ol>
+</div>
+<div aria-label="Ví dụ tooltip khi rê chuột vào nhãn tín hiệu" class="tip" data-i18n-aria="Example tooltip when hovering a signal label" data-kz-alt-en="Tooltip when hovering a signal label" data-kz-alt-vi="Tooltip khi rê chuột vào nhãn tín hiệu" data-kz-fit="contain" data-kz-img="../assets/shots/pro-tooltip.webp">
+<div class="t" data-i18n="k29">Rê chuột vào nhãn tín hiệu, bạn thấy:</div>
+<pre>⚡ KENVIN AURORA · 1st BREAK SETUP · BUY A
+━━━━━━━━━━━━━━━━━━
+⭐ Score        84 / 100
+📊 MTF Vote    ▲ 88% (HTF)
+🔊 Volume   RVOL 1.42 (TOD) · VQ 66
+🧪 BreakQ 78 A  C/A/K/D/V/F 82/76/71/69/84/75
+💎 Tier3 Break 70 B  F/S/C/R 80/65/72/60
+━━━━━━━━━━━━━━━━━━
+▶ Entry        2,412.6
+🛑 F-SL        2,398.1   (−0.60%)
+🎯 TP1 (1R)    2,427.1   (+0.60%)
+🎯 TP2 (2R)    2,441.6   (+1.20%)</pre>
+<p class="note" data-i18n="k30">Các tầng chất lượng mặc định chỉ chấm điểm và thống kê, không tự chặn lệnh. Bạn quyết định có dùng làm bộ lọc hay không, sau khi đã có dữ liệu.</p>
+</div>
+</div>
+</section>
+<!-- PRESETS -->
+<section aria-labelledby="preset-title" class="band" id="cai-dat">
+<div class="wrap">
+<div class="head">
+<h2 data-i18n="k31" id="preset-title">Hai lựa chọn là xong phần cài đặt</h2>
+<p class="lede" data-i18n="k32">Chọn thị trường và phong cách giao dịch. AURORA PRO tự đặt nguồn volume, độ rộng Stoploss, thời gian giữ lệnh, bộ lọc phiên và ngưỡng điểm phù hợp.</p>
+</div>
+<div class="preset">
+<form id="pf" onsubmit="return false">
+<fieldset>
+<legend data-i18n="k33">Bạn giao dịch</legend>
+<div class="chips">
+<label><input name="m" type="radio" value="stock"/><span data-i18n="k34">Cổ phiếu</span></label>
+<label><input name="m" type="radio" value="forex"/><span>Forex</span></label>
+<label><input checked="" name="m" type="radio" value="cfd"/><span data-i18n="k35">Vàng · chỉ số CFD</span></label>
+<label><input name="m" type="radio" value="crypto"/><span>Crypto Futures</span></label>
+</div>
+</fieldset>
+<fieldset>
+<legend data-i18n="k36">Theo phong cách</legend>
+<div class="chips">
+<label><input name="s" type="radio" value="scalp"/><span>Scalping</span></label>
+<label><input name="s" type="radio" value="intra"/><span>Intraday</span></label>
+<label><input name="s" type="radio" value="swing"/><span>Swing</span></label>
+<label><input checked="" name="s" type="radio" value="prop"/><span>Prop Firm</span></label>
+</div>
+</fieldset>
+<p class="muted" data-i18n="k37" style="font-size:14.5px">Tương ứng với hai ô ⚙ Market Preset và ⚙ Trading Style trong Settings của chỉ báo.</p>
+</form>
+<div aria-live="polite" class="result">
+<div class="rh" data-i18n="k38" id="rTitle">CFD MODE · Prop Firm<small id="rSub">Vàng, NAS100, US30 · khung M15–H1</small></div>
+<dl>
+<dt data-i18n="k39">Nguồn volume</dt><dd data-i18n="k40" id="rVol">Futures CME/COMEX tự map</dd>
+<dt data-i18n="k41">Chiều lệnh</dt><dd id="rDir">BUY &amp; SELL</dd>
+<dt data-i18n="k42">Stoploss tối đa của Break</dt><dd id="rSL">2.5 ATR</dd>
+<dt data-i18n="k43">Dời SL về hòa vốn sau TP1</dt><dd data-i18n="k44" id="rBE">Có</dd>
+<dt data-i18n="k45">Điểm tối thiểu để vào lệnh</dt><dd id="rSc">60</dd>
+<dt data-i18n="k46">Phiên giao dịch</dt><dd data-i18n="k47" id="rSes">Chặn giờ giao phiên</dd>
+<dt data-i18n="k48">Giữ lệnh tối đa</dt><dd data-i18n="k49" id="rLen">120 nến</dd>
+<dt>Runner sau TP2</dt><dd data-i18n="k50" id="rRun">Tắt</dd>
+</dl>
+<div class="why" data-i18n="k51" id="rWhy">Ưu tiên giữ tài khoản trước giới hạn lỗ ngày: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TRANSPARENCY -->
+<section aria-labelledby="trans-title">
+<div class="wrap trans">
+<div>
+<h2 data-i18n="k52" id="trans-title">Thống kê ngay trên chart, kể cả phần không đẹp</h2>
+<p class="lede" data-i18n="k53">Dashboard ghi lại từng lệnh trên dữ liệu đã tải, tách theo từng setup và từng nhóm điểm, để bạn tự kiểm chứng thay vì tin lời quảng cáo.</p>
+<ul class="points">
+<li><strong data-i18n="k54">Lệnh ma cho setup bị lọc</strong><span data-i18n="k55">Các setup bị bộ lọc chặn vẫn được theo dõi ngầm. Nếu dòng ⛔ Filtered có lãi, bộ lọc đang chặn nhầm và bạn biết để nới ra.</span></li>
+<li><strong data-i18n="k56">So sánh trực tiếp</strong><span data-i18n="k57">Chờ hồi so với vào ngay, có quét thanh khoản so với không có, điểm cao so với điểm thấp, phiên Á so với phiên Mỹ.</span></li>
+<li><strong data-i18n="k58">Strategy Validator đi kèm</strong><span data-i18n="k59">Bản chiến lược chạy trong Strategy Tester với phí và trượt giá, xuất danh sách lệnh ra CSV để phân tích trên nhiều mã.</span></li>
+</ul>
+</div>
+<div>
+<div aria-label="Minh họa Dashboard thống kê" class="dash" data-i18n-aria="Illustration of the statistics dashboard" data-kz-alt-en="AURORA PRO statistics dashboard" data-kz-alt-vi="Dashboard thống kê AURORA PRO" data-kz-fit="contain" data-kz-img="../assets/shots/pro-dashboard.webp" role="img">
+<div class="r t"><span>⚡ KENVINZONE AURORA · CFD · Setups · Prop</span></div>
+<div class="r"><span class="k">Total R</span><span class="g">+12.4R</span><span class="g">Avg +0.21R</span></div>
+<div class="r"><span class="k">⚡ Break</span><span>31 · Win 52%</span><span class="g">+8.2R · +0.26R</span></div>
+<div class="r"><span class="k">☀ SUNNY</span><span>18 · Win 50%</span><span class="g">+2.9R · +0.16R</span></div>
+<div class="r"><span class="k">💠 SMC</span><span>12 · Win 58%</span><span class="g">+2.6R · +0.22R</span></div>
+<div class="r"><span class="k">  ↳ 💧 SWEEP</span><span>5 · Win 60%</span><span class="g">+1.4R · +0.28R</span></div>
+<div class="r"><span class="k">  ↳ ⇄ IFVG</span><span>4 · Win 50%</span><span class="l">−0.3R · −0.08R</span></div>
+<div class="r"><span class="k">⏳ Pullback</span><span>7/10 fill</span><span class="g">+3.1R vs +1.2R</span></div>
+<div class="r"><span class="k">⛔ Filtered</span><span>6 · Win 33%</span><span class="n">−1.3R · −0.22R</span></div>
+</div>
+<p class="cap" data-i18n="k60">Số liệu minh họa giao diện, không phải kết quả giao dịch thực tế.</p>
+</div>
+</div>
+</section>
+<!-- PLANS -->
+<section aria-labelledby="plans-title" class="band" id="goi">
+<div class="wrap">
+<div class="head">
+<h2 data-i18n="k61" id="plans-title">AURORA PRO trong dòng sản phẩm AURORA</h2>
+<p class="lede" data-i18n="k62">Ba dòng sản phẩm cho ba nhóm trader. PRO dành cho trader đã có kinh nghiệm, muốn hiểu sâu cấu trúc và chất lượng của từng setup.</p>
+</div>
+<div class="plans-wrap">
+<table class="plans">
+<thead>
+<tr>
+<th data-i18n="k63" scope="col">Tính năng</th>
+<th data-i18n="k64" scope="col">STANDARD<small>Trader phổ thông</small></th>
+<th class="pro" data-i18n="k65" scope="col">PRO<small>Trader có kinh nghiệm</small></th>
+<th data-i18n="k66" scope="col">ELITE<small>Trader Futures chuyên nghiệp</small></th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Setup BREAK · SUNNY · Smart Score</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k67">Kế hoạch lệnh, Pullback Entry, Dashboard thống kê</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k68">Volume Quality, phiên giao dịch, đa khung</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k69">Bảng LIVE trên điện thoại, cảnh báo JSON cho bot</td><td class="yes">✓</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k70">Setup Quality và Tier 3 Institutional Quality</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td>Setup SMC: RETEST · SWEEP + MSS · IFVG</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k71">Runner sau TP2, FVG CE cho lệnh chờ</td><td class="no">—</td><td class="pro yes">✓</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k72">Market Preset × Trading Style</td><td class="yes">Market Preset</td><td class="pro yes" data-i18n="k73">Đủ cả hai</td><td class="yes" data-i18n="k73">Đủ cả hai</td></tr>
+<tr><td data-i18n="k74">Xác nhận bằng Footprint gốc của TradingView</td><td class="no">—</td><td class="pro no">—</td><td class="yes">✓</td></tr>
+<tr><td data-i18n="k75">Yêu cầu tài khoản TradingView</td><td data-i18n="k76">Miễn phí trở lên</td><td class="pro" data-i18n="k76">Miễn phí trở lên</td><td data-i18n="k77">Premium / Ultimate + dữ liệu sàn Futures</td></tr>
+<tr class="lnk"><td></td><td><a href="../">Xem STANDARD</a></td><td class="pro"><a data-i18n="k78" href="#dang-ky">Đăng ký PRO</a></td><td><span class="muted" data-i18n="k79">Đang phát triển</span></td></tr>
+</tbody>
+</table>
+</div>
+<p data-i18n="k80" style="margin-top:12px;color:#94A3B8;font-size:14px">Giá và thời hạn dùng thử gói PRO: liên hệ <a href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Telegram @kenvinhoang</a>. Bảng giá STANDARD xem tại <a href="../#bang-gia">trang AURORA STANDARD</a>.</p>
+</div>
+</section>
+<!-- AUTOMATION -->
+<section aria-labelledby="auto-title">
+<div class="wrap auto">
+<div>
+<h2 data-i18n="k81" id="auto-title">Sẵn sàng cho giao dịch tự động</h2>
+<p class="lede" data-i18n="k82">Một alert duy nhất cho toàn bộ vòng đời lệnh. Mỗi sự kiện có mã định danh riêng để bot bỏ qua tin nhắn trùng.</p>
+<ul class="events">
+<li data-i18n="k83"><code>ENTRY_MARKET</code> vào lệnh kèm SL, TP1, TP2 và tỷ lệ chốt</li>
+<li data-i18n="k84"><code>PLACE_LIMIT</code> / <code>CANCEL_LIMIT</code> lệnh chờ Pullback</li>
+<li data-i18n="k85"><code>CLOSE_POSITION</code> đóng lệnh do quản lý: đảo chiều, hết giờ</li>
+<li data-i18n="k86"><code>RUNNER_ACTIVATED</code> / <code>UPDATE_STOP</code> / <code>RUNNER_EXIT</code> phần lệnh chạy theo xu hướng</li>
+</ul>
+</div>
+<pre class="code">{
+  "system": "KENVIN_AURORA",
+  "version": "15.0",
+  "event": "ENTRY_MARKET",
+  "side": "LONG",
+  "setup": "SMC SWEEP",
+  "score": 82,
+  "setup_quality": 71,
+  "tier3_quality": 68,
+  "price": 2412.6,
+  "sl": 2398.1,
+  "tp1": 2427.1,
+  "tp2": 2441.6,
+  "tp1_pct": 50,
+  "tp2_pct": 50
+}</pre>
+</div>
+</section>
+<!-- FAQ -->
+<section aria-labelledby="faq-title" class="band" id="hoi-dap">
+<div class="wrap faq">
+<h2 data-i18n="k87" id="faq-title">Câu hỏi thường gặp</h2>
+<details><summary data-i18n="k88">Tín hiệu có vẽ lại không?</summary><p data-i18n="k89">Ở chế độ mặc định (Confirm signals on bar close bật), tín hiệu chỉ xác nhận khi nến đóng cửa. Nếu bạn tắt tùy chọn này, điều kiện có thể thay đổi trong lúc nến đang chạy. Dữ liệu khung lớn luôn lấy từ nến đã đóng, và các swing của SMC được xác nhận sau 3 nến.</p></details>
+<details><summary data-i18n="k90">SMC trong AURORA PRO khác SMC thông thường thế nào?</summary><p data-i18n="k91">Chỉ vào lệnh thuận chiều xu hướng chính, và mọi khái niệm (swing, vùng FVG, Order Block, MSS) được định nghĩa bằng quy tắc cố định, có thời hạn và điều kiện hủy. Nhờ vậy kết quả thống kê phản ánh đúng cách chỉ báo hoạt động, không phụ thuộc cách mỗi người vẽ.</p></details>
+<details><summary data-i18n="k92">Tôi chưa có kinh nghiệm SMC thì nên chọn gói nào?</summary><p data-i18n="k93">Gói STANDARD tập trung vào BREAK, SUNNY và Smart Score với giao diện đơn giản hơn. Khi đã quen, bạn có thể chuyển lên PRO.</p></details>
+<details><summary data-i18n="k94">Có dùng được cho quỹ prop (FTMO, The5ers, Topstep…)?</summary><p data-i18n="k95">Có. Trading Style Prop Firm giới hạn khoảng Stoploss, dời SL về hòa vốn sau TP1, chặn giờ giao phiên và nâng ngưỡng điểm để giảm chuỗi thua. Bạn vẫn cần tự tuân thủ luật của từng quỹ.</p></details>
+<details><summary data-i18n="k96">Dùng trên điện thoại được không?</summary><p data-i18n="k97">Được. Chế độ Dashboard Mini hiển thị bảng LIVE gọn: xu hướng, setup đang chờ, khoảng cách tới điểm kích hoạt, lệnh đang chạy.</p></details>
+<details><summary data-i18n="k98">Có cam kết lợi nhuận không?</summary><p data-i18n="k99">Không. AURORA PRO là công cụ hỗ trợ phân tích. Thống kê trên Dashboard là kết quả quá khứ trên dữ liệu đã tải, chưa tính phí, và không đảm bảo kết quả tương lai.</p></details>
+</div>
+</section>
+<!-- SIGNUP -->
+<section aria-labelledby="signup-title" class="signup" id="dang-ky">
+<div class="wrap">
+<div class="box">
+<div>
+<h2 data-i18n="k100" id="signup-title">Dùng thử AURORA PRO</h2>
+<p class="lede" data-i18n="k101">Quyền truy cập được cấp theo tên tài khoản TradingView của bạn.</p>
+<ol class="steps">
+<li data-i18n="k102">Gửi tên đăng nhập TradingView qua kênh liên hệ bên cạnh.</li>
+<li data-i18n="k103">Nhận xác nhận cấp quyền Invite-only.</li>
+<li data-i18n="k104">Mở TradingView, vào Indicators, tab Invite-only scripts, chọn KENVINZONE AURORA PRO.</li>
+</ol>
+</div>
+<div>
+<p style="display:flex;flex-direction:column;gap:12px;margin:0">
+<a class="btn primary kz-sheen" data-i18n="k105" href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Gửi tên TradingView qua Telegram</a>
+<a class="btn ghost" data-i18n="k106" href="huong-dan.html">Đọc hướng dẫn trước</a>
+</p>
+<p data-i18n="k107" style="margin-top:14px;color:#94A3B8;font-size:14px">Liên hệ: <a href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Telegram @kenvinhoang</a>. Điều khoản sử dụng và hoàn tiền áp dụng chung cho các gói AURORA: <a href="../#chinh-sach">xem chi tiết</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div>
+<p data-i18n="k108"><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang (Tele @KenvinHoang)</p>
+<p data-i18n="k109">AURORA là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn. Kết quả quá khứ không đảm bảo kết quả tương lai. TradingView là thương hiệu của TradingView, Inc.</p>
+</div>
+<div>
+<p class="lines">
+<a href="../">AURORA STANDARD</a>
+<a href="#top">AURORA PRO</a>
+<span data-i18n="k110">AURORA ELITE (đang phát triển)</span>
+</p>
+<p class="lines">
+<a data-i18n="k111" href="huong-dan.html">Hướng dẫn sử dụng</a>
+<a href="https://kenvinzone.com">kenvinzone.com</a>
+</p>
+</div>
+</div>
 </footer>
-
 <script>
-  // Mobile Menu Controller
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const hamburger = document.getElementById('hamburger-icon');
-    const close = document.getElementById('close-icon');
-    const btn = document.getElementById('mobile-menu-btn');
-    
-    const isHidden = menu.classList.contains('hidden');
-    if (isHidden) {
-      menu.classList.remove('hidden');
-      hamburger.classList.add('hidden');
-      close.classList.remove('hidden');
-      btn.setAttribute('aria-expanded', 'true');
-    } else {
-      menu.classList.add('hidden');
-      hamburger.classList.remove('hidden');
-      close.classList.add('hidden');
-      btn.setAttribute('aria-expanded', 'false');
-    }
+(function(){
+  var M={
+    stock:{t:'STOCK MODE',sub:'Cổ phiếu Việt Nam, Crypto Spot',vol:'Volume thật · RVOL · VWAP · CMF',dir:'Chỉ BUY'},
+    forex:{t:'FOREX MODE',sub:'Các cặp tiền',vol:'Chỉ RVOL (tick volume)',dir:'BUY & SELL'},
+    cfd:{t:'CFD MODE',sub:'Vàng, NAS100, US30',vol:'Futures CME/COMEX tự map',dir:'BUY & SELL'},
+    crypto:{t:'CRYPTO MODE',sub:'Crypto Futures (Perpetual)',vol:'Volume sàn + Open Interest',dir:'BUY & SELL'}
+  };
+  var S={
+    scalp:{t:'Scalping',tf:'M1–M15',sl:'3 ATR',be:'Có',sc:'55',ses:'Chặn giờ giao phiên',len:'60 nến',run:'Tắt',why:'Lệnh ngắn, dời SL về hòa vốn sớm vì khung nhỏ hay quét ngược.'},
+    intra:{t:'Intraday',tf:'M15–H1',sl:'4 ATR',be:'Không',sc:'50',ses:'Chỉ thống kê theo phiên',len:'120 nến',run:'Tắt',why:'Cân bằng giữa số lệnh và độ chọn lọc, phù hợp đa số trader làm việc trong ngày.'},
+    swing:{t:'Swing',tf:'H4–D1',sl:'Không giới hạn',be:'Không',sc:'50',ses:'Tắt',len:'200 nến',run:'Adaptive 25%',why:'Giữ nguyên tham số gốc của hệ thống; xu hướng khung lớn đủ dài để phần Runner chạy theo.'},
+    prop:{t:'Prop Firm',tf:'M15–H1',sl:'2.5 ATR',be:'Có',sc:'60',ses:'Chặn giờ giao phiên',len:'120 nến',run:'Tắt',why:'Ưu tiên giữ tài khoản trước giới hạn lỗ ngày: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn.'}
+  };
+  var f=document.getElementById('pf');
+  function $(id){return document.getElementById(id);}
+  function upd(){
+    var m=M[f.m.value], s=S[f.s.value], stock=f.m.value==='stock';
+    var T=window.kzT||function(x){return x};
+    var tt=$('rTitle'); tt.firstChild.nodeValue=m.t+' · '+s.t;
+    var sub=document.getElementById('rSub')||tt.querySelector('small'); if(sub) sub.textContent=T(m.sub)+T(' · khung ')+s.tf;
+    $('rVol').textContent=T(m.vol); $('rDir').textContent=T(m.dir);
+    $('rSL').textContent=T(s.sl); $('rBE').textContent=T(s.be); $('rSc').textContent=s.sc;
+    $('rSes').textContent=stock?T('Tắt (cổ phiếu)'):T(s.ses);
+    $('rLen').textContent=T(s.len); $('rRun').textContent=T(s.run); $('rWhy').textContent=T(s.why);
   }
-
-  // HERO MULTI-SLIDE CONTROLLER (Image/SVG/Video Showcase)
-  // ===== CẤU HÌNH VIDEO DEMO =====
-  // Dán link video mp4 (hoặc để trống ''). Khi trống: nút "Xem Video Demo" và slide video tự ẩn.
-  const DEMO_VIDEO_SRC = '';
-  const DEMO_VIDEO_POSTER = '';
-  let currentSlideIndex = 0;
-  let totalSlides = DEMO_VIDEO_SRC ? 4 : 3;
-  let slideInterval = null;
-
-  const slideCaptions = [
-    "XAUUSD · 15M · 1st BREAK BUY (TỶ LỆ 1R / 2R)",
-    "EURUSD · 15M · SUNNY TIẾP DIỄN SÓNG",
-    "LIVE HUD · THỐNG KÊ ĐỒNG THUẬN 9 KHUNG MTF",
-    "VIDEO DEMO THỰC CHIẾN · QUY TRÌNH GIAO DỊCH AURORA STANDARD"
-  ];
-
-  function updateSlideUI() {
-    // Hide all slides
-    for (let i = 0; i < totalSlides; i++) {
-      const slide = document.getElementById(`slide-${i}`);
-      const dot = document.getElementById(`dot-${i}`);
-      const tab = document.getElementById(`tab-${i}`);
-      
-      if (slide) slide.classList.remove('active');
-      if (dot) {
-        dot.className = "w-2 h-2 rounded-full bg-space-750 transition-all hover:bg-slate-400";
-      }
-      if (tab) {
-        tab.className = "slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-slate-muted hover:text-white transition";
-      }
-    }
-
-    // Activate current
-    const activeSlide = document.getElementById(`slide-${currentSlideIndex}`);
-    const activeDot = document.getElementById(`dot-${currentSlideIndex}`);
-    const activeTab = document.getElementById(`tab-${currentSlideIndex}`);
-    const captionEl = document.getElementById('slide-ticker-caption');
-    const counterBadge = document.getElementById('slide-counter-badge');
-
-    if (activeSlide) activeSlide.classList.add('active');
-    if (activeDot) {
-      activeDot.className = "w-3 h-2.5 rounded-full bg-aurora-cyan transition-all";
-    }
-    if (activeTab) {
-      activeTab.className = "slide-nav-tab px-2 py-0.5 rounded text-[11px] font-semibold text-aurora-cyan bg-space-800 transition";
-    }
-    if (captionEl) {
-      captionEl.innerText = slideCaptions[currentSlideIndex];
-    }
-    if (counterBadge) {
-      counterBadge.innerText = `${currentSlideIndex + 1} / ${totalSlides}`;
-    }
-  }
-
-  function goToSlide(index) {
-    currentSlideIndex = (index + totalSlides) % totalSlides;
-    updateSlideUI();
-    restartSlideTimer();
-  }
-
-  function nextSlide() {
-    goToSlide(currentSlideIndex + 1);
-  }
-
-  function prevSlide() {
-    goToSlide(currentSlideIndex - 1);
-  }
-
-  function startSlideTimer() {
-    if (slideInterval) clearInterval(slideInterval);
-    slideInterval = setInterval(() => {
-      currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-      updateSlideUI();
-    }, 6000); // 6s per slide
-  }
-
-  function restartSlideTimer() {
-    startSlideTimer();
-  }
-
-  // Pause on hover
-  const sliderBox = document.getElementById('hero-slider-container');
-  if (sliderBox) {
-    sliderBox.addEventListener('mouseenter', () => {
-      if (slideInterval) clearInterval(slideInterval);
-    });
-    sliderBox.addEventListener('mouseleave', () => {
-      startSlideTimer();
-    });
-  }
-
-  // Interactive Video Demo Prompt
-  function playDemoVideoPrompt() {
-    const v = document.getElementById('demo-video');
-    if (v) { v.play(); } else { openRegisterModal('trial'); }
-  }
-  function setupDemoVideo() {
-    const slide = document.getElementById('slide-3');
-    if (!DEMO_VIDEO_SRC) {
-      ['hero-video-btn', 'tab-3', 'dot-3', 'slide-3'].forEach(id => { const el = document.getElementById(id); if (el) el.style.display = 'none'; });
-      return;
-    }
-    const box = slide ? slide.querySelector('.aspect-video') : null;
-    if (box) {
-      box.innerHTML = '<video id="demo-video" controls playsinline preload="metadata" class="w-full h-full object-cover"' + (DEMO_VIDEO_POSTER ? ' poster="' + DEMO_VIDEO_POSTER + '"' : '') + '><source src="' + DEMO_VIDEO_SRC + '" type="video/mp4"></video>';
-    }
-  }
-
-  // Start timer on page load
-  window.addEventListener('DOMContentLoaded', () => {
-    setupDemoVideo();
-    updateSlideUI();
-    startSlideTimer();
-  });
-
-  // Active Trigger Element Memory for Accessibility
-  let lastActiveTriggerElement = null;
-
-  // Modal Controller with explicit tier selection and focus trap
-  function openRegisterModal(tierKey) {
-    lastActiveTriggerElement = document.activeElement;
-    const modal = document.getElementById('register-modal');
-    const select = document.getElementById('plan-select');
-    
-    // Explicitly update select value based on trigger
-    if (tierKey && select) {
-      select.value = tierKey;
-    }
-    
-    modal.classList.remove('hidden');
-    modal.classList.add('grid');
-    document.body.classList.add('modal-open');
-    
-    // Focus first input
-    setTimeout(() => {
-      document.getElementById('tradingview-id').focus();
-    }, 50);
-  }
-
-  function closeRegisterModal() {
-    const modal = document.getElementById('register-modal');
-    modal.classList.add('hidden');
-    modal.classList.remove('grid');
-    document.body.classList.remove('modal-open');
-    resetModalView();
-
-    // Restore focus to trigger element
-    if (lastActiveTriggerElement) {
-      lastActiveTriggerElement.focus();
-    }
-  }
-
-  // Keyboard navigation for Modal (Escape key + Backdrop click)
-  document.getElementById('register-modal').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('register-modal')) {
-      closeRegisterModal();
-    }
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const modal = document.getElementById('register-modal');
-      if (!modal.classList.contains('hidden')) {
-        closeRegisterModal();
-      }
-    }
-  });
-
-  // Handle Form Submission Without Fake Toasts or Lost Leads
-  let currentOrderPayload = '';
-
-  function handleOrderSubmit(e) {
-    e.preventDefault();
-    const tvIdInput = document.getElementById('tradingview-id');
-    const contactInput = document.getElementById('customer-contact');
-    const planSelect = document.getElementById('plan-select');
-
-    const tvId = tvIdInput.value.trim();
-    const contact = contactInput.value.trim();
-    const planLabel = planSelect.options[planSelect.selectedIndex].text;
-
-    if (!tvId || !contact) return;
-
-    // Structured lead payload
-    currentOrderPayload = `[ĐĂNG KÝ AURORA STANDARD]\n• TV ID: ${tvId}\n• Gói: ${planLabel}\n• Liên hệ: ${contact}`;
-
-    // Update dispatch view
-    document.getElementById('generated-payload').innerText = currentOrderPayload;
-
-    // Encode for Telegram direct link
-    const telegramUrl = `https://t.me/kenvinhoang?text=${encodeURIComponent(currentOrderPayload)}`;
-    document.getElementById('telegram-dispatch-btn').setAttribute('href', telegramUrl);
-
-    // Switch view
-    document.getElementById('order-form').classList.add('hidden');
-    document.getElementById('order-success-view').classList.remove('hidden');
-  }
-
-  function resetModalView() {
-    document.getElementById('order-form').classList.remove('hidden');
-    document.getElementById('order-success-view').classList.add('hidden');
-    document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
-  }
-
-  function copyPayloadToClipboard() {
-    if (!currentOrderPayload) return;
-    
-    // Safe clipboard fallback
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(currentOrderPayload).then(() => {
-        document.getElementById('copy-btn-text').innerText = '✓ Đã Sao Chép!';
-        setTimeout(() => {
-          document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
-        }, 2500);
-      });
-    } else {
-      const tempArea = document.createElement('textarea');
-      tempArea.value = currentOrderPayload;
-      document.body.appendChild(tempArea);
-      tempArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempArea);
-      document.getElementById('copy-btn-text').innerText = '✓ Đã Sao Chép!';
-      setTimeout(() => {
-        document.getElementById('copy-btn-text').innerText = 'Sao Chép Nội Dung';
-      }, 2500);
-    }
-  }
+  f.addEventListener('change',upd); document.addEventListener('kz:lang',upd); upd();
+})();
 </script>
-
 <script>
 /* ===== KENVINZONE UNIFIED LAYER: theme, menu, hiệu ứng ===== */
 (function(){
@@ -1593,6 +711,181 @@ html[data-theme="light"] .neon-subtle-border{box-shadow:0 1px 2px rgba(14,27,48,
     var el=e.target.closest&&e.target.closest('.kz-spot'); if(!el)return;
     var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
   },{passive:true});
+})();
+</script>
+<script>window.KZ_META_EN={"t": "KENVINZONE AURORA PRO · Trend indicator with BREAK, SUNNY and SMC for TradingView", "d": "AURORA PRO trades with the trend using BREAK, SUNNY and rule-based SMC setups, with a quality score for every setup and transparent statistics on TradingView."};window.KZ_I18N_EN={
+"k0": "Scoring",
+"k1": "Settings",
+"k2": "Compare plans",
+"k3": "FAQ",
+"k4": "Guide (VI)",
+"k5": "Request a trial",
+"k6": "Know why a setup is worth taking",
+"k7": "AURORA PRO finds trend-following entries with three setup families: BREAK, SUNNY and SMC. Every signal comes with an entry, stop and take-profit plan, plus a base score and a setup-specific quality score showing where the setup is strong and where it is weak.",
+"k8": "Read the user guide (VI)",
+"k9": "Invite-only indicator on TradingView. Works with free TradingView accounts.",
+"k10": "SMC SWEEP setup rating <span>BUY</span>",
+"k11": "Volume · Session",
+"k12": "✓ passed",
+"k13": "Three setup families, one way to manage trades",
+"k14": "All of them only trade in the direction of the main trend confirmed by the system. No top picking, no bottom picking.",
+"k15": "The first and second break of the Trailing line after a new trend forms. Breakout candles that are too long wait for a 50% pullback instead of chasing price.",
+"k16": "Buy / sell continuation signals with the main trend. Catches the next leg after a pullback.",
+"k17": "💠 SMC · with the trend",
+"k18": "<strong>🔁 RETEST</strong>Price returns to the FVG or order block of the post-break impulse, then bounces.",
+"k19": "<strong>💧 SWEEP + MSS</strong>Sweeps the pullback low, closes back inside, then breaks the nearest pullback high.",
+"k20": "<strong>⇄ IFVG</strong>An opposite FVG from the pullback is broken and flips into the entry zone.",
+"k21": "All three families share the minimum score, volume filter, session filter and trade-management rules. SMC setups place the stop at the structural invalidation level of the setup itself. By default, signals are confirmed only on bar close.",
+"k22": "A base score, plus a score for each setup",
+"k23": "Instead of squeezing everything into one number, AURORA PRO splits the assessment into separate parts. You see where a setup is strong, and the statistics show which part actually helps on the symbol you trade.",
+"k24": "Is the environment favourable for this direction: trend, momentum, higher-timeframe agreement, money flow.",
+"k25": "Setup quality score",
+"k26": "Each setup type has its own measure. BreakQ: compression then expansion, decisive close, clean path. SunnyQ: tidy pullback, trend still efficient. SMCQ: quality zone, strong impulse, room to the opposite liquidity.",
+"k27": "Tier 3 · money-flow context",
+"k28": "Applied when data exists: fresh FVG, liquidity sweep, cumulative delta, absorption. Missing components are skipped and never add points.",
+"k29": "Hover over a signal label to see:",
+"k30": "By default the quality layers only score and record statistics; they do not block trades. You decide whether to use them as filters once you have data.",
+"k31": "Two choices and setup is done",
+"k32": "Choose your market and trading style. AURORA PRO sets the volume source, stop width, holding time, session filter and score thresholds to match.",
+"k33": "You trade",
+"k34": "Stocks",
+"k35": "Gold · index CFDs",
+"k36": "Your style",
+"k37": "Matches the two ⚙ Market Preset and ⚙ Trading Style boxes in the indicator settings.",
+"k38": "CFD MODE · Prop Firm<small id=\"rSub\">Gold, NAS100, US30 · M15–H1 timeframe</small>",
+"k39": "Volume source",
+"k40": "CME/COMEX futures, auto-mapped",
+"k41": "Trade direction",
+"k42": "Maximum Break stop",
+"k43": "Move stop to breakeven after TP1",
+"k44": "Yes",
+"k45": "Minimum score to enter",
+"k46": "Sessions",
+"k47": "Block session transitions",
+"k48": "Maximum holding time",
+"k49": "120 bars",
+"k50": "Off",
+"k51": "Protecting the account comes before the daily loss limit: risk per trade is easy to control, with fewer but more selective trades.",
+"k52": "Statistics on the chart, including the parts that aren’t pretty",
+"k53": "The dashboard records every trade on the loaded data, split by setup and score group, so you verify it yourself instead of trusting marketing.",
+"k54": "Ghost trades for filtered setups",
+"k55": "Setups blocked by a filter are still tracked in the background. If the ⛔ Filtered row is profitable, the filter is blocking good trades and you know to loosen it.",
+"k56": "Head-to-head comparisons",
+"k57": "Pullback versus immediate entry, with versus without a liquidity sweep, high versus low score, Asian versus US session.",
+"k58": "Strategy Validator included",
+"k59": "A strategy version for the Strategy Tester with commission and slippage, exporting the trade list to CSV for multi-symbol analysis.",
+"k60": "Illustrative interface figures, not actual trading results.",
+"k61": "AURORA PRO within the AURORA family",
+"k62": "Three products for three groups of traders. PRO is for experienced traders who want to understand the structure and quality of every setup.",
+"k63": "Feature",
+"k64": "STANDARD<small>Everyday traders</small>",
+"k65": "PRO<small>Experienced traders</small>",
+"k66": "ELITE<small>Professional futures traders</small>",
+"k67": "Trade plan, Pullback Entry, statistics dashboard",
+"k68": "Volume Quality, sessions, multi-timeframe",
+"k69": "LIVE panel on mobile, JSON alerts for bots",
+"k70": "Setup Quality and Tier 3 Institutional Quality",
+"k71": "Runner after TP2, FVG CE for limit orders",
+"k72": "Market Preset × Trading Style",
+"k73": "Both",
+"k74": "Confirmation with TradingView native footprint",
+"k75": "TradingView account required",
+"k76": "Free and above",
+"k77": "Premium / Ultimate + futures exchange data",
+"k78": "Register for PRO",
+"k79": "In development",
+"k80": "PRO pricing and trial period: contact <a href=\"https://t.me/kenvinhoang\" rel=\"noopener\" target=\"_blank\">@kenvinhoang on Telegram</a>. See STANDARD pricing on the <a href=\"../#bang-gia\">AURORA STANDARD page</a>.",
+"k81": "Ready for automated trading",
+"k82": "A single alert covers the full trade lifecycle. Every event has its own ID so bots can ignore duplicate messages.",
+"k83": "<code>ENTRY_MARKET</code> entry with SL, TP1, TP2 and close percentages",
+"k84": "<code>PLACE_LIMIT</code> / <code>CANCEL_LIMIT</code> Pullback limit orders",
+"k85": "<code>CLOSE_POSITION</code> managed exits: reversal, time limit",
+"k86": "<code>RUNNER_ACTIVATED</code> / <code>UPDATE_STOP</code> / <code>RUNNER_EXIT</code> the runner portion that follows the trend",
+"k87": "Frequently asked questions",
+"k88": "Do signals repaint?",
+"k89": "With the default setting (Confirm signals on bar close enabled), signals are confirmed only when the bar closes. If you turn this off, conditions can change while the bar is forming. Higher-timeframe data always comes from closed bars, and SMC swings are confirmed after 3 bars.",
+"k90": "How is SMC in AURORA PRO different from typical SMC?",
+"k91": "It only trades with the main trend, and every concept (swing, FVG zone, order block, MSS) is defined by fixed rules with expiry and cancellation conditions. As a result, statistics reflect exactly how the indicator works rather than how each person draws.",
+"k92": "I’m new to SMC. Which plan should I choose?",
+"k93": "STANDARD focuses on BREAK, SUNNY and Smart Score with a simpler interface. Once you are comfortable, you can move up to PRO.",
+"k94": "Can I use it for prop firms (FTMO, The5ers, Topstep…)?",
+"k95": "Yes. The Prop Firm trading style caps the stop distance, moves the stop to breakeven after TP1, blocks session transitions and raises the score threshold to reduce losing streaks. You still need to follow each firm’s own rules.",
+"k96": "Does it work on mobile?",
+"k97": "Yes. Dashboard Mini mode shows a compact LIVE panel: trend, setup being waited for, distance to trigger and any open trade.",
+"k98": "Is profit guaranteed?",
+"k99": "No. AURORA PRO is an analysis tool. Dashboard statistics are past results on loaded data, exclude costs and do not guarantee future results.",
+"k100": "Try AURORA PRO",
+"k101": "Access is granted to your TradingView username.",
+"k102": "Send your TradingView username through the contact channel alongside.",
+"k103": "Receive confirmation of invite-only access.",
+"k104": "Open TradingView, go to Indicators, the Invite-only scripts tab, and select KENVINZONE AURORA PRO.",
+"k105": "Send your TradingView username on Telegram",
+"k106": "Read the guide first (VI)",
+"k107": "Contact: <a href=\"https://t.me/kenvinhoang\" rel=\"noopener\" target=\"_blank\">@kenvinhoang on Telegram</a>. Terms of use and refunds apply to all AURORA plans: <a href=\"../#chinh-sach\">see details</a>.",
+"k108": "<strong>KENVINZONE AURORA PRO</strong> · developed by Trader KenvinHoang (Tele @kenvinhoang)",
+"k109": "AURORA is a technical analysis tool, not investment advice. Trading carries a risk of capital loss. Past results do not guarantee future results. TradingView is a trademark of TradingView, Inc.",
+"k110": "AURORA ELITE (in development)",
+"k111": "User guide (VI)",
+"k112": "swing low swept",
+"k113": "🛑 Structural SL"
+};</script>
+<script>
+/* ===== KENVINZONE LANGUAGE ENGINE (VI / EN) =====
+   Tiếng Việt nằm sẵn trong HTML. Bản tiếng Anh ở KZ_I18N_EN (sửa câu chữ tại đây). */
+(function(){
+  var EN=window.KZ_I18N_EN||{}, root=document.documentElement;
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  var vi=new Map(els.map(function(e){return [e,e.innerHTML]}));
+  var aEls=[].slice.call(document.querySelectorAll('[data-i18n-aria]'));
+  var viA=new Map(aEls.map(function(e){return [e,e.getAttribute('aria-label')]}));
+  var pEls=[].slice.call(document.querySelectorAll('[data-i18n-ph]'));
+  var viP=new Map(pEls.map(function(e){return [e,e.getAttribute('placeholder')]}));
+  var md=document.querySelector('meta[name="description"]'), viMeta={t:document.title,d:md?md.content:''};
+  var btns=[].slice.call(document.querySelectorAll('.kz-lang [data-lang]'));
+  function apply(lang,save){
+    var en=lang==='en';
+    els.forEach(function(e){var t=en?EN[e.dataset.i18n]:vi.get(e);if(t!=null)e.innerHTML=t;});
+    aEls.forEach(function(e){e.setAttribute('aria-label',en?e.dataset.i18nAria:viA.get(e));});
+    pEls.forEach(function(e){e.setAttribute('placeholder',en?e.dataset.i18nPh:viP.get(e));});
+    root.lang=en?'en':'vi';
+    document.title=en&&window.KZ_META_EN?KZ_META_EN.t:viMeta.t;
+    if(md)md.content=en&&window.KZ_META_EN?KZ_META_EN.d:viMeta.d;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});
+    document.dispatchEvent(new CustomEvent('kz:lang',{detail:lang}));
+    if(save){
+      try{localStorage.setItem('kz-lang',lang)}catch(e){}
+      document.cookie='kz-lang='+lang+'; path=/; max-age=31536000; SameSite=Lax'+(location.hostname.endsWith('kenvinzone.com')?'; domain=.kenvinzone.com':'');
+      try{var u=new URL(location.href);if(en)u.searchParams.set('lang','en');else u.searchParams.delete('lang');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
+    }
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang,true);});});
+  apply(root.lang==='en'?'en':'vi',false);
+})();
+
+/* ===== ẢNH THỰC TẾ TỰ NẠP =====
+   Phần tử có data-kz-img="đường-dẫn-ảnh": nếu file tồn tại, ảnh thật thay cho hình minh họa;
+   nếu chưa có file, hình minh họa giữ nguyên. data-kz-replace="self" = thay chính phần tử. */
+(function(){
+  var lb=document.createElement('dialog'); lb.className='kz-lb';
+  lb.innerHTML='<div class="h"><span></span><button type="button" aria-label="Close">✕</button></div><img alt="">';
+  document.body.appendChild(lb);
+  lb.querySelector('button').onclick=function(){lb.close()};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+  function alt(el){return (document.documentElement.lang==='en'?el.dataset.kzAltEn:el.dataset.kzAltVi)||el.dataset.kzAltVi||'';}
+  function zoom(src,cap){lb.querySelector('img').src=src;lb.querySelector('img').alt=cap;lb.querySelector('.h span').textContent=cap;if(lb.showModal)lb.showModal();}
+  document.querySelectorAll('[data-kz-img]').forEach(function(el){
+    var src=el.dataset.kzImg; if(!src)return;
+    var img=new Image(); img.decoding='async';
+    img.onload=function(){
+      img.className='kz-real'+(el.dataset.kzReplace==='self'?' self':''); img.alt=alt(el);
+      if(el.dataset.kzFit)el.style.setProperty('--kz-fit',el.dataset.kzFit);
+      img.addEventListener('click',function(){zoom(img.src,img.alt)});
+      if(el.dataset.kzReplace==='self'){el.replaceWith(img);}
+      else{el.innerHTML='';el.appendChild(img);el.classList.add('kz-img-ok');el.style.background='none';}
+      document.addEventListener('kz:lang',function(){img.alt=alt(el)});
+    };
+    img.src=src;
+  });
 })();
 </script>
 </body>
