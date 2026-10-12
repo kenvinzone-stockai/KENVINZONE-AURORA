@@ -1,13 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hướng dẫn sử dụng KENVINZONE AURORA PRO</title>
-<meta name="description" content="Hướng dẫn sử dụng KENVINZONE AURORA PRO trên TradingView: cài đặt nhanh theo thị trường và phong cách giao dịch, setup BREAK, SUNNY, SMC, hệ thống chấm điểm nhiều tầng, kế hoạch lệnh, Dashboard, Volume, Alert và Strategy Validator.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>/* KZ language: ?lang= > cookie chung .kenvinzone.com > lựa chọn đã lưu > múi giờ VN / trình duyệt */window.KZ_JS_EN={};(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang")}catch(e){}var c=(document.cookie.match(/(?:^|; )kz-lang=(en|vi)/)||[])[1],s=null;try{s=localStorage.getItem("kz-lang")}catch(e){}var l=(q==="en"||q==="vi")?q:(c||s);if(l!=="en"&&l!=="vi"){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"]).map(function(x){return String(x).toLowerCase()});l=(/^Asia\/(Ho_Chi_Minh|Saigon)$/.test(tz)||ls.some(function(x){return x.indexOf("vi")===0}))?"vi":"en"}document.documentElement.lang=l;})();window.kzT=function(s){return (document.documentElement.lang==="en"&&window.KZ_JS_EN[s])||s};</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Hướng dẫn sử dụng KENVINZONE AURORA PRO V15.4</title>
+<meta content="Hướng dẫn sử dụng KENVINZONE AURORA PRO trên TradingView: cài đặt nhanh theo thị trường và phong cách giao dịch, setup BREAK, SUNNY, SMC, hệ thống chấm điểm nhiều tầng, kế hoạch lệnh, Dashboard, Volume, Alert và Strategy Validator." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --ink:#0D1424;
@@ -265,536 +267,534 @@ html[data-theme="light"] .dash{background:#0A1426;color:#E6EEF8}
 html[data-theme="light"] ol.steps>li::before{color:#FFFFFF}
 
 @media (max-width:420px){.kz-prod{font-size:10.5px;padding:4px 6px;letter-spacing:0}.kz-theme,.kz-menu{width:36px;height:36px}.kz-hd-r{gap:6px}.kz-brand{gap:8px}}
+
+.kz-lang{display:inline-flex;padding:3px;border:1px solid var(--kz-line);border-radius:10px;background:var(--kz-surface)}
+.kz-lang button{border:0;background:none;color:var(--kz-muted);font:700 13px/1 'Be Vietnam Pro',system-ui,sans-serif;padding:8px 10px;border-radius:7px;cursor:pointer;letter-spacing:.02em}
+.kz-lang button:hover{color:var(--kz-text)}
+.kz-lang button[aria-pressed="true"]{background:var(--kz-ink);color:var(--kz-cyan);box-shadow:inset 0 0 0 1px var(--kz-line)}
+@media (max-width:420px){.kz-lang button{padding:8px 7px}.kz-hd-in{gap:8px}}
+/* ảnh thực tế tự nạp */
+.kz-img-ok{cursor:zoom-in}
+.kz-img-ok img.kz-real{display:block;width:100%;height:100%;object-fit:var(--kz-fit,cover);object-position:top}
+img.kz-real.self{display:block;width:100%;height:auto;cursor:zoom-in}
+dialog.kz-lb{max-width:min(1200px,94vw);max-height:92vh;padding:0;border:1px solid var(--kz-line);border-radius:16px;background:var(--kz-deep);color:var(--kz-text)}
+dialog.kz-lb::backdrop{background:rgba(3,7,15,.82);backdrop-filter:blur(4px)}
+dialog.kz-lb img{display:block;max-width:100%;max-height:84vh;margin:0 auto}
+dialog.kz-lb .h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--kz-line);font-size:14px;color:var(--kz-muted)}
+dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text);border-radius:8px;padding:6px 10px;cursor:pointer}
+
+@media (max-width:420px){.kz-prod{font-size:10.5px;padding:4px 6px;letter-spacing:0}.kz-theme,.kz-menu{width:36px;height:36px}.kz-hd-r{gap:6px}.kz-brand{gap:8px}}
 </style>
 </head>
 <body>
 <header class="kz-hd" id="kzHeader">
 <div class="kz-hd-in">
-<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" href="https://kenvinzone.com/"><svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#101D35"/><path d="M4 21L10 15L15 19L24 7" stroke="#38D5E7" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="7" r="2.4" fill="#F3BE62"/></svg><span>KenvinZone</span></a><a class="kz-prod pro" href="index.html">AURORA <b>PRO</b></a></div>
-<nav aria-label="Menu chính" class="kz-nav" id="kzNav"><a href="index.html">Trang sản phẩm</a><a href="index.html#goi">So sánh gói</a><a aria-current="page" href="huong-dan.html">Hướng dẫn</a><a href="../huong-dan.html">Hướng dẫn STANDARD</a><a href="../">AURORA STANDARD</a></nav>
-<div class="kz-hd-r"><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><a class="kz-cta pro" href="index.html#dang-ky">Đăng ký dùng thử</a><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" id="kzMenu" type="button">☰</button></div>
+<div class="kz-brand"><a aria-label="KenvinZone, trang chủ hệ sinh thái" class="kz-logo" data-i18n-aria="KenvinZone, ecosystem home" href="https://kenvinzone.com/"><svg aria-hidden="true" viewbox="0 0 28 28"><rect fill="#101D35" height="28" rx="8" width="28"></rect><path d="M4 21L10 15L15 19L24 7" fill="none" stroke="#38D5E7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"></path><circle cx="24" cy="7" fill="#F3BE62" r="2.4"></circle></svg><span>KenvinZone</span></a><a class="kz-prod pro" href="index.html">AURORA <b>PRO</b></a></div>
+<nav aria-label="Menu chính" class="kz-nav" data-i18n-aria="Main menu" id="kzNav"><a data-i18n="k0" href="index.html">Trang sản phẩm</a><a data-i18n="k1" href="index.html#goi">So sánh gói</a><a aria-current="page" data-i18n="k2" href="huong-dan.html">Hướng dẫn</a><a data-i18n="k3" href="../huong-dan.html">Hướng dẫn STANDARD</a><a href="../">AURORA STANDARD</a></nav>
+<div class="kz-hd-r"><div aria-label="Chọn ngôn ngữ" class="kz-lang" data-i18n-aria="Choose language" role="group"><button aria-pressed="true" data-lang="vi" lang="vi" type="button">VI</button><button aria-pressed="false" data-lang="en" lang="en" type="button">EN</button></div><button aria-label="Đổi giao diện sáng / tối" aria-pressed="false" class="kz-theme" data-i18n-aria="Toggle light / dark theme" id="kzTheme" type="button"><svg aria-hidden="true" class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg><svg aria-hidden="true" class="sun" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button><a class="kz-cta pro" data-i18n="k4" href="index.html#dang-ky">Đăng ký dùng thử</a><button aria-controls="kzNav" aria-expanded="false" aria-label="Mở menu" class="kz-menu" data-i18n-aria="Open menu" id="kzMenu" type="button">☰</button></div>
 </div>
 </header>
 <div class="shell">
-
-<nav class="toc" aria-label="Mục lục">
-  <a class="brand" href="#gioi-thieu" style="color:inherit;text-decoration:none">
-    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 21h6v-5h5v-4h5V8h6" fill="none" stroke="#34B8D4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<nav aria-label="Mục lục" class="toc" data-i18n-aria="Contents">
+<a class="brand" href="#gioi-thieu" style="color:inherit;text-decoration:none">
+<svg aria-hidden="true" height="28" viewbox="0 0 28 28" width="28"><path d="M3 21h6v-5h5v-4h5V8h6" fill="none" stroke="#34B8D4" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
     KENVINZONE AURORA PRO
   </a>
-  <ol id="tocList">
-    <li><a href="#gioi-thieu">AURORA PRO là gì</a></li>
-    <li><a href="#bat-dau">Bắt đầu nhanh trong 5 bước</a></li>
-    <li><a href="#cai-dat-nhanh">Cài đặt nhanh: Market Preset × Trading Style</a></li>
-    <li><a href="#doc-chart">Đọc biểu đồ</a></li>
-    <li><a href="#tin-hieu">Các loại tín hiệu</a></li>
-    <li><a href="#ke-hoach">Kế hoạch lệnh</a></li>
-    <li><a href="#pullback">Pullback Entry cho nến Break dài</a></li>
-    <li><a href="#diem">Hệ thống chấm điểm nhiều tầng</a></li>
-    <li><a href="#dashboard">Dashboard thống kê</a></li>
-    <li><a href="#volume">Volume & Volume Quality</a></li>
-    <li><a href="#phien">Phiên giao dịch</a></li>
-    <li><a href="#canh-bao">Cảnh báo (Alert)</a></li>
-    <li><a href="#validator">Strategy Validator</a></li>
-    <li><a href="#nghien-cuu">Quy trình kiểm chứng một cấu hình</a></li>
-    <li><a href="#settings">Tra cứu Settings</a></li>
-    <li><a href="#rui-ro">Quản lý rủi ro</a></li>
-    <li><a href="#faq">Câu hỏi thường gặp</a></li>
-  </ol>
+<ol id="tocList">
+<li><a data-i18n="k5" href="#gioi-thieu">AURORA PRO là gì</a></li>
+<li><a data-i18n="k6" href="#bat-dau">Bắt đầu nhanh trong 5 bước</a></li>
+<li><a data-i18n="k7" href="#cai-dat-nhanh">Cài đặt nhanh: Market Preset × Trading Style × Entry Filter Profile</a></li>
+<li><a data-i18n="k8" href="#doc-chart">Đọc biểu đồ</a></li>
+<li><a data-i18n="k9" href="#tin-hieu">Các loại tín hiệu</a></li>
+<li><a data-i18n="k10" href="#ke-hoach">Kế hoạch lệnh</a></li>
+<li><a data-i18n="k11" href="#pullback">Pullback Entry cho nến Break dài</a></li>
+<li><a data-i18n="k12" href="#diem">Hệ thống chấm điểm nhiều tầng</a></li>
+<li><a data-i18n="k13" href="#dashboard">Dashboard thống kê</a></li>
+<li><a href="#volume">Volume &amp; Volume Quality</a></li>
+<li><a data-i18n="k14" href="#phien">Phiên giao dịch</a></li>
+<li><a data-i18n="k15" href="#canh-bao">Cảnh báo (Alert)</a></li>
+<li><a href="#validator">Strategy Validator</a></li>
+<li><a data-i18n="k16" href="#nghien-cuu">Quy trình kiểm chứng một cấu hình</a></li>
+<li><a data-i18n="k17" href="#settings">Tra cứu Settings</a></li>
+<li><a data-i18n="k18" href="#rui-ro">Quản lý rủi ro</a></li>
+<li><a data-i18n="k19" href="#faq">Câu hỏi thường gặp</a></li>
+</ol>
 </nav>
-
 <main>
 <div class="content">
-
 <div class="toc-mobile">
-  <details>
-    <summary>Mục lục</summary>
-    <ol>
-      <li><a href="#gioi-thieu">AURORA PRO là gì</a></li>
-      <li><a href="#bat-dau">Bắt đầu nhanh trong 5 bước</a></li>
-      <li><a href="#cai-dat-nhanh">Cài đặt nhanh: Market Preset × Trading Style</a></li>
-      <li><a href="#doc-chart">Đọc biểu đồ</a></li>
-      <li><a href="#tin-hieu">Các loại tín hiệu</a></li>
-      <li><a href="#ke-hoach">Kế hoạch lệnh</a></li>
-      <li><a href="#pullback">Pullback Entry cho nến Break dài</a></li>
-      <li><a href="#diem">Hệ thống chấm điểm nhiều tầng</a></li>
-      <li><a href="#dashboard">Dashboard thống kê</a></li>
-      <li><a href="#volume">Volume & Volume Quality</a></li>
-      <li><a href="#phien">Phiên giao dịch</a></li>
-      <li><a href="#canh-bao">Cảnh báo (Alert)</a></li>
-      <li><a href="#validator">Strategy Validator</a></li>
-      <li><a href="#nghien-cuu">Quy trình kiểm chứng một cấu hình</a></li>
-      <li><a href="#settings">Tra cứu Settings</a></li>
-      <li><a href="#rui-ro">Quản lý rủi ro</a></li>
-      <li><a href="#faq">Câu hỏi thường gặp</a></li>
-    </ol>
-  </details>
+<details>
+<summary data-i18n="k20">Mục lục</summary>
+<ol>
+<li><a data-i18n="k5" href="#gioi-thieu">AURORA PRO là gì</a></li>
+<li><a data-i18n="k6" href="#bat-dau">Bắt đầu nhanh trong 5 bước</a></li>
+<li><a data-i18n="k7" href="#cai-dat-nhanh">Cài đặt nhanh: Market Preset × Trading Style × Entry Filter Profile</a></li>
+<li><a data-i18n="k8" href="#doc-chart">Đọc biểu đồ</a></li>
+<li><a data-i18n="k9" href="#tin-hieu">Các loại tín hiệu</a></li>
+<li><a data-i18n="k10" href="#ke-hoach">Kế hoạch lệnh</a></li>
+<li><a data-i18n="k11" href="#pullback">Pullback Entry cho nến Break dài</a></li>
+<li><a data-i18n="k12" href="#diem">Hệ thống chấm điểm nhiều tầng</a></li>
+<li><a data-i18n="k13" href="#dashboard">Dashboard thống kê</a></li>
+<li><a href="#volume">Volume &amp; Volume Quality</a></li>
+<li><a data-i18n="k14" href="#phien">Phiên giao dịch</a></li>
+<li><a data-i18n="k15" href="#canh-bao">Cảnh báo (Alert)</a></li>
+<li><a href="#validator">Strategy Validator</a></li>
+<li><a data-i18n="k16" href="#nghien-cuu">Quy trình kiểm chứng một cấu hình</a></li>
+<li><a data-i18n="k17" href="#settings">Tra cứu Settings</a></li>
+<li><a data-i18n="k18" href="#rui-ro">Quản lý rủi ro</a></li>
+<li><a data-i18n="k19" href="#faq">Câu hỏi thường gặp</a></li>
+</ol>
+</details>
 </div>
-
 <header class="hero">
-  <h1>KENVINZONE AURORA PRO<br>Hướng dẫn sử dụng</h1>
-  <p class="lead">Hệ thống giao dịch theo xu hướng với ba nhóm setup ngang hàng: BREAK, SUNNY và SMC thuận xu hướng. Mỗi tín hiệu có kế hoạch Entry, Stoploss, chốt lời rõ ràng, được chấm điểm nhiều tầng và thống kê minh bạch để bạn biết setup nào thực sự hiệu quả.</p>
-  <figure class="chart" aria-label="Minh họa một setup 1st Break trên biểu đồ">
-    <svg viewBox="0 0 780 360" role="img">
-      <defs>
-        <filter id="glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-        <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34B8D4" stop-opacity=".45"/><stop offset="1" stop-color="#34B8D4" stop-opacity="0"/></linearGradient>
-      </defs>
-      <!-- background strip on entry candle -->
-      <rect x="352" y="0" width="14" height="360" fill="#34B8D4" opacity=".18"/>
-      <!-- plan boxes -->
-      <rect x="359" y="70" width="250" height="118" fill="#1FCB8E" opacity=".12" stroke="#1FCB8E" stroke-opacity=".35"/>
-      <rect x="359" y="188" width="250" height="64" fill="#FF4D6A" opacity=".12" stroke="#FF4D6A" stroke-opacity=".35"/>
-      <line x1="359" y1="129" x2="609" y2="129" stroke="#1FCB8E" stroke-dasharray="5 5" opacity=".8"/>
-      <line x1="359" y1="188" x2="609" y2="188" stroke="#E7EEF6" opacity=".6"/>
-      <!-- downtrend trailing (rose) -->
-      <path d="M20 96 H110 V112 H170 V128 H250 V140 H330" fill="none" stroke="#D0306E" stroke-width="10" opacity=".18"/>
-      <path d="M20 96 H110 V112 H170 V128 H250 V140 H330" fill="none" stroke="#D0306E" stroke-width="2.5" filter="url(#glow)"/>
-      <circle cx="20" cy="96" r="8" fill="#D0306E"/>
-      <!-- uptrend trailing (teal) with ribbon -->
-      <path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760 V188 H640 V210 H570 V226 H520 V248 H470 V264 H359 Z" fill="url(#ribbon)" opacity=".7"/>
-      <path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760" fill="none" stroke="#34B8D4" stroke-width="10" opacity=".2"/>
-      <path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760" fill="none" stroke="#34B8D4" stroke-width="2.5" filter="url(#glow)"/>
-      <circle cx="359" cy="252" r="8" fill="#34B8D4"/>
-      <g fill="#34B8D4"><rect x="466" y="232" width="8" height="8" transform="rotate(45 470 236)"/><rect x="516" y="210" width="8" height="8" transform="rotate(45 520 214)"/><rect x="566" y="194" width="8" height="8" transform="rotate(45 570 198)"/><rect x="636" y="172" width="8" height="8" transform="rotate(45 640 176)"/></g>
-      <!-- candles -->
-      <g stroke-width="1.4">
-        <g stroke="#FF4D6A" fill="#FF4D6A"><line x1="40" y1="150" x2="40" y2="196"/><rect x="36" y="160" width="8" height="26"/><line x1="70" y1="160" x2="70" y2="212"/><rect x="66" y="168" width="8" height="32"/><line x1="130" y1="182" x2="130" y2="236"/><rect x="126" y="190" width="8" height="34"/><line x1="190" y1="200" x2="190" y2="250"/><rect x="186" y="206" width="8" height="30"/><line x1="250" y1="214" x2="250" y2="262"/><rect x="246" y="222" width="8" height="28"/></g>
-        <g stroke="#8FA3B8" fill="#8FA3B8"><line x1="100" y1="170" x2="100" y2="214"/><rect x="96" y="178" width="8" height="24"/><line x1="160" y1="190" x2="160" y2="232"/><rect x="156" y="198" width="8" height="22"/><line x1="220" y1="206" x2="220" y2="250"/><rect x="216" y="212" width="8" height="26"/><line x1="280" y1="212" x2="280" y2="248"/><rect x="276" y="216" width="8" height="22"/><line x1="310" y1="198" x2="310" y2="236"/><rect x="306" y="204" width="8" height="24"/><line x1="335" y1="186" x2="335" y2="222"/><rect x="331" y="190" width="8" height="24"/></g>
-        <g stroke="#FFD54F" fill="#FFD54F"><line x1="359" y1="176" x2="359" y2="214"/><rect x="355" y="186" width="8" height="24"/></g>
-        <g stroke="#8FA3B8" fill="#8FA3B8"><line x1="390" y1="170" x2="390" y2="206"/><rect x="386" y="176" width="8" height="22"/><line x1="420" y1="150" x2="420" y2="190"/><rect x="416" y="156" width="8" height="26"/><line x1="450" y1="136" x2="450" y2="176"/><rect x="446" y="142" width="8" height="24"/><line x1="510" y1="118" x2="510" y2="160"/><rect x="506" y="124" width="8" height="26"/><line x1="560" y1="98" x2="560" y2="140"/><rect x="556" y="104" width="8" height="26"/><line x1="600" y1="78" x2="600" y2="120"/><rect x="596" y="84" width="8" height="26"/><line x1="660" y1="84" x2="660" y2="126"/><rect x="656" y="92" width="8" height="24"/><line x1="720" y1="90" x2="720" y2="130"/><rect x="716" y="96" width="8" height="24"/></g>
-        <g stroke="#FF4D6A" fill="#FF4D6A"><line x1="480" y1="128" x2="480" y2="168"/><rect x="476" y="136" width="8" height="22"/><line x1="630" y1="88" x2="630" y2="128"/><rect x="626" y="94" width="8" height="22"/><line x1="690" y1="94" x2="690" y2="132"/><rect x="686" y="100" width="8" height="22"/></g>
-      </g>
-      <!-- labels -->
-      <g font-family="Be Vietnam Pro, Segoe UI, sans-serif" font-size="12" font-weight="700">
-        <rect x="248" y="62" width="104" height="20" rx="4" fill="#1FCB8E" opacity=".85"/><text x="256" y="76" fill="#06231A">🎯 TP2 · 2R</text>
-        <rect x="248" y="120" width="104" height="20" rx="4" fill="#1FCB8E" opacity=".55"/><text x="256" y="134" fill="#fff">🎯 TP1 · 1R</text>
-        <rect x="248" y="178" width="104" height="20" rx="4" fill="#1E2A44"/><text x="256" y="192" fill="#fff">▶ Entry</text>
-        <rect x="248" y="242" width="104" height="20" rx="4" fill="#FF4D6A" opacity=".85"/><text x="256" y="256" fill="#fff">🛑 F-SL</text>
-        <rect x="306" y="278" width="110" height="40" rx="6" fill="#34B8D4" opacity=".55"/><text x="318" y="294" fill="#fff">⚡ 1st BREAK</text><text x="318" y="310" fill="#fff">BUY B · 72</text>
-        <rect x="638" y="148" width="132" height="20" rx="4" fill="#34B8D4" opacity=".85"/><text x="646" y="162" fill="#06131F">🛡 T-SL ▲ (động)</text>
-        <rect x="520" y="54" width="104" height="20" rx="4" fill="#1FCB8E"/><text x="528" y="68" fill="#06231A">✓ +1.5R · TP2</text>
-      </g>
-    </svg>
-  </figure>
+<h1 data-i18n="k21">KENVINZONE AURORA PRO<br/>Hướng dẫn sử dụng</h1>
+<p class="lead" data-i18n="k22" style="margin-top:-6px"><span class="tag buyB">Phiên bản V15.4</span> Cập nhật theo V15.4: Trading Style chỉ còn quản lý lệnh, bộ lọc vào lệnh tách sang Entry Filter Profile.</p>
+<p class="lead" data-i18n="k23">Hệ thống giao dịch theo xu hướng với ba nhóm setup ngang hàng: BREAK, SUNNY và SMC thuận xu hướng. Mỗi tín hiệu có kế hoạch Entry, Stoploss, chốt lời rõ ràng, được chấm điểm nhiều tầng và thống kê minh bạch để bạn biết setup nào thực sự hiệu quả.</p>
+<figure aria-label="Minh họa một setup 1st Break trên biểu đồ" class="chart" data-i18n-aria="Illustration of a 1st Break setup on the chart">
+<svg role="img" viewbox="0 0 780 360">
+<defs>
+<filter height="200%" id="glow" width="140%" x="-20%" y="-50%"><fegaussianblur result="b" stddeviation="4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<lineargradient id="ribbon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#34B8D4" stop-opacity=".45"></stop><stop offset="1" stop-color="#34B8D4" stop-opacity="0"></stop></lineargradient>
+</defs>
+<!-- background strip on entry candle -->
+<rect fill="#34B8D4" height="360" opacity=".18" width="14" x="352" y="0"></rect>
+<!-- plan boxes -->
+<rect fill="#1FCB8E" height="118" opacity=".12" stroke="#1FCB8E" stroke-opacity=".35" width="250" x="359" y="70"></rect>
+<rect fill="#FF4D6A" height="64" opacity=".12" stroke="#FF4D6A" stroke-opacity=".35" width="250" x="359" y="188"></rect>
+<line opacity=".8" stroke="#1FCB8E" stroke-dasharray="5 5" x1="359" x2="609" y1="129" y2="129"></line>
+<line opacity=".6" stroke="#E7EEF6" x1="359" x2="609" y1="188" y2="188"></line>
+<!-- downtrend trailing (rose) -->
+<path d="M20 96 H110 V112 H170 V128 H250 V140 H330" fill="none" opacity=".18" stroke="#D0306E" stroke-width="10"></path>
+<path d="M20 96 H110 V112 H170 V128 H250 V140 H330" fill="none" filter="url(#glow)" stroke="#D0306E" stroke-width="2.5"></path>
+<circle cx="20" cy="96" fill="#D0306E" r="8"></circle>
+<!-- uptrend trailing (teal) with ribbon -->
+<path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760 V188 H640 V210 H570 V226 H520 V248 H470 V264 H359 Z" fill="url(#ribbon)" opacity=".7"></path>
+<path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760" fill="none" opacity=".2" stroke="#34B8D4" stroke-width="10"></path>
+<path d="M359 252 H470 V236 H520 V214 H570 V198 H640 V176 H760" fill="none" filter="url(#glow)" stroke="#34B8D4" stroke-width="2.5"></path>
+<circle cx="359" cy="252" fill="#34B8D4" r="8"></circle>
+<g fill="#34B8D4"><rect height="8" transform="rotate(45 470 236)" width="8" x="466" y="232"></rect><rect height="8" transform="rotate(45 520 214)" width="8" x="516" y="210"></rect><rect height="8" transform="rotate(45 570 198)" width="8" x="566" y="194"></rect><rect height="8" transform="rotate(45 640 176)" width="8" x="636" y="172"></rect></g>
+<!-- candles -->
+<g stroke-width="1.4">
+<g fill="#FF4D6A" stroke="#FF4D6A"><line x1="40" x2="40" y1="150" y2="196"></line><rect height="26" width="8" x="36" y="160"></rect><line x1="70" x2="70" y1="160" y2="212"></line><rect height="32" width="8" x="66" y="168"></rect><line x1="130" x2="130" y1="182" y2="236"></line><rect height="34" width="8" x="126" y="190"></rect><line x1="190" x2="190" y1="200" y2="250"></line><rect height="30" width="8" x="186" y="206"></rect><line x1="250" x2="250" y1="214" y2="262"></line><rect height="28" width="8" x="246" y="222"></rect></g>
+<g fill="#8FA3B8" stroke="#8FA3B8"><line x1="100" x2="100" y1="170" y2="214"></line><rect height="24" width="8" x="96" y="178"></rect><line x1="160" x2="160" y1="190" y2="232"></line><rect height="22" width="8" x="156" y="198"></rect><line x1="220" x2="220" y1="206" y2="250"></line><rect height="26" width="8" x="216" y="212"></rect><line x1="280" x2="280" y1="212" y2="248"></line><rect height="22" width="8" x="276" y="216"></rect><line x1="310" x2="310" y1="198" y2="236"></line><rect height="24" width="8" x="306" y="204"></rect><line x1="335" x2="335" y1="186" y2="222"></line><rect height="24" width="8" x="331" y="190"></rect></g>
+<g fill="#FFD54F" stroke="#FFD54F"><line x1="359" x2="359" y1="176" y2="214"></line><rect height="24" width="8" x="355" y="186"></rect></g>
+<g fill="#8FA3B8" stroke="#8FA3B8"><line x1="390" x2="390" y1="170" y2="206"></line><rect height="22" width="8" x="386" y="176"></rect><line x1="420" x2="420" y1="150" y2="190"></line><rect height="26" width="8" x="416" y="156"></rect><line x1="450" x2="450" y1="136" y2="176"></line><rect height="24" width="8" x="446" y="142"></rect><line x1="510" x2="510" y1="118" y2="160"></line><rect height="26" width="8" x="506" y="124"></rect><line x1="560" x2="560" y1="98" y2="140"></line><rect height="26" width="8" x="556" y="104"></rect><line x1="600" x2="600" y1="78" y2="120"></line><rect height="26" width="8" x="596" y="84"></rect><line x1="660" x2="660" y1="84" y2="126"></line><rect height="24" width="8" x="656" y="92"></rect><line x1="720" x2="720" y1="90" y2="130"></line><rect height="24" width="8" x="716" y="96"></rect></g>
+<g fill="#FF4D6A" stroke="#FF4D6A"><line x1="480" x2="480" y1="128" y2="168"></line><rect height="22" width="8" x="476" y="136"></rect><line x1="630" x2="630" y1="88" y2="128"></line><rect height="22" width="8" x="626" y="94"></rect><line x1="690" x2="690" y1="94" y2="132"></line><rect height="22" width="8" x="686" y="100"></rect></g>
+</g>
+<!-- labels -->
+<g font-family="Be Vietnam Pro, Segoe UI, sans-serif" font-size="12" font-weight="700">
+<rect fill="#1FCB8E" height="20" opacity=".85" rx="4" width="104" x="248" y="62"></rect><text fill="#06231A" x="256" y="76">🎯 TP2 · 2R</text>
+<rect fill="#1FCB8E" height="20" opacity=".55" rx="4" width="104" x="248" y="120"></rect><text fill="#fff" x="256" y="134">🎯 TP1 · 1R</text>
+<rect fill="#1E2A44" height="20" rx="4" width="104" x="248" y="178"></rect><text fill="#fff" x="256" y="192">▶ Entry</text>
+<rect fill="#FF4D6A" height="20" opacity=".85" rx="4" width="104" x="248" y="242"></rect><text fill="#fff" x="256" y="256">🛑 F-SL</text>
+<rect fill="#34B8D4" height="40" opacity=".55" rx="6" width="110" x="306" y="278"></rect><text fill="#fff" x="318" y="294">⚡ 1st BREAK</text><text fill="#fff" x="318" y="310">BUY B · 72</text>
+<rect fill="#34B8D4" height="20" opacity=".85" rx="4" width="132" x="638" y="148"></rect><text data-i18n="k305" fill="#06131F" x="646" y="162">🛡 T-SL ▲ (động)</text>
+<rect fill="#1FCB8E" height="20" rx="4" width="104" x="520" y="54"></rect><text fill="#06231A" x="528" y="68">✓ +1.5R · TP2</text>
+</g>
+</svg>
+</figure>
 </header>
-
 <section id="gioi-thieu">
-  <h2>AURORA PRO là gì</h2>
-  <p>AURORA là hệ thống giao dịch <strong>theo xu hướng</strong>. Ý tưởng cốt lõi giữ nguyên từ KENVIN CLOUD: chờ xu hướng mới được hệ thống xác nhận, sau đó chỉ vào lệnh theo hướng đó với kế hoạch Entry, Stoploss và chốt lời rõ ràng.</p>
-  <p>AURORA PRO (phiên bản V15.2) là bản đầy đủ nhất hiện nay, gồm <strong>ba nhóm setup ngang hàng</strong> cùng đi qua một hệ thống chấm điểm, bộ lọc, kế hoạch lệnh và thống kê chung:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Nhóm setup</th><th>Ý tưởng</th></tr></thead>
-    <tbody>
-      <tr><td>⚡ <strong>1st / 2nd BREAK</strong></td><td>Cú phá vỡ đầu tiên và thứ hai của đường Trailing sau khi xu hướng mới hình thành. Đây là "linh hồn" của hệ thống.</td></tr>
-      <tr><td>☀ <strong>SUNNY</strong></td><td>Tín hiệu mua / bán tiếp diễn thuận xu hướng chính: bắt nhịp tiếp diễn sau một đợt hồi.</td></tr>
-      <tr><td>💠 <strong>SMC</strong> (mới ở PRO)</td><td>Ba setup Smart Money Concepts <strong>chỉ thuận xu hướng</strong>: RETEST vùng FVG/Order Block, SWEEP thanh khoản kèm MSS, và IFVG (FVG đảo vai).</td></tr>
-    </tbody>
-  </table></div>
-  <p>Mỗi tín hiệu có <strong>điểm nền</strong> (Base Score), cộng <strong>điểm chất lượng riêng theo loại setup</strong> (BreakQ, SunnyQ hoặc SMCQ), và <strong>bối cảnh dòng tiền Tier 3</strong> khi có dữ liệu. Mỗi phần có thống kê riêng, nên bạn biết phần nào đang thực sự giúp ích:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Tầng</th><th>Trả lời câu hỏi</th></tr></thead>
-    <tbody>
-      <tr><td>Tầng 1 · <strong>Base Score</strong> (0–100)</td><td>Môi trường thị trường có thuận lợi cho chiều BUY / SELL không? (xu hướng, động lượng, đa khung, volume)</td></tr>
-      <tr><td>Tầng 2 · <strong>Setup Quality</strong> (BREAK, SUNNY)</td><td>Riêng cú BREAK / SUNNY này đẹp đến đâu? (nén rồi bung, độ dứt khoát của nến, hiệu suất đường đi, ADX…)</td></tr>
-      <tr><td>Tầng 3 · <strong>Institutional Quality</strong> (khi có dữ liệu)</td><td>Có dấu vết dòng tiền lớn không? (FVG còn tươi, quét thanh khoản, CVD, hấp thụ lực)</td></tr>
-      <tr><td><strong>SMC Quality</strong> (thay cho Setup Quality ở setup SMC)</td><td>Setup SMC có vùng giá chất lượng, cú bung mạnh và còn "khoảng trống" tới thanh khoản đối diện không?</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note"><p>Setup Quality, Tier 3 và SMC Quality mặc định ở chế độ <kbd>Stats only</kbd>: chỉ chấm điểm và thống kê, <strong>không chặn lệnh</strong>. Bạn chỉ nên bật chế độ lọc khi thống kê trên nhiều mã cho thấy điểm cao thật sự cho kết quả tốt hơn.</p></div>
+<h2 data-i18n="k5">AURORA PRO là gì</h2>
+<p data-i18n="k24">AURORA là hệ thống giao dịch <strong>theo xu hướng</strong>. Ý tưởng cốt lõi giữ nguyên từ KENVIN CLOUD: chờ xu hướng mới được hệ thống xác nhận, sau đó chỉ vào lệnh theo hướng đó với kế hoạch Entry, Stoploss và chốt lời rõ ràng.</p>
+<p data-i18n="k25">AURORA PRO (phiên bản V15.4) là bản đầy đủ nhất hiện nay, gồm <strong>ba nhóm setup ngang hàng</strong> cùng đi qua một hệ thống chấm điểm, bộ lọc, kế hoạch lệnh và thống kê chung:</p>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k26">Nhóm setup</th><th data-i18n="k27">Ý tưởng</th></tr></thead>
+<tbody>
+<tr><td>⚡ <strong>1st / 2nd BREAK</strong></td><td data-i18n="k28">Cú phá vỡ đầu tiên và thứ hai của đường Trailing sau khi xu hướng mới hình thành. Đây là "linh hồn" của hệ thống.</td></tr>
+<tr><td>☀ <strong>SUNNY</strong></td><td data-i18n="k29">Tín hiệu mua / bán tiếp diễn thuận xu hướng chính: bắt nhịp tiếp diễn sau một đợt hồi.</td></tr>
+<tr><td data-i18n="k30">💠 <strong>SMC</strong> (mới ở PRO)</td><td data-i18n="k31">Ba setup Smart Money Concepts <strong>chỉ thuận xu hướng</strong>: RETEST vùng FVG/Order Block, SWEEP thanh khoản kèm MSS, và IFVG (FVG đảo vai).</td></tr>
+</tbody>
+</table></div>
+<p data-i18n="k32">Mỗi tín hiệu có <strong>điểm nền</strong> (Base Score), cộng <strong>điểm chất lượng riêng theo loại setup</strong> (BreakQ, SunnyQ hoặc SMCQ), và <strong>bối cảnh dòng tiền Tier 3</strong> khi có dữ liệu. Mỗi phần có thống kê riêng, nên bạn biết phần nào đang thực sự giúp ích:</p>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k33">Tầng</th><th data-i18n="k34">Trả lời câu hỏi</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k35">Tầng 1 · <strong>Base Score</strong> (0–100)</td><td data-i18n="k36">Môi trường thị trường có thuận lợi cho chiều BUY / SELL không? (xu hướng, động lượng, đa khung, volume)</td></tr>
+<tr><td data-i18n="k37">Tầng 2 · <strong>Setup Quality</strong> (BREAK, SUNNY)</td><td data-i18n="k38">Riêng cú BREAK / SUNNY này đẹp đến đâu? (nén rồi bung, độ dứt khoát của nến, hiệu suất đường đi, ADX…)</td></tr>
+<tr><td data-i18n="k39">Tầng 3 · <strong>Institutional Quality</strong> (khi có dữ liệu)</td><td data-i18n="k40">Có dấu vết dòng tiền lớn không? (FVG còn tươi, quét thanh khoản, CVD, hấp thụ lực)</td></tr>
+<tr><td data-i18n="k41"><strong>SMC Quality</strong> (thay cho Setup Quality ở setup SMC)</td><td data-i18n="k42">Setup SMC có vùng giá chất lượng, cú bung mạnh và còn "khoảng trống" tới thanh khoản đối diện không?</td></tr>
+</tbody>
+</table></div>
+<div class="note"><p data-i18n="k43">Setup Quality, Tier 3 và SMC Quality mặc định ở chế độ <kbd>Stats only</kbd>: chỉ chấm điểm và thống kê, <strong>không chặn lệnh</strong>. Bạn chỉ nên bật chế độ lọc khi thống kê trên nhiều mã cho thấy điểm cao thật sự cho kết quả tốt hơn.</p></div>
 </section>
-
 <section id="bat-dau">
-  <h2>Bắt đầu nhanh trong 5 bước</h2>
-  <ol class="steps">
-    <li><strong>Thêm chỉ báo lên chart.</strong> Mở <kbd>Indicators</kbd> → tab <kbd>Invite-only scripts</kbd> → chọn <strong>KENVINZONE AURORA PRO</strong>.</li>
-    <li><strong>Chọn Market Preset</strong> đúng loại tài sản: STOCK, FOREX, CFD hoặc CRYPTO (xem mục Cài đặt nhanh).</li>
-    <li><strong>Chọn Trading Style</strong> theo cách bạn giao dịch: Scalping, Intraday, Swing hoặc Prop Firm.</li>
-    <li><strong>Chọn khung thời gian phù hợp</strong> với Trading Style (ví dụ Intraday: M15–H1).</li>
-    <li><strong>Đọc Dashboard.</strong> Bản Full để nghiên cứu lịch sử trên máy tính; bản Mini (bảng LIVE) để theo dõi lệnh trên điện thoại.</li>
-  </ol>
-  <div class="warn"><p>Hãy luôn bắt đầu bằng việc đọc thống kê <strong>trên đúng mã và khung thời gian</strong> bạn định giao dịch. Mỗi thị trường có "tính cách" riêng; một cấu hình tốt trên vàng chưa chắc tốt trên Bitcoin.</p></div>
+<h2 data-i18n="k6">Bắt đầu nhanh trong 5 bước</h2>
+<ol class="steps">
+<li data-i18n="k44"><strong>Thêm chỉ báo lên chart.</strong> Mở <kbd>Indicators</kbd> → tab <kbd>Invite-only scripts</kbd> → chọn <strong>KENVINZONE AURORA PRO</strong>.</li>
+<li data-i18n="k45"><strong>Chọn Market Preset</strong> đúng loại tài sản: STOCK, FOREX, CFD hoặc CRYPTO (xem mục Cài đặt nhanh).</li>
+<li data-i18n="k46"><strong>Chọn Trading Style</strong> theo cách bạn quản lý lệnh (Scalping, Intraday, Swing, Prop Firm), và <strong>Entry Filter Profile</strong> theo mức chọn lọc (Core parity, Balanced, Strict).</li>
+<li data-i18n="k47"><strong>Chọn khung thời gian phù hợp</strong> với Trading Style (ví dụ Intraday: M15–H1).</li>
+<li data-i18n="k48"><strong>Đọc Dashboard.</strong> Bản Full để nghiên cứu lịch sử trên máy tính; bản Mini (bảng LIVE) để theo dõi lệnh trên điện thoại.</li>
+</ol>
+<div class="warn"><p data-i18n="k49">Hãy luôn bắt đầu bằng việc đọc thống kê <strong>trên đúng mã và khung thời gian</strong> bạn định giao dịch. Mỗi thị trường có "tính cách" riêng; một cấu hình tốt trên vàng chưa chắc tốt trên Bitcoin.</p></div>
 </section>
-
 <section id="cai-dat-nhanh">
-  <h2>Cài đặt nhanh: Market Preset × Trading Style</h2>
-  <p>Hai ô cài đặt nhanh nằm đầu nhóm <kbd>AURORA MODE</kbd>. Chúng hoạt động <strong>độc lập và kết hợp được với nhau</strong>: Market Preset lo phần dữ liệu thị trường, Trading Style lo phần cách vào và quản lý lệnh.</p>
-
-  <h3>⚙ Market Preset (theo thị trường)</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Preset</th><th>Chiều lệnh</th><th>Nguồn volume</th><th>Phiên</th><th>Dùng cho</th></tr></thead>
-    <tbody>
-      <tr><td><strong>STOCK</strong></td><td>Chỉ BUY</td><td>Volume thật: RVOL · VWAP · CMF · Delta</td><td>Tắt</td><td>Cổ phiếu Việt Nam, Crypto Spot</td></tr>
-      <tr><td><strong>FOREX</strong></td><td>BUY & SELL</td><td>Chỉ RVOL (tick volume)</td><td>Stats only</td><td>Các cặp tiền</td></tr>
-      <tr><td><strong>CFD</strong></td><td>BUY & SELL</td><td>Volume Futures tự map theo mã chart</td><td>Stats only</td><td>Vàng, bạc, NAS100, US30, SPX500, dầu WTI</td></tr>
-      <tr><td><strong>CRYPTO</strong></td><td>BUY & SELL</td><td>Volume sàn + Open Interest</td><td>Stats only</td><td>Crypto Futures (Perpetual)</td></tr>
-      <tr><td><strong>Custom</strong></td><td colspan="4">Dùng đúng từng ô bạn tự chỉnh bên dưới.</td></tr>
-    </tbody>
-  </table></div>
-  <p>Ở CFD MODE, Aurora tự chọn hợp đồng Futures theo mã chart: XAU → <kbd>COMEX:GC1!</kbd>, XAG → <kbd>COMEX:SI1!</kbd>, NAS/US100 → <kbd>CME_MINI:NQ1!</kbd>, US30 → <kbd>CBOT_MINI:YM1!</kbd>, SPX/US500 → <kbd>CME_MINI:ES1!</kbd>, WTI/USOIL → <kbd>NYMEX:CL1!</kbd>. Dashboard dòng 🔊 Volume báo <kbd>EXT ✓</kbd> khi lấy được dữ liệu.</p>
-
-  <h3>⚙ Trading Style (theo phong cách giao dịch)</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Thông số</th><th>⚡ Scalping</th><th>📊 Intraday</th><th>🌊 Swing</th><th>🛡 Prop Firm</th></tr></thead>
-    <tbody>
-      <tr><td>Khung gợi ý</td><td>M1–M15</td><td>M15–H1</td><td>H4–D1</td><td>M15–H1</td></tr>
-      <tr><td>Giữ lệnh tối đa</td><td>60 nến</td><td>120 nến</td><td>200 nến</td><td>120 nến</td></tr>
-      <tr><td>SL tối đa của Break</td><td>3 ATR</td><td>4 ATR</td><td>Không giới hạn</td><td><strong>2.5 ATR</strong></td></tr>
-      <tr><td>Dời SL về hòa vốn sau TP1</td><td>Có</td><td>Không</td><td>Không</td><td><strong>Có</strong></td></tr>
-      <tr><td>Pullback chờ tối đa</td><td>4 nến</td><td>6 nến</td><td>3 nến</td><td>6 nến</td></tr>
-      <tr><td>Session mode</td><td>Filter (chặn giao phiên)</td><td>Stats only</td><td>Off</td><td><strong>Filter</strong> (chặn giao phiên)</td></tr>
-      <tr><td>Min Score BREAK / SUNNY / SMC</td><td>55</td><td>50</td><td>50</td><td><strong>60</strong></td></tr>
-      <tr><td>Runner sau TP2</td><td>Off</td><td>Off</td><td>Adaptive 25%</td><td>Off</td></tr>
-    </tbody>
-  </table></div>
-  <p><strong>Khi chọn một Trading Style khác Custom, các ô tương ứng ở bên dưới sẽ bị bỏ qua</strong> và dùng giá trị trong bảng. Đường Trailing (Factor) và Dashboard layout không bao giờ bị ghi đè. Muốn tự tinh chỉnh từng ô, hãy chọn <kbd>Custom</kbd>.</p>
-  <ul>
-    <li><strong>Scalping:</strong> lệnh ngắn hơn, dời SL về hòa vốn sớm vì khung nhỏ hay quét ngược, tránh khung giờ giao phiên thanh khoản mỏng.</li>
-    <li><strong>Intraday:</strong> cân bằng, phù hợp đa số trader làm việc trong ngày.</li>
-    <li><strong>Swing:</strong> lệnh giữ lâu hơn, không chặn phiên. Là phong cách duy nhất bật Runner, vì xu hướng khung lớn đủ dài để phần lệnh còn lại chạy theo.</li>
-    <li><strong>Prop Firm:</strong> ưu tiên <strong>giữ tài khoản sống sót</strong> trước giới hạn lỗ ngày và drawdown của quỹ: rủi ro mỗi lệnh dễ kiểm soát, ít lệnh hơn nhưng chọn lọc hơn, giảm chuỗi thua.</li>
-  </ul>
-
-  <h3>Ví dụ kết hợp</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Bạn là</th><th>Market Preset</th><th>Trading Style</th><th>Khung</th></tr></thead>
-    <tbody>
-      <tr><td>Nhà đầu tư cổ phiếu Việt Nam</td><td>STOCK</td><td>Swing</td><td>D1 / H1</td></tr>
-      <tr><td>Trader quỹ (FTMO, The5ers…) giao dịch vàng</td><td>CFD</td><td>Prop Firm</td><td>M15 / H1</td></tr>
-      <tr><td>Trader quỹ Futures (Topstep, Bulenox…) giao dịch NQ</td><td>Custom (chart NQ1!)</td><td>Prop Firm</td><td>M5 / M15</td></tr>
-      <tr><td>Trader Crypto Futures trong ngày</td><td>CRYPTO</td><td>Intraday</td><td>M15 / H1</td></tr>
-      <tr><td>Scalper vàng</td><td>CFD</td><td>Scalping</td><td>M5</td></tr>
-    </tbody>
-  </table></div>
-  <div class="warn"><p>Các giá trị preset là <strong>điểm khởi đầu hợp lý</strong>, không phải kết quả tối ưu cho mọi mã. Hãy kiểm chứng trên Dashboard và Strategy Validator với mã bạn giao dịch.</p></div>
+<h2 data-i18n="k7">Cài đặt nhanh: Market Preset × Trading Style × Entry Filter Profile</h2>
+<p data-i18n="k50">Ba ô cài đặt nhanh nằm đầu nhóm <kbd>AURORA MODE</kbd>. Chúng hoạt động <strong>độc lập và kết hợp được với nhau</strong>: Market Preset lo dữ liệu thị trường và phiên, Trading Style lo cách giữ và thoát lệnh, Entry Filter Profile lo mức chọn lọc setup.</p>
+<h3 data-i18n="k51">⚙ Market Preset (theo thị trường)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Preset</th><th data-i18n="k52">Chiều lệnh</th><th data-i18n="k53">Nguồn volume</th><th data-i18n="k54">Phiên</th><th data-i18n="k55">Dùng cho</th></tr></thead>
+<tbody>
+<tr><td><strong>STOCK</strong></td><td data-i18n="k56">Chỉ BUY</td><td data-i18n="k57">Volume thật: RVOL · VWAP · CMF · Delta</td><td data-i18n="k58">Tắt</td><td data-i18n="k59">Cổ phiếu Việt Nam, Crypto Spot</td></tr>
+<tr><td><strong>FOREX</strong></td><td>BUY &amp; SELL</td><td data-i18n="k60">Chỉ RVOL (tick volume)</td><td data-i18n="k61">Score (cộng, trừ điểm)</td><td data-i18n="k62">Các cặp tiền</td></tr>
+<tr><td><strong>CFD</strong></td><td>BUY &amp; SELL</td><td data-i18n="k63">Volume Futures tự map theo mã chart</td><td>Stats only</td><td data-i18n="k64">Vàng, bạc, NAS100, US30, SPX500, dầu WTI</td></tr>
+<tr><td><strong>CRYPTO</strong></td><td>BUY &amp; SELL</td><td data-i18n="k65">Volume sàn + Open Interest</td><td>Stats only</td><td>Crypto Futures (Perpetual)</td></tr>
+<tr><td><strong>Custom</strong></td><td colspan="4" data-i18n="k66">Dùng đúng từng ô bạn tự chỉnh bên dưới.</td></tr>
+</tbody>
+</table></div>
+<p data-i18n="k67">Ở CFD MODE, Aurora tự chọn hợp đồng Futures theo mã chart: XAU → <kbd>COMEX:GC1!</kbd>, XAG → <kbd>COMEX:SI1!</kbd>, NAS/US100 → <kbd>CME_MINI:NQ1!</kbd>, US30 → <kbd>CBOT_MINI:YM1!</kbd>, SPX/US500 → <kbd>CME_MINI:ES1!</kbd>, WTI/USOIL → <kbd>NYMEX:CL1!</kbd>. Dashboard dòng 🔊 Volume báo <kbd>EXT ✓</kbd> khi lấy được dữ liệu.</p>
+<h3 data-i18n="k68">⚙ Trading Style (quản lý lệnh)</h3>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k69">Thông số</th><th>⚡ Scalping</th><th>📊 Intraday</th><th>🌊 Swing</th><th>🛡 Prop Firm</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k70">Khung gợi ý</td><td>M1–M15</td><td>M15–H1</td><td>H4–D1</td><td>M15–H1</td></tr>
+<tr><td data-i18n="k71">Giữ lệnh tối đa</td><td data-i18n="k72">60 nến</td><td data-i18n="k73">120 nến</td><td data-i18n="k74">200 nến</td><td data-i18n="k73">120 nến</td></tr>
+<tr><td data-i18n="k75">Dời SL về hòa vốn sau TP1</td><td data-i18n="k76">Có</td><td data-i18n="k77">Không</td><td data-i18n="k77">Không</td><td><strong data-i18n="k76">Có</strong></td></tr>
+<tr><td data-i18n="k78">Pullback chờ tối đa</td><td data-i18n="k79">4 nến</td><td data-i18n="k80">6 nến</td><td data-i18n="k81">3 nến</td><td data-i18n="k80">6 nến</td></tr>
+<tr><td data-i18n="k306">Runner sau TP2</td><td>Off</td><td>Off</td><td>Adaptive 25%</td><td>Off</td></tr>
+</tbody>
+</table></div>
+<p data-i18n="k82">Từ V15.4, <strong>Trading Style chỉ điều chỉnh quản lý lệnh</strong>. Nó không còn âm thầm thay đổi điểm tối thiểu, Stoploss tối đa hay bộ lọc phiên, nên chọn Scalping hay Prop Firm không làm mất setup. Khi chọn khác Custom, các ô tương ứng ở bên dưới (giữ lệnh, hòa vốn, Pullback, Runner) bị bỏ qua. Đường Trailing (Factor) và Dashboard layout không bao giờ bị ghi đè.</p>
+<ul>
+<li data-i18n="k83"><strong>Scalping:</strong> lệnh ngắn hơn, dời SL về hòa vốn sớm vì khung nhỏ hay quét ngược.</li>
+<li data-i18n="k84"><strong>Intraday:</strong> cân bằng, phù hợp đa số trader làm việc trong ngày.</li>
+<li data-i18n="k85"><strong>Swing:</strong> lệnh giữ lâu hơn, SL cố định như setup gốc. Là phong cách duy nhất bật Runner, vì xu hướng khung lớn đủ dài để phần lệnh còn lại chạy theo.</li>
+<li data-i18n="k86"><strong>Prop Firm:</strong> ưu tiên <strong>giữ tài khoản</strong>: dời SL về hòa vốn sau TP1. Nên kết hợp Entry Filter Profile <kbd>Strict</kbd> và Session mode <kbd>Filter</kbd> (chặn giờ giao phiên).</li>
+</ul>
+<h3 data-i18n="k87">⚙ Entry Filter Profile (mức chọn lọc)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Profile</th><th data-i18n="k88">Điểm tối thiểu BREAK / SUNNY / SMC</th><th data-i18n="k89">SL tối đa của Break</th><th data-i18n="k90">Dùng khi</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k91"><strong>Core parity</strong> (mặc định)</td><td>50</td><td data-i18n="k92">Không giới hạn</td><td data-i18n="k93">Giữ số setup gần với AURORA STANDARD; điểm khởi đầu để so sánh</td></tr>
+<tr><td><strong>Balanced</strong></td><td>55</td><td>4 ATR</td><td data-i18n="k94">Muốn bớt setup điểm thấp và SL quá xa</td></tr>
+<tr><td><strong>Strict</strong></td><td>60</td><td>3 ATR</td><td data-i18n="k95">Tài khoản quỹ, ưu tiên ít lệnh nhưng chọn lọc</td></tr>
+<tr><td><strong>Custom</strong></td><td colspan="3" data-i18n="k96">Dùng các ô Min score và Max SL distance trong từng nhóm setup.</td></tr>
+</tbody>
+</table></div>
+<h3 data-i18n="k97">Ví dụ kết hợp</h3>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k98">Bạn là</th><th>Market Preset</th><th>Trading Style</th><th>Entry profile</th><th>Khung</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k99">Nhà đầu tư cổ phiếu Việt Nam</td><td>STOCK</td><td>Swing</td><td>Core parity</td><td>D1 / H1</td></tr>
+<tr><td data-i18n="k100">Trader quỹ (FTMO, The5ers…) giao dịch vàng</td><td>CFD</td><td>Prop Firm</td><td>Strict + Session Filter</td><td>M15 / H1</td></tr>
+<tr><td data-i18n="k101">Trader quỹ Futures (Topstep, Bulenox…) giao dịch NQ</td><td>Custom (chart NQ1!)</td><td>Prop Firm</td><td>Strict + Session Filter</td><td>M5 / M15</td></tr>
+<tr><td data-i18n="k102">Trader Crypto Futures trong ngày</td><td>CRYPTO</td><td>Intraday</td><td>Core parity</td><td>M15 / H1</td></tr>
+<tr><td data-i18n="k103">Scalper vàng</td><td>CFD</td><td>Scalping</td><td>Balanced</td><td>M5</td></tr>
+</tbody>
+</table></div>
+<div class="warn"><p data-i18n="k104">Các giá trị preset là <strong>điểm khởi đầu hợp lý</strong>, không phải kết quả tối ưu cho mọi mã. Hãy kiểm chứng trên Dashboard và Strategy Validator với mã bạn giao dịch.</p></div>
 </section>
-
 <section id="doc-chart">
-  <h2>Đọc biểu đồ</h2>
-  <div class="tbl"><table>
-    <thead><tr><th>Thành phần</th><th>Ý nghĩa</th></tr></thead>
-    <tbody>
-      <tr><td>Đường Trailing (neon)</td><td><span class="buy">Xanh</span> = xu hướng tăng, <span class="sell">hồng</span> = giảm. Chuyển màu cam khi giá tiến sát đường (cảnh báo). Hình thoi nhỏ đánh dấu mỗi lần đường được kéo lên/xuống.</td></tr>
-      <tr><td>Nhãn <kbd>🛡 T-SL</kbd> mép phải</td><td>Giá trị đường Trailing hiện tại và % rủi ro nếu vào lệnh ở giá này.</td></tr>
-      <tr><td>Mây Kenvin</td><td>Vùng giữa đường Baseline và Trailing: xanh khi thuận tăng, tím khi thuận giảm.</td></tr>
-      <tr><td>Dải nền dọc + nến vàng</td><td>Đánh dấu nến vào lệnh chất lượng cao (Grade A hoặc 1st Break, chỉnh ở nhóm Entry Highlight).</td></tr>
-      <tr><td>Khung đỏ / xanh</td><td>Kế hoạch lệnh: vùng rủi ro (Entry → SL) và vùng mục tiêu (Entry → TP2).</td></tr>
-      <tr><td>Hộp màu mờ</td><td>Vùng SMC: <span class="buy">xanh</span>/<span class="sell">hồng</span> = vùng RETEST (FVG/Order Block), <span style="color:#B388FF;font-weight:700">tím</span> = vùng IFVG. Chuyển xám khi hết hiệu lực.</td></tr>
-      <tr><td>Đường vàng nét đứt <kbd>⏳ LIMIT</kbd></td><td>Lệnh chờ Pullback đang treo, kèm số nến còn lại.</td></tr>
-      <tr><td>Nhãn <kbd>⛔ 1st</kbd> / <kbd>⛔ 2nd</kbd></td><td>Setup Break bị bộ lọc chặn. Rê chuột để xem lý do.</td></tr>
-    </tbody>
-  </table></div>
+<h2 data-i18n="k8">Đọc biểu đồ</h2>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k105">Thành phần</th><th data-i18n="k106">Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td data-i18n="k107">Đường Trailing (neon)</td><td data-i18n="k108"><span class="buy">Xanh</span> = xu hướng tăng, <span class="sell">hồng</span> = giảm. Chuyển màu cam khi giá tiến sát đường (cảnh báo). Hình thoi nhỏ đánh dấu mỗi lần đường được kéo lên/xuống.</td></tr>
+<tr><td data-i18n="k109">Nhãn <kbd>🛡 T-SL</kbd> mép phải</td><td data-i18n="k110">Giá trị đường Trailing hiện tại và % rủi ro nếu vào lệnh ở giá này.</td></tr>
+<tr><td data-i18n="k111">Mây Kenvin</td><td data-i18n="k112">Vùng giữa đường Baseline và Trailing: xanh khi thuận tăng, tím khi thuận giảm.</td></tr>
+<tr><td data-i18n="k113">Dải nền dọc + nến vàng</td><td data-i18n="k114">Đánh dấu nến vào lệnh chất lượng cao (Grade A hoặc 1st Break, chỉnh ở nhóm Entry Highlight).</td></tr>
+<tr><td data-i18n="k115">Khung đỏ / xanh</td><td data-i18n="k116">Kế hoạch lệnh: vùng rủi ro (Entry → SL) và vùng mục tiêu (Entry → TP2).</td></tr>
+<tr><td data-i18n="k117">Hộp màu mờ</td><td data-i18n="k118">Vùng SMC: <span class="buy">xanh</span>/<span class="sell">hồng</span> = vùng RETEST (FVG/Order Block), <span style="color:#B388FF;font-weight:700">tím</span> = vùng IFVG. Chuyển xám khi hết hiệu lực.</td></tr>
+<tr><td data-i18n="k119">Đường vàng nét đứt <kbd>⏳ LIMIT</kbd></td><td data-i18n="k120">Lệnh chờ Pullback đang treo, kèm số nến còn lại.</td></tr>
+<tr><td data-i18n="k121">Nhãn <kbd>⛔ 1st</kbd> / <kbd>⛔ 2nd</kbd> / <kbd>⛔ SUN</kbd> / <kbd>⛔ SMC</kbd></td><td data-i18n="k122">Setup BREAK, SUNNY hoặc SMC bị bộ lọc chặn. Rê chuột để xem lý do cụ thể.</td></tr>
+</tbody>
+</table></div>
 </section>
-
 <section id="tin-hieu">
-  <h2>Các loại tín hiệu</h2>
-  <div class="specimens">
-    <div class="spec kz-spot"><span class="tag buyA">⚡ 1st BREAK<br>BUY A · 84</span><h4>BREAK</h4><p>Cú Break đầu tiên (hoặc thứ hai) của chu kỳ xu hướng. <kbd>💎</kbd> thay cho ⚡ khi có quét thanh khoản ngay trước đó.</p></div>
-    <div class="spec kz-spot"><span class="tag buyB">☀ SUNNY<br>BUY · 72</span><h4>SUNNY</h4><p>Tín hiệu mua / bán tiếp diễn thuận xu hướng: bắt nhịp tiếp diễn sau hồi.</p></div>
-    <div class="spec kz-spot"><span class="tag buyB">💧 SMC SWEEP<br>BUY · 68 · Q61</span><h4>SMC</h4><p>Setup SMC. Q là điểm SMC Quality. Ba loại: 🔁 RETEST, 💧 SWEEP, ⇄ IFVG.</p></div>
-    <div class="spec kz-spot"><span class="tag grey">+ADD 76</span><h4>Nhồi lệnh</h4><p>Tín hiệu cùng chiều khi đã có lệnh đang chạy: có thể nhồi thêm, dùng chung SL/TP.</p></div>
-  </div>
-
-  <h3>Ba setup SMC (chỉ thuận xu hướng)</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Setup</th><th>Điều kiện (ví dụ chu kỳ BUY)</th><th>Stoploss</th></tr></thead>
-    <tbody>
-      <tr><td>🔁 <strong>RETEST</strong></td><td>Sau 1st/2nd Break, lấy FVG của cú bung (không có thì dùng Order Block: nến giảm cuối cùng trước cú bung). Giá hồi chạm vùng, rồi nến đóng cửa tăng vượt điểm giữa vùng.</td><td>Dưới đáy vùng</td></tr>
-      <tr><td>💧 <strong>SWEEP + MSS</strong></td><td>Râu nến quét swing low của nhịp hồi nhưng đóng cửa quay lên (vẫn thuận xu hướng chính). Trong 8 nến, nến đóng cửa vượt đỉnh hồi gần nhất (MSS: đổi cấu trúc).</td><td>Dưới đáy cây nến quét</td></tr>
-      <tr><td>⇄ <strong>IFVG</strong></td><td>FVG giảm hình thành trong nhịp hồi bị giá đóng cửa xuyên qua → đổi vai thành hỗ trợ. Giá quay lại chạm vùng rồi bật lên.</td><td>Dưới đáy vùng</td></tr>
-    </tbody>
-  </table></div>
-  <p>SMC dùng chung Score tối thiểu, bộ lọc volume, bộ lọc phiên, chiều giao dịch và quản lý lệnh với BREAK/SUNNY. Mặc định SMC cũng phải nằm <strong>đúng phía đường Trailing</strong> như BREAK/SUNNY (ô <kbd>SMC: chỉ vào lệnh khi giá đúng phía đường Trailing</kbd>). Khác biệt duy nhất: <strong>Stoploss theo cấu trúc</strong> (tối thiểu 0.3 ATR) thay vì theo đường Trailing. Khi nhiều tín hiệu trùng một nến, thứ tự ưu tiên là BREAK → SUNNY → SMC.</p>
-  <div class="note"><p>Các khái niệm SMC thường chủ quan. Trong AURORA, mọi swing được xác nhận sau 3 nến (không vẽ lại), mọi vùng có thời hạn và điều kiện hủy rõ ràng, để kết quả thống kê là thật.</p></div>
+<h2 data-i18n="k9">Các loại tín hiệu</h2>
+<div class="specimens">
+<div class="spec kz-spot"><span class="tag buyA">⚡ 1st BREAK<br/>BUY A · 84</span><h4>BREAK</h4><p data-i18n="k123">Cú Break đầu tiên (hoặc thứ hai) của chu kỳ xu hướng. <kbd>💎</kbd> thay cho ⚡ khi có quét thanh khoản ngay trước đó.</p></div>
+<div class="spec kz-spot"><span class="tag buyB">☀ SUNNY<br/>BUY · 72</span><h4>SUNNY</h4><p data-i18n="k124">Tín hiệu mua / bán tiếp diễn thuận xu hướng: bắt nhịp tiếp diễn sau hồi.</p></div>
+<div class="spec kz-spot"><span class="tag buyB">💧 SMC SWEEP<br/>BUY · 68 · Q61</span><h4>SMC</h4><p data-i18n="k125">Setup SMC. Q là điểm SMC Quality. Ba loại: 🔁 RETEST, 💧 SWEEP, ⇄ IFVG. <kbd>⚠SL</kbd> khi Stoploss cấu trúc rộng hơn 4 ATR.</p></div>
+<div class="spec kz-spot"><span class="tag grey">+ADD 76</span><h4 data-i18n="k126">Nhồi lệnh</h4><p data-i18n="k127">Tín hiệu cùng chiều khi đã có lệnh đang chạy: có thể nhồi thêm, dùng chung SL/TP.</p></div>
+</div>
+<h3 data-i18n="k128">Ba setup SMC (chỉ thuận xu hướng)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Setup</th><th data-i18n="k129">Điều kiện (ví dụ chu kỳ BUY)</th><th>Stoploss</th></tr></thead>
+<tbody>
+<tr><td>🔁 <strong>RETEST</strong></td><td data-i18n="k130">Sau 1st/2nd Break, lấy FVG của cú bung (không có thì dùng Order Block: nến giảm cuối cùng trước cú bung). Giá hồi chạm vùng, rồi nến đóng cửa tăng vượt điểm giữa vùng.</td><td data-i18n="k131">Dưới đáy vùng</td></tr>
+<tr><td>💧 <strong>SWEEP + MSS</strong></td><td data-i18n="k132">Râu nến quét swing low của nhịp hồi nhưng đóng cửa quay lên (vẫn thuận xu hướng chính). Trong 8 nến, nến đóng cửa vượt đỉnh hồi gần nhất (MSS: đổi cấu trúc).</td><td data-i18n="k133">Dưới đáy cây nến quét</td></tr>
+<tr><td>⇄ <strong>IFVG</strong></td><td data-i18n="k134">FVG giảm hình thành trong nhịp hồi bị giá đóng cửa xuyên qua → đổi vai thành hỗ trợ. Giá quay lại chạm vùng rồi bật lên.</td><td data-i18n="k131">Dưới đáy vùng</td></tr>
+</tbody>
+</table></div>
+<p data-i18n="k135">SMC dùng chung điểm tối thiểu (theo Entry Filter Profile), bộ lọc phiên, chiều giao dịch và quản lý lệnh với BREAK/SUNNY, nhưng có <strong>bộ lọc volume riêng</strong> (<kbd>SMC volume gate</kbd>, mặc định Off). Mặc định SMC cũng phải nằm <strong>đúng phía đường Trailing</strong> như BREAK/SUNNY (ô <kbd>SMC: chỉ vào lệnh khi giá đúng phía đường Trailing</kbd>). SMC dùng <strong>Stoploss theo cấu trúc</strong> (tối thiểu 0.3 ATR) thay vì đường Trailing. Ô <kbd>SMC structural SL policy</kbd>: <kbd>Warn only</kbd> (mặc định) vẫn vào lệnh nhưng gắn <kbd>⚠SL</kbd> khi SL rộng hơn ngưỡng (mặc định 4 ATR); <kbd>Filter</kbd> chặn hẳn, chỉ nên bật sau khi đã kiểm chứng. Khi nhiều tín hiệu trùng một nến, thứ tự ưu tiên là BREAK → SUNNY → SMC.</p>
+<div class="note"><p data-i18n="k136">Các khái niệm SMC thường chủ quan. Trong AURORA, mọi swing được xác nhận sau 3 nến (không vẽ lại), mọi vùng có thời hạn và điều kiện hủy rõ ràng, để kết quả thống kê là thật.</p></div>
 </section>
-
 <section id="ke-hoach">
-  <h2>Kế hoạch lệnh</h2>
-  <p>Mỗi tín hiệu được vào lệnh đi kèm một kế hoạch đầy đủ, vẽ trực tiếp trên chart:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Mức</th><th>Ý nghĩa</th></tr></thead>
-    <tbody>
-      <tr><td>▶ Entry</td><td>Giá đóng cửa nến tín hiệu. Ở chế độ mặc định, tín hiệu chỉ xác nhận khi nến đóng cửa.</td></tr>
-      <tr><td>🛑 F-SL</td><td>Stoploss <strong>cố định</strong> của lệnh: đường Trailing tại nến Break (BREAK/SUNNY) hoặc mức cấu trúc (SMC).</td></tr>
-      <tr><td>🎯 TP1 · TP2</td><td>1R và 2R (chỉnh được). Mặc định chốt 50% tại TP1, 50% tại TP2.</td></tr>
-      <tr><td>🛡 T-SL</td><td>Stoploss <strong>động</strong> theo đường Trailing: tham khảo để quản lý lệnh thủ công.</td></tr>
-    </tbody>
-  </table></div>
-  <h3>Lệnh đóng như thế nào (nhãn kết quả)</h3>
-  <div class="specimens">
-    <div class="spec kz-spot"><span class="tag win">✓ +1.5R · TP2</span><p>Chạm TP2.</p></div>
-    <div class="spec kz-spot"><span class="tag grey">■ +0.5R · BE</span><p>Đã chốt TP1, phần còn lại về hòa vốn.</p></div>
-    <div class="spec kz-spot"><span class="tag loss">✗ -1R · SL</span><p>Chạm Stoploss.</p></div>
-    <div class="spec kz-spot"><span class="tag win">✓ +2.1R · 🚀 RUN</span><p>Phần Runner đóng theo SL kéo theo Trailing.</p></div>
-  </div>
-  <p>Ngoài TP/SL, chính sách <kbd>Break exit policy = Adaptive</kbd> (mặc định) còn đóng lệnh khi: Trailing đảo chiều (<kbd>EXIT</kbd>), hết thời gian giữ lệnh (<kbd>TIME</kbd>), có tín hiệu ngược chiều (<kbd>REV</kbd>) hoặc có cú Break mới cùng chiều thay thế (<kbd>NEXT</kbd>).</p>
+<h2 data-i18n="k10">Kế hoạch lệnh</h2>
+<p data-i18n="k137">Mỗi tín hiệu được vào lệnh đi kèm một kế hoạch đầy đủ, vẽ trực tiếp trên chart:</p>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k138">Mức</th><th data-i18n="k106">Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td>▶ Entry</td><td data-i18n="k139">Giá đóng cửa nến tín hiệu. Ở chế độ mặc định, tín hiệu chỉ xác nhận khi nến đóng cửa.</td></tr>
+<tr><td>🛑 F-SL</td><td data-i18n="k140">Stoploss <strong>cố định</strong> của lệnh: đường Trailing tại nến Break (BREAK/SUNNY) hoặc mức cấu trúc (SMC).</td></tr>
+<tr><td>🎯 TP1 · TP2</td><td data-i18n="k141">1R và 2R (chỉnh được). Mặc định chốt 50% tại TP1, 50% tại TP2.</td></tr>
+<tr><td>🛡 T-SL</td><td data-i18n="k142">Stoploss <strong>động</strong> theo đường Trailing: tham khảo để quản lý lệnh thủ công.</td></tr>
+</tbody>
+</table></div>
+<h3 data-i18n="k143">Lệnh đóng như thế nào (nhãn kết quả)</h3>
+<div class="specimens">
+<div class="spec kz-spot"><span class="tag win">✓ +1.5R · TP2</span><p data-i18n="k144">Chạm TP2.</p></div>
+<div class="spec kz-spot"><span class="tag grey">■ +0.5R · BE</span><p data-i18n="k145">Đã chốt TP1, phần còn lại về hòa vốn.</p></div>
+<div class="spec kz-spot"><span class="tag loss">✗ -1R · SL</span><p data-i18n="k146">Chạm Stoploss.</p></div>
+<div class="spec kz-spot"><span class="tag win">✓ +2.1R · 🚀 RUN</span><p data-i18n="k147">Phần Runner đóng theo SL kéo theo Trailing.</p></div>
+</div>
+<p data-i18n="k148">Ngoài TP/SL, chính sách <kbd>Break exit policy = Adaptive</kbd> (mặc định) còn đóng lệnh khi: Trailing đảo chiều (<kbd>EXIT</kbd>), hết thời gian giữ lệnh (<kbd>TIME</kbd>), có tín hiệu ngược chiều (<kbd>REV</kbd>) hoặc có cú Break mới cùng chiều thay thế (<kbd>NEXT</kbd>).</p>
 </section>
-
 <section id="pullback">
-  <h2>Pullback Entry cho nến Break dài</h2>
-  <p>Khi nến Break dài từ <strong>1.8 ATR</strong> trở lên, vào lệnh ngay lúc đóng nến tức là mua ở đỉnh hoặc bán ở đáy một cú xả. AURORA đặt <strong>lệnh chờ tại mức hồi 50%</strong> của nến Break thay vì vào ngay:</p>
-  <ul>
-    <li><strong>Giá hồi về:</strong> khớp lệnh, nhãn ghi <kbd>▶ Entry (Pullback 50%)</kbd>, 1R nhỏ hơn và TP gần hơn.</li>
-    <li><strong>Không hồi:</strong> lệnh chờ tự hủy khi hết thời gian, khi giá chạy thẳng quá 1R, hoặc khi xu hướng đảo.</li>
-    <li><strong>Tùy chọn FVG CE</strong> (nhóm Tier 3): nếu có FVG còn tươi cùng chiều, lệnh chờ đặt tại điểm giữa FVG thay cho mức %.</li>
-  </ul>
-  <p>Dòng <kbd>⏳ Pullback</kbd> trên Dashboard so sánh kết quả chờ hồi với việc vào ngay (lệnh đối chứng chạy ngầm). Màu xanh nghĩa là chờ hồi đang tốt hơn trên chart đó.</p>
+<h2 data-i18n="k11">Pullback Entry cho nến Break dài</h2>
+<p data-i18n="k149">Khi nến Break dài từ <strong>1.8 ATR</strong> trở lên, vào lệnh ngay lúc đóng nến tức là mua ở đỉnh hoặc bán ở đáy một cú xả. AURORA đặt <strong>lệnh chờ tại mức hồi 50%</strong> của nến Break thay vì vào ngay:</p>
+<ul>
+<li data-i18n="k150"><strong>Giá hồi về:</strong> khớp lệnh, nhãn ghi <kbd>▶ Entry (Pullback 50%)</kbd>, 1R nhỏ hơn và TP gần hơn.</li>
+<li data-i18n="k151"><strong>Không hồi:</strong> lệnh chờ tự hủy khi hết thời gian, khi giá chạy thẳng quá 1R, hoặc khi xu hướng đảo.</li>
+<li data-i18n="k152"><strong>Tùy chọn FVG CE</strong> (nhóm Tier 3): nếu có FVG còn tươi cùng chiều, lệnh chờ đặt tại điểm giữa FVG thay cho mức %.</li>
+</ul>
+<p data-i18n="k153">Dòng <kbd>⏳ Pullback</kbd> trên Dashboard so sánh kết quả chờ hồi với việc vào ngay (lệnh đối chứng chạy ngầm). Màu xanh nghĩa là chờ hồi đang tốt hơn trên chart đó.</p>
 </section>
-
 <section id="diem">
-  <h2>Hệ thống chấm điểm nhiều tầng</h2>
-  <h3>Tầng 1 · Base Score (0–100)</h3>
-  <p>Chấm môi trường thị trường cho từng chiều. Có hai engine để chọn ở ô <kbd>Score engine</kbd>:</p>
-  <ul>
-    <li><strong>Classic:</strong> xu hướng chính, đường Trailing, mây Kenvin, các chỉ báo động lượng, đồng thuận khung lớn, cộng điểm Volume.</li>
-    <li><strong>Family:</strong> 6 nhóm độc lập: Trend, Momentum, Structure, Volatility, Flow, Execution (có trọng số chỉnh được).</li>
-  </ul>
-  <p>Hạng tín hiệu: <strong>A</strong> từ 80 điểm, <strong>B</strong> từ 70 điểm. Setup BREAK/SUNNY/SMC cần đạt <kbd>Min score</kbd> (mặc định 50) mới được vào lệnh.</p>
-
-  <h3>Tầng 2 · Setup Quality (BREAK & SUNNY)</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Ký hiệu</th><th>Thành phần</th><th>Đo gì</th></tr></thead>
-    <tbody>
-      <tr><td>C</td><td>Compression → Expansion</td><td>Thị trường nén chặt rồi bung ra; nến quá dài (&gt; 2.5 ATR) bị trừ điểm.</td></tr>
-      <tr><td>A</td><td>Acceptance</td><td>Phá vỡ đỉnh/đáy cấu trúc 20 nến, đóng cửa dứt khoát, thân nến lớn, ít râu ngược.</td></tr>
-      <tr><td>K</td><td>Kaufman Efficiency</td><td>Đường đi của giá "sạch" hay nhiễu.</td></tr>
-      <tr><td>D</td><td>ADX / DMI</td><td>Sức mạnh và gia tốc xu hướng.</td></tr>
-      <tr><td>V</td><td>Cycle AVWAP</td><td>Vị trí giá so với VWAP neo tại điểm bắt đầu chu kỳ xu hướng.</td></tr>
-      <tr><td>F</td><td>Flow</td><td>Delta và mức tham gia của volume.</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Tầng 3 · Institutional Quality</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Ký hiệu</th><th>Thành phần</th></tr></thead>
-    <tbody>
-      <tr><td>F</td><td>FVG còn tươi và chưa bị lấp.</td></tr>
-      <tr><td>S</td><td>Liquidity Sweep: độ sâu quét, mức kéo ngược, độ dài râu; giảm dần theo thời gian.</td></tr>
-      <tr><td>C</td><td>CVD tích lũy (Delta ước lượng từ khung thấp) và tín hiệu hấp thụ lực.</td></tr>
-      <tr><td>R</td><td>Runner suitability: xu hướng có đủ "đà" để giữ phần lệnh chạy tiếp không.</td></tr>
-      <tr><td>Cov</td><td>Coverage: bao nhiêu % thành phần có dữ liệu. Chế độ Filter không quyết định khi coverage thấp.</td></tr>
-    </tbody>
-  </table></div>
-  <p>Rê chuột vào nhãn tín hiệu để xem chi tiết, ví dụ <kbd>🧪 BreakQ 78 A  C/A/K/D/V/F 82/76/71/69/84/75</kbd> và <kbd>💎 Tier3 Break 70 B  F/S/C/R 80/65/72/60 · Cov 100%</kbd>.</p>
-  <div class="note"><p><strong>Ba chế độ</strong> cho Setup Quality và Tier 3: <kbd>Off</kbd> · <kbd>Stats only</kbd> (mặc định: chấm và thống kê, không đổi tín hiệu) · <kbd>Filter (experimental)</kbd> (chặn setup dưới ngưỡng). Một tầng điểm có giá trị khi R trung bình <strong>tăng dần</strong> từ nhóm điểm thấp lên nhóm điểm cao trên Dashboard, và lặp lại trên nhiều mã.</p></div>
-
-  <h3>Runner sau TP2</h3>
-  <p>Ô <kbd>⑤ Runner sau TP2</kbd> (nhóm Tier 3): <strong>Off</strong> chốt 50% TP1 · 50% TP2. <strong>Always 25%</strong>: 50% TP1 · 25% TP2 · 25% chạy tiếp, SL của phần này khóa tại TP1 rồi kéo theo đường Trailing (chỉ kéo về phía có lợi). <strong>Adaptive</strong>: chỉ giữ Runner khi Runner suitability lúc vào lệnh đạt ngưỡng.</p>
+<h2 data-i18n="k12">Hệ thống chấm điểm nhiều tầng</h2>
+<h3 data-i18n="k154">Tầng 1 · Base Score (0–100)</h3>
+<p data-i18n="k155">Chấm môi trường thị trường cho từng chiều. Có hai engine để chọn ở ô <kbd>Score engine</kbd>:</p>
+<ul>
+<li data-i18n="k156"><strong>Classic</strong>: xu hướng chính, đường Trailing, mây Kenvin, các chỉ báo động lượng, đồng thuận khung lớn, cộng điểm Volume.</li>
+<li data-i18n="k157"><strong>Family</strong> (mặc định): 6 nhóm độc lập: Trend, Momentum, Structure, Volatility, Flow, Execution (có trọng số chỉnh được).</li>
+</ul>
+<p data-i18n="k158">Hạng tín hiệu: <strong>A</strong> từ 80 điểm, <strong>B</strong> từ 70 điểm. Setup BREAK/SUNNY/SMC cần đạt điểm tối thiểu theo Entry Filter Profile (Core parity 50, Balanced 55, Strict 60) mới được vào lệnh.</p>
+<h3 data-i18n="k159">Tầng 2 · Setup Quality (BREAK &amp; SUNNY)</h3>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k160">Ký hiệu</th><th data-i18n="k105">Thành phần</th><th data-i18n="k161">Đo gì</th></tr></thead>
+<tbody>
+<tr><td>C</td><td>Compression → Expansion</td><td data-i18n="k162">Thị trường nén chặt rồi bung ra; nến quá dài (&gt; 2.5 ATR) bị trừ điểm.</td></tr>
+<tr><td>A</td><td>Acceptance</td><td data-i18n="k163">Phá vỡ đỉnh/đáy cấu trúc 20 nến, đóng cửa dứt khoát, thân nến lớn, ít râu ngược.</td></tr>
+<tr><td>K</td><td>Kaufman Efficiency</td><td data-i18n="k164">Đường đi của giá "sạch" hay nhiễu.</td></tr>
+<tr><td>D</td><td>ADX / DMI</td><td data-i18n="k165">Sức mạnh và gia tốc xu hướng.</td></tr>
+<tr><td>V</td><td>Cycle AVWAP</td><td data-i18n="k166">Vị trí giá so với VWAP neo tại điểm bắt đầu chu kỳ xu hướng.</td></tr>
+<tr><td>F</td><td>Flow</td><td data-i18n="k167">Delta và mức tham gia của volume.</td></tr>
+</tbody>
+</table></div>
+<h3 data-i18n="k168">Tầng 3 · Institutional Quality</h3>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k160">Ký hiệu</th><th data-i18n="k105">Thành phần</th></tr></thead>
+<tbody>
+<tr><td>F</td><td data-i18n="k169">FVG còn tươi và chưa bị lấp.</td></tr>
+<tr><td>S</td><td data-i18n="k170">Liquidity Sweep: độ sâu quét, mức kéo ngược, độ dài râu; giảm dần theo thời gian.</td></tr>
+<tr><td>C</td><td data-i18n="k171">CVD tích lũy (Delta ước lượng từ khung thấp) và tín hiệu hấp thụ lực.</td></tr>
+<tr><td>R</td><td data-i18n="k172">Runner suitability: xu hướng có đủ "đà" để giữ phần lệnh chạy tiếp không.</td></tr>
+<tr><td>Cov</td><td data-i18n="k173">Coverage: bao nhiêu % thành phần có dữ liệu. Chế độ Filter không quyết định khi coverage thấp.</td></tr>
+</tbody>
+</table></div>
+<p data-i18n="k174">Rê chuột vào nhãn tín hiệu để xem chi tiết, ví dụ <kbd>🧪 BreakQ 78 A  C/A/K/D/V/F 82/76/71/69/84/75</kbd> và <kbd>💎 Tier3 Break 70 B  F/S/C/R 80/65/72/60 · Cov 100%</kbd>.</p>
+<div class="note"><p data-i18n="k175"><strong>Ba chế độ</strong> cho Setup Quality và Tier 3: <kbd>Off</kbd> · <kbd>Stats only</kbd> (mặc định: chấm và thống kê, không đổi tín hiệu) · <kbd>Filter (experimental)</kbd> (chặn setup dưới ngưỡng). Một tầng điểm có giá trị khi R trung bình <strong>tăng dần</strong> từ nhóm điểm thấp lên nhóm điểm cao, và lặp lại trên nhiều mã. Từ V15.4, phân tích theo nhóm điểm làm trên file CSV của Strategy Validator (tên lệnh có sẵn điểm Q và T3). <kbd>SMC Quality mode</kbd> cũng có hai chế độ Stats only (mặc định) và Filter.</p></div>
+<h3 data-i18n="k306">Runner sau TP2</h3>
+<p data-i18n="k176">Ô <kbd>⑤ Runner sau TP2</kbd> (nhóm Tier 3): <strong>Off</strong> chốt 50% TP1 · 50% TP2. <strong>Always 25%</strong>: 50% TP1 · 25% TP2 · 25% chạy tiếp, SL của phần này khóa tại TP1 rồi kéo theo đường Trailing (chỉ kéo về phía có lợi). <strong>Adaptive</strong>: chỉ giữ Runner khi Runner suitability lúc vào lệnh đạt ngưỡng.</p>
 </section>
-
 <section id="dashboard">
-  <h2>Dashboard thống kê</h2>
-  <p>Ba kiểu hiển thị ở ô <kbd>Dashboard layout</kbd>: <strong>Full</strong> (đầy đủ, có bảng 9 khung thời gian), <strong>Compact</strong> (bỏ bảng 9 khung), <strong>Mini</strong> (bảng LIVE cho giao dịch thực trên điện thoại).</p>
-  <div class="dash" aria-label="Minh họa Dashboard">
-    <div class="t"><span>⚡ KENVINZONE AURORA PRO · CFD · Setups · Prop</span></div>
-    <div class="b"><span>▲ BUY BIAS</span></div>
-    <div><span class="k">Score</span><span>LONG 74</span><span>SHORT 22</span></div>
-    <div><span class="k">Total R</span><span class="g">+12.4R</span><span class="g">Avg +0.21R</span></div>
-    <div><span class="k">⚡ Break</span><span>31 · Win 52%</span><span class="g">+8.2R · +0.26R</span></div>
-    <div><span class="k">☀ SUNNY</span><span>18 · Win 50%</span><span class="g">+2.9R · +0.16R</span></div>
-    <div><span class="k">💠 SMC</span><span>12 · Win 58%</span><span class="g">+2.6R · +0.22R</span></div>
-    <div><span class="k">⛔ Filtered</span><span>6 · Win 33%</span><span class="g">-1.3R · -0.22R</span></div>
-  </div>
-  <p class="muted">Số liệu minh họa giao diện, không phải kết quả giao dịch.</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Dòng</th><th>Cách đọc</th></tr></thead>
-    <tbody>
-      <tr><td>📈 Stats · Hit rate · Total R</td><td>Tổng số lệnh, tỷ lệ thắng, tỷ lệ chạm TP1/TP2, tổng R và R trung bình mỗi lệnh.</td></tr>
-      <tr><td>🚪 Exits</td><td>Lệnh được đóng thế nào: TP2 / BE / SL / EXIT / TIME / REV.</td></tr>
-      <tr><td>⚡ Break · ↳ Score ≥ / &lt;</td><td>Kết quả Break, tách theo Score cao và thấp để kiểm tra Score có giúp chọn lệnh tốt hơn không.</td></tr>
-      <tr><td>🧪 Setup Q · ↳ Q</td><td>Setup Quality hiện tại và thống kê theo 4 nhóm điểm (&lt;40 · 40–59 · 60–74 · 75+).</td></tr>
-      <tr><td>💎 Tier 3 · ↳ T3</td><td>Institutional Quality hiện tại và thống kê theo nhóm điểm.</td></tr>
-      <tr><td>🚀 Runner</td><td>Các lệnh chạm TP2 và giữ Runner (khi bật Runner).</td></tr>
-      <tr><td>💎 Sweep</td><td>Break có quét thanh khoản trước đó so với Break không có.</td></tr>
-      <tr><td>⏳ Pullback</td><td>Số lệnh chờ khớp / kích hoạt; R của chờ hồi so với R nếu vào ngay.</td></tr>
-      <tr><td>☀ SUNNY · 💠 SMC · ↳ RETEST/SWEEP/IFVG</td><td>Kết quả riêng từng setup.</td></tr>
-      <tr><td>⛔ Filtered</td><td>"Lệnh ma": các Break bị bộ lọc chặn nhưng vẫn được theo dõi ngầm. <strong>Âm</strong> = bộ lọc đang loại đúng lệnh xấu; <strong>dương</strong> = bộ lọc đang chặn nhầm lệnh tốt.</td></tr>
-      <tr><td>Các dòng phiên</td><td>Kết quả theo phiên lúc vào lệnh: Á, London, giao London–New York, New York, giao phiên. Dấu ● là phiên hiện tại.</td></tr>
-      <tr><td>🔊 Volume</td><td>RVOL hiện tại (RVOL~ là dự phóng cho nến đang chạy) và nguồn volume.</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Bảng LIVE (Dashboard = Mini)</h3>
-  <div class="tbl"><table>
-    <thead><tr><th>Dòng</th><th>Ý nghĩa</th></tr></thead>
-    <tbody>
-      <tr><td>Trend</td><td>Xu hướng chính, chiều đường Trailing, % đồng thuận khung lớn.</td></tr>
-      <tr><td>Trạng thái</td><td><kbd>● IN TRADE BUY · SMC·SWEEP · +0.62R · TP1 ✓</kbd> khi đang có lệnh; <kbd>⏳ WAITING 2nd BREAK / SUNNY BUY</kbd> khi đang chờ.</td></tr>
-      <tr><td>Trigger</td><td>Khoảng cách tới điểm kích hoạt theo ATR. 🔥 và nền cam khi dưới 0.3 ATR.</td></tr>
-      <tr><td>Checks</td><td>Score, Volume, Phiên tại nến hiện tại. Nền xanh = nếu setup kích hoạt bây giờ sẽ được vào lệnh.</td></tr>
-      <tr><td>Stop · Last</td><td>F-SL / T-SL hiện tại và tín hiệu gần nhất.</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Thẻ chi tiết kế hoạch</h3>
-  <p>Ô <kbd>Signal detail card</kbd> (nhóm Trade Plan) hiển thị thẻ kế hoạch với thanh điểm, Entry, F-SL, TP1, TP2. Chế độ <strong>Panel</strong> đặt thẻ trong bảng cố định (8 vị trí ở ô <kbd>Card panel position</kbd>), không che nhãn và nến. Nên đặt khác góc với Dashboard chính.</p>
+<h2 data-i18n="k13">Dashboard thống kê</h2>
+<p data-i18n="k177">Ba kiểu hiển thị ở ô <kbd>Dashboard layout</kbd>: <strong>Full</strong> (đầy đủ, có bảng 9 khung thời gian), <strong>Compact</strong> (bỏ bảng 9 khung), <strong>Mini</strong> (bảng LIVE cho giao dịch thực trên điện thoại).</p>
+<div aria-label="Minh họa Dashboard" class="dash" data-i18n-aria="Dashboard illustration">
+<div class="t"><span>⚡ KENVINZONE AURORA PRO · CFD · Setups · Prop</span></div>
+<div class="b"><span>▲ BUY BIAS</span></div>
+<div><span class="k">Score</span><span>LONG 74</span><span>SHORT 22</span></div>
+<div><span class="k">Total R</span><span class="g">+12.4R</span><span class="g">Avg +0.21R</span></div>
+<div><span class="k">⚡ Break</span><span>31 · Win 52%</span><span class="g">+8.2R · +0.26R</span></div>
+<div><span class="k">☀ SUNNY</span><span>18 · Win 50%</span><span class="g">+2.9R · +0.16R</span></div>
+<div><span class="k">💠 SMC</span><span>12 · Win 58%</span><span class="g">+2.6R · +0.22R</span></div>
+<div><span class="k">⛔ Filtered</span><span>6 · Win 33%</span><span class="g">-1.3R · -0.22R</span></div>
+</div>
+<p class="muted" data-i18n="k178">Số liệu minh họa giao diện, không phải kết quả giao dịch.</p>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k179">Dòng</th><th data-i18n="k180">Cách đọc</th></tr></thead>
+<tbody>
+<tr><td>📈 Stats · Hit rate · Total R</td><td data-i18n="k181">Tổng số lệnh, tỷ lệ thắng, tỷ lệ chạm TP1/TP2, tổng R và R trung bình mỗi lệnh.</td></tr>
+<tr><td>🚪 Exits</td><td data-i18n="k182">Lệnh được đóng thế nào: TP2 / BE / SL / EXIT / TIME / REV.</td></tr>
+<tr><td>⚡ Break · ↳ Score ≥ / &lt;</td><td data-i18n="k183">Kết quả Break, tách theo Score cao và thấp để kiểm tra Score có giúp chọn lệnh tốt hơn không.</td></tr>
+<tr><td>🧪 Setup Q</td><td data-i18n="k184">Setup Quality hiện tại của chiều BUY và SELL.</td></tr>
+<tr><td>💎 Tier 3</td><td data-i18n="k185">Institutional Quality hiện tại của chiều BUY và SELL.</td></tr>
+<tr><td>🚀 Runner</td><td data-i18n="k186">Các lệnh chạm TP2 và giữ Runner (khi bật Runner).</td></tr>
+<tr><td>💎 Sweep</td><td data-i18n="k187">Break có quét thanh khoản trước đó so với Break không có.</td></tr>
+<tr><td>⏳ Pullback</td><td data-i18n="k188">Số lệnh chờ khớp / kích hoạt; R của chờ hồi so với R nếu vào ngay.</td></tr>
+<tr><td>☀ SUNNY · 💠 SMC · ↳ RETEST/SWEEP/IFVG</td><td data-i18n="k189">Kết quả riêng từng setup; SMC có thêm ba dòng con RETEST, SWEEP, IFVG (bản Full).</td></tr>
+<tr><td>⛔ Filtered</td><td data-i18n="k190">"Lệnh ma": các Break bị bộ lọc chặn nhưng vẫn được theo dõi ngầm. <strong>Âm</strong> = bộ lọc đang loại đúng lệnh xấu; <strong>dương</strong> = bộ lọc đang chặn nhầm lệnh tốt.</td></tr>
+<tr><td data-i18n="k191">Các dòng phiên</td><td data-i18n="k192">Kết quả theo phiên lúc vào lệnh: Á, London, giao London–New York, New York, giao phiên. Dấu ● là phiên hiện tại.</td></tr>
+<tr><td>🔊 Volume</td><td data-i18n="k193">RVOL hiện tại (RVOL~ là dự phóng cho nến đang chạy) và nguồn volume.</td></tr>
+</tbody>
+</table></div>
+<h3 data-i18n="k194">Bảng LIVE (Dashboard = Mini)</h3>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k179">Dòng</th><th data-i18n="k106">Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td>Trend</td><td data-i18n="k195">Xu hướng chính, chiều đường Trailing, % đồng thuận khung lớn.</td></tr>
+<tr><td data-i18n="k196">Trạng thái</td><td data-i18n="k197"><kbd>● IN TRADE BUY · SMC·SWEEP · +0.62R · TP1 ✓</kbd> khi đang có lệnh; <kbd>⏳ WAITING 2nd BREAK / SUNNY BUY</kbd> khi đang chờ.</td></tr>
+<tr><td>Trigger</td><td data-i18n="k198">Khoảng cách tới điểm kích hoạt theo ATR. 🔥 và nền cam khi dưới 0.3 ATR.</td></tr>
+<tr><td>Checks</td><td data-i18n="k199">Score, Volume, Phiên tại nến hiện tại. Nền xanh = nếu setup kích hoạt bây giờ sẽ được vào lệnh.</td></tr>
+<tr><td>Stop · Last</td><td data-i18n="k200">F-SL / T-SL hiện tại và tín hiệu gần nhất.</td></tr>
+</tbody>
+</table></div>
+<h3 data-i18n="k201">Thẻ chi tiết kế hoạch</h3>
+<p data-i18n="k202">Ô <kbd>Signal detail card</kbd> (nhóm Trade Plan) hiển thị thẻ kế hoạch với thanh điểm, Entry, F-SL, TP1, TP2. Chế độ <strong>Panel</strong> đặt thẻ trong bảng cố định (8 vị trí ở ô <kbd>Card panel position</kbd>), không che nhãn và nến. Nên đặt khác góc với Dashboard chính.</p>
 </section>
-
 <section id="volume">
-  <h2>Volume & Volume Quality</h2>
-  <p>Volume Engine cộng điểm cho Base Score từ 5 yếu tố có thể bật/tắt riêng: ① RVOL · ② vị trí so với VWAP · ③ Chaikin Money Flow · ④ Delta khung thấp · ⑤ Open Interest (crypto). Yếu tố nào không có dữ liệu sẽ được bỏ qua, không bị trừ điểm.</p>
-  <h3>Bộ lọc volume cho setup</h3>
-  <p>Ô <kbd>Break setup volume gate</kbd> áp dụng cho <strong>cả BREAK, SUNNY và SMC</strong>:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>Lựa chọn</th><th>Cách hoạt động</th><th>Khuyến nghị</th></tr></thead>
-    <tbody>
-      <tr><td>Off</td><td>Không lọc theo volume</td><td>Mặc định; bắt buộc với Forex và CFD không có dữ liệu Futures</td></tr>
-      <tr><td>RVOL ≥ Strong</td><td>Volume nến Break (hoặc nến trước) phải ≥ 1.3 lần trung bình cùng giờ</td><td>Chặt, hay chặn nhầm Break volume bình thường</td></tr>
-      <tr><td>Volume Quality ≥ min</td><td>Điểm tổng hợp: RVOL 35% · Delta 25% · Effort vs Result 20% · Expansion 20%</td><td>Bắt đầu với ngưỡng <strong>45</strong>, Break volume window = 3, bật ④ Delta</td></tr>
-    </tbody>
-  </table></div>
-  <div class="warn"><p><strong>Thiếu dữ liệu volume = chặn hết.</strong> Khi bật bộ lọc mà không có dữ liệu (forex, CFD không lấy được Futures), mọi setup đều bị chặn để an toàn. Luôn kiểm chứng bộ lọc bằng dòng ⛔ Filtered: nếu dòng này dương, bộ lọc đang chặn nhầm.</p></div>
+<h2>Volume &amp; Volume Quality</h2>
+<p data-i18n="k203">Volume Engine cộng điểm cho Base Score từ 5 yếu tố có thể bật/tắt riêng: ① RVOL · ② vị trí so với VWAP · ③ Chaikin Money Flow · ④ Delta khung thấp · ⑤ Open Interest (crypto). Yếu tố nào không có dữ liệu sẽ được bỏ qua, không bị trừ điểm.</p>
+<h3 data-i18n="k204">Bộ lọc volume cho setup</h3>
+<p data-i18n="k205">Từ V15.4, mỗi nhóm setup có ô riêng: <kbd>Break setup volume gate</kbd>, <kbd>SUNNY volume gate</kbd> và <kbd>SMC volume gate</kbd> (cả ba mặc định Off), nên bộ lọc của nhóm này không âm thầm chặn nhóm khác. Các lựa chọn giống nhau:</p>
+<div class="tbl"><table>
+<thead><tr><th data-i18n="k206">Lựa chọn</th><th data-i18n="k207">Cách hoạt động</th><th data-i18n="k208">Khuyến nghị</th></tr></thead>
+<tbody>
+<tr><td>Off</td><td data-i18n="k209">Không lọc theo volume</td><td data-i18n="k210">Mặc định; bắt buộc với Forex và CFD không có dữ liệu Futures</td></tr>
+<tr><td>RVOL ≥ Strong</td><td data-i18n="k211">Volume nến Break (hoặc nến trước) phải ≥ 1.3 lần trung bình cùng giờ</td><td data-i18n="k212">Chặt, hay chặn nhầm Break volume bình thường</td></tr>
+<tr><td>Volume Quality ≥ min</td><td data-i18n="k213">Điểm tổng hợp: RVOL 35% · Delta 25% · Effort vs Result 20% · Expansion 20%</td><td data-i18n="k214">Bắt đầu với ngưỡng <strong>45</strong>, Break volume window = 3, bật ④ Delta</td></tr>
+</tbody>
+</table></div>
+<div class="warn"><p data-i18n="k215"><strong>Thiếu dữ liệu volume = chặn hết.</strong> Khi bật bộ lọc mà không có dữ liệu (forex, CFD không lấy được Futures), mọi setup đều bị chặn để an toàn. Luôn kiểm chứng bộ lọc bằng dòng ⛔ Filtered: nếu dòng này dương, bộ lọc đang chặn nhầm.</p></div>
 </section>
-
 <section id="phien">
-  <h2>Phiên giao dịch</h2>
-  <p>Áp dụng cho chart intraday. Giờ London và New York tự điều chỉnh theo giờ mùa hè/mùa đông.</p>
-  <ul>
-    <li><kbd>Stats only</kbd>: chỉ thống kê kết quả theo phiên (khuyến nghị lúc đầu).</li>
-    <li><kbd>Score</kbd>: cộng/trừ điểm theo phiên (mặc định London–NY +10, London/NY +5, giao phiên −10).</li>
-    <li><kbd>Filter</kbd>: chặn tín hiệu trong các phiên được chọn (mặc định chặn khung giờ giao phiên).</li>
-  </ul>
+<h2 data-i18n="k14">Phiên giao dịch</h2>
+<p data-i18n="k216">Áp dụng cho chart intraday. Giờ London và New York tự điều chỉnh theo giờ mùa hè/mùa đông. Ô <kbd>Session mode</kbd> mặc định <kbd>Auto (theo Market Preset)</kbd>: STOCK tắt, FOREX dùng Score, CFD / CRYPTO / Custom dùng Stats only. Chọn một chế độ cụ thể để ghi đè ở mọi Market Preset, ví dụ tài khoản quỹ chọn Filter.</p>
+<ul>
+<li data-i18n="k217"><kbd>Stats only</kbd>: chỉ thống kê kết quả theo phiên (khuyến nghị lúc đầu).</li>
+<li data-i18n="k218"><kbd>Score</kbd>: cộng/trừ điểm theo phiên (mặc định London–NY +10, London/NY +5, giao phiên −10).</li>
+<li data-i18n="k219"><kbd>Filter</kbd>: chặn tín hiệu trong các phiên được chọn (mặc định chặn khung giờ giao phiên).</li>
+</ul>
 </section>
-
 <section id="canh-bao">
-  <h2>Cảnh báo (Alert)</h2>
-  <h3>Cho giao dịch thủ công</h3>
-  <p>Tạo alert với các điều kiện có sẵn: <kbd>AURORA 1st BREAK BUY setup</kbd>, <kbd>AURORA SUNNY BUY setup</kbd>, <kbd>AURORA SMC BUY setup</kbd>, <kbd>AURORA PULLBACK LIMIT placed</kbd>… (và bản SELL tương ứng). Các alert này chỉ kêu khi lệnh thực sự được vào.</p>
-  <h3>Cho bot / webhook</h3>
-  <p>Tạo <strong>một</strong> alert với điều kiện <kbd>Any alert() function call</kbd>. Aurora gửi JSON có <kbd>version</kbd>, <kbd>event</kbd>, <kbd>signal_id</kbd> để bot chống trùng:</p>
-  <div class="tbl"><table>
-    <thead><tr><th>event</th><th>Ý nghĩa</th></tr></thead>
-    <tbody>
-      <tr><td>ENTRY_MARKET</td><td>Vào lệnh mới kèm SL, TP1, TP2, setup, điểm số, % chốt ở mỗi TP</td></tr>
-      <tr><td>PLACE_LIMIT · CANCEL_LIMIT</td><td>Đặt / hủy lệnh chờ Pullback (cùng <kbd>order_id</kbd>)</td></tr>
-      <tr><td>ADD_POSITION</td><td>Tín hiệu nhồi lệnh cùng chiều</td></tr>
-      <tr><td>CLOSE_POSITION</td><td>Đóng do quản lý lệnh: EXIT / TIME / REV / NEXT</td></tr>
-      <tr><td>RUNNER_ACTIVATED · UPDATE_STOP · RUNNER_EXIT</td><td>Vòng đời phần Runner (dời SL kèm <kbd>parent_id</kbd>)</td></tr>
-    </tbody>
-  </table></div>
-<pre>{"system":"KENVIN_AURORA","version":"15.2","event":"ENTRY_MARKET",
+<h2 data-i18n="k15">Cảnh báo (Alert)</h2>
+<h3 data-i18n="k220">Cho giao dịch thủ công</h3>
+<p data-i18n="k221">Tạo alert với các điều kiện có sẵn: <kbd>AURORA 1st BREAK BUY setup</kbd>, <kbd>AURORA SUNNY BUY setup</kbd>, <kbd>AURORA SMC BUY setup</kbd>, <kbd>AURORA PULLBACK LIMIT placed</kbd>… (và bản SELL tương ứng). Các alert này chỉ kêu khi lệnh thực sự được vào.</p>
+<h3>Cho bot / webhook</h3>
+<p data-i18n="k222">Tạo <strong>một</strong> alert với điều kiện <kbd>Any alert() function call</kbd>. Aurora gửi JSON có <kbd>version</kbd>, <kbd>event</kbd>, <kbd>signal_id</kbd> để bot chống trùng:</p>
+<div class="tbl"><table>
+<thead><tr><th>event</th><th data-i18n="k106">Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td>ENTRY_MARKET</td><td data-i18n="k223">Vào lệnh mới kèm SL, TP1, TP2, setup, điểm số, % chốt ở mỗi TP</td></tr>
+<tr><td>PLACE_LIMIT · CANCEL_LIMIT</td><td data-i18n="k224">Đặt / hủy lệnh chờ Pullback (cùng <kbd>order_id</kbd>)</td></tr>
+<tr><td>ADD_POSITION</td><td data-i18n="k225">Tín hiệu nhồi lệnh cùng chiều</td></tr>
+<tr><td>CLOSE_POSITION</td><td data-i18n="k226">Đóng do quản lý lệnh: EXIT / TIME / REV / NEXT</td></tr>
+<tr><td>RUNNER_ACTIVATED · UPDATE_STOP · RUNNER_EXIT</td><td data-i18n="k227">Vòng đời phần Runner (dời SL kèm <kbd>parent_id</kbd>)</td></tr>
+</tbody>
+</table></div>
+<pre>{"system":"KENVIN_AURORA","version":"15.4","event":"ENTRY_MARKET",
  "signal_id":"OANDA:XAUUSD|15|1790000000000|ENTRY_MARKET",
  "side":"LONG","signal":"BUY","setup":"SMC SWEEP","grade":"B","score":72,
  "setup_quality":61,"tier3_quality":70,"runner_planned":false,
  "tp1_pct":50,"tp2_pct":50,"price":4161.02,"sl":4151.36,"tp1":4170.68,"tp2":4180.34}</pre>
-  <div class="warn"><p>Bot cần lưu <kbd>signal_id</kbd> / <kbd>order_id</kbd> đã xử lý để bỏ qua tin nhắn trùng. Trạng thái vị thế thật luôn lấy từ sàn. Hãy chạy thử trên tài khoản demo trước khi dùng tiền thật.</p></div>
+<p data-i18n="k228">Alert JSON chỉ gửi <strong>khi nến đã đóng</strong>; nếu trên cùng một nến có nhiều sự kiện (ví dụ đóng lệnh cũ rồi mở lệnh đảo chiều) thì tất cả đều được gửi. Từ V15.4, các alert sự kiện thô (X Cross, SUNNY / Break chưa lọc) đã được bỏ; sau khi cập nhật, hãy xóa và tạo lại toàn bộ alert.</p>
+<div class="warn"><p data-i18n="k229">Bot cần lưu <kbd>signal_id</kbd> / <kbd>order_id</kbd> đã xử lý để bỏ qua tin nhắn trùng. Trạng thái vị thế thật luôn lấy từ sàn. Hãy chạy thử trên tài khoản demo trước khi dùng tiền thật.</p></div>
 </section>
-
 <section id="validator">
-  <h2>Strategy Validator</h2>
-  <p><strong>KENVINZONE AURORA PRO · STRATEGY VALIDATOR</strong> là bản chiến lược của cùng hệ thống, chạy trong Strategy Tester của TradingView: lệnh khớp ở nến kế tiếp, khối lượng theo % rủi ro vốn, có phí và trượt giá. Dùng để kiểm tra con số thật sau chi phí.</p>
-  <ol class="steps">
-    <li>Thêm Validator lên cùng chart, đặt <strong>cùng Market Preset và Trading Style</strong> với chỉ báo.</li>
-    <li>Mở tab <kbd>Strategy Tester</kbd>, chỉnh phí và trượt giá theo broker/sàn của bạn.</li>
-    <li>Xem Net Profit, Max Drawdown, Profit Factor và danh sách lệnh.</li>
-    <li>Xuất <kbd>List of Trades</kbd> ra CSV. Tên lệnh có dạng <kbd>SMC-SWEEP-L Q61 T70 OOS</kbd> để phân tích theo setup, điểm số và giai đoạn trên nhiều mã.</li>
-  </ol>
-  <h3>Giả định thực thi (cần hiểu đúng)</h3>
-  <ul>
-    <li><strong>Lệnh market khớp ở tick / nến kế tiếp.</strong> Khối lượng, SL, TP1, TP2 tính từ giá đóng nến tín hiệu, nên 1% rủi ro là <em>rủi ro mục tiêu</em>; rủi ro thực tế có thể lệch khi có gap hoặc trượt giá.</li>
-    <li><strong>Phân bổ khối lượng:</strong> 50% TP1 + 50% TP2; khi bật Runner là 50% TP1 + 25% TP2 + 25% RUN, đặt sẵn ngay khi vào lệnh. Trạng thái TP1/TP2 suy ra từ khối lượng thực tế còn lại. Khối lượng quá nhỏ (ví dụ 1 hợp đồng) không chia được tỷ lệ này.</li>
-    <li><strong>Thời gian giữ lệnh</strong> tính từ nến khớp thực tế, không phải nến tín hiệu.</li>
-    <li><strong>Lệnh chờ Pullback</strong> khớp theo cài đặt <kbd>Verify price for limit orders</kbd> trong Strategy Properties. Nên so sánh 0 tick và 1 tick trở lên.</li>
-    <li><strong>Đòn bẩy:</strong> ô <kbd>Max position notional</kbd> (mặc định 5x) phải khớp với Margin trong Strategy Properties (mặc định 20%). Cổ phiếu không đòn bẩy: đặt 1x và Margin 100%.</li>
-  </ul>
-  <h3>Tách In-sample / Out-of-sample</h3>
-  <p>Dùng hai ô <kbd>Backtest từ ngày</kbd> / <kbd>đến ngày</kbd> và <kbd>Sample tag</kbd> (IS / OOS). Lệnh chỉ được mở trong khoảng đã chọn; lệnh còn mở khi hết khoảng sẽ đóng với nhãn <kbd>WINDOW</kbd>.</p>
-  <h3>Chi phí giao dịch</h3>
-  <p>Mức mặc định 0.05% + 2 tick chỉ là giá trị giữ chỗ. Hãy đặt theo broker của bạn: cổ phiếu và crypto thường tính theo %, Futures CME/COMEX thường tính theo tiền mỗi hợp đồng, còn CFD và Forex chủ yếu là spread và trượt giá.</p>
-  <div class="warn"><p>Validator <strong>mặc định không phát alert JSON</strong>, vì các alert đó mô tả kế hoạch của chỉ báo, không phải lệnh khớp của Strategy Tester. Để giao dịch tự động, hãy tạo alert trên chỉ báo chính.</p></div>
+<h2>Strategy Validator</h2>
+<p data-i18n="k230"><strong>KENVINZONE AURORA PRO · STRATEGY VALIDATOR</strong> là bản chiến lược của cùng hệ thống, chạy trong Strategy Tester của TradingView: lệnh khớp ở nến kế tiếp, khối lượng theo % rủi ro vốn, có phí và trượt giá. Dùng để kiểm tra con số thật sau chi phí.</p>
+<ol class="steps">
+<li data-i18n="k231">Thêm Validator lên cùng chart, đặt <strong>cùng Market Preset, Trading Style và Entry Filter Profile</strong> với chỉ báo.</li>
+<li data-i18n="k232">Mở tab <kbd>Strategy Tester</kbd>, chỉnh phí và trượt giá theo broker/sàn của bạn.</li>
+<li data-i18n="k233">Xem Net Profit, Max Drawdown, Profit Factor và danh sách lệnh.</li>
+<li data-i18n="k234">Xuất <kbd>List of Trades</kbd> ra CSV. Tên lệnh có dạng <kbd>SMC-SWEEP-L Q61 T70 OOS</kbd> (thêm <kbd>W</kbd> khi SMC có Stoploss cấu trúc rộng) để phân tích theo setup, nhóm điểm, độ rộng SL và giai đoạn trên nhiều mã.</li>
+</ol>
+<h3 data-i18n="k235">Giả định thực thi (cần hiểu đúng)</h3>
+<ul>
+<li data-i18n="k236"><strong>Lệnh market khớp ở tick / nến kế tiếp.</strong> Khối lượng, SL, TP1, TP2 tính từ giá đóng nến tín hiệu, nên 1% rủi ro là <em>rủi ro mục tiêu</em>; rủi ro thực tế có thể lệch khi có gap hoặc trượt giá.</li>
+<li data-i18n="k237"><strong>Phân bổ khối lượng:</strong> 50% TP1 + 50% TP2; khi bật Runner là 50% TP1 + 25% TP2 + 25% RUN, đặt sẵn ngay khi vào lệnh. Trạng thái TP1/TP2 suy ra từ khối lượng thực tế còn lại. Khối lượng quá nhỏ (ví dụ 1 hợp đồng) không chia được tỷ lệ này.</li>
+<li data-i18n="k238"><strong>Thời gian giữ lệnh</strong> tính từ nến khớp thực tế, không phải nến tín hiệu.</li>
+<li data-i18n="k239"><strong>Lệnh chờ Pullback</strong> khớp theo cài đặt <kbd>Verify price for limit orders</kbd> trong Strategy Properties. Nên so sánh 0 tick và 1 tick trở lên.</li>
+<li data-i18n="k240"><strong>Đòn bẩy:</strong> ô <kbd>Max position notional</kbd> (mặc định 5x) phải khớp với Margin trong Strategy Properties (mặc định 20%). Cổ phiếu không đòn bẩy: đặt 1x và Margin 100%.</li>
+</ul>
+<h3 data-i18n="k241">Tách In-sample / Out-of-sample</h3>
+<p data-i18n="k242">Dùng hai ô <kbd>Backtest từ ngày</kbd> / <kbd>đến ngày</kbd> và <kbd>Sample tag</kbd> (IS / OOS). Lệnh chỉ được mở trong khoảng đã chọn; lệnh còn mở khi hết khoảng sẽ đóng với nhãn <kbd>WINDOW</kbd>.</p>
+<h3 data-i18n="k243">Chi phí giao dịch</h3>
+<p data-i18n="k244">Mức mặc định 0.05% + 2 tick chỉ là giá trị giữ chỗ. Hãy đặt theo broker của bạn: cổ phiếu và crypto thường tính theo %, Futures CME/COMEX thường tính theo tiền mỗi hợp đồng, còn CFD và Forex chủ yếu là spread và trượt giá.</p>
+<div class="warn"><p data-i18n="k245">Validator <strong>mặc định không phát alert JSON</strong>, vì các alert đó mô tả kế hoạch của chỉ báo, không phải lệnh khớp của Strategy Tester. Để giao dịch tự động, hãy tạo alert trên chỉ báo chính.</p></div>
 </section>
-
 <section id="nghien-cuu">
-  <h2>Quy trình kiểm chứng một cấu hình</h2>
-  <ol class="steps">
-    <li><strong>Thay đổi từng yếu tố một.</strong> Ví dụ chỉ đổi Volume gate, giữ nguyên mọi thứ khác, rồi so Dashboard.</li>
-    <li><strong>Đọc theo R trung bình mỗi lệnh,</strong> không chỉ Tổng R, vì số lệnh giữa các cấu hình khác nhau.</li>
-    <li><strong>Cần ít nhất 20–30 lệnh</strong> mỗi nhóm trước khi kết luận.</li>
-    <li><strong>Chia dữ liệu:</strong> chọn cấu hình trên giai đoạn cũ, kiểm tra lại trên giai đoạn mới (out-of-sample).</li>
-    <li><strong>Không gộp các thị trường khác nhau</strong> khi hiệu chỉnh (vàng, NQ, crypto, cổ phiếu test riêng).</li>
-    <li><strong>Xác nhận bằng Validator</strong> có phí trước khi dùng cấu hình cho tiền thật.</li>
-  </ol>
+<h2 data-i18n="k16">Quy trình kiểm chứng một cấu hình</h2>
+<ol class="steps">
+<li data-i18n="k246"><strong>Thay đổi từng yếu tố một.</strong> Ví dụ chỉ đổi Volume gate, giữ nguyên mọi thứ khác, rồi so Dashboard.</li>
+<li data-i18n="k247"><strong>Đọc theo R trung bình mỗi lệnh,</strong> không chỉ Tổng R, vì số lệnh giữa các cấu hình khác nhau.</li>
+<li data-i18n="k248"><strong>Cần ít nhất 20–30 lệnh</strong> mỗi nhóm trước khi kết luận.</li>
+<li data-i18n="k249"><strong>Chia dữ liệu:</strong> chọn cấu hình trên giai đoạn cũ, kiểm tra lại trên giai đoạn mới (out-of-sample).</li>
+<li data-i18n="k250"><strong>Không gộp các thị trường khác nhau</strong> khi hiệu chỉnh (vàng, NQ, crypto, cổ phiếu test riêng).</li>
+<li data-i18n="k251"><strong>Xác nhận bằng Validator</strong> có phí trước khi dùng cấu hình cho tiền thật.</li>
+</ol>
 </section>
-
 <section id="settings">
-  <h2>Tra cứu Settings</h2>
-  <details><summary>AURORA MODE</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>⚙ Market Preset</td><td>STOCK / FOREX / CFD / CRYPTO / Custom</td></tr>
-    <tr><td>⚙ Trading Style</td><td>Scalping / Intraday / Swing / Prop Firm / Custom</td></tr>
-    <tr><td>Trading mode</td><td>Setups only (Break + SUNNY + SMC) mặc định · Smart + Setups · Smart only</td></tr>
-    <tr><td>Direction</td><td>Long & Short · Long only · Short only</td></tr>
-    <tr><td>Score engine</td><td>Classic · Family</td></tr>
-    <tr><td>MTF Vote mode</td><td>Chỉ khung lớn hơn chart (có trọng số) hoặc cả 9 khung</td></tr>
-    <tr><td>Dashboard layout</td><td>Full · Compact · Mini</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>CORE TREND SETTINGS</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>Stoploss Level Calculate</td><td>Số nến pivot dùng tính đường Trailing (mặc định 4)</td></tr>
-    <tr><td>Trader Style Factor</td><td>Khoảng cách đường Trailing theo ATR: nhỏ = bám sát (scalp), lớn = rộng (swing)</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>TRADE PLAN</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>TP1 / TP2 (R)</td><td>Mục tiêu theo bội số rủi ro</td></tr>
-    <tr><td>Max plan length</td><td>Thời gian giữ lệnh tối đa cho tín hiệu Smart</td></tr>
-    <tr><td>Signal detail card · position</td><td>Thẻ chi tiết kế hoạch: Off / Panel / Near signal</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>1ST / 2ND BREAK SETUP</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>Trade 1st / 2nd Break · SUNNY</td><td>Bật/tắt từng setup</td></tr>
-    <tr><td>Min score</td><td>Điểm tối thiểu cho Break / SUNNY</td></tr>
-    <tr><td>Break setup Stop Loss</td><td>Trailing (gốc) · Swing · Cloud</td></tr>
-    <tr><td>Max SL distance (ATR)</td><td>Bỏ setup có SL quá xa</td></tr>
-    <tr><td>Exit policy</td><td>Original TP/SL · Trend managed · Adaptive</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>PULLBACK ENTRY</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>Long candle if range ≥</td><td>Ngưỡng nến dài (mặc định 1.8 ATR)</td></tr>
-    <tr><td>Pullback level</td><td>Mức hồi % (38.2 / 50 / 61.8)</td></tr>
-    <tr><td>Limit order valid for</td><td>Số nến chờ tối đa</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>V15 SMC SETUPS</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>RETEST / SWEEP / IFVG</td><td>Bật/tắt từng setup SMC</td></tr>
-    <tr><td>Min score for SMC</td><td>Điểm tối thiểu</td></tr>
-    <tr><td>Swing pivot</td><td>Số nến xác nhận swing (mặc định 3)</td></tr>
-    <tr><td>Hiệu lực vùng · chờ MSS · chờ retest</td><td>Thời hạn của từng setup</td></tr>
-    <tr><td>SL tối thiểu (ATR)</td><td>Tránh 1R quá nhỏ (mặc định 0.3)</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>V13 SETUP QUALITY · V14 TIER 3</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>Mode</td><td>Off · Stats only · Filter (experimental)</td></tr>
-    <tr><td>Thành phần</td><td>Bật/tắt từng thành phần chấm điểm</td></tr>
-    <tr><td>FVG CE làm mức Pullback</td><td>Off · Prefer fresh FVG CE</td></tr>
-    <tr><td>Runner sau TP2</td><td>Off · Always 25% · Adaptive 25%</td></tr>
-  </tbody></table></div></div></details>
-  <details><summary>VOLUME ENGINE · VOLUME QUALITY · SESSION</summary><div class="inner"><div class="tbl"><table><tbody>
-    <tr><td>External volume mapping</td><td>Auto theo mã chart · Manual</td></tr>
-    <tr><td>RVOL method</td><td>Theo giờ trong ngày (khuyến nghị) · Rolling</td></tr>
-    <tr><td>Break setup volume gate</td><td>Off · RVOL ≥ Strong · Volume Quality ≥ min</td></tr>
-    <tr><td>Session mode</td><td>Off · Stats only · Score · Filter</td></tr>
-  </tbody></table></div></div></details>
+<h2 data-i18n="k17">Tra cứu Settings</h2>
+<details><summary>AURORA MODE</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>⚙ Market Preset</td><td>STOCK / FOREX / CFD / CRYPTO / Custom</td></tr>
+<tr><td>⚙ Trading Style</td><td data-i18n="k252">Scalping / Intraday / Swing / Prop Firm / Custom (chỉ quản lý lệnh)</td></tr>
+<tr><td>⚙ Entry Filter Profile</td><td data-i18n="k253">Core parity (mặc định) / Balanced / Strict / Custom</td></tr>
+<tr><td>Trading mode</td><td data-i18n="k254">Setups only (Break + SUNNY + SMC) mặc định · Smart + Setups · Smart only</td></tr>
+<tr><td>Direction</td><td>Long &amp; Short · Long only · Short only</td></tr>
+<tr><td>Score engine</td><td data-i18n="k255">Family (mặc định) · Classic</td></tr>
+<tr><td>MTF Vote mode</td><td data-i18n="k256">Chỉ khung lớn hơn chart (có trọng số) hoặc cả 9 khung</td></tr>
+<tr><td>Dashboard layout</td><td>Full · Compact · Mini</td></tr>
+</tbody></table></div></div></details>
+<details><summary>CORE TREND SETTINGS</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>Stoploss Level Calculate</td><td data-i18n="k257">Số nến pivot dùng tính đường Trailing (mặc định 4)</td></tr>
+<tr><td>Trader Style Factor</td><td data-i18n="k258">Khoảng cách đường Trailing theo ATR: nhỏ = bám sát (scalp), lớn = rộng (swing)</td></tr>
+</tbody></table></div></div></details>
+<details><summary>TRADE PLAN</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>TP1 / TP2 (R)</td><td data-i18n="k259">Mục tiêu theo bội số rủi ro</td></tr>
+<tr><td>Max plan length</td><td data-i18n="k260">Thời gian giữ lệnh tối đa cho tín hiệu Smart</td></tr>
+<tr><td>Signal detail card · position</td><td data-i18n="k261">Thẻ chi tiết kế hoạch: Off / Panel / Near signal</td></tr>
+</tbody></table></div></div></details>
+<details><summary>1ST / 2ND BREAK SETUP</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>Trade 1st / 2nd Break · SUNNY</td><td data-i18n="k262">Bật/tắt từng setup</td></tr>
+<tr><td>Min score</td><td data-i18n="k263">Điểm tối thiểu cho Break / SUNNY (khi Entry Filter Profile = Custom)</td></tr>
+<tr><td>Break setup Stop Loss</td><td data-i18n="k264">Trailing (gốc) · Swing · Cloud</td></tr>
+<tr><td>Max SL distance (ATR)</td><td data-i18n="k265">Bỏ setup Break có SL quá xa (khi Entry Filter Profile = Custom)</td></tr>
+<tr><td>Exit policy</td><td>Original TP/SL · Trend managed · Adaptive</td></tr>
+</tbody></table></div></div></details>
+<details><summary>PULLBACK ENTRY</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>Long candle if range ≥</td><td data-i18n="k266">Ngưỡng nến dài (mặc định 1.8 ATR)</td></tr>
+<tr><td>Pullback level</td><td data-i18n="k267">Mức hồi % (38.2 / 50 / 61.8)</td></tr>
+<tr><td>Limit order valid for</td><td data-i18n="k268">Số nến chờ tối đa</td></tr>
+</tbody></table></div></div></details>
+<details><summary>V15 SMC SETUPS</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>RETEST / SWEEP / IFVG</td><td data-i18n="k269">Bật/tắt từng setup SMC</td></tr>
+<tr><td>Min score for SMC</td><td data-i18n="k270">Điểm tối thiểu</td></tr>
+<tr><td>Swing pivot</td><td data-i18n="k271">Số nến xác nhận swing (mặc định 3)</td></tr>
+<tr><td data-i18n="k272">Hiệu lực vùng · chờ MSS · chờ retest</td><td data-i18n="k273">Thời hạn của từng setup</td></tr>
+<tr><td data-i18n="k274">SL tối thiểu (ATR)</td><td data-i18n="k275">Tránh 1R quá nhỏ (mặc định 0.3)</td></tr>
+<tr><td>SMC structural SL policy</td><td data-i18n="k276">Off · Warn only (mặc định) · Filter, ngưỡng mặc định 4 ATR</td></tr>
+<tr><td>SMC Quality mode</td><td data-i18n="k277">Stats only (mặc định) · Filter (experimental)</td></tr>
+</tbody></table></div></div></details>
+<details><summary>V13 SETUP QUALITY · V14 TIER 3</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>Mode</td><td>Off · Stats only · Filter (experimental)</td></tr>
+<tr><td data-i18n="k105">Thành phần</td><td data-i18n="k278">Bật/tắt từng thành phần chấm điểm</td></tr>
+<tr><td data-i18n="k279">FVG CE làm mức Pullback</td><td>Off · Prefer fresh FVG CE</td></tr>
+<tr><td data-i18n="k306">Runner sau TP2</td><td>Off · Always 25% · Adaptive 25%</td></tr>
+</tbody></table></div></div></details>
+<details><summary>VOLUME ENGINE · VOLUME QUALITY · SESSION</summary><div class="inner"><div class="tbl"><table><tbody>
+<tr><td>External volume mapping</td><td data-i18n="k280">Auto theo mã chart · Manual</td></tr>
+<tr><td>RVOL method</td><td data-i18n="k281">Theo giờ trong ngày (khuyến nghị) · Rolling</td></tr>
+<tr><td>Break / SUNNY / SMC volume gate</td><td data-i18n="k282">Off · RVOL ≥ Strong · Volume Quality ≥ min (mỗi nhóm một ô)</td></tr>
+<tr><td>Session mode</td><td data-i18n="k283">Auto (theo Market Preset, mặc định) · Off · Stats only · Score · Filter</td></tr>
+</tbody></table></div></div></details>
 </section>
-
 <section id="rui-ro">
-  <h2>Quản lý rủi ro</h2>
-  <ul>
-    <li><strong>Tính khối lượng từ F-SL:</strong> chọn mức rủi ro mỗi lệnh (thường 0.5–1% tài khoản), chia cho khoảng cách Entry → F-SL.</li>
-    <li><strong>Đòn bẩy không đổi rủi ro</strong> nếu khối lượng tính đúng, nhưng giá thanh lý phải nằm xa hơn F-SL.</li>
-    <li><strong>Chuỗi thua là một phần bình thường</strong> của hệ theo xu hướng. Xem dòng chuỗi thua và Max Drawdown trong Validator để chọn mức rủi ro mỗi lệnh phù hợp.</li>
-    <li><strong>Thống kê chưa tính phí</strong> và trượt giá. Dùng Validator để có con số sau chi phí.</li>
-  </ul>
-  <div class="warn"><p>KENVINZONE AURORA là công cụ hỗ trợ phân tích, không phải lời khuyên đầu tư và không cam kết lợi nhuận. Kết quả quá khứ không đảm bảo tương lai. Giao dịch có rủi ro mất vốn.</p></div>
+<h2 data-i18n="k18">Quản lý rủi ro</h2>
+<ul>
+<li data-i18n="k284"><strong>Tính khối lượng từ F-SL:</strong> chọn mức rủi ro mỗi lệnh (thường 0.5–1% tài khoản), chia cho khoảng cách Entry → F-SL.</li>
+<li data-i18n="k285"><strong>Đòn bẩy không đổi rủi ro</strong> nếu khối lượng tính đúng, nhưng giá thanh lý phải nằm xa hơn F-SL.</li>
+<li data-i18n="k286"><strong>Chuỗi thua là một phần bình thường</strong> của hệ theo xu hướng. Xem dòng chuỗi thua và Max Drawdown trong Validator để chọn mức rủi ro mỗi lệnh phù hợp.</li>
+<li data-i18n="k287"><strong>Thống kê chưa tính phí</strong> và trượt giá. Dùng Validator để có con số sau chi phí.</li>
+</ul>
+<div class="warn"><p data-i18n="k288">KENVINZONE AURORA là công cụ hỗ trợ phân tích, không phải lời khuyên đầu tư và không cam kết lợi nhuận. Kết quả quá khứ không đảm bảo tương lai. Giao dịch có rủi ro mất vốn.</p></div>
 </section>
-
 <section id="faq">
-  <h2>Câu hỏi thường gặp</h2>
-  <details><summary>Tín hiệu có vẽ lại (repaint) không?</summary><div class="inner"><p>Ở chế độ mặc định (<kbd>Confirm signals on bar close</kbd> bật), tín hiệu chỉ xác nhận khi nến đóng cửa. Nếu tắt tùy chọn này, điều kiện có thể thay đổi trong lúc nến đang chạy. Dữ liệu khung lớn luôn lấy từ nến đã đóng; swing SMC xác nhận sau 3 nến.</p></div></details>
-  <details><summary>Vì sao Dashboard không có lệnh SMC?</summary><div class="inner"><p>Kiểm tra: chu kỳ đã qua warm-up chưa (cần thấy điểm bắt đầu một chu kỳ xu hướng), Min score for SMC có quá cao không, Trading mode có đang ở "Smart only" không, và bộ lọc volume/phiên có đang chặn không.</p></div></details>
-  <details><summary>Market Preset và Trading Style có xung đột không?</summary><div class="inner"><p>Không. Market Preset quyết định dữ liệu (chiều lệnh, nguồn volume); Trading Style quyết định cách vào và quản lý lệnh. Riêng cổ phiếu (STOCK) luôn tắt phần phiên.</p></div></details>
-  <details><summary>Tôi chỉnh một ô nhưng không thấy thay đổi?</summary><div class="inner"><p>Ô đó có thể đang bị Market Preset hoặc Trading Style ghi đè. Chọn <kbd>Custom</kbd> ở preset tương ứng để dùng giá trị của bạn.</p></div></details>
-  <details><summary>Dùng trên điện thoại được không?</summary><div class="inner"><p>Được. Chọn Dashboard layout = Mini để có bảng LIVE gọn. Ô này không bị Trading Style ghi đè.</p></div></details>
+<h2 data-i18n="k19">Câu hỏi thường gặp</h2>
+<details><summary data-i18n="k289">Tín hiệu có vẽ lại (repaint) không?</summary><div class="inner"><p data-i18n="k290">Ở chế độ mặc định (<kbd>Confirm signals on bar close</kbd> bật), tín hiệu chỉ xác nhận khi nến đóng cửa. Nếu tắt tùy chọn này, điều kiện có thể thay đổi trong lúc nến đang chạy. Dữ liệu khung lớn luôn lấy từ nến đã đóng; swing SMC xác nhận sau 3 nến.</p></div></details>
+<details><summary data-i18n="k291">Vì sao Dashboard không có lệnh SMC?</summary><div class="inner"><p data-i18n="k292">Kiểm tra: chu kỳ đã qua warm-up chưa (cần thấy điểm bắt đầu một chu kỳ xu hướng), Min score for SMC có quá cao không, Trading mode có đang ở "Smart only" không, và bộ lọc volume/phiên có đang chặn không.</p></div></details>
+<details><summary data-i18n="k293">Market Preset, Trading Style và Entry Filter Profile có xung đột không?</summary><div class="inner"><p data-i18n="k294">Không. Market Preset quyết định dữ liệu (chiều lệnh, nguồn volume, phiên mặc định); Trading Style quyết định cách giữ và thoát lệnh; Entry Filter Profile quyết định setup nào đủ chuẩn để vào lệnh.</p></div></details>
+<details><summary data-i18n="k295">Tôi chỉnh một ô nhưng không thấy thay đổi?</summary><div class="inner"><p data-i18n="k296">Ô đó có thể đang bị ghi đè: Market Preset (Direction, Volume Engine), Trading Style (giữ lệnh, hòa vốn, Pullback, Runner) hoặc Entry Filter Profile (Min score, Max SL distance). Chọn <kbd>Custom</kbd> ở ô tương ứng để dùng giá trị của bạn. Với Session mode, chọn một chế độ khác Auto.</p></div></details>
+<details><summary data-i18n="k297">Dùng trên điện thoại được không?</summary><div class="inner"><p data-i18n="k298">Được. Chọn Dashboard layout = Mini để có bảng LIVE gọn. Ô này không bị Trading Style ghi đè.</p></div></details>
+<details><summary data-i18n="k299">V15.4 khác V15.2 thế nào?</summary><div class="inner"><p data-i18n="k300">Trading Style chỉ còn quản lý lệnh; bộ lọc vào lệnh chuyển sang Entry Filter Profile, nên chọn Scalping hay Prop Firm không còn âm thầm làm mất setup. SUNNY và SMC có bộ lọc volume riêng, SMC cảnh báo khi Stoploss cấu trúc quá rộng, setup bị lọc ở cả ba nhóm đều hiện lý do, Score mặc định là Family và FOREX dùng Session Score giống AURORA STANDARD V12.2.</p></div></details>
+<details><summary data-i18n="k301">Đang dùng V15.2, cập nhật lên V15.4 thế nào?</summary><div class="inner"><p data-i18n="k302">Chỉ báo đã có trên biểu đồ vẫn giữ cài đặt cũ. Mở Settings, bấm <kbd>Defaults</kbd> rồi <kbd>Reset settings</kbd> (hoặc xóa và thêm lại chỉ báo), chọn lại Market Preset, Trading Style, Entry Filter Profile, sau đó xóa và tạo lại toàn bộ alert. Nếu trước đây bạn dùng Prop Firm, hãy chọn thêm Entry Filter Profile Strict và Session mode Filter để giữ mức thận trọng như cũ.</p></div></details>
 </section>
-
-
 <footer>
-  <p>KENVINZONE AURORA PRO · phát triển bởi Trader KenvinHoang (Telegram: @KenvinHoang) · kenvinzone.com</p>
-  <p>Công cụ hỗ trợ phân tích, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn.</p>
+<p data-i18n="k303">KENVINZONE AURORA PRO · phát triển bởi Trader KenvinHoang (Tele @KenvinHoang) · kenvinzone.com</p>
+<p data-i18n="k304">Công cụ hỗ trợ phân tích, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn.</p>
 </footer>
-
 </div>
 </main>
 </div>
@@ -815,7 +815,6 @@ html[data-theme="light"] ol.steps>li::before{color:#FFFFFF}
   document.querySelectorAll('section[id]').forEach(function(s){ obs.observe(s); });
 })();
 </script>
-
 <script>
 /* ===== KENVINZONE UNIFIED LAYER: theme, menu, hiệu ứng ===== */
 (function(){
@@ -839,6 +838,373 @@ html[data-theme="light"] ol.steps>li::before{color:#FFFFFF}
     var el=e.target.closest&&e.target.closest('.kz-spot'); if(!el)return;
     var r=el.getBoundingClientRect(); el.style.setProperty('--mx',(e.clientX-r.left)+'px'); el.style.setProperty('--my',(e.clientY-r.top)+'px');
   },{passive:true});
+})();
+</script>
+<script>window.KZ_META_EN={"t": "KENVINZONE AURORA PRO V15.4 — User Guide", "d": "User guide for KENVINZONE AURORA PRO V15.4: BREAK, SUNNY and SMC setups, Market Preset, Trading Style and Entry Filter Profile, multi-layer scoring, dashboard, alerts and the Strategy Validator."};window.KZ_I18N_EN={
+"k0": "Product page",
+"k1": "Compare plans",
+"k2": "Guide",
+"k3": "STANDARD guide",
+"k4": "Request a trial",
+"k5": "What is AURORA PRO",
+"k6": "Quick start in 5 steps",
+"k7": "Quick setup: Market Preset × Trading Style × Entry Filter Profile",
+"k8": "Reading the chart",
+"k9": "Signal types",
+"k10": "Trade plan",
+"k11": "Pullback Entry for long Break candles",
+"k12": "The multi-layer scoring system",
+"k13": "Statistics dashboard",
+"k14": "Trading sessions",
+"k15": "Alerts",
+"k16": "How to validate a configuration",
+"k17": "Settings reference",
+"k18": "Risk management",
+"k19": "FAQ",
+"k20": "Contents",
+"k21": "KENVINZONE AURORA PRO<br/>User Guide",
+"k22": "<span class=\"tag buyB\">Version V15.4</span> Updated for V15.4: the Trading Style now only manages trades, and entry filters move to the Entry Filter Profile.",
+"k23": "A trend-following trading system with three equal setup families: BREAK, SUNNY and with-trend SMC. Every signal has a clear Entry, Stoploss and take-profit plan, multi-layer scoring and transparent statistics, so you know which setups really work.",
+"k24": "AURORA is a <strong>trend-following</strong> trading system. The core idea is unchanged from KENVIN CLOUD: wait for the system to confirm a new trend, then trade only in that direction with a clear Entry, Stoploss and take-profit plan.",
+"k25": "AURORA PRO (version V15.4) is the most complete edition, with <strong>three equal setup families</strong> that go through one shared scoring system, filters, trade plan and statistics:",
+"k26": "Setup family",
+"k27": "Idea",
+"k28": "The first and second breaks of the Trailing line after a new trend forms. This is the \"soul\" of the system.",
+"k29": "A buy / sell continuation signal with the main trend: catching the continuation after a pullback.",
+"k30": "💠 <strong>SMC</strong> (new in PRO)",
+"k31": "Three Smart Money Concepts setups, <strong>with the trend only</strong>: RETEST of an FVG/Order Block zone, liquidity SWEEP with MSS, and IFVG (an inverted FVG).",
+"k32": "Every signal has a <strong>Base Score</strong>, plus <strong>a setup-specific quality score</strong> (BreakQ, SunnyQ or SMCQ), and <strong>Tier 3 money-flow context</strong> when data is available. Each part has its own statistics, so you know which parts really help:",
+"k33": "Layer",
+"k34": "Question it answers",
+"k35": "Layer 1 · <strong>Base Score</strong> (0–100)",
+"k36": "Is the market environment favourable for BUY / SELL? (trend, momentum, multi-timeframe, volume)",
+"k37": "Layer 2 · <strong>Setup Quality</strong> (BREAK, SUNNY)",
+"k38": "How good is this particular BREAK / SUNNY? (compression then expansion, decisiveness of the candle, path efficiency, ADX…)",
+"k39": "Layer 3 · <strong>Institutional Quality</strong> (when data is available)",
+"k40": "Are there traces of large players? (fresh FVG, liquidity sweep, CVD, absorption)",
+"k41": "<strong>SMC Quality</strong> (replaces Setup Quality for SMC setups)",
+"k42": "Does the SMC setup have a quality zone, a strong displacement and enough \"room\" to the opposing liquidity?",
+"k43": "Setup Quality, Tier 3 and SMC Quality default to <kbd>Stats only</kbd>: they only score and record statistics and <strong>never block trades</strong>. Turn on filtering only when statistics across many symbols show that higher scores really perform better.",
+"k44": "<strong>Add the indicator to your chart.</strong> Open <kbd>Indicators</kbd> → <kbd>Invite-only scripts</kbd> tab → choose <strong>KENVINZONE AURORA PRO</strong>.",
+"k45": "<strong>Choose the Market Preset</strong> matching your asset: STOCK, FOREX, CFD or CRYPTO (see Quick setup).",
+"k46": "<strong>Choose a Trading Style</strong> for how you manage trades (Scalping, Intraday, Swing, Prop Firm), and an <strong>Entry Filter Profile</strong> for how selective to be (Core parity, Balanced, Strict).",
+"k47": "<strong>Choose a timeframe</strong> that suits your Trading Style (for example Intraday: M15–H1).",
+"k48": "<strong>Read the Dashboard.</strong> Full for studying history on desktop; Mini (the LIVE panel) for following trades on your phone.",
+"k49": "Always start by reading the statistics <strong>on the exact symbol and timeframe</strong> you plan to trade. Every market has its own \"personality\"; a setup that works on gold may not work on Bitcoin.",
+"k50": "The three quick-setup boxes sit at the top of the <kbd>AURORA MODE</kbd> group. They are <strong>independent and can be combined</strong>: Market Preset handles market data and sessions, Trading Style handles how trades are held and exited, Entry Filter Profile handles setup selectivity.",
+"k51": "⚙ Market Preset (by market)",
+"k52": "Direction",
+"k53": "Volume source",
+"k54": "Session",
+"k55": "Use for",
+"k56": "BUY only",
+"k57": "Real volume: RVOL · VWAP · CMF · Delta",
+"k58": "Off",
+"k59": "Vietnamese stocks, crypto spot",
+"k60": "RVOL only (tick volume)",
+"k61": "Score (adds/subtracts points)",
+"k62": "Currency pairs",
+"k63": "Futures volume auto-mapped from the chart symbol",
+"k64": "Gold, silver, NAS100, US30, SPX500, WTI crude",
+"k65": "Exchange volume + open interest",
+"k66": "Uses exactly the boxes you set below.",
+"k67": "In CFD MODE, Aurora automatically picks the futures contract from the chart symbol: XAU → <kbd>COMEX:GC1!</kbd>, XAG → <kbd>COMEX:SI1!</kbd>, NAS/US100 → <kbd>CME_MINI:NQ1!</kbd>, US30 → <kbd>CBOT_MINI:YM1!</kbd>, SPX/US500 → <kbd>CME_MINI:ES1!</kbd>, WTI/USOIL → <kbd>NYMEX:CL1!</kbd>. The 🔊 Volume row on the Dashboard shows <kbd>EXT ✓</kbd> when data is available.",
+"k68": "⚙ Trading Style (trade management)",
+"k69": "Parameter",
+"k70": "Suggested timeframe",
+"k71": "Maximum holding time",
+"k72": "60 bars",
+"k73": "120 bars",
+"k74": "200 bars",
+"k75": "Move SL to breakeven after TP1",
+"k76": "Yes",
+"k77": "No",
+"k78": "Maximum Pullback wait",
+"k79": "4 bars",
+"k80": "6 bars",
+"k81": "3 bars",
+"k82": "Since V15.4 the <strong>Trading Style only adjusts trade management</strong>. It no longer silently changes the minimum score, maximum Stoploss or session filter, so choosing Scalping or Prop Firm does not remove setups. When it is not Custom, the matching boxes below (holding time, breakeven, Pullback, Runner) are ignored. The Trailing line (Factor) and Dashboard layout are never overridden.",
+"k83": "<strong>Scalping:</strong> shorter trades, early move to breakeven because low timeframes often sweep back.",
+"k84": "<strong>Intraday:</strong> balanced, suits most intraday traders.",
+"k85": "<strong>Swing:</strong> longer trades with the fixed SL of the original setup. The only style that turns on the Runner, because higher-timeframe trends run long enough for the remaining position to follow.",
+"k86": "<strong>Prop Firm:</strong> <strong>account protection</strong> first: move SL to breakeven after TP1. Combine it with Entry Filter Profile <kbd>Strict</kbd> and Session mode <kbd>Filter</kbd> (blocks session transitions).",
+"k87": "⚙ Entry Filter Profile (selectivity)",
+"k88": "Minimum score BREAK / SUNNY / SMC",
+"k89": "Maximum Break SL",
+"k90": "Use when",
+"k91": "<strong>Core parity</strong> (default)",
+"k92": "No limit",
+"k93": "Keeps the setup count close to AURORA STANDARD; the baseline for comparison",
+"k94": "You want fewer low-score setups and fewer very wide SLs",
+"k95": "Funded accounts; fewer but more selective trades",
+"k96": "Uses the Min score and Max SL distance boxes in each setup group.",
+"k97": "Example combinations",
+"k98": "You are",
+"k99": "A Vietnamese stock investor",
+"k100": "A funded trader (FTMO, The5ers…) trading gold",
+"k101": "A futures funded trader (Topstep, Bulenox…) trading NQ",
+"k102": "An intraday crypto futures trader",
+"k103": "A gold scalper",
+"k104": "Preset values are <strong>a reasonable starting point</strong>, not the optimum for every symbol. Validate them on the Dashboard and in the Strategy Validator for the symbol you trade.",
+"k105": "Element",
+"k106": "Meaning",
+"k107": "Trailing line (neon)",
+"k108": "<span class=\"buy\">Green</span> = uptrend, <span class=\"sell\">pink</span> = downtrend. Turns orange as price gets close to the line (warning). Small diamonds mark each time the line is pulled up or down.",
+"k109": "<kbd>🛡 T-SL</kbd> label on the right edge",
+"k110": "Current Trailing line value and the % risk if entering at this price.",
+"k111": "Kenvin cloud",
+"k112": "The area between the Baseline and the Trailing line: green in an uptrend, purple in a downtrend.",
+"k113": "Vertical strip + gold candle",
+"k114": "Marks high-quality entry candles (Grade A or 1st Break; set in the Entry Highlight group).",
+"k115": "Red / green boxes",
+"k116": "Trade plan: risk zone (Entry → SL) and target zone (Entry → TP2).",
+"k117": "Faded boxes",
+"k118": "SMC zones: <span class=\"buy\">green</span>/<span class=\"sell\">pink</span> = RETEST zones (FVG/Order Block), <span style=\"color:#B388FF;font-weight:700\">purple</span> = IFVG zones. They turn grey when expired.",
+"k119": "Dashed gold line <kbd>⏳ LIMIT</kbd>",
+"k120": "A pending Pullback order, with the number of bars left.",
+"k121": "<kbd>⛔ 1st</kbd> / <kbd>⛔ 2nd</kbd> / <kbd>⛔ SUN</kbd> / <kbd>⛔ SMC</kbd> labels",
+"k122": "A BREAK, SUNNY or SMC setup blocked by a filter. Hover to see the exact reason.",
+"k123": "The first (or second) Break of the trend cycle. <kbd>💎</kbd> replaces ⚡ when a liquidity sweep happened just before.",
+"k124": "A buy / sell continuation signal with the trend: catching the continuation after a pullback.",
+"k125": "SMC setup. Q is the SMC Quality score. Three types: 🔁 RETEST, 💧 SWEEP, ⇄ IFVG. <kbd>⚠SL</kbd> when the structural Stoploss is wider than 4 ATR.",
+"k126": "Add-on",
+"k127": "A same-direction signal while a trade is already open: optionally add to it, sharing the same SL/TP.",
+"k128": "Three SMC setups (with the trend only)",
+"k129": "Conditions (BUY cycle example)",
+"k130": "After a 1st/2nd Break, take the FVG of the displacement (if none, use the Order Block: the last down candle before the displacement). Price pulls back into the zone, then a candle closes up above the zone midpoint.",
+"k131": "Below the zone",
+"k132": "A wick sweeps the swing low of the pullback but closes back up (still with the main trend). Within 8 bars, a candle closes above the latest pullback high (MSS: market structure shift).",
+"k133": "Below the sweep candle",
+"k134": "A bearish FVG formed during the pullback is closed through by price → it flips into support. Price comes back into the zone and bounces.",
+"k135": "SMC shares the minimum score (from the Entry Filter Profile), session filter, trade direction and trade management with BREAK/SUNNY, but has <strong>its own volume filter</strong> (<kbd>SMC volume gate</kbd>, Off by default). By default SMC must also be <strong>on the correct side of the Trailing line</strong> like BREAK/SUNNY (the <kbd>SMC: chỉ vào lệnh khi giá đúng phía đường Trailing</kbd> box). SMC uses a <strong>structural Stoploss</strong> (at least 0.3 ATR) instead of the Trailing line. The <kbd>SMC structural SL policy</kbd> box: <kbd>Warn only</kbd> (default) still enters but tags <kbd>⚠SL</kbd> when the SL is wider than the threshold (4 ATR by default); <kbd>Filter</kbd> blocks it, only after you have validated it. When several signals land on the same candle, priority is BREAK → SUNNY → SMC.",
+"k136": "SMC concepts are often subjective. In AURORA, every swing is confirmed after 3 bars (no repaint) and every zone has a clear lifetime and invalidation rule, so the statistics are real.",
+"k137": "Every entered signal comes with a full plan drawn directly on the chart:",
+"k138": "Level",
+"k139": "Close of the signal candle. By default, signals are confirmed only on candle close.",
+"k140": "The <strong>fixed</strong> stoploss of the trade: the Trailing line at the Break candle (BREAK/SUNNY) or the structural level (SMC).",
+"k141": "1R and 2R (adjustable). By default 50% is closed at TP1 and 50% at TP2.",
+"k142": "The <strong>dynamic</strong> stoploss following the Trailing line: a reference for managing trades manually.",
+"k143": "How trades close (result labels)",
+"k144": "Hit TP2.",
+"k145": "TP1 taken, the rest returned to breakeven.",
+"k146": "Hit the Stoploss.",
+"k147": "The Runner part closed at its SL trailing the Trailing line.",
+"k148": "Besides TP/SL, the <kbd>Break exit policy = Adaptive</kbd> setting (default) also closes trades when: the Trailing line flips (<kbd>EXIT</kbd>), the maximum holding time runs out (<kbd>TIME</kbd>), an opposite signal appears (<kbd>REV</kbd>) or a new same-direction Break replaces it (<kbd>NEXT</kbd>).",
+"k149": "When a Break candle is <strong>1.8 ATR</strong> or longer, entering at its close means buying the top or selling the bottom of a thrust. AURORA places a <strong>limit order at the 50% retracement</strong> of the Break candle instead of entering immediately:",
+"k150": "<strong>Price pulls back:</strong> the order fills, the label reads <kbd>▶ Entry (Pullback 50%)</kbd>, 1R is smaller and TPs are closer.",
+"k151": "<strong>No pullback:</strong> the pending order cancels itself when time runs out, when price runs more than 1R, or when the trend reverses.",
+"k152": "<strong>FVG CE option</strong> (Tier 3 group): if there is a fresh same-direction FVG, the limit is placed at the FVG midpoint instead of the % level.",
+"k153": "The <kbd>⏳ Pullback</kbd> row on the Dashboard compares waiting for the pullback with entering immediately (a background reference trade). Green means waiting is doing better on that chart.",
+"k154": "Layer 1 · Base Score (0–100)",
+"k155": "Scores the market environment for each direction. There are two engines in the <kbd>Score engine</kbd> box:",
+"k156": "<strong>Classic</strong>: main trend, Trailing line, Kenvin cloud, momentum indicators, higher-timeframe agreement, plus volume points.",
+"k157": "<strong>Family</strong> (default): 6 independent families: Trend, Momentum, Structure, Volatility, Flow, Execution (with adjustable weights).",
+"k158": "Signal grades: <strong>A</strong> from 80 points, <strong>B</strong> from 70 points. BREAK/SUNNY/SMC setups must reach the minimum score of the Entry Filter Profile (Core parity 50, Balanced 55, Strict 60) to be entered.",
+"k159": "Layer 2 · Setup Quality (BREAK &amp; SUNNY)",
+"k160": "Code",
+"k161": "What it measures",
+"k162": "The market compresses then expands; overly long candles (&gt; 2.5 ATR) are penalised.",
+"k163": "Breaks the 20-bar structural high/low, closes decisively, large body, few opposing wicks.",
+"k164": "Whether the price path is \"clean\" or noisy.",
+"k165": "Trend strength and acceleration.",
+"k166": "Price position versus a VWAP anchored at the start of the trend cycle.",
+"k167": "Delta and volume participation.",
+"k168": "Layer 3 · Institutional Quality",
+"k169": "Fresh, unfilled FVG.",
+"k170": "Liquidity sweep: sweep depth, pull-back strength, wick length; decays over time.",
+"k171": "Cumulative CVD (Delta estimated from a lower timeframe) and absorption signals.",
+"k172": "Runner suitability: whether the trend has enough momentum to keep the rest of the position running.",
+"k173": "Coverage: what % of components have data. Filter mode does not decide when coverage is low.",
+"k174": "Hover a signal label for details, for example <kbd>🧪 BreakQ 78 A  C/A/K/D/V/F 82/76/71/69/84/75</kbd> and <kbd>💎 Tier3 Break 70 B  F/S/C/R 80/65/72/60 · Cov 100%</kbd>.",
+"k175": "<strong>Three modes</strong> for Setup Quality and Tier 3: <kbd>Off</kbd> · <kbd>Stats only</kbd> (default: score and record, signals unchanged) · <kbd>Filter (experimental)</kbd> (blocks setups below the threshold). A scoring layer is valuable when average R <strong>rises steadily</strong> from low-score groups to high-score groups, repeatedly across symbols. Since V15.4, score-group analysis is done on the Strategy Validator CSV (trade names already contain the Q and T3 scores). <kbd>SMC Quality mode</kbd> also has two modes: Stats only (default) and Filter.",
+"k176": "The <kbd>⑤ Runner sau TP2</kbd> box (Tier 3 group): <strong>Off</strong> closes 50% at TP1 · 50% at TP2. <strong>Always 25%</strong>: 50% TP1 · 25% TP2 · 25% keeps running, its SL locked at TP1 and then trailing the Trailing line (only in the favourable direction). <strong>Adaptive</strong>: keeps the Runner only when Runner suitability at entry reaches the threshold.",
+"k177": "Three layouts in the <kbd>Dashboard layout</kbd> box: <strong>Full</strong> (everything, including the 9-timeframe table), <strong>Compact</strong> (without the 9-timeframe table), <strong>Mini</strong> (the LIVE panel for live trading on your phone).",
+"k178": "Interface illustration only, not trading results.",
+"k179": "Row",
+"k180": "How to read it",
+"k181": "Total trades, win rate, TP1/TP2 hit rates, total R and average R per trade.",
+"k182": "How trades closed: TP2 / BE / SL / EXIT / TIME / REV.",
+"k183": "Break results split by high and low Score, to check whether the Score helps pick better trades.",
+"k184": "Current Setup Quality for BUY and SELL.",
+"k185": "Current Institutional Quality for BUY and SELL.",
+"k186": "Trades that hit TP2 and kept a Runner (when the Runner is on).",
+"k187": "Breaks with a prior liquidity sweep versus Breaks without.",
+"k188": "Filled / triggered limit orders; R of waiting versus R of entering immediately.",
+"k189": "Results of each setup; SMC also has three sub-rows RETEST, SWEEP, IFVG (Full layout).",
+"k190": "\"Ghost trades\": Breaks blocked by a filter but still tracked in the background. <strong>Negative</strong> = the filter is correctly removing bad trades; <strong>positive</strong> = the filter is blocking good trades.",
+"k191": "Session rows",
+"k192": "Results by session at entry: Asia, London, London–New York overlap, New York, transition. ● marks the current session.",
+"k193": "Current RVOL (RVOL~ is the projection for the live candle) and the volume source.",
+"k194": "The LIVE panel (Dashboard = Mini)",
+"k195": "Main trend, Trailing line direction, % higher-timeframe agreement.",
+"k196": "Status",
+"k197": "<kbd>● IN TRADE BUY · SMC·SWEEP · +0.62R · TP1 ✓</kbd> when a trade is open; <kbd>⏳ WAITING 2nd BREAK / SUNNY BUY</kbd> while waiting.",
+"k198": "Distance to the trigger in ATR. 🔥 and an orange background when under 0.3 ATR.",
+"k199": "Score, Volume and Session on the current bar. Green background = if a setup triggered now, it would be entered.",
+"k200": "Current F-SL / T-SL and the latest signal.",
+"k201": "Trade detail card",
+"k202": "The <kbd>Signal detail card</kbd> box (Trade Plan group) shows a plan card with a score bar, Entry, F-SL, TP1, TP2. <strong>Panel</strong> mode places the card in a fixed table (8 positions in <kbd>Card panel position</kbd>), never covering labels or candles. Put it in a different corner from the main Dashboard.",
+"k203": "The Volume Engine adds points to the Base Score from 5 factors you can switch on or off: ① RVOL · ② position versus VWAP · ③ Chaikin Money Flow · ④ lower-timeframe Delta · ⑤ open interest (crypto). Factors without data are skipped, not penalised.",
+"k204": "Volume filters for setups",
+"k205": "Since V15.4 each setup family has its own box: <kbd>Break setup volume gate</kbd>, <kbd>SUNNY volume gate</kbd> and <kbd>SMC volume gate</kbd> (all Off by default), so one family’s filter never silently blocks another. The options are the same:",
+"k206": "Option",
+"k207": "How it works",
+"k208": "Recommendation",
+"k209": "No volume filtering",
+"k210": "Default; required for forex and CFDs without futures data",
+"k211": "Break candle (or the previous one) volume must be ≥ 1.3× the same-time average",
+"k212": "Strict; often blocks Breaks with normal volume",
+"k213": "Combined score: RVOL 35% · Delta 25% · Effort vs Result 20% · Expansion 20%",
+"k214": "Start with a threshold of <strong>45</strong>, Break volume window = 3, ④ Delta on",
+"k215": "<strong>Missing volume data = everything blocked.</strong> When the filter is on without data (forex, CFDs without futures data), every setup is blocked for safety. Always validate a filter with the ⛔ Filtered row: if it is positive, the filter is blocking good trades.",
+"k216": "Intraday charts only. London and New York hours adjust automatically for daylight saving. The <kbd>Session mode</kbd> box defaults to <kbd>Auto (theo Market Preset)</kbd>: STOCK off, FOREX Score, CFD / CRYPTO / Custom Stats only. Choose a specific mode to override it in any Market Preset, for example Filter for a funded account.",
+"k217": "<kbd>Stats only</kbd>: only records results by session (recommended at first).",
+"k218": "<kbd>Score</kbd>: adds or subtracts points by session (default London–NY +10, London/NY +5, transition −10).",
+"k219": "<kbd>Filter</kbd>: blocks signals in the chosen sessions (blocks session transitions by default).",
+"k220": "For manual trading",
+"k221": "Create alerts with the built-in conditions: <kbd>AURORA 1st BREAK BUY setup</kbd>, <kbd>AURORA SUNNY BUY setup</kbd>, <kbd>AURORA SMC BUY setup</kbd>, <kbd>AURORA PULLBACK LIMIT placed</kbd>… (and the matching SELL ones). These alerts fire only when a trade is actually entered.",
+"k222": "Create <strong>one</strong> alert with the <kbd>Any alert() function call</kbd> condition. Aurora sends JSON with <kbd>version</kbd>, <kbd>event</kbd> and <kbd>signal_id</kbd> so a bot can de-duplicate:",
+"k223": "New entry with SL, TP1, TP2, setup, score and % closed at each TP",
+"k224": "Place / cancel the Pullback limit order (same <kbd>order_id</kbd>)",
+"k225": "Same-direction add-on signal",
+"k226": "Closed by trade management: EXIT / TIME / REV / NEXT",
+"k227": "Runner lifecycle (stop updates with <kbd>parent_id</kbd>)",
+"k228": "JSON alerts are sent <strong>only when the candle has closed</strong>; if several events happen on the same candle (for example closing an old trade and opening a reversal), all of them are sent. Since V15.4, raw event alerts (X Cross, unfiltered SUNNY / Break) have been removed; after updating, delete and recreate all alerts.",
+"k229": "A bot should store processed <kbd>signal_id</kbd> / <kbd>order_id</kbd> values to ignore duplicates. Real position state always comes from the exchange. Test on a demo account before using real money.",
+"k230": "<strong>KENVINZONE AURORA PRO · STRATEGY VALIDATOR</strong> is the strategy version of the same system, running in TradingView’s Strategy Tester: orders fill on the next bar, size is based on % risk of equity, with commission and slippage. Use it to see real numbers after costs.",
+"k231": "Add the Validator to the same chart and set <strong>the same Market Preset, Trading Style and Entry Filter Profile</strong> as the indicator.",
+"k232": "Open the <kbd>Strategy Tester</kbd> tab and set commission and slippage for your broker/exchange.",
+"k233": "Check Net Profit, Max Drawdown, Profit Factor and the trade list.",
+"k234": "Export the <kbd>List of Trades</kbd> to CSV. Trade names look like <kbd>SMC-SWEEP-L Q61 T70 OOS</kbd> (with <kbd>W</kbd> added when an SMC trade has a wide structural Stoploss), so you can analyse by setup, score group, SL width and period across symbols.",
+"k235": "Execution assumptions (understand them correctly)",
+"k236": "<strong>Market orders fill on the next tick / bar.</strong> Size, SL, TP1 and TP2 are calculated from the signal candle’s close, so 1% risk is the <em>target risk</em>; actual risk can differ with gaps or slippage.",
+"k237": "<strong>Position split:</strong> 50% TP1 + 50% TP2; with the Runner on, 50% TP1 + 25% TP2 + 25% RUN, placed as soon as the trade is entered. TP1/TP2 state is derived from the actual remaining size. Very small sizes (for example 1 contract) cannot be split this way.",
+"k238": "<strong>Holding time</strong> is counted from the actual fill bar, not the signal bar.",
+"k239": "<strong>Pullback limit orders</strong> fill according to <kbd>Verify price for limit orders</kbd> in Strategy Properties. Compare 0 ticks with 1 tick or more.",
+"k240": "<strong>Leverage:</strong> the <kbd>Max position notional</kbd> box (5x by default) must match the Margin in Strategy Properties (20% by default). For unleveraged stocks, use 1x and 100% margin.",
+"k241": "In-sample / Out-of-sample split",
+"k242": "Use the <kbd>Backtest từ ngày</kbd> / <kbd>đến ngày</kbd> (from / to date) boxes and <kbd>Sample tag</kbd> (IS / OOS). Trades only open inside the chosen window; trades still open at its end close with a <kbd>WINDOW</kbd> label.",
+"k243": "Trading costs",
+"k244": "The default 0.05% + 2 ticks is only a placeholder. Set it for your broker: stocks and crypto usually charge a percentage, CME/COMEX futures a fee per contract, CFDs and forex mainly spread and slippage.",
+"k245": "The Validator <strong>does not send JSON alerts by default</strong>, because those alerts describe the indicator’s plan, not Strategy Tester fills. For automated trading, create alerts on the main indicator.",
+"k246": "<strong>Change one factor at a time.</strong> For example, change only the Volume gate, keep everything else, then compare the Dashboard.",
+"k247": "<strong>Judge by average R per trade,</strong> not just total R, because trade counts differ between configurations.",
+"k248": "<strong>You need at least 20–30 trades</strong> per group before drawing conclusions.",
+"k249": "<strong>Split the data:</strong> choose a configuration on an older period, then check it again on a newer one (out-of-sample).",
+"k250": "<strong>Do not mix different markets</strong> when tuning (test gold, NQ, crypto and stocks separately).",
+"k251": "<strong>Confirm with the Validator</strong> including costs before using a configuration with real money.",
+"k252": "Scalping / Intraday / Swing / Prop Firm / Custom (trade management only)",
+"k253": "Core parity (default) / Balanced / Strict / Custom",
+"k254": "Setups only (Break + SUNNY + SMC) default · Smart + Setups · Smart only",
+"k255": "Family (default) · Classic",
+"k256": "Higher timeframes only (weighted) or all 9 timeframes",
+"k257": "Pivot bars used to compute the Trailing line (default 4)",
+"k258": "Trailing line distance in ATR: small = tight (scalp), large = wide (swing)",
+"k259": "Targets as risk multiples",
+"k260": "Maximum holding time for Smart signals",
+"k261": "Trade detail card: Off / Panel / Near signal",
+"k262": "Turn each setup on or off",
+"k263": "Minimum score for Break / SUNNY (when Entry Filter Profile = Custom)",
+"k264": "Trailing (original) · Swing · Cloud",
+"k265": "Skip Break setups whose SL is too far (when Entry Filter Profile = Custom)",
+"k266": "Long-candle threshold (default 1.8 ATR)",
+"k267": "Retracement % (38.2 / 50 / 61.8)",
+"k268": "Maximum bars to wait",
+"k269": "Turn each SMC setup on or off",
+"k270": "Minimum score",
+"k271": "Bars to confirm a swing (default 3)",
+"k272": "Zone lifetime · MSS wait · retest wait",
+"k273": "Lifetime of each setup",
+"k274": "Minimum SL (ATR)",
+"k275": "Avoids a tiny 1R (default 0.3)",
+"k276": "Off · Warn only (default) · Filter, threshold 4 ATR by default",
+"k277": "Stats only (default) · Filter (experimental)",
+"k278": "Turn each scoring component on or off",
+"k279": "FVG CE as the Pullback level",
+"k280": "Auto from the chart symbol · Manual",
+"k281": "Time of day (recommended) · Rolling",
+"k282": "Off · RVOL ≥ Strong · Volume Quality ≥ min (one box per family)",
+"k283": "Auto (by Market Preset, default) · Off · Stats only · Score · Filter",
+"k284": "<strong>Size from the F-SL:</strong> choose a risk per trade (usually 0.5–1% of the account) and divide by the Entry → F-SL distance.",
+"k285": "<strong>Leverage does not change risk</strong> if size is calculated correctly, but the liquidation price must be beyond the F-SL.",
+"k286": "<strong>Losing streaks are a normal part</strong> of a trend-following system. Check losing streaks and Max Drawdown in the Validator to choose a suitable risk per trade.",
+"k287": "<strong>Statistics exclude commission</strong> and slippage. Use the Validator for figures after costs.",
+"k288": "KENVINZONE AURORA is an analysis tool, not investment advice, and makes no profit promises. Past results do not guarantee future results. Trading carries a risk of capital loss.",
+"k289": "Do signals repaint?",
+"k290": "By default (<kbd>Confirm signals on bar close</kbd> on), signals are confirmed only when the candle closes. If you turn this off, conditions can change while the candle is forming. Higher-timeframe data always comes from closed candles; SMC swings are confirmed after 3 bars.",
+"k291": "Why are there no SMC trades on the Dashboard?",
+"k292": "Check: whether the cycle has passed warm-up (a trend-cycle start must be visible), whether Min score for SMC is too high, whether Trading mode is set to \"Smart only\", and whether the volume/session filters are blocking.",
+"k293": "Do Market Preset, Trading Style and Entry Filter Profile conflict?",
+"k294": "No. Market Preset decides the data (trade direction, volume source, default session); Trading Style decides how trades are held and exited; Entry Filter Profile decides which setups qualify for entry.",
+"k295": "I changed a box but nothing happens?",
+"k296": "That box may be overridden: by the Market Preset (Direction, Volume Engine), the Trading Style (holding time, breakeven, Pullback, Runner) or the Entry Filter Profile (Min score, Max SL distance). Choose <kbd>Custom</kbd> in the matching box to use your own values. For Session mode, choose any mode other than Auto.",
+"k297": "Can I use it on my phone?",
+"k298": "Yes. Choose Dashboard layout = Mini for a compact LIVE panel. This box is never overridden by the Trading Style.",
+"k299": "How is V15.4 different from V15.2?",
+"k300": "The Trading Style only manages trades now; entry filters move to the Entry Filter Profile, so choosing Scalping or Prop Firm no longer silently removes setups. SUNNY and SMC have their own volume filters, SMC warns when its structural Stoploss is too wide, filtered setups in all three families show their reason, the default Score is Family, and FOREX uses Session Score like AURORA STANDARD V12.2.",
+"k301": "I use V15.2. How do I update to V15.4?",
+"k302": "An indicator already on your chart keeps its old settings. Open Settings, click <kbd>Defaults</kbd> then <kbd>Reset settings</kbd> (or remove and re-add the indicator), choose your Market Preset, Trading Style and Entry Filter Profile again, then delete and recreate all alerts. If you used Prop Firm before, also choose Entry Filter Profile Strict and Session mode Filter to keep the same level of caution.",
+"k303": "KENVINZONE AURORA PRO · developed by Trader KenvinHoang (Tele @KenvinHoang) · kenvinzone.com",
+"k304": "An analysis tool, not investment advice. Trading financial markets carries a risk of capital loss.",
+"k305": "🛡 T-SL ▲ (dynamic)",
+"k306": "Runner after TP2"
+};</script><script>
+/* ===== KENVINZONE LANGUAGE ENGINE (VI / EN) =====
+   Tiếng Việt nằm sẵn trong HTML. Bản tiếng Anh ở KZ_I18N_EN (sửa câu chữ tại đây). */
+(function(){
+  var EN=window.KZ_I18N_EN||{}, root=document.documentElement;
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  var vi=new Map(els.map(function(e){return [e,e.innerHTML]}));
+  var aEls=[].slice.call(document.querySelectorAll('[data-i18n-aria]'));
+  var viA=new Map(aEls.map(function(e){return [e,e.getAttribute('aria-label')]}));
+  var pEls=[].slice.call(document.querySelectorAll('[data-i18n-ph]'));
+  var viP=new Map(pEls.map(function(e){return [e,e.getAttribute('placeholder')]}));
+  var md=document.querySelector('meta[name="description"]'), viMeta={t:document.title,d:md?md.content:''};
+  var btns=[].slice.call(document.querySelectorAll('.kz-lang [data-lang]'));
+  function apply(lang,save){
+    var en=lang==='en';
+    els.forEach(function(e){var t=en?EN[e.dataset.i18n]:vi.get(e);if(t!=null)e.innerHTML=t;});
+    aEls.forEach(function(e){e.setAttribute('aria-label',en?e.dataset.i18nAria:viA.get(e));});
+    pEls.forEach(function(e){e.setAttribute('placeholder',en?e.dataset.i18nPh:viP.get(e));});
+    root.lang=en?'en':'vi';
+    document.title=en&&window.KZ_META_EN?KZ_META_EN.t:viMeta.t;
+    if(md)md.content=en&&window.KZ_META_EN?KZ_META_EN.d:viMeta.d;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.lang===lang));});
+    document.dispatchEvent(new CustomEvent('kz:lang',{detail:lang}));
+    if(save){
+      try{localStorage.setItem('kz-lang',lang)}catch(e){}
+      document.cookie='kz-lang='+lang+'; path=/; max-age=31536000; SameSite=Lax'+(location.hostname.endsWith('kenvinzone.com')?'; domain=.kenvinzone.com':'');
+      try{var u=new URL(location.href);if(en)u.searchParams.set('lang','en');else u.searchParams.delete('lang');history.replaceState(null,'',u.pathname+u.search+u.hash);}catch(e){}
+    }
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang,true);});});
+  apply(root.lang==='en'?'en':'vi',false);
+})();
+
+/* ===== ẢNH THỰC TẾ TỰ NẠP =====
+   Phần tử có data-kz-img="đường-dẫn-ảnh": nếu file tồn tại, ảnh thật thay cho hình minh họa;
+   nếu chưa có file, hình minh họa giữ nguyên. data-kz-replace="self" = thay chính phần tử. */
+(function(){
+  var lb=document.createElement('dialog'); lb.className='kz-lb';
+  lb.innerHTML='<div class="h"><span></span><button type="button" aria-label="Close">✕</button></div><img alt="">';
+  document.body.appendChild(lb);
+  lb.querySelector('button').onclick=function(){lb.close()};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+  function alt(el){return (document.documentElement.lang==='en'?el.dataset.kzAltEn:el.dataset.kzAltVi)||el.dataset.kzAltVi||'';}
+  function zoom(src,cap){lb.querySelector('img').src=src;lb.querySelector('img').alt=cap;lb.querySelector('.h span').textContent=cap;if(lb.showModal)lb.showModal();}
+  document.querySelectorAll('[data-kz-img]').forEach(function(el){
+    var src=el.dataset.kzImg; if(!src)return;
+    var img=new Image(); img.decoding='async';
+    img.onload=function(){
+      img.className='kz-real'+(el.dataset.kzReplace==='self'?' self':''); img.alt=alt(el);
+      if(el.dataset.kzFit)el.style.setProperty('--kz-fit',el.dataset.kzFit);
+      img.addEventListener('click',function(){zoom(img.src,img.alt)});
+      if(el.dataset.kzReplace==='self'){el.replaceWith(img);}
+      else{el.innerHTML='';el.appendChild(img);el.classList.add('kz-img-ok');el.style.background='none';}
+      document.addEventListener('kz:lang',function(){img.alt=alt(el)});
+    };
+    img.src=src;
+  });
 })();
 </script>
 </body>
