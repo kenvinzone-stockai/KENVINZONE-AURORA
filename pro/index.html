@@ -185,6 +185,17 @@ details[open] summary::after{content:"–"}
 details p{color:var(--kz-text2);margin:0 0 18px}
 
 /* Signup */
+/* ===== Form đăng ký dùng thử ===== */
+.kzf{display:flex;flex-direction:column;gap:12px}
+.kzf label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--kz-text2,#C5D2E2);margin-bottom:5px}
+.kzf input{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--kz-line2,#2E4366);background:var(--kz-surface,#0F1A2D);color:var(--kz-text,#E6EDF5);font:inherit;font-size:15px}
+.kzf input:focus{outline:none;border-color:var(--buy);box-shadow:0 0 0 2px rgba(52,184,212,.25)}
+.kzf .hint{font-size:12.5px;color:var(--kz-muted,#97A7BC);margin:4px 0 0}
+.kzf .err{color:var(--loss);font-size:13.5px;margin:0}
+.kzf .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.kzf-ok{border:1px solid rgba(31,203,142,.45);background:rgba(31,203,142,.10);border-radius:12px;padding:16px;font-size:15px}
+.kzf-ok strong{display:block;margin-bottom:4px}
+.kzf button[disabled]{opacity:.6;cursor:wait}
 .signup{text-align:left}
 .signup .box{border:1px solid #2E4366;border-radius:18px;padding:40px;background:linear-gradient(135deg,rgba(52,184,212,.12),rgba(179,136,255,.08) 70%),var(--bg-2);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:36px;align-items:center}
 .steps{margin:0;padding:0;list-style:none;counter-reset:s}
@@ -637,17 +648,31 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <h2 data-i18n="k100" id="signup-title">Dùng thử AURORA PRO</h2>
 <p class="lede" data-i18n="k101">Quyền truy cập được cấp theo tên tài khoản TradingView của bạn.</p>
 <ol class="steps">
-<li data-i18n="k102">Gửi tên đăng nhập TradingView qua kênh liên hệ bên cạnh.</li>
+<li data-i18n="k102">Điền tên đăng nhập TradingView và email vào form bên cạnh.</li>
 <li data-i18n="k103">Nhận xác nhận cấp quyền Invite-only.</li>
 <li data-i18n="k104">Mở TradingView, vào Indicators, tab Invite-only scripts, chọn KENVINZONE AURORA PRO.</li>
 </ol>
 </div>
 <div>
-<p style="display:flex;flex-direction:column;gap:12px;margin:0">
-<a class="btn primary kz-sheen" data-i18n="k105" href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Gửi tên TradingView qua Telegram</a>
-<a class="btn ghost" data-i18n="k106" href="huong-dan.html">Đọc hướng dẫn trước</a>
+<form class="kzf" id="kzf" novalidate>
+<div><label for="kzf-tv">TradingView username *</label>
+<input autocomplete="username" data-i18n-ph="e.g. kenvin_trader_88" id="kzf-tv" placeholder="Ví dụ: kenvin_trader_88" required type="text"/>
+<p class="hint" data-i18n="k120">Bấm avatar góc trên bên trái TradingView để xem đúng username.</p></div>
+<div><label for="kzf-email">Email *</label>
+<input autocomplete="email" data-i18n-ph="you@example.com" id="kzf-email" placeholder="ban@gmail.com" required type="email"/></div>
+<div><label data-i18n="k121" for="kzf-contact">Telegram / Zalo (không bắt buộc)</label>
+<input data-i18n-ph="@telegram or phone number" id="kzf-contact" placeholder="@telegram hoặc số điện thoại" type="text"/></div>
+<div aria-hidden="true" class="hp"><label>Website<input autocomplete="off" id="kzf-website" tabindex="-1" type="text"/></label></div>
+<p aria-live="polite" class="err" hidden id="kzf-err"></p>
+<button class="btn primary kz-sheen" data-i18n="k122" id="kzf-btn" type="submit">Gửi yêu cầu dùng thử</button>
+<p class="hint" data-i18n="k123">Thông tin chỉ dùng để cấp quyền truy cập và liên hệ hỗ trợ, không chia sẻ cho bên thứ ba.</p>
+</form>
+<div class="kzf-ok" hidden id="kzf-ok"><span data-i18n="k124"><strong>✓ Đã gửi yêu cầu!</strong>KenvinZone sẽ cấp quyền trên TradingView sớm nhất. Hãy kiểm tra email (kể cả mục Spam / Quảng cáo) để nhận xác nhận.</span><p data-i18n="k125" hidden id="kzf-unsure" style="margin:8px 0 0;color:var(--amber);font-size:14px">Nếu sau 10 phút chưa nhận được email xác nhận, hãy gửi tên TradingView qua Telegram ở bên dưới.</p></div>
+<p class="hint" style="margin-top:14px">
+<a data-i18n="k105" href="https://t.me/kenvinhoang" id="kzf-tg" rel="noopener" target="_blank">Gửi tên TradingView qua Telegram</a> ·
+<a data-i18n="k106" href="huong-dan.html">Đọc hướng dẫn trước</a>
 </p>
-<p data-i18n="k107" style="margin-top:14px;color:#94A3B8;font-size:14px">Liên hệ: <a href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Telegram @kenvinhoang</a>. Điều khoản sử dụng và hoàn tiền áp dụng chung cho các gói AURORA: <a href="../#chinh-sach">xem chi tiết</a>.</p>
+<p data-i18n="k107" style="margin-top:10px;color:#94A3B8;font-size:14px">Liên hệ: <a href="https://t.me/kenvinhoang" rel="noopener" target="_blank">Telegram @kenvinhoang</a>. Điều khoản sử dụng và hoàn tiền áp dụng chung cho các gói AURORA: <a href="../#chinh-sach">xem chi tiết</a>.</p>
 </div>
 </div>
 </div>
@@ -656,7 +681,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <footer>
 <div class="wrap">
 <div>
-<p data-i18n="k108"><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang (Tele @KenvinHoang)</p>
+<p data-i18n="k108"><strong>KENVINZONE AURORA PRO</strong> · phát triển bởi Trader KenvinHoang</p>
 <p data-i18n="k109">AURORA là công cụ hỗ trợ phân tích kỹ thuật, không phải lời khuyên đầu tư. Giao dịch tài chính có rủi ro mất vốn. Kết quả quá khứ không đảm bảo kết quả tương lai. TradingView là thương hiệu của TradingView, Inc.</p>
 </div>
 <div>
@@ -728,6 +753,12 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 })();
 </script>
 <script>window.KZ_META_EN={"t": "KENVINZONE AURORA PRO V15.4 · Trend indicator with BREAK, SUNNY and SMC for TradingView", "d": "AURORA PRO trades with the trend using BREAK, SUNNY and rule-based SMC setups, with a quality score for every setup and transparent statistics on TradingView."};window.KZ_I18N_EN={
+"k125": "If you have not received a confirmation email within 10 minutes, please send your TradingView username via Telegram below.",
+"k120": "Click your avatar at the top left of TradingView to see your exact username.",
+"k121": "Telegram / Zalo (optional)",
+"k122": "Request a trial",
+"k123": "Your details are only used to grant access and provide support, never shared with third parties.",
+"k124": "<strong>✓ Request sent!</strong>KenvinZone will grant access on TradingView as soon as possible. Check your email (including Spam / Promotions) for the confirmation.",
 "k0": "Scoring",
 "k1": "Settings",
 "k2": "Compare plans",
@@ -830,13 +861,13 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 "k99": "No. AURORA PRO is an analysis tool. Dashboard statistics are past results on loaded data, exclude costs and do not guarantee future results.",
 "k100": "Try AURORA PRO",
 "k101": "Access is granted to your TradingView username.",
-"k102": "Send your TradingView username through the contact channel alongside.",
+"k102": "Enter your TradingView username and email in the form.",
 "k103": "Receive confirmation of invite-only access.",
 "k104": "Open TradingView, go to Indicators, the Invite-only scripts tab, and select KENVINZONE AURORA PRO.",
 "k105": "Send your TradingView username on Telegram",
 "k106": "Read the guide first",
 "k107": "Contact: <a href=\"https://t.me/kenvinhoang\" rel=\"noopener\" target=\"_blank\">@kenvinhoang on Telegram</a>. Terms of use and refunds apply to all AURORA plans: <a href=\"../#chinh-sach\">see details</a>.",
-"k108": "<strong>KENVINZONE AURORA PRO</strong> · developed by Trader KenvinHoang (Hoàng Văn Hiệu)",
+"k108": "<strong>KENVINZONE AURORA PRO</strong> · developed by Trader KenvinHoang",
 "k109": "AURORA is a technical analysis tool, not investment advice. Trading carries a risk of capital loss. Past results do not guarantee future results. TradingView is a trademark of TradingView, Inc.",
 "k110": "AURORA ELITE (in development)",
 "k111": "User guide",
@@ -905,6 +936,50 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
       document.addEventListener('kz:lang',function(){img.alt=alt(el)});
     };
     img.src=src;
+  });
+})();
+</script>
+
+<script>
+/* ===== Form dùng thử AURORA PRO → Google Apps Script (xem aurora-trial-form/HUONG-DAN-CAI-DAT.md) =====
+   Dán URL Web app vào KZ_FORM_ENDPOINT. Để trống = chuyển sang Telegram như trước. */
+(function(){
+  var KZ_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw2o1gP0WjUt8dPOT6O4TGRe5O6s2qmr37dL5Slr3xzx5b29YxWXPcLPlZuXiAaIIcTxw/exec';
+  var f=document.getElementById('kzf'); if(!f) return;
+  var t0=Date.now(), en=function(){return document.documentElement.lang==='en'};
+  var T={vi:{tv:'TradingView username chỉ gồm chữ, số, dấu gạch dưới, dấu chấm hoặc gạch ngang.',email:'Email không hợp lệ.',rate:'Bạn đã gửi nhiều lần. Vui lòng thử lại sau 10 phút hoặc nhắn Telegram.',fail:'Chưa gửi được. Trình duyệt sẽ mở Telegram để bạn gửi thông tin.',sending:'Đang gửi…'},
+         en:{tv:'A TradingView username only contains letters, digits, underscores, dots or hyphens.',email:'Invalid email address.',rate:'Too many requests. Please try again in 10 minutes or message us on Telegram.',fail:'Could not send. Telegram will open so you can send your details.',sending:'Sending…'}};
+  function tr(k){return T[en()?'en':'vi'][k]}
+  var err=document.getElementById('kzf-err'), btn=document.getElementById('kzf-btn');
+  function showErr(m){err.textContent=m;err.hidden=false}
+  f.addEventListener('submit',async function(e){
+    e.preventDefault(); err.hidden=true;
+    var tv=document.getElementById('kzf-tv').value.trim().replace(/^@/,''), email=document.getElementById('kzf-email').value.trim(), contact=document.getElementById('kzf-contact').value.trim();
+    if(!/^[A-Za-z0-9_.\-]{2,40}$/.test(tv)) return showErr(tr('tv'));
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return showErr(tr('email'));
+    var msg='[DÙNG THỬ AURORA PRO]\n• TV ID: '+tv+'\n• Email: '+email+(contact?'\n• Liên hệ: '+contact:'');
+    var tg='https://t.me/kenvinhoang?text='+encodeURIComponent(msg);
+    document.getElementById('kzf-tg').href=tg;
+    if(!KZ_FORM_ENDPOINT){ window.open(tg,'_blank','noopener'); return; }
+    if(Date.now()-t0<2500) return;
+    var old=btn.innerHTML; btn.disabled=true; btn.textContent=tr('sending');
+    var posted=false;
+    try{
+      var ctrl=new AbortController(), tm=setTimeout(function(){ctrl.abort()},30000);
+      var req=fetch(KZ_FORM_ENDPOINT,{method:'POST',signal:ctrl.signal,body:JSON.stringify({product:'PRO',plan:'trial',tv:tv,email:email,contact:contact,lang:en()?'en':'vi',page:location.href,website:document.getElementById('kzf-website').value})});
+      posted=true; var res=await req;
+      clearTimeout(tm); var out=await res.json();
+      if(out.ok){ f.hidden=true; document.getElementById('kzf-ok').hidden=false; return; }
+      btn.disabled=false; btn.innerHTML=old;
+      if(out.error==='tv') return showErr(tr('tv'));
+      if(out.error==='email') return showErr(tr('email'));
+      if(out.error==='rate') return showErr(tr('rate'));
+      throw new Error('server');
+    }catch(x){
+      btn.disabled=false; btn.innerHTML=old;
+      if(posted && navigator.onLine!==false){ f.hidden=true; document.getElementById('kzf-ok').hidden=false; document.getElementById('kzf-unsure').hidden=false; return; }
+      showErr(tr('fail')); window.open(tg,'_blank','noopener');
+    }
   });
 })();
 </script>
