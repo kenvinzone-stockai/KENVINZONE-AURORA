@@ -2,7 +2,7 @@
 
 <html class="dark scroll-smooth" lang="vi">
 <head>
-<script>/* KZ language: ?lang= > cookie chung .kenvinzone.com > lựa chọn đã lưu > múi giờ VN / trình duyệt */window.KZ_JS_EN={"XAUUSD · 15M · 1st BREAK BUY (TỶ LỆ 1R / 2R)": "XAUUSD · 15M · 1st BREAK BUY (1R / 2R TARGETS)", "EURUSD · 15M · SUNNY TIẾP DIỄN SÓNG": "EURUSD · 15M · SUNNY TREND CONTINUATION", "LIVE HUD · THỐNG KÊ ĐỒNG THUẬN 9 KHUNG MTF": "LIVE HUD · 9-TIMEFRAME AGREEMENT STATS", "VIDEO DEMO THỰC CHIẾN · QUY TRÌNH GIAO DỊCH AURORA STANDARD": "LIVE DEMO VIDEO · AURORA STANDARD TRADING WORKFLOW", "Sao Chép Nội Dung": "Copy Message", "✓ Đã Sao Chép!": "✓ Copied!"};(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang")}catch(e){}var c=(document.cookie.match(/(?:^|; )kz-lang=(en|vi)/)||[])[1],s=null;try{s=localStorage.getItem("kz-lang")}catch(e){}var l=(q==="en"||q==="vi")?q:(c||s);if(l!=="en"&&l!=="vi"){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"]).map(function(x){return String(x).toLowerCase()});l=(/^Asia\/(Ho_Chi_Minh|Saigon)$/.test(tz)||ls.some(function(x){return x.indexOf("vi")===0}))?"vi":"en"}document.documentElement.lang=l;})();window.kzT=function(s){return (document.documentElement.lang==="en"&&window.KZ_JS_EN[s])||s};</script>
+<script>/* KZ language: ?lang= > cookie chung .kenvinzone.com > lựa chọn đã lưu > múi giờ VN / trình duyệt */window.KZ_JS_EN={"Đang gửi…": "Sending\u2026", "TradingView username chỉ gồm chữ, số, dấu gạch dưới, dấu chấm hoặc gạch ngang.": "A TradingView username only contains letters, digits, underscores, dots or hyphens.", "TradingView username không hợp lệ.": "Invalid TradingView username.", "Email không hợp lệ.": "Invalid email address.", "Bạn đã gửi nhiều lần. Vui lòng thử lại sau 10 phút hoặc nhắn Telegram.": "Too many requests. Please try again in 10 minutes or message us on Telegram.", "XAUUSD · 15M · 1st BREAK BUY (TỶ LỆ 1R / 2R)": "XAUUSD · 15M · 1st BREAK BUY (1R / 2R TARGETS)", "EURUSD · 15M · SUNNY TIẾP DIỄN SÓNG": "EURUSD · 15M · SUNNY TREND CONTINUATION", "LIVE HUD · THỐNG KÊ ĐỒNG THUẬN 9 KHUNG MTF": "LIVE HUD · 9-TIMEFRAME AGREEMENT STATS", "VIDEO DEMO THỰC CHIẾN · QUY TRÌNH GIAO DỊCH AURORA STANDARD": "LIVE DEMO VIDEO · AURORA STANDARD TRADING WORKFLOW", "Sao Chép Nội Dung": "Copy Message", "✓ Đã Sao Chép!": "✓ Copied!"};(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang")}catch(e){}var c=(document.cookie.match(/(?:^|; )kz-lang=(en|vi)/)||[])[1],s=null;try{s=localStorage.getItem("kz-lang")}catch(e){}var l=(q==="en"||q==="vi")?q:(c||s);if(l!=="en"&&l!=="vi"){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}var ls=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"vi"]).map(function(x){return String(x).toLowerCase()});l=(/^Asia\/(Ho_Chi_Minh|Saigon)$/.test(tz)||ls.some(function(x){return x.indexOf("vi")===0}))?"vi":"en"}document.documentElement.lang=l;})();window.kzT=function(s){return (document.documentElement.lang==="en"&&window.KZ_JS_EN[s])||s};</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>KENVINZONE AURORA STANDARD V12.2 — Hệ Thống Hỗ Trợ Giao Dịch Trend-Following Trên TradingView</title>
@@ -1125,6 +1125,14 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <input class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition" data-i18n-ph="Phone number or @telegram_username" id="customer-contact" placeholder="0912 xxx xxx hoặc @username_telegram" required="" type="text"/>
 </div>
 <div>
+<label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" for="customer-email">
+          Email <span class="text-rose-400">*</span>
+</label>
+<input autocomplete="email" class="w-full bg-space-900 border border-space-750 rounded-xl px-3.5 py-2.5 text-white text-sm focus:border-aurora-cyan focus:ring-1 focus:ring-aurora-cyan outline-none transition" data-i18n-ph="you@example.com" id="customer-email" placeholder="ban@gmail.com" required="" type="email"/>
+<p class="text-[11px] text-slate-subtle mt-1" data-i18n="k230">Bạn sẽ nhận email xác nhận và email hướng dẫn khi quyền được kích hoạt.</p>
+</div>
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label>Website<input autocomplete="off" id="kz-website" tabindex="-1" type="text"/></label></div>
+<div>
 <label class="block text-xs font-mono font-bold text-slate-text uppercase mb-1" data-i18n="k209" for="plan-select">
           Gói Đăng Ký
         </label>
@@ -1142,10 +1150,16 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
           Tạo Yêu Cầu &amp; Gửi Xác Nhận
         </button>
 </div>
+<p aria-live="polite" class="hidden text-xs text-rose-400" id="form-error"></p>
+<p class="text-[11px] text-slate-subtle leading-relaxed" data-i18n="k231">Thông tin chỉ dùng để cấp quyền truy cập và liên hệ hỗ trợ, không chia sẻ cho bên thứ ba.</p>
 </form>
 <!-- Success / Safe Dispatch View (Shown after form submit) -->
 <div class="hidden space-y-4 pt-2" id="order-success-view">
-<div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed" data-i18n="k217">
+<div class="hidden p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed" data-i18n="k232" id="sent-ok-block">
+<div class="font-bold text-sm mb-1 text-white">✓ Đã gửi yêu cầu thành công!</div>
+        KenvinZone đã nhận thông tin của bạn và sẽ cấp quyền trên TradingView sớm nhất. Hãy kiểm tra email (kể cả mục Spam / Quảng cáo) để nhận xác nhận. Nếu cần gấp, bạn có thể nhắn thêm qua Telegram.
+      </div>
+<div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40 text-emerald-300 text-xs leading-relaxed" data-i18n="k217" id="manual-block">
 <div class="font-bold text-sm mb-1 text-white flex items-center gap-1.5">
 <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
 <span>Đã tạo nội dung đăng ký thành công!</span>
@@ -1347,6 +1361,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 
   // Modal Controller with explicit tier selection and focus trap
   function openRegisterModal(tierKey) {
+    kzFormOpenedAt = Date.now();
     lastActiveTriggerElement = document.activeElement;
     const modal = document.getElementById('register-modal');
     const select = document.getElementById('plan-select');
@@ -1398,29 +1413,52 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
   // Handle Form Submission Without Fake Toasts or Lost Leads
   let currentOrderPayload = '';
 
-  function handleOrderSubmit(e) {
+  // ===== Form đăng ký: gửi về Google Apps Script (xem aurora-trial-form/HUONG-DAN-CAI-DAT.md) =====
+  // Dán URL Web app của Apps Script vào đây. Để trống = dùng cách cũ (soạn tin nhắn gửi Telegram).
+  const KZ_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw2o1gP0WjUt8dPOT6O4TGRe5O6s2qmr37dL5Slr3xzx5b29YxWXPcLPlZuXiAaIIcTxw/exec';
+  let kzFormOpenedAt = Date.now();
+
+  async function handleOrderSubmit(e) {
     e.preventDefault();
-    const tvIdInput = document.getElementById('tradingview-id');
-    const contactInput = document.getElementById('customer-contact');
+    const tvId = document.getElementById('tradingview-id').value.trim().replace(/^@/, '');
+    const contact = document.getElementById('customer-contact').value.trim();
+    const emailEl = document.getElementById('customer-email');
+    const email = emailEl ? emailEl.value.trim() : '';
     const planSelect = document.getElementById('plan-select');
-
-    const tvId = tvIdInput.value.trim();
-    const contact = contactInput.value.trim();
     const planLabel = planSelect.options[planSelect.selectedIndex].text;
+    const errEl = document.getElementById('form-error');
+    const btn = document.getElementById('submit-btn');
+    const showErr = (m) => { if (errEl) { errEl.textContent = m; errEl.classList.remove('hidden'); } };
+    if (errEl) errEl.classList.add('hidden');
 
-    if (!tvId || !contact) return;
+    if (!tvId || !contact || !email) return;
+    if (!/^[A-Za-z0-9_.\-]{2,40}$/.test(tvId)) { showErr(kzT('TradingView username chỉ gồm chữ, số, dấu gạch dưới, dấu chấm hoặc gạch ngang.')); return; }
 
-    // Structured lead payload
-    currentOrderPayload = `[ĐĂNG KÝ AURORA STANDARD]\n• TV ID: ${tvId}\n• Gói: ${planLabel}\n• Liên hệ: ${contact}`;
-
-    // Update dispatch view
+    currentOrderPayload = `[ĐĂNG KÝ AURORA STANDARD]\n• TV ID: ${tvId}\n• Gói: ${planLabel}\n• Email: ${email}\n• Liên hệ: ${contact}`;
     document.getElementById('generated-payload').innerText = currentOrderPayload;
+    document.getElementById('telegram-dispatch-btn').setAttribute('href', `https://t.me/kenvinhoang?text=${encodeURIComponent(currentOrderPayload)}`);
 
-    // Encode for Telegram direct link
-    const telegramUrl = `https://t.me/kenvinhoang?text=${encodeURIComponent(currentOrderPayload)}`;
-    document.getElementById('telegram-dispatch-btn').setAttribute('href', telegramUrl);
-
-    // Switch view
+    let sent = false;
+    const hp = document.getElementById('kz-website');
+    if (KZ_FORM_ENDPOINT && Date.now() - kzFormOpenedAt > 2500) {
+      const oldTxt = btn.innerHTML;
+      btn.disabled = true; btn.textContent = kzT('Đang gửi…');
+      try {
+        const ctrl = new AbortController(); const tm = setTimeout(() => ctrl.abort(), 15000);
+        const res = await fetch(KZ_FORM_ENDPOINT, { method: 'POST', signal: ctrl.signal,
+          body: JSON.stringify({ product: 'STANDARD', plan: planLabel, tv: tvId, email, contact,
+            lang: document.documentElement.lang === 'en' ? 'en' : 'vi', page: location.href, website: hp ? hp.value : '' }) });
+        clearTimeout(tm);
+        const out = await res.json();
+        if (out.ok) sent = true;
+        else if (out.error === 'tv') { showErr(kzT('TradingView username không hợp lệ.')); btn.disabled = false; btn.innerHTML = oldTxt; return; }
+        else if (out.error === 'email') { showErr(kzT('Email không hợp lệ.')); btn.disabled = false; btn.innerHTML = oldTxt; return; }
+        else if (out.error === 'rate') { showErr(kzT('Bạn đã gửi nhiều lần. Vui lòng thử lại sau 10 phút hoặc nhắn Telegram.')); btn.disabled = false; btn.innerHTML = oldTxt; return; }
+      } catch (err) { /* lỗi mạng → dùng Telegram dự phòng */ }
+      btn.disabled = false; btn.innerHTML = oldTxt;
+    }
+    document.getElementById('sent-ok-block').classList.toggle('hidden', !sent);
+    document.getElementById('manual-block').classList.toggle('hidden', sent);
     document.getElementById('order-form').classList.add('hidden');
     document.getElementById('order-success-view').classList.remove('hidden');
   }
@@ -1481,7 +1519,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
   },{passive:true});
 })();
 </script>
-<script>window.KZ_META_EN={"t": "KENVINZONE AURORA STANDARD V12.2 — Trend-Following Trading System for TradingView", "d": "AURORA STANDARD detects trend-following entry signals, draws entry, stop and take-profit plans and tracks performance on TradingView. 3-day free trial."};window.KZ_I18N_EN={
+<script>window.KZ_META_EN={"t": "KENVINZONE AURORA STANDARD V12.2 — Trend-Following Trading System for TradingView", "d": "AURORA STANDARD detects trend-following entry signals, draws entry, stop and take-profit plans and tracks performance on TradingView. 3-day free trial."};window.KZ_I18N_EN={"k230": "You will receive a confirmation email, and a guide email once access is active.", "k231": "Your details are only used to grant access and provide support, never shared with third parties.", "k232": "<div class=\"font-bold text-sm mb-1 text-white\">✓ Request sent!</div> KenvinZone has received your details and will grant access on TradingView as soon as possible. Check your email (including Spam / Promotions) for the confirmation. If it is urgent, you can also message us on Telegram.", 
 "k0": "Features",
 "k1": "Chart",
 "k2": "Access",
