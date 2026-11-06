@@ -789,6 +789,353 @@ html[data-theme="light"] .sc-quant-num {
 html[data-theme="light"] .sc-sim-chart-box {
   background: #0A1426;
 }
+
+/* =====================================================================
+   HYPER-DIMENSIONAL QUANTUM TRADING OS V3 (AMAZING EDITION)
+   100% Explicit CSS — Zero Uncompiled Tailwind Dependencies
+   ===================================================================== */
+#sc-cursor-aura {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(56, 213, 231, 0.09) 0%, rgba(243, 190, 98, 0.04) 38%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  mix-blend-mode: screen;
+}
+html[data-theme="light"] #sc-cursor-aura {
+  background: radial-gradient(circle, rgba(14, 143, 168, 0.08) 0%, rgba(184, 121, 14, 0.04) 38%, transparent 70%);
+  mix-blend-mode: multiply;
+}
+@media (pointer: coarse), (max-width: 768px) {
+  #sc-cursor-aura { display: none !important; }
+}
+
+/* 3D Holographic Foil Glare Cards */
+.sc-holo-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.sc-holo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(56, 213, 231, 0.14),
+    rgba(243, 190, 98, 0.06) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.sc-holo-card:hover::after {
+  opacity: 1;
+}
+
+/* Live Bar-by-Bar Breakout Replay Theater */
+.sc-replay-sec {
+  position: relative;
+  padding: 72px 0;
+  background:
+    radial-gradient(900px 420px at 15% 10%, rgba(56, 213, 231, 0.10), transparent 65%),
+    radial-gradient(800px 380px at 85% 90%, rgba(243, 190, 98, 0.09), transparent 65%),
+    var(--kz-bg2);
+  border-bottom: 1px solid var(--kz-line);
+  overflow: hidden;
+}
+.sc-replay-shell {
+  background: rgba(7, 13, 25, 0.92);
+  border: 1px solid rgba(56, 213, 231, 0.32);
+  border-radius: 26px;
+  padding: 20px;
+  box-shadow: 0 32px 90px -20px rgba(0, 0, 0, 0.78), 0 0 40px rgba(56, 213, 231, 0.10);
+  position: relative;
+}
+html[data-theme="light"] .sc-replay-shell {
+  background: #0B1528;
+  color: #F2F6FC;
+  border-color: rgba(14, 143, 168, 0.45);
+}
+@media (min-width: 768px) {
+  .sc-replay-shell { padding: 28px; }
+}
+.sc-replay-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sc-replay-scenarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sc-scen-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 9px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 25, 45, 0.85);
+  color: #94A3B8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sc-scen-btn:hover {
+  border-color: rgba(56, 213, 231, 0.5);
+  color: #FFFFFF;
+}
+.sc-scen-btn.active {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(56, 213, 231, 0.22));
+  border-color: #38D5E7;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px -6px rgba(56, 213, 231, 0.45);
+}
+.sc-scen-btn.active[data-scen="sunny"] {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.30), rgba(243, 190, 98, 0.20));
+  border-color: #F3BE62;
+  box-shadow: 0 8px 24px -6px rgba(243, 190, 98, 0.4);
+}
+.sc-scen-btn.active[data-scen="ghost"] {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.30), rgba(225, 29, 72, 0.18));
+  border-color: #FB7185;
+  box-shadow: 0 8px 24px -6px rgba(244, 63, 94, 0.4);
+}
+
+.sc-replay-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+@media (min-width: 1024px) {
+  .sc-replay-grid {
+    grid-template-columns: 8fr 4fr;
+    gap: 24px;
+  }
+}
+.sc-canvas-wrap {
+  position: relative;
+  background: #040914;
+  border: 1px solid rgba(56, 213, 231, 0.24);
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#sc-replay-canvas {
+  width: 100%;
+  height: 360px;
+  display: block;
+  cursor: crosshair;
+}
+.sc-canvas-hud-overlay {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  pointer-events: none;
+  z-index: 3;
+}
+.sc-hud-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(6, 12, 24, 0.86);
+  border: 1px solid rgba(56, 213, 231, 0.30);
+  color: #E2E8F0;
+  backdrop-filter: blur(8px);
+}
+.sc-replay-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(10, 18, 34, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sc-ctrl-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sc-ctrl-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 32, 56, 0.9);
+  color: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sc-ctrl-btn:hover {
+  border-color: #38D5E7;
+  transform: translateY(-1px);
+}
+.sc-ctrl-btn.primary {
+  background: linear-gradient(135deg, #0284C7 0%, #38D5E7 100%);
+  color: #04131C;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(56, 213, 231, 0.38);
+}
+.sc-ctrl-scrubber {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #94A3B8;
+}
+
+/* Replay Right Telemetry Panel */
+.sc-replay-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sc-tel-box {
+  background: rgba(11, 20, 38, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  padding: 15px;
+}
+.sc-score-dial-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sc-dial-svg {
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+}
+.sc-mtf-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+.sc-mtf-cell {
+  text-align: center;
+  padding: 5px 2px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34D399;
+  transition: all 0.25s ease;
+}
+.sc-mtf-cell.down {
+  background: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #FB7185;
+}
+.sc-mtf-cell.neutral {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.25);
+  color: #94A3B8;
+}
+
+/* Floating Interactive Command Dock */
+.sc-cmd-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 24px);
+  z-index: 46;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(7, 13, 25, 0.88);
+  border: 1px solid rgba(56, 213, 231, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 28px rgba(56, 213, 231, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: calc(100vw - 24px);
+  overflow-x: auto;
+}
+.sc-cmd-dock.sc-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+.sc-dock-item {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #CBD5E1;
+  padding: 7px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.sc-dock-item:hover {
+  color: #FFFFFF;
+  background: rgba(56, 213, 231, 0.14);
+  border-color: rgba(56, 213, 231, 0.35);
+}
+.sc-dock-item.cta {
+  background: linear-gradient(135deg, #0284C7 0%, #38D5E7 100%);
+  color: #04131C;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(56, 213, 231, 0.35);
+}
+.sc-dock-item.cta:hover {
+  transform: scale(1.04);
+}
+@media (max-width: 900px) {
+  .sc-floating-fab { display: none !important; }
+}
+@media (min-width: 901px) {
+  .sc-floating-fab { display: none !important; } /* Replaced by unified Command Dock */
+}
 </style>
 </head>
 <body class="bg-space-900 text-slate-text font-sans antialiased overflow-x-hidden relative selection:bg-aurora-cyan selection:text-space-950">
@@ -1162,12 +1509,132 @@ html[data-theme="light"] .sc-sim-chart-box {
           Smart Score (0–100) chấm điểm từng cơ hội theo độ đồng thuận giữa xu hướng, động lượng và dòng tiền (Volume Engine), giúp bạn đánh giá mức độ đồng thuận của từng setup trước khi vào lệnh.
         </p>
 </div>
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal sc-delay-2">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-holo-card sc-reveal sc-delay-2">
 <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold mb-4">03</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k40">Kế Hoạch R:R Định Sẵn</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k41">
           Ngay khi nến tín hiệu đóng cửa, hộp lệnh tự động hiển thị Entry, F-SL cố định, TP1 (1R) và TP2 (2R). Giúp bạn tính toán khối lượng lot chuẩn xác trước khi vào lệnh.
         </p>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE BAR-BY-BAR BREAKOUT REPLAY ENGINE (SCROLL CRAFT V3 FLAGSHIP THEATER) -->
+<section class="sc-replay-sec" id="sc-live-replay">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-10 sc-reveal">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aurora-cyan/15 border border-aurora-cyan/30 text-aurora-cyan text-xs font-mono font-bold mb-3">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+<span data-i18n="sc_r_badge">🎬 RẠP CHIẾU NẾN TRỰC TIẾP · BAR-BY-BAR REPLAY ENGINE</span>
+</div>
+<h2 class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="sc_r_title">Tua Từng Cây Nến — Xem Aurora Bắt Sóng &amp; Chặn Lệnh Nhiễu</h2>
+<p class="text-slate-muted mt-3 text-sm sm:text-base" data-i18n="sc_r_sub">
+        Bấm <strong>▶ Chạy Replay</strong> hoặc kéo thanh trượt từng cây nến để trải nghiệm cách <strong>Nến Break Tô Vàng</strong>, <strong>Hộp R:R 1:2</strong>, đường bậc thang <strong>Kenvin Super Trailing Stop</strong> và bộ lọc <strong>⛔ Ghost Trade</strong> vận hành ngay khi nến đóng cửa.
+      </p>
+</div>
+<div class="sc-replay-shell sc-conic-card sc-reveal">
+<!-- Top Scenario Switcher + Audio Synth Toggle -->
+<div class="sc-replay-top">
+<div class="sc-replay-scenarios" id="sc-scen-group">
+<button class="sc-scen-btn active" data-scen="xau" onclick="setReplayScenario('xau')" type="button">
+<span>🥇</span>
+<span data-i18n="sc_r_s1">XAUUSD · 1st Break (+1.5R Win)</span>
+</button>
+<button class="sc-scen-btn" data-scen="sunny" onclick="setReplayScenario('sunny')" type="button">
+<span>☀️</span>
+<span data-i18n="sc_r_s2">BTCUSDT.P · SUNNY Pullback (+2.0R)</span>
+</button>
+<button class="sc-scen-btn" data-scen="ghost" onclick="setReplayScenario('ghost')" type="button">
+<span>⛔</span>
+<span data-i18n="sc_r_s3">EURUSD · Chặn Lệnh Ma (Cứu -1.0R)</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="sc-ctrl-btn" id="sc-sound-btn" onclick="toggleReplaySound()" type="button">
+<span id="sc-sound-ico">🔇</span>
+<span data-i18n="sc_r_snd" id="sc-sound-txt">Âm thanh: Tắt</span>
+</button>
+<button class="sc-ctrl-btn" onclick="cycleReplaySpeed()" type="button">
+<span>⚡</span>
+<span id="sc-speed-txt">1.0x</span>
+</button>
+</div>
+</div>
+<!-- Main 2-Column Interactive Canvas + Live Telemetry HUD -->
+<div class="sc-replay-grid">
+<!-- Left: 60fps HTML5 Candlestick & Strategy Canvas -->
+<div class="sc-canvas-wrap">
+<div class="sc-canvas-hud-overlay">
+<div class="sc-hud-pill" id="sc-hud-sym">🥇 OANDA:XAUUSD · M15 · Vol: COMEX:GC1!</div>
+<div class="sc-hud-pill" id="sc-hud-bar-state" style="color:#38D5E7;">BAR 28 / 38 · LIVE REPLAY</div>
+</div>
+<canvas aria-label="Biểu đồ mô phỏng từng cây nến của Aurora STANDARD" height="360" id="sc-replay-canvas" width="820"></canvas>
+<div class="sc-replay-controls">
+<div class="sc-ctrl-btns">
+<button class="sc-ctrl-btn primary" id="sc-btn-play" onclick="toggleReplayPlay()" type="button">
+<span id="sc-play-ico">▶</span>
+<span data-i18n="sc_r_play" id="sc-play-lbl">Chạy Replay</span>
+</button>
+<button class="sc-ctrl-btn" onclick="stepReplayBar(1)" title="Đóng cây nến tiếp theo" type="button">
+<span data-i18n="sc_r_step">⏭ +1 Nến</span>
+</button>
+<button class="sc-ctrl-btn" onclick="resetReplayBar()" title="Quay về đầu chu kỳ" type="button">
+<span>⏮</span>
+</button>
+</div>
+<div class="sc-ctrl-scrubber">
+<span data-i18n="sc_r_scrub">Kéo nến:</span>
+<input class="sc-range" id="sc-replay-slider" max="38" min="8" oninput="scrubReplayBar(this.value)" step="1" type="range" value="34"/>
+<span class="text-white font-bold" id="sc-slider-val">#34</span>
+</div>
+</div>
+</div>
+<!-- Right: Synchronized Quantitative Telemetry Sidebar -->
+<div class="sc-replay-side">
+<!-- Card 1: Smart Score Radial Gauge -->
+<div class="sc-tel-box">
+<div class="text-[11px] font-mono text-slate-muted uppercase tracking-wider mb-2" data-i18n="sc_r_c1">1. Điểm Đồng Thuận Smart Score (0–100)</div>
+<div class="sc-score-dial-row">
+<svg class="sc-dial-svg" viewBox="0 0 80 80">
+<circle cx="40" cy="40" fill="none" r="32" stroke="rgba(255,255,255,0.08)" stroke-width="7"></circle>
+<circle cx="40" cy="40" fill="none" id="sc-dial-arc" r="32" stroke="#38D5E7" stroke-dasharray="201" stroke-dashoffset="28" stroke-linecap="round" stroke-width="7" transform="rotate(-90 40 40)"></circle>
+<text fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="18" font-weight="800" id="sc-dial-num" text-anchor="middle" x="40" y="46">86</text>
+</svg>
+<div>
+<div class="inline-flex items-center px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-mono text-xs font-extrabold" id="sc-dial-grade">GRADE A · PASS</div>
+<div class="text-xs text-slate-300 mt-1.5 leading-snug" id="sc-dial-desc">RVOL 1.84x (COMEX) · Đủ điều kiện mở hộp R:R 1:2 khi nến đóng cửa.</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Live Event Log -->
+<div class="sc-tel-box">
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-muted uppercase tracking-wider mb-1.5">
+<span data-i18n="sc_r_c2">2. Nhật Ký Thuật Toán Tại Cây Nến Này</span>
+<span class="text-emerald-400 font-bold" id="sc-log-r-badge">+1.5R LOCKED</span>
+</div>
+<div class="p-3 rounded-xl bg-space-950 border border-space-800 font-mono text-xs text-slate-200 leading-relaxed" id="sc-replay-log">
+⚡ Nến #18 đóng cửa xác nhận 1st Break BUY! Nến #26 chạm TP1 (+1R, chốt 50%, dời SL về Hòa vốn). Nến #34 chạm TP2 (+2R) → Tổng thắng +1.5R!
+</div>
+</div>
+<!-- Card 3: 9-Timeframe MTF Consensus Matrix -->
+<div class="sc-tel-box">
+<div class="flex items-center justify-between text-[11px] font-mono text-slate-muted uppercase tracking-wider">
+<span data-i18n="sc_r_c3">3. Ma Trận 9 Khung MTF (Closed-Bar)</span>
+<span class="text-aurora-cyan font-bold" id="sc-mtf-pct">▲ 89% BULLISH</span>
+</div>
+<div class="sc-mtf-mini-grid" id="sc-mtf-grid">
+<div class="sc-mtf-cell">M1<br/>▲</div>
+<div class="sc-mtf-cell">M5<br/>▲</div>
+<div class="sc-mtf-cell">M15<br/>▲</div>
+<div class="sc-mtf-cell">M30<br/>▲</div>
+<div class="sc-mtf-cell">H1<br/>▲</div>
+<div class="sc-mtf-cell">H4<br/>▲</div>
+<div class="sc-mtf-cell">D1<br/>▲</div>
+<div class="sc-mtf-cell">W1<br/>▲</div>
+<div class="sc-mtf-cell neutral">MN<br/>─</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2193,6 +2660,15 @@ html[data-theme="light"] .sc-sim-chart-box {
 </div>
 </div>
 </footer>
+<!-- QUANTUM CURSOR AURA & FLOATING COMMAND DOCK (SCROLL CRAFT V3) -->
+<div aria-hidden="true" id="sc-cursor-aura"></div>
+<nav aria-label="Thanh điều hướng nhanh" class="sc-cmd-dock" id="sc-cmd-dock">
+<a class="sc-dock-item" data-i18n="sc_d1" href="#sc-live-replay">🎬 Replay Nến</a>
+<a class="sc-dock-item" data-i18n="sc_d2" href="#sc-pipeline">⚡ 4 Bước</a>
+<a class="sc-dock-item" data-i18n="sc_d3" href="#sc-simulator">🧮 Tính Lot &amp; R:R</a>
+<a class="sc-dock-item" data-i18n="sc_d4" href="#bang-gia">💎 Bảng Giá</a>
+<button class="sc-dock-item cta" data-i18n="sc_21" onclick="openRegisterModal('trial')" type="button">⚡ Dùng Thử 3 Ngày Free</button>
+</nav>
 <script>
   // Mobile Menu Controller
   function toggleMobileMenu() {
@@ -2759,7 +3235,24 @@ html[data-theme="light"] .sc-sim-chart-box {
 "sc_p3_h": "6-Family Smart Score &amp; Real Time-Of-Day RVOL",
 "sc_p3_d": "Every setup is scored from <strong>0–100</strong> (Grade A ≥80, Grade B ≥70) paired with the <strong>Time-Of-Day Volume Engine</strong> comparing volume against the exact same hour over the past 10 days (supports external Futures volume like <code>COMEX:GC1!</code>).",
 "sc_p4_h": "Auto-Draw Entry · F-SL · TP1 · TP2 &amp; Track Ghost Trades",
-"sc_p4_d": "The moment the signal bar closes, the trade box locks in <strong>Entry, fixed F-SL, TP1 (1R), TP2 (2R)</strong> (or a 50% Pullback limit order on long bars). Blocked setups are tracked as <strong>⛔ Ghost Trades</strong> so you can verify how much drawdown the filters saved."
+"sc_p4_d": "The moment the signal bar closes, the trade box locks in <strong>Entry, fixed F-SL, TP1 (1R), TP2 (2R)</strong> (or a 50% Pullback limit order on long bars). Blocked setups are tracked as <strong>⛔ Ghost Trades</strong> so you can verify how much drawdown the filters saved.",
+"sc_r_badge": "🎬 INTERACTIVE BAR-BY-BAR REPLAY ENGINE",
+"sc_r_title": "Scrub Every Candle — Watch Aurora Catch Breakouts &amp; Block Noise",
+"sc_r_sub": "Click <strong>▶ Play Replay</strong> or drag the bar timeline slider to watch the <strong>Gold Breakout Candle</strong>, <strong>1:2 R:R Plan Box</strong>, <strong>Kenvin Super Trailing Stop</strong> step-line, and <strong>⛔ Ghost Trade Filter</strong> execute on bar close.",
+"sc_r_s1": "XAUUSD · 1st Break (+1.5R Win)",
+"sc_r_s2": "BTCUSDT.P · SUNNY Pullback (+2.0R)",
+"sc_r_s3": "EURUSD · Ghost Filter (Saved -1.0R)",
+"sc_r_snd": "Sound: Off",
+"sc_r_play": "Play Replay",
+"sc_r_step": "⏭ +1 Bar",
+"sc_r_scrub": "Scrub Bar:",
+"sc_r_c1": "1. Live Smart Score (0–100)",
+"sc_r_c2": "2. Algorithmic Event Log at Current Bar",
+"sc_r_c3": "3. 9-Timeframe MTF Matrix (Closed-Bar)",
+"sc_d1": "🎬 Live Replay",
+"sc_d2": "⚡ 4 Stages",
+"sc_d3": "🧮 Lot &amp; R:R Sim",
+"sc_d4": "💎 Pricing"
 };</script>
 <script>
 /* ===== KENVINZONE LANGUAGE ENGINE (VI / EN) =====
@@ -3170,6 +3663,527 @@ function startPipeTimer() {
 
 document.addEventListener('kz:lang', updateSimCalculations);
 window.addEventListener('DOMContentLoaded', updateSimCalculations);
+
+/* =====================================================================
+   8. SCROLL CRAFT V3: LIVE BAR-BY-BAR BREAKOUT REPLAY ENGINE + 3D HOLO
+   ===================================================================== */
+var scReplay = {
+  scenario: 'xau',
+  bar: 34,
+  maxBar: 38,
+  playing: false,
+  timer: null,
+  speedIdx: 0,
+  speeds: [1.0, 2.0, 4.0],
+  soundOn: false,
+  audioCtx: null
+};
+
+var scReplayData = {
+  xau: {
+    sym: '🥇 OANDA:XAUUSD · M15 · Vol: COMEX:GC1!',
+    sigBar: 18,
+    tp1Bar: 26,
+    tp2Bar: 34,
+    scorePre: 61,
+    scoreSig: 86,
+    grade: 'GRADE A · PASS',
+    gradeColor: '#34D399',
+    rBadgeVi: '+1.5R LOCKED',
+    rBadgeEn: '+1.5R LOCKED',
+    mtfPct: '▲ 89% BULLISH',
+    mtfDirs: [1,1,1,1,1,1,1,1,0],
+    entryY: 192,
+    slY: 246,
+    tp1Y: 138,
+    tp2Y: 84,
+    labelTitle: '⚡ 1st BREAK BUY · GRADE A (86)',
+    candles: [
+      [255,268,248,262,0.4],[262,270,245,250,0.45],[250,258,238,244,0.5],[244,256,240,252,0.42],
+      [252,260,242,246,0.38],[246,254,234,238,0.48],[238,245,228,234,0.52],[234,242,226,236,0.4],
+      [236,244,228,232,0.44],[232,239,222,226,0.55],[226,234,218,229,0.46],[229,235,216,220,0.5],
+      [220,228,212,216,0.58],[216,224,208,218,0.49],[218,225,210,214,0.52],[214,220,205,210,0.6],
+      [210,216,202,208,0.65],[208,186,212,192,0.96], /* #18 Breakout Gold Candle */
+      [192,182,198,186,0.72],[186,178,194,189,0.55],[189,180,195,182,0.6],[182,168,186,172,0.75],
+      [172,162,178,166,0.68],[166,156,172,160,0.7],[160,144,164,148,0.82],[148,132,152,136,0.9], /* #26 TP1 */
+      [136,128,144,140,0.58],[140,130,145,134,0.62],[134,122,138,125,0.74],[125,114,130,118,0.78],
+      [118,108,124,112,0.7],[112,98,116,102,0.84],[102,88,106,92,0.88],[92,76,96,80,0.95], /* #34 TP2 */
+      [80,70,86,74,0.76],[74,66,82,72,0.68],[72,62,78,66,0.72],[66,58,74,62,0.75]
+    ]
+  },
+  sunny: {
+    sym: '☀️ BINANCE:BTCUSDT.P · H1 · Real Volume + OI',
+    sigBar: 19,
+    tp1Bar: 27,
+    tp2Bar: 35,
+    scorePre: 72,
+    scoreSig: 88,
+    grade: 'SUNNY A · PASS',
+    gradeColor: '#F3BE62',
+    rBadgeVi: '+2.0R RUNNER',
+    rBadgeEn: '+2.0R RUNNER',
+    mtfPct: '▲ 100% BULLISH',
+    mtfDirs: [1,1,1,1,1,1,1,1,1],
+    entryY: 184,
+    slY: 236,
+    tp1Y: 132,
+    tp2Y: 80,
+    labelTitle: '☀ SUNNY BUY · GRADE A (88)',
+    candles: [
+      [260,245,265,248,0.6],[248,230,252,234,0.7],[234,218,238,222,0.75],[222,204,226,208,0.8],
+      [208,192,212,196,0.82],[196,182,202,186,0.78],[186,174,192,178,0.7],[178,168,184,172,0.65],
+      [172,165,182,179,0.5],[179,174,190,186,0.48],[186,180,198,194,0.45],[194,188,205,200,0.42],
+      [200,195,212,206,0.4],[206,200,216,210,0.38],[210,202,215,205,0.44],[205,196,208,200,0.5],
+      [200,192,204,196,0.55],[196,188,200,192,0.6],[192,176,196,184,0.94], /* #19 SUNNY Bounce */
+      [184,170,188,174,0.76],[174,162,178,166,0.72],[166,156,172,160,0.68],[160,148,164,152,0.75],
+      [152,142,158,146,0.7],[146,136,150,140,0.8],[140,128,144,134,0.85],[134,122,138,126,0.92], /* #27 TP1 */
+      [126,118,132,122,0.68],[122,112,126,116,0.72],[116,106,120,110,0.76],[110,98,114,102,0.8],
+      [102,92,106,96,0.82],[96,86,100,89,0.86],[89,78,94,82,0.9],[82,70,86,74,0.96], /* #35 TP2 */
+      [74,64,78,68,0.8],[68,60,74,64,0.75],[64,54,70,58,0.78]
+    ]
+  },
+  ghost: {
+    sym: '⛔ FX:EURUSD · M15 · Asian Session Fakeout',
+    sigBar: 18,
+    tp1Bar: 99,
+    tp2Bar: 99,
+    scorePre: 38,
+    scoreSig: 41,
+    grade: '⛔ BLOCKED (<50)',
+    gradeColor: '#FB7185',
+    rBadgeVi: '🛡 CỨU THUA +1.0R',
+    rBadgeEn: '🛡 SAVED -1.0R LOSS',
+    mtfPct: '▼ 67% BEARISH HTF',
+    mtfDirs: [1,1,0,-1,-1,-1,-1,-1,0],
+    entryY: 182,
+    slY: 234,
+    tp1Y: 130,
+    tp2Y: 78,
+    labelTitle: '⛔ GHOST TRADE BLOCKED (SCORE 41)',
+    candles: [
+      [220,214,228,224,0.35],[224,218,230,222,0.32],[222,215,226,218,0.3],[218,210,222,214,0.28],
+      [214,208,220,216,0.3],[216,210,224,219,0.26],[219,212,225,215,0.29],[215,208,220,212,0.31],
+      [212,205,216,209,0.27],[209,202,214,206,0.33],[206,198,210,202,0.28],[202,196,208,204,0.25],
+      [204,198,209,201,0.3],[201,194,205,198,0.29],[198,192,202,195,0.31],[195,188,199,192,0.34],
+      [192,186,196,190,0.36],[190,175,194,182,0.38], /* #18 Fake Breakout with Low Volume */
+      [182,178,198,195,0.52],[195,190,212,208,0.68],[208,202,224,220,0.75],[220,215,236,232,0.82],
+      [232,226,246,242,0.88],[242,236,255,250,0.84],[250,244,264,258,0.78],[258,252,270,265,0.72],
+      [265,258,275,270,0.68],[270,262,278,272,0.65],[272,265,282,276,0.6],[276,270,286,280,0.58],
+      [280,274,290,284,0.55],[284,278,292,286,0.52],[286,280,295,288,0.5],[288,282,296,290,0.48],
+      [290,284,298,292,0.46],[292,286,300,294,0.45],[294,288,302,296,0.44],[296,290,304,298,0.42]
+    ]
+  }
+};
+
+function playBeep(freq, dur, type) {
+  if (!scReplay.soundOn) return;
+  try {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    if (!scReplay.audioCtx) scReplay.audioCtx = new AC();
+    var ctx = scReplay.audioCtx;
+    if (ctx.state === 'suspended') ctx.resume();
+    var osc = ctx.createOscillator();
+    var gain = ctx.createGain();
+    osc.type = type || 'sine';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    gain.gain.setValueAtTime(0.08, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (dur || 0.18));
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.start();
+    osc.stop(ctx.currentTime + (dur || 0.18));
+  } catch (e) {}
+}
+
+function toggleReplaySound() {
+  scReplay.soundOn = !scReplay.soundOn;
+  var isEn = document.documentElement.lang === 'en';
+  var ico = document.getElementById('sc-sound-ico');
+  var txt = document.getElementById('sc-sound-txt');
+  if (ico) ico.textContent = scReplay.soundOn ? '🔊' : '🔇';
+  if (txt) txt.textContent = scReplay.soundOn ? (isEn ? 'Sound: On' : 'Âm thanh: Bật') : (isEn ? 'Sound: Off' : 'Âm thanh: Tắt');
+  if (scReplay.soundOn) playBeep(660, 0.12, 'triangle');
+}
+
+function cycleReplaySpeed() {
+  scReplay.speedIdx = (scReplay.speedIdx + 1) % scReplay.speeds.length;
+  var spd = scReplay.speeds[scReplay.speedIdx];
+  var el = document.getElementById('sc-speed-txt');
+  if (el) el.textContent = spd.toFixed(1) + 'x';
+  if (scReplay.playing) {
+    stopReplayLoop();
+    startReplayLoop();
+  }
+}
+
+function setReplayScenario(scen) {
+  scReplay.scenario = scen;
+  document.querySelectorAll('#sc-scen-group .sc-scen-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-scen') === scen);
+  });
+  scReplay.bar = 12;
+  renderReplayFrame();
+  if (!scReplay.playing) toggleReplayPlay();
+}
+
+function toggleReplayPlay() {
+  scReplay.playing = !scReplay.playing;
+  var isEn = document.documentElement.lang === 'en';
+  var ico = document.getElementById('sc-play-ico');
+  var lbl = document.getElementById('sc-play-lbl');
+  if (scReplay.playing) {
+    if (scReplay.bar >= scReplay.maxBar) scReplay.bar = 8;
+    if (ico) ico.textContent = '⏸';
+    if (lbl) lbl.textContent = isEn ? 'Pause' : 'Tạm dừng';
+    startReplayLoop();
+  } else {
+    if (ico) ico.textContent = '▶';
+    if (lbl) lbl.textContent = isEn ? 'Play Replay' : 'Chạy Replay';
+    stopReplayLoop();
+  }
+}
+
+function startReplayLoop() {
+  stopReplayLoop();
+  var spd = scReplay.speeds[scReplay.speedIdx] || 1.0;
+  var interval = Math.round(420 / spd);
+  scReplay.timer = setInterval(function() {
+    if (scReplay.bar < scReplay.maxBar) {
+      scReplay.bar++;
+      var d = scReplayData[scReplay.scenario];
+      if (scReplay.bar === d.sigBar) playBeep(scReplay.scenario === 'ghost' ? 240 : 740, 0.22, 'triangle');
+      else if (scReplay.bar === d.tp1Bar) playBeep(880, 0.18, 'sine');
+      else if (scReplay.bar === d.tp2Bar) playBeep(1046, 0.28, 'sine');
+      renderReplayFrame();
+    } else {
+      toggleReplayPlay();
+    }
+  }, interval);
+}
+
+function stopReplayLoop() {
+  if (scReplay.timer) {
+    clearInterval(scReplay.timer);
+    scReplay.timer = null;
+  }
+}
+
+function stepReplayBar(delta) {
+  if (scReplay.playing) toggleReplayPlay();
+  scReplay.bar = Math.max(8, Math.min(scReplay.maxBar, scReplay.bar + delta));
+  renderReplayFrame();
+}
+
+function resetReplayBar() {
+  if (scReplay.playing) toggleReplayPlay();
+  scReplay.bar = 10;
+  renderReplayFrame();
+}
+
+function scrubReplayBar(val) {
+  if (scReplay.playing) toggleReplayPlay();
+  scReplay.bar = parseInt(val, 10) || 18;
+  renderReplayFrame();
+}
+
+function renderReplayFrame() {
+  var cvs = document.getElementById('sc-replay-canvas');
+  if (!cvs) return;
+  var ctx = cvs.getContext('2d');
+  var W = cvs.width, H = cvs.height;
+  var d = scReplayData[scReplay.scenario] || scReplayData.xau;
+  var b = scReplay.bar;
+  var isEn = document.documentElement.lang === 'en';
+
+  /* Sync slider & top pills */
+  var sld = document.getElementById('sc-replay-slider');
+  var sldVal = document.getElementById('sc-slider-val');
+  if (sld) sld.value = b;
+  if (sldVal) sldVal.textContent = '#' + b;
+  var symEl = document.getElementById('sc-hud-sym');
+  if (symEl) symEl.textContent = d.sym;
+  var stEl = document.getElementById('sc-hud-bar-state');
+  if (stEl) {
+    stEl.textContent = 'BAR ' + b + ' / ' + scReplay.maxBar + (b >= d.sigBar ? ' · barstate.isconfirmed ✓' : ' · SCANNING...');
+  }
+
+  /* Clear & Draw Subtle Grid */
+  ctx.clearRect(0, 0, W, H);
+  ctx.strokeStyle = 'rgba(255,255,255,0.045)';
+  ctx.lineWidth = 1;
+  for (var gy = 45; gy < H - 40; gy += 45) {
+    ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke();
+  }
+  for (var gx = 60; gx < W; gx += 80) {
+    ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H - 40); ctx.stroke();
+  }
+
+  var padL = 26, stepX = 19.5;
+  var sigX = padL + (d.sigBar - 1) * stepX;
+
+  /* Draw R:R Plan Box once signal bar is reached */
+  if (b >= d.sigBar) {
+    var boxEndBar = Math.min(b + 3, scReplay.maxBar);
+    var boxW = Math.max(120, (boxEndBar - d.sigBar + 2) * stepX);
+    if (scReplay.scenario === 'ghost') {
+      /* Ghost Trade Blocked Overlay */
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.11)';
+      ctx.fillRect(sigX, d.entryY, boxW, d.slY - d.entryY + 35);
+      ctx.strokeStyle = 'rgba(244, 63, 94, 0.65)';
+      ctx.setLineDash([5, 4]);
+      ctx.strokeRect(sigX, d.entryY, boxW, d.slY - d.entryY + 35);
+      ctx.setLineDash([]);
+    } else {
+      /* Vertical Signal Highlight Strip */
+      ctx.fillStyle = 'rgba(56, 213, 231, 0.10)';
+      ctx.fillRect(sigX - 7, 0, 14, H - 42);
+
+      /* TP Zone (Green) */
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.13)';
+      ctx.fillRect(sigX, d.tp2Y, boxW, d.entryY - d.tp2Y);
+      ctx.strokeStyle = 'rgba(16, 185, 129, 0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.strokeRect(sigX, d.tp2Y, boxW, d.entryY - d.tp2Y);
+
+      /* TP1 Mid Line (1R) */
+      ctx.strokeStyle = '#10B981';
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(sigX, d.tp1Y); ctx.lineTo(sigX + boxW, d.tp1Y); ctx.stroke();
+
+      /* Entry Line */
+      ctx.strokeStyle = '#38D5E7';
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath(); ctx.moveTo(sigX, d.entryY); ctx.lineTo(sigX + boxW, d.entryY); ctx.stroke();
+      ctx.setLineDash([]);
+
+      /* F-SL Zone (Rose) */
+      ctx.fillStyle = 'rgba(244, 63, 94, 0.12)';
+      ctx.fillRect(sigX, d.entryY, boxW, d.slY - d.entryY);
+      ctx.strokeStyle = 'rgba(244, 63, 94, 0.55)';
+      ctx.strokeRect(sigX, d.entryY, boxW, d.slY - d.entryY);
+
+      /* Right-side Level Tags */
+      ctx.font = '700 10px "JetBrains Mono", monospace';
+      ctx.fillStyle = '#34D399';
+      ctx.fillText('🎯 TP2 (2R)', sigX + 8, d.tp2Y + 13);
+      ctx.fillStyle = '#6EE7B7';
+      ctx.fillText('🎯 TP1 (1R · 50%)', sigX + 8, d.tp1Y - 5);
+      ctx.fillStyle = '#38D5E7';
+      ctx.fillText('▶ ENTRY', sigX + 8, d.entryY - 5);
+      ctx.fillStyle = '#FB7185';
+      ctx.fillText('🛑 FIXED F-SL (-1R)', sigX + 8, d.slY - 6);
+    }
+  }
+
+  /* Draw Trend Cloud & Kenvin Super Trailing Stop Step-Line */
+  ctx.beginPath();
+  for (var i = 0; i < b; i++) {
+    var cx = padL + i * stepX;
+    var c = d.candles[i];
+    var trailY = (i < d.sigBar - 1 && scReplay.scenario === 'xau')
+      ? c[2] - 28
+      : (scReplay.scenario === 'ghost' && i >= d.sigBar ? c[2] - 24 : c[3] + 24);
+    if (i === 0) ctx.moveTo(cx, trailY);
+    else {
+      var prevX = padL + (i - 1) * stepX;
+      ctx.lineTo(cx, trailY);
+    }
+  }
+  ctx.strokeStyle = scReplay.scenario === 'ghost' && b >= d.sigBar ? '#F43F5E' : '#38D5E7';
+  ctx.lineWidth = 2.2;
+  ctx.stroke();
+
+  /* Draw Candles + Bottom Volume Bars */
+  for (var k = 0; k < b; k++) {
+    var x = padL + k * stepX;
+    var cd = d.candles[k];
+    var openY = cd[0], highY = cd[1], lowY = cd[2], closeY = cd[3], volRatio = cd[4];
+    var isBull = closeY <= openY;
+    var isSig = (k + 1) === d.sigBar;
+
+    var col = isBull ? '#10B981' : '#EF4444';
+    if (isSig && scReplay.scenario !== 'ghost') col = '#F3BE62';
+    if (isSig && scReplay.scenario === 'ghost') col = '#FB7185';
+
+    /* Wick */
+    ctx.strokeStyle = col;
+    ctx.lineWidth = isSig ? 2.2 : 1.4;
+    ctx.beginPath();
+    ctx.moveTo(x, highY);
+    ctx.lineTo(x, lowY);
+    ctx.stroke();
+
+    /* Body */
+    var topY = Math.min(openY, closeY);
+    var bodyH = Math.max(4, Math.abs(closeY - openY));
+    ctx.fillStyle = col;
+    if (isSig) {
+      ctx.shadowColor = col;
+      ctx.shadowBlur = 12;
+    }
+    ctx.fillRect(x - 4.5, topY, 9, bodyH);
+    ctx.shadowBlur = 0;
+
+    /* Volume Bar at Bottom */
+    var vH = Math.round(volRatio * 34);
+    ctx.fillStyle = isSig
+      ? (scReplay.scenario === 'ghost' ? 'rgba(244,63,94,0.75)' : 'rgba(243,190,98,0.85)')
+      : (isBull ? 'rgba(16,185,129,0.35)' : 'rgba(239,68,68,0.30)');
+    ctx.fillRect(x - 3.5, H - 6 - vH, 7, vH);
+  }
+
+  /* Draw Floating Signal Callout Badge & TP Hit Markers */
+  if (b >= d.sigBar) {
+    ctx.font = '800 11px "JetBrains Mono", monospace';
+    var badgeW = scReplay.scenario === 'ghost' ? 215 : 198;
+    var bx = Math.max(12, Math.min(W - badgeW - 12, sigX - 30));
+    var by = scReplay.scenario === 'ghost' ? d.entryY - 36 : d.slY + 12;
+    ctx.fillStyle = scReplay.scenario === 'ghost' ? '#E11D48' : '#0284C7';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx, by, badgeW, 24, 6) : ctx.rect(bx, by, badgeW, 24);
+    ctx.fill();
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(d.labelTitle, bx + 8, by + 16);
+  }
+  if (b >= d.tp1Bar && scReplay.scenario !== 'ghost') {
+    var tp1X = padL + (d.tp1Bar - 1) * stepX;
+    ctx.fillStyle = '#10B981';
+    ctx.font = '800 10px "JetBrains Mono", monospace';
+    ctx.fillText('✓ TP1 (+1R · SL→BE)', tp1X - 24, d.tp1Y - 10);
+  }
+  if (b >= d.tp2Bar && scReplay.scenario !== 'ghost') {
+    var tp2X = padL + (d.tp2Bar - 1) * stepX;
+    ctx.fillStyle = '#F3BE62';
+    ctx.font = '800 11px "JetBrains Mono", monospace';
+    ctx.fillText('🏆 TP2 HIT (' + d.rBadgeVi + ')', tp2X - 40, d.tp2Y - 10);
+  }
+
+  /* Update Telemetry Sidebar (Gauge, Log, MTF Matrix) */
+  var curScore = b < d.sigBar ? d.scorePre : d.scoreSig;
+  var arc = document.getElementById('sc-dial-arc');
+  var num = document.getElementById('sc-dial-num');
+  var grd = document.getElementById('sc-dial-grade');
+  var desc = document.getElementById('sc-dial-desc');
+  var logEl = document.getElementById('sc-replay-log');
+  var rBadge = document.getElementById('sc-log-r-badge');
+  var mtfPct = document.getElementById('sc-mtf-pct');
+
+  if (arc) {
+    var offset = Math.round(201 - (201 * curScore) / 100);
+    arc.setAttribute('stroke-dashoffset', String(offset));
+    arc.setAttribute('stroke', b < d.sigBar ? '#38D5E7' : d.gradeColor);
+  }
+  if (num) num.textContent = String(curScore);
+  if (grd) {
+    grd.textContent = b < d.sigBar ? (isEn ? 'SCANNING...' : 'ĐANG QUÉT...') : d.grade;
+    grd.style.color = b < d.sigBar ? '#38D5E7' : d.gradeColor;
+  }
+  if (desc) {
+    if (scReplay.scenario === 'ghost') {
+      desc.textContent = isEn
+        ? 'RVOL 0.62x (Low Asian Vol) · Score 41 < 50 threshold → Blocked automatically!'
+        : 'RVOL 0.62x (Volume phiên Á yếu) · Điểm 41 < ngưỡng 50 → Chặn lệnh tự động!';
+    } else {
+      desc.textContent = isEn
+        ? 'RVOL 1.84x verified · High MTF consensus → 1:2 R:R box unlocked on bar close.'
+        : 'RVOL 1.84x xác nhận dòng tiền · Đồng thuận 9 khung MTF → Mở hộp R:R 1:2 khi đóng nến.';
+    }
+  }
+  if (rBadge) {
+    rBadge.textContent = b >= d.tp2Bar
+      ? (isEn ? d.rBadgeEn : d.rBadgeVi)
+      : (b >= d.tp1Bar ? '+1.0R LOCKED (SL→BE)' : (b >= d.sigBar ? (scReplay.scenario === 'ghost' ? (isEn ? d.rBadgeEn : d.rBadgeVi) : 'ACTIVE PLAN 1:2') : 'WAITING'));
+  }
+  if (logEl) {
+    if (b < d.sigBar) {
+      logEl.textContent = isEn
+        ? '🔍 Bar #' + b + ': Monitoring Trend Cloud & Trailing Stop. Waiting for confirmed breakout bar close...'
+        : '🔍 Nến #' + b + ': Đang theo dõi dải Mây Xu Hướng & đường bậc thang Trailing. Chờ nến tín hiệu đóng cửa hoàn tất...';
+    } else if (scReplay.scenario === 'ghost') {
+      logEl.textContent = isEn
+        ? '⛔ Bar #' + d.sigBar + ' Closed: Fake breakout detected! Smart Score 41/100 & RVOL 0.62x below threshold. Aurora BLOCKED the trade and saved -1.0R loss!'
+        : '⛔ Nến #' + d.sigBar + ' đóng cửa: Phát hiện bẫy Breakout giả! Smart Score 41/100 & RVOL 0.62x không đạt chuẩn. Aurora CHẶN LỆNH và cứu bạn khỏi thua -1.0R!';
+    } else if (b < d.tp1Bar) {
+      logEl.textContent = isEn
+        ? '⚡ Bar #' + d.sigBar + ' Closed (barstate.isconfirmed): Gold Candle locked! Auto-drew Entry, Fixed F-SL (-1R), TP1 (+1R) & TP2 (+2R).'
+        : '⚡ Nến #' + d.sigBar + ' đóng cửa (barstate.isconfirmed): Khóa Nến Vàng! Tự động vẽ hộp Entry, F-SL cố định (-1R), TP1 (+1R) & TP2 (+2R).';
+    } else if (b < d.tp2Bar) {
+      logEl.textContent = isEn
+        ? '🎯 Bar #' + d.tp1Bar + ': Price hit TP1 (+1R)! Locked 50% profit and moved Stop Loss to Breakeven. Trailing remaining 50% toward TP2...'
+        : '🎯 Nến #' + d.tp1Bar + ': Giá chạm TP1 (+1R)! Chốt 50% khối lượng và dời SL về Hòa vốn (Breakeven). Gồng 50% còn lại theo T-SL...';
+    } else {
+      logEl.textContent = isEn
+        ? '🏆 Bar #' + d.tp2Bar + ': Price hit TP2 (+2R)! Full trade cycle completed with ' + d.rBadgeEn + ' and zero repaint!'
+        : '🏆 Nến #' + d.tp2Bar + ': Giá chạm mục tiêu TP2 (+2R)! Hoàn tất chu kỳ lệnh kỷ luật với ' + d.rBadgeVi + ', không vẽ lại!';
+    }
+  }
+  if (mtfPct) mtfPct.textContent = d.mtfPct;
+  var cells = document.querySelectorAll('#sc-mtf-grid .sc-mtf-cell');
+  var tfs = ['M1','M5','M15','M30','H1','H4','D1','W1','MN'];
+  cells.forEach(function(cell, idx) {
+    var dir = d.mtfDirs[idx];
+    cell.className = 'sc-mtf-cell' + (dir < 0 ? ' down' : (dir === 0 ? ' neutral' : ''));
+    cell.innerHTML = tfs[idx] + '<br/>' + (dir > 0 ? '▲' : (dir < 0 ? '▼' : '─'));
+  });
+}
+
+(function() {
+  /* Initialize Replay Canvas + Auto-Play When Scrolled Into View */
+  window.addEventListener('DOMContentLoaded', function() {
+    renderReplayFrame();
+    var repSec = document.getElementById('sc-live-replay');
+    if ('IntersectionObserver' in window && repSec) {
+      var rio = new IntersectionObserver(function(entries) {
+        entries.forEach(function(en) {
+          if (en.isIntersecting && !scReplay.playing && scReplay.bar === 34) {
+            scReplay.bar = 12;
+            toggleReplayPlay();
+            rio.unobserve(repSec);
+          }
+        });
+      }, { threshold: 0.35 });
+      rio.observe(repSec);
+    }
+  });
+  document.addEventListener('kz:lang', renderReplayFrame);
+
+  /* Quantum Cursor Aura + Command Dock Visibility + 3D Holographic Cards */
+  var aura = document.getElementById('sc-cursor-aura');
+  var dock = document.getElementById('sc-cmd-dock');
+  if (aura && window.matchMedia('(pointer:fine)').matches) {
+    document.addEventListener('pointermove', function(e) {
+      aura.style.opacity = '1';
+      aura.style.left = e.clientX + 'px';
+      aura.style.top = e.clientY + 'px';
+    }, { passive: true });
+  }
+  window.addEventListener('scroll', function() {
+    var st = window.scrollY || document.documentElement.scrollTop;
+    if (dock) dock.classList.toggle('sc-visible', st > 420);
+  }, { passive: true });
+
+  /* Apply 3D Holographic Glare & Subtle Tilt to Feature & Pricing Cards */
+  if (window.matchMedia('(pointer:fine)').matches) {
+    var holoCards = document.querySelectorAll('.kz-spot, .sc-holo-card');
+    holoCards.forEach(function(card) {
+      card.classList.add('sc-holo-card');
+      card.addEventListener('pointermove', function(e) {
+        var r = card.getBoundingClientRect();
+        var x = e.clientX - r.left;
+        var y = e.clientY - r.top;
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+        var rx = (((y / r.height) - 0.5) * -4.5).toFixed(2);
+        var ry = (((x / r.width) - 0.5) * 4.5).toFixed(2);
+        card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-3px)';
+      }, { passive: true });
+      card.addEventListener('pointerleave', function() {
+        card.style.transform = '';
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
