@@ -209,9 +209,590 @@ dialog.kz-lb .h{display:flex;justify-content:space-between;align-items:center;ga
 dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text);border-radius:8px;padding:6px 10px;cursor:pointer}
 
 @media (max-width:420px){.kz-prod{font-size:10.5px;padding:4px 6px;letter-spacing:0}.kz-theme,.kz-menu{width:36px;height:36px}.kz-hd-r{gap:6px}.kz-brand{gap:8px}}
+
+/* =====================================================================
+   SCROLL CRAFT PRO MOTION UPGRADE — KENVINZONE AURORA STANDARD V12.2
+   ===================================================================== */
+#sc-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #38D5E7 0%, #F3BE62 55%, #10B981 100%);
+  box-shadow: 0 0 14px rgba(56, 213, 231, 0.75);
+  z-index: 120;
+  transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* 3D Hero Terminal & Floating Satellite Badges */
+.sc-hero-stage {
+  position: relative;
+  perspective: 1200px;
+}
+
+#hero-slider-container {
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 28px 70px -15px rgba(0, 0, 0, 0.72), 0 0 38px -8px rgba(56, 213, 231, 0.28);
+  position: relative;
+  z-index: 2;
+}
+
+#hero-slider-container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 213, 231, 0.55), rgba(243, 190, 98, 0.55), transparent);
+  box-shadow: 0 0 16px rgba(56, 213, 231, 0.45);
+  pointer-events: none;
+  z-index: 15;
+  animation: scScanline 6.5s ease-in-out infinite;
+  opacity: 0.65;
+}
+
+@keyframes scScanline {
+  0% { top: 8%; opacity: 0; }
+  15% { opacity: 0.7; }
+  85% { opacity: 0.7; }
+  100% { top: 92%; opacity: 0; }
+}
+
+.sc-sat-badge {
+  position: absolute;
+  background: rgba(10, 20, 38, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(56, 213, 231, 0.35);
+  border-radius: 14px;
+  padding: 9px 13px;
+  color: #E6EEF8;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.58);
+  pointer-events: none;
+  z-index: 25;
+  white-space: nowrap;
+  animation: scFloatBadge 4.6s ease-in-out infinite alternate;
+}
+
+html[data-theme="light"] .sc-sat-badge {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0E1B30;
+  border-color: rgba(14, 143, 168, 0.35);
+  box-shadow: 0 14px 32px rgba(14, 27, 48, 0.14);
+}
+
+.sc-sat-badge.sat-top-left {
+  left: -24px;
+  top: -18px;
+}
+
+.sc-sat-badge.sat-bottom-right {
+  right: -18px;
+  bottom: 48px;
+  border-color: rgba(243, 190, 98, 0.42);
+  animation-delay: -2.3s;
+}
+
+@keyframes scFloatBadge {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+@media (max-width: 1024px) {
+  .sc-sat-badge { display: none; }
+}
+
+/* Infinite Quantitative Telemetry Marquee */
+.sc-marquee-strip {
+  background: var(--kz-deep);
+  border-top: 1px solid var(--kz-line);
+  border-bottom: 1px solid var(--kz-line);
+  padding: 13px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.sc-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  animation: scMarqueeScroll 38s linear infinite;
+}
+
+.sc-marquee-strip:hover .sc-marquee-track {
+  animation-play-state: paused;
+}
+
+.sc-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--kz-text2);
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--kz-surface);
+  border: 1px solid var(--kz-line);
+  white-space: nowrap;
+}
+
+.sc-marquee-item b.cy { color: var(--kz-cyan); }
+.sc-marquee-item b.gd { color: var(--kz-gold); }
+.sc-marquee-item b.em { color: var(--kz-green); }
+
+@keyframes scMarqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.sc-sat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  flex-shrink: 0;
+}
+
+.sc-sat-dot.gold {
+  background: #F3BE62;
+  box-shadow: 0 0 8px #F3BE62;
+}
+
+.sc-m-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+  flex-shrink: 0;
+}
+
+.sc-m-dot.gold {
+  background: #F3BE62;
+  box-shadow: 0 0 6px #F3BE62;
+}
+
+.sc-m-dot.cyan {
+  background: #38D5E7;
+  box-shadow: 0 0 6px #38D5E7;
+}
+
+.sc-m-val {
+  color: var(--kz-cyan);
+  font-weight: 800;
+}
+
+.sc-m-gold {
+  color: var(--kz-gold);
+  font-weight: 800;
+}
+
+/* Scroll-Reveal Choreography */
+.sc-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sc-reveal.sc-visible,
+.sc-reveal.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.sc-delay-1 { transition-delay: 0.08s; }
+.sc-delay-2 { transition-delay: 0.16s; }
+
+/* Enhanced Card Lift & Spotlight */
+.neon-subtle-border, .sc-card-lift, .kz-spot {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.neon-subtle-border:hover, .sc-card-lift:hover, .kz-spot:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 213, 231, 0.48);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(56, 213, 231, 0.22);
+}
+
+/* Interactive Trade Plan & Lot Size Simulator */
+.sc-sim-box {
+  background: linear-gradient(160deg, var(--kz-surface) 0%, var(--kz-deep) 100%);
+  border: 1px solid var(--kz-line2);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.45);
+}
+
+.sc-sim-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .sc-sim-box { padding: 36px; }
+  .sc-sim-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 36px;
+    align-items: center;
+  }
+}
+
+.sc-sim-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--kz-line);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .sc-sim-box { padding: 20px; }
+  .sc-sim-metrics { grid-template-columns: 1fr; }
+}
+
+.sc-lv-tp2 {
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
+
+.sc-lv-tp1 {
+  background: rgba(16, 185, 129, 0.10);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.sc-lv-entry {
+  background: var(--kz-surface);
+  border: 1px solid rgba(56, 213, 231, 0.55);
+}
+
+.sc-lv-sl {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.40);
+}
+
+.sc-badge-sl {
+  background: #F43F5E;
+  color: #FFFFFF;
+}
+
+.sc-badge-tp1 {
+  background: rgba(16, 185, 129, 0.28);
+  color: #6EE7B7;
+}
+
+html[data-theme="light"] .sc-badge-tp1 {
+  color: #047857;
+}
+
+.sc-sim-preset-btn,
+.sc-sim-chip {
+  font-family: inherit;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--kz-line);
+  background: var(--kz-surface2);
+  color: var(--kz-text2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sc-sim-preset-btn:hover,
+.sc-sim-chip:hover {
+  border-color: var(--kz-cyan);
+  color: var(--kz-text);
+}
+
+.sc-sim-preset-btn.active,
+.sc-sim-chip.active {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.28), rgba(56, 213, 231, 0.22));
+  color: #FFFFFF;
+  border-color: #38D5E7;
+  box-shadow: 0 8px 22px -6px rgba(56, 213, 231, 0.38);
+}
+
+html[data-theme="light"] .sc-sim-preset-btn.active {
+  background: linear-gradient(135deg, rgba(14, 143, 168, 0.16), rgba(56, 213, 231, 0.14));
+  color: #0E1B30;
+  border-color: #0E8FA8;
+}
+
+.sc-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--kz-line2);
+  outline: none;
+  cursor: pointer;
+}
+
+.sc-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #38D5E7;
+  border: 2px solid #04131C;
+  box-shadow: 0 0 10px rgba(56, 213, 231, 0.8);
+  cursor: pointer;
+}
+
+/* Floating Quick-Action Trial Pill */
+.sc-floating-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 45;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.sc-floating-fab.sc-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sc-fab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0284C7 0%, #38D5E7 100%);
+  color: #04131C;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 14px 34px rgba(56, 213, 231, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sc-fab-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(56, 213, 231, 0.55);
+}
+
+.sc-fab-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #04131C;
+  box-shadow: 0 0 0 3px rgba(4, 19, 28, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-reveal { opacity: 1; transform: none; transition: none; }
+  .sc-marquee-track { animation: none; }
+  #hero-slider-container::before { animation: none; display: none; }
+}
+
+/* =====================================================================
+   QUANTUM AURORA COCKPIT V2 — KINETIC MOTION & INTERACTIVE ENGINE
+   ===================================================================== */
+#sc-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.72;
+}
+html[data-theme="light"] #sc-particle-canvas { opacity: 0.35; }
+
+/* Animated Conic Laser Border for Featured Cards & Simulator */
+@property --sc-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes scRotateBorder {
+  to { --sc-angle: 360deg; }
+}
+.sc-conic-card {
+  position: relative;
+  isolation: isolate;
+}
+.sc-conic-card::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--sc-angle, 0deg), transparent 55%, #38D5E7 78%, #F3BE62 92%, #10B981 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: scRotateBorder 5s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Live Quantitative Telemetry Counter Strip */
+.sc-quant-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+@media (min-width: 768px) {
+  .sc-quant-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+}
+.sc-quant-card {
+  background: linear-gradient(155deg, rgba(16, 29, 53, 0.92), rgba(7, 15, 29, 0.95));
+  border: 1px solid var(--kz-line);
+  border-radius: 18px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+html[data-theme="light"] .sc-quant-card {
+  background: linear-gradient(155deg, #FFFFFF, #F3F6FB);
+}
+.sc-quant-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--kz-cyan);
+  box-shadow: 0 18px 36px -14px rgba(56, 213, 231, 0.28);
+}
+.sc-quant-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.1;
+  background: linear-gradient(95deg, #FFFFFF 10%, #38D5E7 60%, #F3BE62 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+html[data-theme="light"] .sc-quant-num {
+  background: linear-gradient(95deg, #0E1B30 10%, #0E8FA8 65%, #A86A06 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sc-quant-lbl {
+  font-size: 12px;
+  color: var(--kz-muted);
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* Interactive 4-Stage Algorithmic Pipeline Stepper */
+.sc-pipe-wrap {
+  background: linear-gradient(165deg, var(--kz-surface) 0%, var(--kz-deep) 100%);
+  border: 1px solid var(--kz-line2);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 26px 64px -18px rgba(0, 0, 0, 0.55);
+}
+.sc-pipe-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+@media (min-width: 900px) {
+  .sc-pipe-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+}
+.sc-pipe-tab {
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--kz-line);
+  background: var(--kz-surface2);
+  color: var(--kz-text2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+.sc-pipe-tab:hover {
+  border-color: rgba(56, 213, 231, 0.45);
+  transform: translateY(-2px);
+}
+.sc-pipe-tab.active {
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.26), rgba(56, 213, 231, 0.14));
+  border-color: #38D5E7;
+  color: var(--kz-strong);
+  box-shadow: 0 12px 28px -10px rgba(56, 213, 231, 0.4);
+}
+.sc-pipe-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #38D5E7, #F3BE62);
+  transition: width 0.1s linear;
+}
+.sc-pipe-tab.active .sc-pipe-bar {
+  width: 100%;
+  transition: width 5.5s linear;
+}
+.sc-pipe-stage {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  animation: scStageIn 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 960px) {
+  .sc-pipe-stage { grid-template-columns: 5fr 7fr; gap: 32px; }
+}
+.sc-pipe-stage.active { display: grid; }
+@keyframes scStageIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* SVG Animated Candlestick & Laser Line Keyframes */
+@keyframes scCandlePulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(243, 190, 98, 0.45)); }
+  50% { filter: drop-shadow(0 0 14px rgba(243, 190, 98, 0.95)); }
+}
+@keyframes scDashFlow {
+  to { stroke-dashoffset: -40; }
+}
+.sc-svg-pulse { animation: scCandlePulse 2.4s ease-in-out infinite; }
+.sc-svg-flow { animation: scDashFlow 2.2s linear infinite; }
+
+/* Live Animated Chart Inside Simulator */
+.sc-sim-chart-box {
+  background: #050A14;
+  border: 1px solid rgba(56, 213, 231, 0.25);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+html[data-theme="light"] .sc-sim-chart-box {
+  background: #0A1426;
+}
 </style>
 </head>
 <body class="bg-space-900 text-slate-text font-sans antialiased overflow-x-hidden relative selection:bg-aurora-cyan selection:text-space-950">
+<div id="sc-scroll-progress" aria-hidden="true"></div>
 <!-- STICKY HEADER -->
 <header class="kz-hd" id="kzHeader">
 <div class="kz-hd-in">
@@ -221,7 +802,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </header>
 <!-- HERO SECTION -->
-<section class="kz-has-aurora relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
+<section class="kz-has-aurora relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-grid-mesh"><canvas aria-hidden="true" id="sc-particle-canvas"></canvas><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
 <!-- Subtle ambient glow -->
 <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[350px] bg-gradient-to-tr from-aurora-cyan/10 via-blue-500/5 to-transparent blur-[100px] pointer-events-none -z-10"></div>
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -279,7 +860,15 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </div>
 <!-- Right Column: Interactive Multi-Slide / Video Showcase -->
-<div class="lg:col-span-6" id="giao-dien">
+<div class="lg:col-span-6 sc-hero-stage" id="giao-dien">
+<div class="sc-sat-badge sat-top-left" aria-hidden="true">
+<span class="sc-sat-dot"></span>
+<span data-i18n="sc_1">⚡ NO-REPAINT · ĐÓNG NẾN XÁC NHẬN</span>
+</div>
+<div class="sc-sat-badge sat-bottom-right" aria-hidden="true">
+<span class="sc-sat-dot gold"></span>
+<span data-i18n="sc_2">🎯 R:R 1:1 &amp; 1:2 ĐỊNH SẴN TRƯỚC LỆNH</span>
+</div>
 <div class="bg-space-950 rounded-2xl border border-aurora-cyan/30 overflow-hidden shadow-2xl relative" id="hero-slider-container">
 <!-- Terminal Titlebar & Slide Tabs -->
 <div class="bg-space-850 px-3 sm:px-4 py-2.5 border-b border-space-750 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
@@ -516,25 +1105,64 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </div>
 </section>
-<!-- 3 CORE VALUE PILLARS -->
+<!-- INFINITE QUANTITATIVE TELEMETRY MARQUEE STRIP -->
+<div aria-hidden="true" class="sc-marquee-strip">
+<div class="sc-marquee-track">
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>XAUUSD · 15M</span><span class="sc-m-val">⚡ 1st BREAK BUY · GRADE A (84/100)</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot gold"></span><span>COMEX:GC1! VOLUME ENGINE</span><span class="sc-m-gold">RVOL 1.74 · TOD VERIFIED</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>BTCUSDT.P · 1H</span><span class="sc-m-val">☀ SUNNY CONTINUATION · +2.0R HIT</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot cyan"></span><span>MTF 9-TIMEFRAME CONSENSUS</span><span class="sc-m-val">▲ 78% CLOSED-BAR LOCKED</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot gold"></span><span>GHOST TRADE FILTER</span><span class="sc-m-gold">⛔ BLOCKED 14 NOISE SETUPS (-3.4R SAVED)</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>VNINDEX / FPT · D1</span><span class="sc-m-val">STOCK MODE · BUY ONLY · REAL VOLUME</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot cyan"></span><span>PROP FIRM READY</span><span class="sc-m-val">FIXED F-SL · DYNAMIC T-SL STEP LINE</span></div>
+<!-- Duplicate set for seamless infinite loop -->
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>XAUUSD · 15M</span><span class="sc-m-val">⚡ 1st BREAK BUY · GRADE A (84/100)</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot gold"></span><span>COMEX:GC1! VOLUME ENGINE</span><span class="sc-m-gold">RVOL 1.74 · TOD VERIFIED</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>BTCUSDT.P · 1H</span><span class="sc-m-val">☀ SUNNY CONTINUATION · +2.0R HIT</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot cyan"></span><span>MTF 9-TIMEFRAME CONSENSUS</span><span class="sc-m-val">▲ 78% CLOSED-BAR LOCKED</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot gold"></span><span>GHOST TRADE FILTER</span><span class="sc-m-gold">⛔ BLOCKED 14 NOISE SETUPS (-3.4R SAVED)</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot"></span><span>VNINDEX / FPT · D1</span><span class="sc-m-val">STOCK MODE · BUY ONLY · REAL VOLUME</span></div>
+<div class="sc-marquee-item"><span class="sc-m-dot cyan"></span><span>PROP FIRM READY</span><span class="sc-m-val">FIXED F-SL · DYNAMIC T-SL STEP LINE</span></div>
+</div>
+</div>
+<!-- 3 CORE VALUE PILLARS + LIVE QUANTITATIVE COUNTERS -->
 <section class="py-14 bg-space-950 border-y border-space-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Live Animated Quantitative Counter Strip -->
+<div class="sc-quant-strip sc-reveal" id="sc-counter-strip">
+<div class="sc-quant-card kz-spot">
+<div class="sc-quant-num"><span class="sc-count" data-suffix=" TF" data-target="9">9 TF</span></div>
+<div class="sc-quant-lbl" data-i18n="sc_c1">Đồng thuận Đa Khung (Nến đã đóng)</div>
+</div>
+<div class="sc-quant-card kz-spot">
+<div class="sc-quant-num"><span class="sc-count" data-prefix="0–" data-suffix=" PTS" data-target="100">0–100 PTS</span></div>
+<div class="sc-quant-lbl" data-i18n="sc_c2">Chấm điểm Smart Score 6 Họ Tín Hiệu</div>
+</div>
+<div class="sc-quant-card kz-spot">
+<div class="sc-quant-num"><span class="sc-count" data-prefix="1:" data-suffix=" R:R" data-target="2">1:2 R:R</span></div>
+<div class="sc-quant-lbl" data-i18n="sc_c3">Khung Entry · F-SL · TP1 · TP2 Tự Động</div>
+</div>
+<div class="sc-quant-card kz-spot">
+<div class="sc-quant-num"><span class="sc-count" data-suffix="% LOCKED" data-target="100">100% LOCKED</span></div>
+<div class="sc-quant-lbl" data-i18n="sc_c4">Không Vẽ Lại Sau Khi Đóng Nến</div>
+</div>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal">
 <div class="w-10 h-10 rounded-xl bg-aurora-cyan/15 text-aurora-cyan flex items-center justify-center font-bold mb-4">01</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k36">Đọc Bối Cảnh Xu Hướng Đa Khung</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k37">
           Theo dõi trạng thái mây và xu hướng chính trên 9 khung thời gian trong một Dashboard. Điểm đồng thuận chỉ tính các khung lớn hơn khung đang xem, lấy từ nến đã đóng để tránh nhiễu và vẽ lại.
         </p>
 </div>
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal sc-delay-1">
 <div class="w-10 h-10 rounded-xl bg-aurora-gold/15 text-aurora-gold flex items-center justify-center font-bold mb-4">02</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k38">Đánh Giá Setup Định Lượng</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k39">
           Smart Score (0–100) chấm điểm từng cơ hội theo độ đồng thuận giữa xu hướng, động lượng và dòng tiền (Volume Engine), giúp bạn đánh giá mức độ đồng thuận của từng setup trước khi vào lệnh.
         </p>
 </div>
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal sc-delay-2">
 <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center font-bold mb-4">03</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k40">Kế Hoạch R:R Định Sẵn</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k41">
@@ -547,14 +1175,177 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- CORE SYSTEM COMPONENTS -->
 <section class="py-20 bg-space-900" id="tinh-nang">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
+<div class="text-center max-w-3xl mx-auto mb-12 sc-reveal">
 <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2" data-i18n="k42">Cấu trúc công cụ</h2>
 <p class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="k43">Các Thành Phần Tích Hợp Của Aurora STANDARD</p>
 <p class="text-slate-muted mt-3 text-sm sm:text-base" data-i18n="k44">Mọi thành phần logic được đóng gói gọn trong một chỉ báo duy nhất, tối ưu tài nguyên biểu đồ.</p>
 </div>
+<!-- INTERACTIVE 4-STAGE ALGORITHMIC PIPELINE STEPPER -->
+<div class="sc-pipe-wrap sc-conic-card mb-14 sc-reveal" id="sc-pipeline">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4 text-xs font-mono">
+<div class="flex items-center gap-2 text-aurora-cyan font-bold">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span data-i18n="sc_p0">⚡ BUỒNG LÁI THUẬT TOÁN 4 BƯỚC KHÉP KÍN (BẤM ĐỂ TƯƠNG TÁC)</span>
+</div>
+<span class="text-slate-subtle" data-i18n="sc_p0_sub">Tự động chuyển bước mỗi 5.5 giây · Rê chuột để giữ</span>
+</div>
+<div class="sc-pipe-tabs" role="tablist">
+<button class="sc-pipe-tab active" onclick="selectPipeStage(0)" role="tab" type="button">
+<div class="text-[11px] font-mono text-aurora-cyan font-bold">STAGE 01 · CONTEXT</div>
+<div class="text-sm font-extrabold mt-0.5" data-i18n="sc_p1_t">Đọc Xu Hướng &amp; 9 Khung MTF</div>
+<div class="sc-pipe-bar"></div>
+</button>
+<button class="sc-pipe-tab" onclick="selectPipeStage(1)" role="tab" type="button">
+<div class="text-[11px] font-mono text-aurora-gold font-bold">STAGE 02 · TRIGGER</div>
+<div class="text-sm font-extrabold mt-0.5" data-i18n="sc_p2_t">Bắt Sóng 1st/2nd Break &amp; SUNNY</div>
+<div class="sc-pipe-bar"></div>
+</button>
+<button class="sc-pipe-tab" onclick="selectPipeStage(2)" role="tab" type="button">
+<div class="text-[11px] font-mono text-emerald-400 font-bold">STAGE 03 · FILTER</div>
+<div class="text-sm font-extrabold mt-0.5" data-i18n="sc_p3_t">Chấm Điểm Smart Score &amp; RVOL</div>
+<div class="sc-pipe-bar"></div>
+</button>
+<button class="sc-pipe-tab" onclick="selectPipeStage(3)" role="tab" type="button">
+<div class="text-[11px] font-mono text-purple-300 font-bold">STAGE 04 · EXECUTION</div>
+<div class="text-sm font-extrabold mt-0.5" data-i18n="sc_p4_t">Khóa Hộp R:R, T-SL &amp; Lệnh Ma</div>
+<div class="sc-pipe-bar"></div>
+</button>
+</div>
+<!-- Stage 0 Content -->
+<div class="sc-pipe-stage active" id="sc-pipe-panel-0">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-cyan/15 text-aurora-cyan text-xs font-mono font-bold">01 · MULTI-TIMEFRAME CLOUD &amp; STEP LINE</div>
+<h3 class="text-xl sm:text-2xl font-extrabold text-white" data-i18n="sc_p1_h">Xác Định Đúng Chiều Sóng Lớn Trước Khi Tìm Điểm Vào</h3>
+<p class="text-slate-muted text-sm leading-relaxed" data-i18n="sc_p1_d">Hệ thống quét đồng thời Dải Mây Xu Hướng và Đường Bậc Thang Kenvin Super Trailing Stop trên <strong>9 khung thời gian (M1 → W1)</strong>. Chỉ lấy dữ liệu từ nến đã đóng của các khung lớn hơn khung hiện tại để triệt tiêu hoàn toàn hiện tượng nhấp nháy hay vẽ lại.</p>
+<div class="grid grid-cols-2 gap-2.5 pt-2 font-mono text-xs">
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">MTF WEIGHTED VOTE</span><span class="text-emerald-400 font-bold">▲ 78% UPTREND LOCKED</span></div>
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">BAR CONFIRMATION</span><span class="text-aurora-cyan font-bold">barstate.isconfirmed ✓</span></div>
+</div>
+</div>
+<div class="bg-space-950 rounded-2xl p-4 border border-aurora-cyan/30">
+<svg class="w-full h-auto block" role="img" viewbox="0 0 560 220">
+<rect fill="#060C18" height="220" rx="12" width="560"></rect>
+<line stroke="rgba(56,213,231,0.08)" x1="0" x2="560" y1="55" y2="55"></line>
+<line stroke="rgba(56,213,231,0.08)" x1="0" x2="560" y1="110" y2="110"></line>
+<line stroke="rgba(56,213,231,0.08)" x1="0" x2="560" y1="165" y2="165"></line>
+<path d="M20 175 Q 140 160, 260 120 T 540 55 L 540 95 Q 380 135, 260 155 T 20 195 Z" fill="rgba(56,213,231,0.16)"></path>
+<path class="sc-svg-flow" d="M20 175 Q 140 160, 260 120 T 540 55" fill="none" stroke="#38D5E7" stroke-dasharray="8 6" stroke-width="3"></path>
+<path d="M20 192 H120 V172 H220 V148 H320 V120 H430 V92 H540" fill="none" stroke="#10B981" stroke-width="2.5"></path>
+<g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+<rect fill="#0B192E" height="32" rx="6" stroke="#38D5E7" width="165" x="24" y="20"></rect>
+<text fill="#38D5E7" x="36" y="40">▲ MTF 9 KHUNG: 78%</text>
+<rect fill="#06281E" height="28" rx="6" stroke="#10B981" width="190" x="345" y="172"></rect>
+<text fill="#34D399" x="357" y="190">🛡 T-SL STEP LINE ACTIVE</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Stage 1 Content -->
+<div class="sc-pipe-stage" id="sc-pipe-panel-1">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-gold/15 text-aurora-gold text-xs font-mono font-bold">02 · BREAKOUT &amp; SUNNY CONTINUATION</div>
+<h3 class="text-xl sm:text-2xl font-extrabold text-white" data-i18n="sc_p2_h">Bắt Trọn Cú Phá Vỡ Đầu Tiên Hoặc Nhịp Hồi Thuận Xu Hướng</h3>
+<p class="text-slate-muted text-sm leading-relaxed" data-i18n="sc_p2_d"><strong>⚡ 1st Break</strong> định vị ngay điểm khởi đầu chu kỳ xu hướng mới; <strong>⚡ 2nd Break</strong> bắt nhịp tái nhập sau cú quét thanh khoản; và <strong>☀ SUNNY</strong> giúp bạn lên tàu an toàn sau nhịp điều chỉnh khi giá bật lại từ vùng đệm xu hướng.</p>
+<div class="grid grid-cols-2 gap-2.5 pt-2 font-mono text-xs">
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">PRIMARY TRIGGER</span><span class="text-aurora-gold font-bold">⚡ 1st &amp; 2nd BREAK</span></div>
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">WAVE CONTINUATION</span><span class="text-emerald-400 font-bold">☀ SUNNY PULLBACK BOUNCE</span></div>
+</div>
+</div>
+<div class="bg-space-950 rounded-2xl p-4 border border-aurora-gold/35">
+<svg class="w-full h-auto block" role="img" viewbox="0 0 560 220">
+<rect fill="#060C18" height="220" rx="12" width="560"></rect>
+<rect fill="rgba(243,190,98,0.12)" height="220" width="22" x="215" y="0"></rect>
+<rect fill="rgba(16,185,129,0.12)" height="220" width="22" x="405" y="0"></rect>
+<path d="M20 155 H195" fill="none" stroke="#F43F5E" stroke-dasharray="4 4" stroke-width="2"></path>
+<path d="M215 175 H320 V150 H415 V118 H540" fill="none" stroke="#38D5E7" stroke-width="2.5"></path>
+<!-- Candles -->
+<g fill="#F43F5E"><rect height="26" rx="2" width="10" x="90" y="135"></rect><rect height="24" rx="2" width="10" x="140" y="142"></rect></g>
+<g class="sc-svg-pulse" fill="#F3BE62"><rect height="44" rx="2" width="14" x="219" y="112"></rect></g>
+<g fill="#10B981"><rect height="32" rx="2" width="10" x="275" y="96"></rect><rect height="26" rx="2" width="10" x="320" y="108"></rect><rect class="sc-svg-pulse" height="42" rx="2" width="14" x="409" y="78"></rect><rect height="36" rx="2" width="10" x="470" y="54"></rect></g>
+<g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+<rect fill="#F3BE62" height="26" rx="5" width="135" x="160" y="176"></rect>
+<text fill="#081120" x="172" y="193">⚡ 1st BREAK BUY</text>
+<rect fill="#10B981" height="26" rx="5" width="135" x="355" y="160"></rect>
+<text fill="#041E15" x="368" y="177">☀ SUNNY BUY</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Stage 2 Content -->
+<div class="sc-pipe-stage" id="sc-pipe-panel-2">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-mono font-bold">03 · SMART SCORE (0–100) &amp; VOLUME ENGINE</div>
+<h3 class="text-xl sm:text-2xl font-extrabold text-white" data-i18n="sc_p3_h">Chấm Điểm 6 Họ Tín Hiệu &amp; RVOL Theo Khung Giờ Thực</h3>
+<p class="text-slate-muted text-sm leading-relaxed" data-i18n="sc_p3_d">Mỗi setup được chấm điểm định lượng từ <strong>0–100</strong> (Grade A ≥80, Grade B ≥70) kết hợp <strong>Volume Engine Time-Of-Day</strong> so sánh khối lượng cùng khung giờ 10 ngày trước và cho phép lấy volume chuẩn từ sàn Futures (như <code>COMEX:GC1!</code> cho Vàng CFD).</p>
+<div class="grid grid-cols-2 gap-2.5 pt-2 font-mono text-xs">
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">SMART SCORE ENGINE</span><span class="text-aurora-cyan font-bold">GRADE A (86/100 PTS)</span></div>
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">EXTERNAL FUTURES VOL</span><span class="text-aurora-gold font-bold">COMEX:GC1! · RVOL 1.84</span></div>
+</div>
+</div>
+<div class="bg-space-950 rounded-2xl p-4 border border-emerald-500/35">
+<svg class="w-full h-auto block" role="img" viewbox="0 0 560 220">
+<rect fill="#060C18" height="220" rx="12" width="560"></rect>
+<g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+<text fill="#94A3B8" x="28" y="36">6-FAMILY SMART SCORE BREAKDOWN</text>
+<text fill="#38D5E7" x="435" y="36">TOTAL: 86 / 100 (A)</text>
+<!-- Progress bars -->
+<rect fill="#111D33" height="14" rx="7" width="504" x="28" y="52"></rect>
+<rect fill="#38D5E7" height="14" rx="7" width="440" x="28" y="52"></rect>
+<text fill="#E2E8F0" font-size="10" x="36" y="63">TREND + MTF CONSENSUS (32/35)</text>
+<rect fill="#111D33" height="14" rx="7" width="504" x="28" y="82"></rect>
+<rect fill="#F3BE62" height="14" rx="7" width="410" x="28" y="82"></rect>
+<text fill="#081120" font-size="10" x="36" y="93">TIME-OF-DAY RVOL 1.84 · COMEX:GC1! (24/25)</text>
+<rect fill="#111D33" height="14" rx="7" width="504" x="28" y="112"></rect>
+<rect fill="#10B981" height="14" rx="7" width="380" x="28" y="112"></rect>
+<text fill="#041E15" font-size="10" x="36" y="123">MOMENTUM &amp; STRUCTURE QUALITY (30/40)</text>
+<!-- Volume bars -->
+<rect fill="#334155" height="22" rx="2" width="24" x="40" y="176"></rect>
+<rect fill="#334155" height="28" rx="2" width="24" x="80" y="170"></rect>
+<rect fill="#334155" height="25" rx="2" width="24" x="120" y="173"></rect>
+<rect class="sc-svg-pulse" fill="#F3BE62" height="54" rx="2" width="26" x="160" y="144"></rect>
+<rect fill="#10B981" height="46" rx="2" width="26" x="200" y="152"></rect>
+<text fill="#F3BE62" x="245" y="172">🔊 TOD VOLUME SPIKE (+84% vs 10-Day Avg)</text>
+<text fill="#34D399" x="245" y="192">✓ No Absorption Warning · Clean Breakout</text>
+</g>
+</svg>
+</div>
+</div>
+<!-- Stage 3 Content -->
+<div class="sc-pipe-stage" id="sc-pipe-panel-3">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 text-xs font-mono font-bold">04 · PRESET R:R PLAN &amp; GHOST TRADE AUDIT</div>
+<h3 class="text-xl sm:text-2xl font-extrabold text-white" data-i18n="sc_p4_h">Tự Động Vẽ Hộp Entry · F-SL · TP1 · TP2 &amp; Theo Dõi "Lệnh Ma"</h3>
+<p class="text-slate-muted text-sm leading-relaxed" data-i18n="sc_p4_d">Ngay khi nến đóng cửa, hộp lệnh vẽ sẵn <strong>Entry, F-SL cố định, TP1 (1R), TP2 (2R)</strong> (hoặc đặt chờ hồi 50% nếu nến quá dài). Đặc biệt, các setup bị bộ lọc chặn vẫn được theo dõi ngầm thành <strong>⛔ Lệnh Ma</strong> để bạn kiểm chứng bộ lọc đã cứu mình khỏi bao nhiêu lệnh thua.</p>
+<div class="grid grid-cols-2 gap-2.5 pt-2 font-mono text-xs">
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">AUTO R:R BOX</span><span class="text-emerald-400 font-bold">TP1 (50%) + TP2 (50%) = +1.5R</span></div>
+<div class="p-3 rounded-xl bg-space-950 border border-space-800"><span class="text-slate-subtle block text-[10px]">GHOST TRADE TRACKER</span><span class="text-aurora-cyan font-bold">⛔ 14 BLOCKED (-3.4R SAVED)</span></div>
+</div>
+</div>
+<div class="bg-space-950 rounded-2xl p-4 border border-purple-500/35">
+<svg class="w-full h-auto block" role="img" viewbox="0 0 560 220">
+<rect fill="#060C18" height="220" rx="12" width="560"></rect>
+<rect fill="rgba(16,185,129,0.14)" height="90" rx="4" stroke="#10B981" width="320" x="190" y="28"></rect>
+<line stroke="#10B981" stroke-dasharray="5 4" x1="190" x2="510" y1="73" y2="73"></line>
+<rect fill="rgba(244,63,94,0.14)" height="45" rx="4" stroke="#F43F5E" width="320" x="190" y="118"></rect>
+<g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+<rect fill="#10B981" height="22" rx="4" width="125" x="50" y="20"></rect>
+<text fill="#041E15" x="58" y="35">🎯 TP2 (+2.0R)</text>
+<rect fill="#064E3B" height="22" rx="4" stroke="#10B981" width="125" x="50" y="62"></rect>
+<text fill="#6EE7B7" x="58" y="77">🎯 TP1 (+1.0R)</text>
+<rect fill="#0F1E36" height="22" rx="4" stroke="#38D5E7" width="125" x="50" y="106"></rect>
+<text fill="#38D5E7" x="58" y="121">▶ ENTRY LOCKED</text>
+<rect fill="#F43F5E" height="22" rx="4" width="125" x="50" y="150"></rect>
+<text fill="#FFFFFF" x="58" y="165">🛑 FIXED F-SL</text>
+<rect fill="#1E1B4B" height="30" rx="6" stroke="#A855F7" width="460" x="50" y="182"></rect>
+<text fill="#E9D5FF" x="64" y="201">⛔ GHOST AUDIT: 14 Filtered Setups → Avoided -3.4R Drawdown</text>
+</g>
+</svg>
+</div>
+</div>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Component 1 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal">
 <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1" data-i18n="k45">Xương sống vào lệnh</div>
 <h3 class="text-lg font-bold text-white mb-2.5">1st &amp; 2nd Break Setup</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k46">
@@ -562,7 +1353,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </p>
 </div>
 <!-- Component 2 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-1">
 <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1" data-i18n="k47">Nhịp tiếp diễn sóng</div>
 <h3 class="text-lg font-bold text-white mb-2.5">SUNNY Continuation</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k48">
@@ -570,7 +1361,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </p>
 </div>
 <!-- Component 3 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-2">
 <div class="text-xs font-mono font-bold text-emerald-400 uppercase mb-1" data-i18n="k49">Bảo vệ vị thế</div>
 <h3 class="text-lg font-bold text-white mb-2.5">Kenvin Super Trailing Stop</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k50">
@@ -578,7 +1369,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </p>
 </div>
 <!-- Component 4 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal">
 <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1" data-i18n="k51">Định lượng điều kiện</div>
 <h3 class="text-lg font-bold text-white mb-2.5">Smart Score &amp; MTF Vote</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k52">
@@ -586,7 +1377,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </p>
 </div>
 <!-- Component 5 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-1">
 <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1" data-i18n="k53">Khối lượng thông minh</div>
 <h3 class="text-lg font-bold text-white mb-2.5">Volume Engine Time-Of-Day</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k54">
@@ -594,28 +1385,28 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </p>
 </div>
 <!-- Component 6 -->
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-2">
 <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1" data-i18n="k55">Tích hợp mở rộng</div>
 <h3 class="text-lg font-bold text-white mb-2.5" data-i18n="k56">Cảnh Báo Chuẩn Hóa JSON Webhook</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k57">
           Phát tín hiệu alert có cấu trúc JSON đầy đủ (Entry, SL, TP1, TP2, Score). Thuận tiện gửi thông báo về kênh Telegram, Discord cá nhân hoặc kết nối với các bộ cầu nối webhook ngoài.
         </p>
 </div>
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal">
 <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1" data-i18n="k58">Vào lệnh thông minh</div>
 <h3 class="text-lg font-bold text-white mb-2.5" data-i18n="k59">Pullback Entry Cho Nến Break Dài</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k60">
           Khi nến Break quá dài, hệ thống không vào lệnh ở đáy hay đỉnh cây nến mà đặt lệnh chờ tại mức hồi 50%. Stoploss gần hơn, TP1 và TP2 dễ đạt hơn. Lệnh tự hủy nếu giá chạy thẳng hoặc hết thời gian chờ.
         </p>
 </div>
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-1">
 <div class="text-xs font-mono font-bold text-aurora-cyan uppercase mb-1" data-i18n="k61">Giao dịch trên điện thoại</div>
 <h3 class="text-lg font-bold text-white mb-2.5" data-i18n="k62">Bảng LIVE Cho Mobile</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k63">
           Một bảng gọn hiển thị xu hướng, setup đang chờ (1st Break / 2nd Break / SUNNY), khoảng cách tới điểm kích hoạt 🔥, các điều kiện lọc và lệnh đang chạy kèm R hiện tại.
         </p>
 </div>
-<div class="bg-space-850 neon-subtle-border rounded-2xl p-6">
+<div class="bg-space-850 neon-subtle-border rounded-2xl p-6 kz-spot sc-reveal sc-delay-2">
 <div class="text-xs font-mono font-bold text-aurora-gold uppercase mb-1" data-i18n="k64">Thiết lập 1 chạm</div>
 <h3 class="text-lg font-bold text-white mb-2.5" data-i18n="k65">Market Preset &amp; Phiên Giao Dịch</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k66">Chọn STOCK, FOREX, CFD hoặc CRYPTO là chỉ báo tự cấu hình chiều lệnh và nguồn volume phù hợp. Với FOREX, điểm được cộng hoặc trừ theo phiên (London–NY cao nhất, giờ giao phiên bị trừ). Thống kê theo phiên Á, Âu, Mỹ với giờ tự điều chỉnh theo mùa hè, mùa đông.</p>
@@ -623,26 +1414,203 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </div>
 </section>
+<!-- INTERACTIVE BESPOKE SIGNATURE: AURORA TRADE PLAN & LOT SIZE SIMULATOR -->
+<section class="py-20 bg-space-950 border-t border-space-800" id="sc-simulator">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-3xl mx-auto mb-12 sc-reveal">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-cyan/10 border border-aurora-cyan/30 text-aurora-cyan text-xs font-mono font-bold uppercase tracking-wider mb-3">
+<span class="w-2 h-2 rounded-full bg-aurora-cyan animate-ping"></span>
+<span data-i18n="sc_3">INTERACTIVE RISK &amp; R:R SIMULATOR</span>
+</div>
+<h2 class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="sc_4">Mô Phỏng Kế Hoạch Lệnh &amp; Tính Khối Lượng Chuẩn R</h2>
+<p class="text-slate-muted mt-3 text-sm sm:text-base" data-i18n="sc_5">
+        Trải nghiệm cách Aurora STANDARD đóng khung rủi ro trước mỗi cú bấm lệnh. Chọn thị trường, điều chỉnh vốn &amp; % rủi ro, hoặc bật chế độ <strong>⏳ Pullback 50%</strong> khi gặp nến Break dài để thấy sự khác biệt về Stoploss và mục tiêu lợi nhuận.
+      </p>
+</div>
+<div class="sc-sim-box sc-reveal">
+<div class="sc-sim-grid">
+<!-- Controls Column -->
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-mono font-bold text-slate-muted uppercase tracking-wider mb-2.5" data-i18n="sc_6">1. Chọn Market Preset &amp; Cặp Giao Dịch</label>
+<div class="grid grid-cols-2 gap-2" id="sim-preset-group">
+<button class="sc-sim-preset-btn active text-left" data-preset="xau" onclick="setSimPreset('xau')" type="button">
+<div class="text-xs font-extrabold">🥇 XAUUSD (CFD)</div>
+<div class="text-[10px] text-slate-muted">COMEX:GC1! Vol · M15</div>
+</button>
+<button class="sc-sim-preset-btn text-left" data-preset="btc" onclick="setSimPreset('btc')" type="button">
+<div class="text-xs font-extrabold">₿ BTCUSDT.P (Crypto)</div>
+<div class="text-[10px] text-slate-muted">Real Vol + OI · H1</div>
+</button>
+<button class="sc-sim-preset-btn text-left" data-preset="eur" onclick="setSimPreset('eur')" type="button">
+<div class="text-xs font-extrabold">💱 EURUSD (Forex)</div>
+<div class="text-[10px] text-slate-muted">London–NY Session · M15</div>
+</button>
+<button class="sc-sim-preset-btn text-left" data-preset="vn" onclick="setSimPreset('vn')" type="button">
+<div class="text-xs font-extrabold">📈 FPT / VNINDEX</div>
+<div class="text-[10px] text-slate-muted">STOCK Mode · D1 (Buy Only)</div>
+</button>
+</div>
+</div>
+<!-- Capital & Risk Sliders -->
+<div class="space-y-4 p-4 rounded-2xl bg-space-950/70 border border-space-800">
+<div>
+<div class="flex justify-between text-xs font-mono mb-1.5">
+<span class="text-slate-muted" data-i18n="sc_7">Quy mô tài khoản / Quỹ Prop Firm:</span>
+<span class="text-aurora-cyan font-bold" id="sim-cap-label">$10,000</span>
+</div>
+<input aria-label="Quy mô vốn tài khoản" class="sc-range" id="sim-cap-range" max="100000" min="1000" oninput="updateSimCalculations()" step="1000" type="range" value="10000"/>
+<div class="flex justify-between text-[10px] font-mono text-slate-subtle mt-1">
+<span>$1,000</span><span>$10,000</span><span>$50,000</span><span>$100,000</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-mono mb-1.5">
+<span class="text-slate-muted" data-i18n="sc_8">Rủi ro cố định mỗi lệnh (1R = F-SL):</span>
+<span class="text-aurora-gold font-bold" id="sim-risk-label">1.0% ($100)</span>
+</div>
+<input aria-label="Phần trăm rủi ro mỗi lệnh" class="sc-range" id="sim-risk-range" max="3.0" min="0.25" oninput="updateSimCalculations()" step="0.25" type="range" value="1.0"/>
+<div class="flex justify-between text-[10px] font-mono text-slate-subtle mt-1">
+<span>0.25% (An toàn quỹ)</span><span>1.0% (Chuẩn)</span><span>3.0%</span>
+</div>
+</div>
+</div>
+<!-- Entry Mode Toggle: Standard vs Pullback 50% -->
+<div>
+<label class="block text-xs font-mono font-bold text-slate-muted uppercase tracking-wider mb-2" data-i18n="sc_9">2. Chế Độ Khớp Lệnh (Khi Nến Break Dài)</label>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="sc-sim-preset-btn active text-center py-2.5" id="sim-mode-close" onclick="setSimEntryMode('close')" type="button">
+<div class="text-xs font-bold" data-i18n="sc_10">⚡ Vào Ngay Giá Đóng Nến</div>
+<div class="text-[10px] text-slate-muted" data-i18n="sc_11">Nến Break độ dài tiêu chuẩn</div>
+</button>
+<button class="sc-sim-preset-btn text-center py-2.5" id="sim-mode-pb" onclick="setSimEntryMode('pullback')" type="button">
+<div class="text-xs font-bold text-aurora-gold" data-i18n="sc_12">⏳ Chờ Hồi 50% (Pullback)</div>
+<div class="text-[10px] text-slate-muted" data-i18n="sc_13">Giảm ~35% khoảng cách F-SL</div>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Visual Plan Box & Telemetry Output -->
+<div class="space-y-4">
+<div class="p-5 sm:p-6 rounded-2xl bg-space-950 border border-aurora-cyan/30 relative overflow-hidden sc-conic-card">
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-space-800 text-xs font-mono">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-aurora-cyan/15 text-aurora-cyan font-bold" id="sim-badge-setup">⚡ 1st BREAK BUY · GRADE A (86/100)</span>
+<span class="text-slate-subtle" id="sim-badge-vol">COMEX:GC1! RVOL 1.82</span>
+</div>
+<span class="text-emerald-400 font-bold" data-i18n="sc_14">✓ barstate.isconfirmed</span>
+</div>
+<!-- Live Dynamic SVG Chart Visualizer inside Simulator -->
+<div class="sc-sim-chart-box">
+<svg aria-label="Biểu đồ mô phỏng hộp lệnh R:R trực quan" class="w-full h-auto block" id="sim-live-svg" role="img" viewbox="0 0 520 145">
+<defs>
+<lineargradient id="simTpGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#10B981" stop-opacity="0.28"></stop>
+<stop offset="100%" stop-color="#10B981" stop-opacity="0.06"></stop>
+</lineargradient>
+<lineargradient id="simSlGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#F43F5E" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#F43F5E" stop-opacity="0.26"></stop>
+</lineargradient>
+</defs>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="520" y1="22" y2="22"></line>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="520" y1="56" y2="56"></line>
+<line stroke="rgba(255,255,255,0.07)" x1="0" x2="520" y1="90" y2="90"></line>
+<line stroke="rgba(255,255,255,0.05)" x1="0" x2="520" y1="126" y2="126"></line>
+<!-- Historical wave + breakout candle -->
+<path d="M12 122 L52 114 L92 118 L132 104 L175 90" fill="none" stroke="#38D5E7" stroke-width="2"></path>
+<rect class="sc-svg-pulse" fill="#F3BE62" height="44" id="sim-svg-break-candle" rx="2" width="12" x="170" y="68"></rect>
+<!-- Dynamic R:R Box -->
+<rect fill="url(#simTpGrad)" height="68" id="sim-svg-tp-box" rx="3" stroke="#10B981" stroke-opacity="0.6" width="310" x="190" y="22"></rect>
+<line id="sim-svg-tp1-line" stroke="#10B981" stroke-dasharray="5 4" stroke-width="1.5" x1="190" x2="500" y1="56" y2="56"></line>
+<line class="sc-svg-flow" id="sim-svg-entry-line" stroke="#38D5E7" stroke-dasharray="4 3" stroke-width="2" x1="190" x2="500" y1="90" y2="90"></line>
+<rect fill="url(#simSlGrad)" height="36" id="sim-svg-sl-box" rx="3" stroke="#F43F5E" stroke-opacity="0.6" width="310" x="190" y="90"></rect>
+<!-- Projected price trajectory -->
+<path class="sc-svg-flow" d="M182 82 L225 90 L275 64 L335 56 L410 32 L485 22" fill="none" id="sim-svg-path" stroke="#34D399" stroke-dasharray="6 4" stroke-width="2.2"></path>
+<g font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+<text fill="#34D399" id="sim-svg-tp2-txt" x="198" y="36">🎯 TP2 (+2R)</text>
+<text fill="#6EE7B7" id="sim-svg-tp1-txt" x="198" y="70">🎯 TP1 (+1R · 50%)</text>
+<text fill="#38D5E7" id="sim-svg-ent-txt" x="198" y="86">▶ ENTRY</text>
+<text fill="#FB7185" id="sim-svg-sl-txt" x="198" y="120">🛑 F-SL (-1R)</text>
+</g>
+</svg>
+</div>
+<!-- Simulated Price Levels Bar -->
+<div class="space-y-2.5 font-mono text-xs">
+<div class="flex items-center justify-between p-3 rounded-xl sc-lv-tp2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-emerald-400 text-space-950 font-black text-[11px]">🎯 TP2 (2R)</span>
+<span class="text-white font-bold" id="sim-price-tp2">4,180.16</span>
+</div>
+<span class="text-emerald-400 font-bold" id="sim-gain-tp2">+$200.00 (+2.0R)</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl sc-lv-tp1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded sc-badge-tp1 font-bold text-[11px]">🎯 TP1 (1R · Chốt 50%)</span>
+<span class="text-white font-bold" id="sim-price-tp1">4,170.59</span>
+</div>
+<span class="text-emerald-300 font-bold" id="sim-gain-tp1">+$100.00 (+1.0R)</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl sc-lv-entry">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-aurora-cyan text-space-950 font-black text-[11px]" id="sim-entry-tag">▶ ENTRY</span>
+<span class="text-white font-bold" id="sim-price-entry">4,161.02</span>
+</div>
+<span class="text-aurora-cyan font-bold" id="sim-lot-output">Khối lượng chuẩn: 0.10 Lot</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl sc-lv-sl">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded sc-badge-sl font-bold text-[11px]">🛑 F-SL CỐ ĐỊNH</span>
+<span class="text-white font-bold" id="sim-price-sl">4,151.45</span>
+</div>
+<span class="text-rose-400 font-bold" id="sim-loss-sl">-$100.00 (-1.0R)</span>
+</div>
+</div>
+<!-- Bottom Summary Metrics -->
+<div class="sc-sim-metrics font-mono">
+<div class="p-2.5 rounded-xl bg-space-900/90 border border-space-800">
+<div class="text-[10px] text-slate-subtle uppercase" data-i18n="sc_15">Khoảng cách SL</div>
+<div class="text-sm font-extrabold text-white mt-1" id="sim-sl-dist">9.57 giá (0.23%)</div>
+</div>
+<div class="p-2.5 rounded-xl bg-space-900/90 border border-space-800">
+<div class="text-[10px] text-slate-subtle uppercase" data-i18n="sc_16">Kỳ vọng Chốt 50% TP1 + TP2</div>
+<div class="text-sm font-extrabold text-emerald-400 mt-1" id="sim-blended-r">+1.5R (+$150)</div>
+</div>
+<div class="p-2.5 rounded-xl bg-space-900/90 border border-space-800">
+<div class="text-[10px] text-slate-subtle uppercase" data-i18n="sc_17">Bảo vệ sau TP1</div>
+<div class="text-sm font-extrabold text-aurora-cyan mt-1" data-i18n="sc_18">Dời SL → Hòa Vốn / T-SL</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-3 px-2 text-xs text-slate-muted">
+<span data-i18n="sc_19">💡 Hộp kế hoạch này tự động vẽ ngay trên chart TradingView của bạn khi nến tín hiệu đóng cửa.</span>
+<button class="text-aurora-cyan hover:text-white font-bold whitespace-nowrap" data-i18n="sc_20" onclick="openRegisterModal('trial')" type="button">Dùng thử 3 ngày trên chart của bạn →</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- TRANSPARENCY: TỰ KIỂM CHỨNG -->
 <section class="py-20 bg-space-950 border-t border-space-800" id="kiem-chung">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="text-center max-w-3xl mx-auto mb-12 sc-reveal">
 <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-gold uppercase mb-2" data-i18n="k67">Minh bạch</h2>
 <p class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="k68">Đừng Tin Quảng Cáo. Hãy Tự Kiểm Chứng.</p>
 <p class="text-slate-muted mt-3 text-sm sm:text-base" data-i18n="k69">Aurora STANDARD đi kèm bộ công cụ để bạn tự đo hiệu quả của hệ thống trên đúng mã và khung thời gian bạn giao dịch, thay vì phải tin vào những con số chúng tôi đưa ra.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal">
 <div class="text-2xl mb-3">📊</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k70">Thống Kê Theo Từng Setup</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k71">Dashboard ghi lại kết quả của từng nhóm: 1st/2nd Break (tách theo Score cao và thấp), SUNNY, Pullback và từng phiên giao dịch. Có tỷ lệ thắng, tổng R, R trung bình mỗi lệnh và cách các lệnh được đóng.</p>
 </div>
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal sc-delay-1">
 <div class="text-2xl mb-3">⛔</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k72">"Lệnh Ma" Đo Giá Trị Bộ Lọc</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k73">Mỗi setup bị bộ lọc chặn vẫn được theo dõi ngầm như thể đã vào lệnh. Bạn biết ngay bộ lọc đang loại bỏ lệnh xấu, hay đang chặn nhầm lệnh tốt, và có lý do cụ thể cho từng lần chặn.</p>
 </div>
-<div class="p-6 rounded-2xl bg-space-900 border border-space-800">
+<div class="p-6 rounded-2xl bg-space-900 border border-space-800 kz-spot sc-reveal sc-delay-2">
 <div class="text-2xl mb-3">🧪</div>
 <h3 class="text-lg font-bold text-white mb-2" data-i18n="k74">Strategy Validator Có Tính Phí</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k75">Phiên bản chiến lược của cùng hệ thống chạy trên Strategy Tester của TradingView: lệnh khớp ở nến kế tiếp, khối lượng theo % rủi ro, có phí và trượt giá. Bạn xem được lợi nhuận, drawdown và từng lệnh.</p>
@@ -653,22 +1621,22 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- REAL CHART SCREENSHOTS -->
 <section class="py-20 bg-space-900" id="anh-thuc-te">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="text-center max-w-3xl mx-auto mb-12 sc-reveal">
 <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2" data-i18n="k76">Trên chart thật</h2>
 <p class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="k77">Aurora STANDARD Trên TradingView</p>
 </div>
 <!-- HƯỚNG DẪN: thay mỗi khối <div class="shot-placeholder"> bằng
          <img src="duong-dan-anh.jpg" alt="Mô tả ảnh" class="w-full h-full object-cover" loading="lazy"> -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750 kz-spot sc-reveal">
 <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono" data-i18n="k78" data-kz-alt-en="1st Break setup and trade plan" data-kz-alt-vi="Setup 1st Break và khung kế hoạch lệnh" data-kz-img="assets/shots/real-1.webp">Ảnh: 1st Break + khung kế hoạch</div>
 <figcaption class="p-4 text-sm text-slate-muted" data-i18n="k79"><strong class="text-white">Setup 1st Break</strong> với Entry, F-SL, TP1, TP2 và nhãn kết quả sau khi lệnh đóng.</figcaption>
 </figure>
-<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750 kz-spot sc-reveal sc-delay-1">
 <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono" data-i18n="k80" data-kz-alt-en="LIVE panel on mobile" data-kz-alt-vi="Bảng LIVE trên điện thoại" data-kz-fit="contain" data-kz-img="assets/shots/real-2.webp">Ảnh: Bảng LIVE trên điện thoại</div>
 <figcaption class="p-4 text-sm text-slate-muted" data-i18n="k81"><strong class="text-white">Bảng LIVE</strong> trên ứng dụng TradingView: setup đang chờ, khoảng cách kích hoạt và điều kiện vào lệnh.</figcaption>
 </figure>
-<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750">
+<figure class="rounded-2xl overflow-hidden bg-space-850 border border-space-750 kz-spot sc-reveal sc-delay-2">
 <div class="aspect-video shot-placeholder flex items-center justify-center text-slate-subtle text-sm font-mono" data-i18n="k82" data-kz-alt-en="Statistics dashboard" data-kz-alt-vi="Dashboard thống kê" data-kz-img="assets/shots/real-3.webp">Ảnh: Dashboard thống kê</div>
 <figcaption class="p-4 text-sm text-slate-muted" data-i18n="k83"><strong class="text-white">Dashboard Full</strong> với thống kê theo setup, bộ lọc và phiên giao dịch.</figcaption>
 </figure>
@@ -678,7 +1646,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- ABOUT AUTHOR -->
 <section class="py-20 bg-space-950 border-t border-space-800" id="tac-gia">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="rounded-2xl bg-space-900 border border-space-800 p-7 sm:p-9 grid grid-cols-1 sm:grid-cols-[96px_1fr] gap-6 items-start">
+<div class="rounded-2xl bg-space-900 border border-space-800 p-7 sm:p-9 grid grid-cols-1 sm:grid-cols-[96px_1fr] gap-6 items-start kz-spot sc-reveal">
 <!-- Thay khối dưới bằng ảnh đại diện: <img src="avatar.jpg" alt="KenvinHoang" class="w-24 h-24 rounded-2xl object-cover"> -->
 <div class="w-24 h-24 rounded-2xl bg-space-850 border border-aurora-cyan/30 flex items-center justify-center text-3xl font-extrabold text-aurora-cyan" data-kz-alt-en="Trader KenvinHoang" data-kz-alt-vi="Trader KenvinHoang" data-kz-img="assets/avatar.webp">K</div>
 <div>
@@ -697,27 +1665,27 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- 3-STEP ACTIVATION WORKFLOW -->
 <section class="py-20 bg-space-950 border-t border-space-800" id="quy-trinh">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-14">
+<div class="text-center max-w-3xl mx-auto mb-14 sc-reveal">
 <h2 class="text-xs font-mono font-bold tracking-widest text-aurora-cyan uppercase mb-2" data-i18n="k87">Quy trình cấp quyền</h2>
 <p class="text-2xl sm:text-4xl font-extrabold text-white" data-i18n="k88">3 Bước Bắt Đầu Sử Dụng Chỉ Báo</p>
 <p class="text-slate-muted mt-2 text-sm" data-i18n="k89">Cấp quyền qua hệ thống Invite-Only chính thức của TradingView.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative kz-spot sc-reveal">
 <div class="text-aurora-cyan font-mono font-bold text-2xl mb-4">01</div>
 <h3 class="text-base font-bold text-white mb-2" data-i18n="k90">Gửi TradingView Username</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k91">
           Đăng ký gói bạn chọn và cung cấp chính xác Username TradingView của bạn. Yêu cầu sẽ được chuyển đến người quản trị để cấp quyền truy cập.
         </p>
 </div>
-<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative kz-spot sc-reveal sc-delay-1">
 <div class="text-aurora-gold font-mono font-bold text-2xl mb-4">02</div>
 <h3 class="text-base font-bold text-white mb-2" data-i18n="k92">Mở Chỉ Báo Trên Biểu Đồ</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k93">
           Sau khi được cấp quyền, bạn mở biểu đồ TradingView, vào mục <em>Indicators → Invite-only scripts</em> và nhấp chọn <code>AURORA STANDARD</code>.
         </p>
 </div>
-<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative">
+<div class="bg-space-900 border border-space-800 rounded-2xl p-7 relative kz-spot sc-reveal sc-delay-2">
 <div class="text-emerald-400 font-mono font-bold text-2xl mb-4">03</div>
 <h3 class="text-base font-bold text-white mb-2" data-i18n="k94">Chọn Preset &amp; Giao Dịch</h3>
 <p class="text-slate-muted text-sm leading-relaxed" data-i18n="k95">Vào mục Cài đặt chỉ báo, chọn Market Preset tương ứng (STOCK, FOREX, CFD hoặc CRYPTO; mặc định FOREX). Chỉ báo tự động thiết lập thông số phù hợp.</p>
@@ -728,7 +1696,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- PRICING / MEMBER SUBSCRIPTION SECTION -->
 <section class="py-20 bg-space-900 border-t border-space-800" id="bang-gia">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="text-center max-w-3xl mx-auto mb-12 sc-reveal">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aurora-cyan/10 border border-aurora-cyan/30 text-aurora-cyan text-xs font-mono font-bold uppercase tracking-wider mb-3">
         MEMBER SUBSCRIPTION PLANS
       </div>
@@ -739,7 +1707,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <p class="text-slate-subtle text-xs mt-2" data-i18n="k98">* Mức quy đổi VND tạm tính theo tỷ giá tham khảo 1 USD ~ 26.000 VNĐ.</p>
 </div>
 <!-- Trial Banner -->
-<div class="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-space-850 via-space-800 to-space-850 border border-aurora-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="max-w-4xl mx-auto mb-10 p-5 rounded-2xl bg-gradient-to-r from-space-850 via-space-800 to-space-850 border border-aurora-cyan/30 flex flex-col sm:flex-row items-center justify-between gap-4 kz-spot sc-reveal">
 <div>
 <div class="flex items-center gap-2">
 <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-aurora-cyan/20 text-aurora-cyan" data-i18n="k99">MIỄN PHÍ</span>
@@ -754,7 +1722,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <!-- Primary 3 Pricing Cards -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8 items-stretch">
 <!-- Tier 1: 1 Month -->
-<div class="bg-space-850 border border-space-750 hover:border-space-700 rounded-2xl p-6 flex flex-col justify-between shadow-card">
+<div class="bg-space-850 border border-space-750 hover:border-space-700 rounded-2xl p-6 flex flex-col justify-between shadow-card kz-spot sc-reveal">
 <div>
 <div class="flex items-center justify-between mb-3">
 <span class="text-xs font-mono font-bold text-slate-muted uppercase" data-i18n="k103">Khởi đầu</span>
@@ -780,7 +1748,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </button>
 </div>
 <!-- Tier 2: 6 Month (Featured Recommendation) -->
-<div class="bg-space-850 border-2 border-aurora-cyan rounded-2xl p-6 flex flex-col justify-between shadow-glow-cyan relative">
+<div class="bg-space-850 border-2 border-aurora-cyan rounded-2xl p-6 flex flex-col justify-between shadow-glow-cyan relative kz-spot sc-conic-card sc-reveal sc-delay-1">
 <div class="absolute -top-3 right-5 bg-aurora-cyan text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider" data-i18n="k112">
           Gói Đề Xuất · Giảm 21%
         </div>
@@ -810,7 +1778,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
         </button>
 </div>
 <!-- Tier 3: 1 Year -->
-<div class="bg-space-850 border border-aurora-gold/40 hover:border-aurora-gold rounded-2xl p-6 flex flex-col justify-between shadow-glow-gold relative">
+<div class="bg-space-850 border border-aurora-gold/40 hover:border-aurora-gold rounded-2xl p-6 flex flex-col justify-between shadow-glow-gold relative kz-spot sc-reveal sc-delay-2">
 <div class="absolute -top-3 right-5 bg-aurora-gold text-space-950 text-[10px] font-black font-mono px-2.5 py-0.5 rounded-full uppercase tracking-wider" data-i18n="k124">
           Tiết Kiệm 31%
         </div>
@@ -1093,6 +2061,13 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </div>
 </section>
+<!-- FLOATING QUICK-ACTION TRIAL PILL (SCROLL CRAFT) -->
+<div class="sc-floating-fab" id="sc-floating-fab">
+<button aria-label="Đăng ký dùng thử 3 ngày miễn phí" class="sc-fab-btn kz-sheen" onclick="openRegisterModal('trial')" type="button">
+<span class="sc-fab-dot"></span>
+<span data-i18n="sc_21">⚡ Dùng Thử 3 Ngày Free</span>
+</button>
+</div>
 <!-- REGISTRATION / ORDER MODAL (WAI-ARIA COMPLIANT) -->
 <div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden place-items-center p-4" id="register-modal" role="dialog">
 <div class="bg-space-850 border border-aurora-cyan/40 rounded-2xl w-full max-w-lg p-6 sm:p-7 relative shadow-2xl">
@@ -1745,7 +2720,46 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 "k222": "© 2026 KenvinZone Systems · Source code author: Trader KenvinHoang.",
 "k223": "Risk warning: Trading financial markets (forex, gold CFDs, stocks, crypto) carries a risk of capital loss. KENVINZONE AURORA STANDARD is a technical analysis tool, not financial advice or a profit promise.",
 "k224": "TREND CONTINUATION SIGNAL",
-"k225": "SUNNY entry signal confirmed"
+"k225": "SUNNY entry signal confirmed",
+"sc_1": "⚡ NO-REPAINT · CONFIRMED ON BAR CLOSE",
+"sc_2": "🎯 PRESET R:R 1:1 &amp; 1:2 BEFORE ENTRY",
+"sc_3": "INTERACTIVE RISK &amp; R:R SIMULATOR",
+"sc_4": "Simulate Your Trade Plan &amp; Exact R-Based Position Size",
+"sc_5": "Experience how Aurora STANDARD frames risk before every click. Pick a market preset, adjust capital &amp; risk %, or toggle <strong>⏳ 50% Pullback Mode</strong> on long breakout bars to see the impact on your stop and profit targets.",
+"sc_6": "1. Select Market Preset &amp; Symbol",
+"sc_7": "Account / Prop-Firm Balance:",
+"sc_8": "Fixed Risk per Trade (1R = F-SL):",
+"sc_9": "2. Entry Execution Mode (Long Breakout Bar)",
+"sc_10": "⚡ Enter on Bar Close",
+"sc_11": "Standard breakout candle length",
+"sc_12": "⏳ Wait for 50% Pullback",
+"sc_13": "Tightens F-SL distance by ~35%",
+"sc_14": "✓ barstate.isconfirmed",
+"sc_15": "Stop Distance",
+"sc_16": "Expected 50% TP1 + TP2",
+"sc_17": "Protection after TP1",
+"sc_18": "Move SL → Breakeven / T-SL",
+"sc_19": "💡 This trade plan box is drawn automatically on your TradingView chart as soon as the signal bar closes.",
+"sc_20": "Try 3 days free on your chart →",
+"sc_21": "⚡ 3-Day Free Trial",
+"sc_c1": "Multi-Timeframe Agreement (Closed Bars)",
+"sc_c2": "6-Family Smart Score Quantitative Engine",
+"sc_c3": "Automated Entry · F-SL · TP1 · TP2 Box",
+"sc_c4": "Zero Repainting After Bar Close",
+"sc_p0": "⚡ 4-STAGE ALGORITHMIC TRADING COCKPIT (CLICK TO EXPLORE)",
+"sc_p0_sub": "Auto-advances every 5.5s · Hover to pause",
+"sc_p1_t": "Read Trend &amp; 9-TF Cloud",
+"sc_p2_t": "Catch 1st/2nd Break &amp; SUNNY",
+"sc_p3_t": "Score 0–100 &amp; TOD RVOL",
+"sc_p4_t": "Lock R:R Box &amp; Ghost Audit",
+"sc_p1_h": "Align With Higher-Timeframe Trend Before Hunting Entries",
+"sc_p1_d": "Simultaneously scans the Trend Cloud and Kenvin Super Trailing Stop step line across <strong>9 timeframes (M1 → W1)</strong>. Uses strictly closed bars from higher timeframes to eliminate flickering and repainting.",
+"sc_p2_h": "Catch the First Breakout or Safe Pullback Continuation",
+"sc_p2_d": "<strong>⚡ 1st Break</strong> pinpoints the birth of a new trend cycle; <strong>⚡ 2nd Break</strong> captures re-entry after liquidity sweeps; and <strong>☀ SUNNY</strong> lets you join safely after a pullback bounce.",
+"sc_p3_h": "6-Family Smart Score &amp; Real Time-Of-Day RVOL",
+"sc_p3_d": "Every setup is scored from <strong>0–100</strong> (Grade A ≥80, Grade B ≥70) paired with the <strong>Time-Of-Day Volume Engine</strong> comparing volume against the exact same hour over the past 10 days (supports external Futures volume like <code>COMEX:GC1!</code>).",
+"sc_p4_h": "Auto-Draw Entry · F-SL · TP1 · TP2 &amp; Track Ghost Trades",
+"sc_p4_d": "The moment the signal bar closes, the trade box locks in <strong>Entry, fixed F-SL, TP1 (1R), TP2 (2R)</strong> (or a 50% Pullback limit order on long bars). Blocked setups are tracked as <strong>⛔ Ghost Trades</strong> so you can verify how much drawdown the filters saved."
 };</script>
 <script>
 /* ===== KENVINZONE LANGUAGE ENGINE (VI / EN) =====
@@ -1805,6 +2819,357 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
     img.src=src;
   });
 })();
+
+/* ===== SCROLL CRAFT PRO MOTION & INTERACTIVE SIMULATOR ENGINE ===== */
+(function(){
+  /* 1. Top Scroll Progress Laser & Floating FAB Visibility */
+  var prog=document.getElementById('sc-scroll-progress');
+  var fab=document.getElementById('sc-floating-fab');
+  function onScroll(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var dh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+    if(prog&&dh>0){prog.style.width=Math.min(100,Math.max(0,(st/dh)*100))+'%';}
+    if(fab){
+      if(st>520) fab.classList.add('sc-visible');
+      else fab.classList.remove('sc-visible');
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  /* 2. Staggered Scroll-Reveal Choreography */
+  var revEls=document.querySelectorAll('.sc-reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('sc-visible','is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.05,rootMargin:'0px 0px -10px 0px'});
+    revEls.forEach(function(el){
+      var rect=el.getBoundingClientRect();
+      if(rect.top < window.innerHeight && rect.bottom > 0){
+        el.classList.add('sc-visible','is-visible');
+      } else {
+        io.observe(el);
+      }
+    });
+  } else {
+    revEls.forEach(function(el){el.classList.add('sc-visible','is-visible');});
+  }
+
+  /* 3. Subtle 3D Mouse Tilt on Hero Chart Terminal */
+  var stage=document.querySelector('.sc-hero-stage');
+  var term=document.getElementById('hero-slider-container');
+  if(stage&&term&&window.matchMedia('(pointer:fine)').matches){
+    stage.addEventListener('pointermove',function(e){
+      var r=stage.getBoundingClientRect();
+      var nx=((e.clientX-r.left)/r.width)-0.5;
+      var ny=((e.clientY-r.top)/r.height)-0.5;
+      term.style.transform='rotateY('+(nx*5).toFixed(2)+'deg) rotateX('+(-ny*5).toFixed(2)+'deg)';
+    },{passive:true});
+    stage.addEventListener('pointerleave',function(){
+      term.style.transform='rotateY(0deg) rotateX(0deg)';
+    });
+  }
+})();
+
+/* 4. Interactive Aurora Trade Plan & Lot Size Simulator Controller */
+var scSimState = {
+  preset: 'xau',
+  mode: 'close'
+};
+var scPresets = {
+  xau: {
+    setup: '⚡ 1st BREAK BUY · GRADE A (86/100)',
+    vol: 'COMEX:GC1! RVOL 1.82',
+    entry: 4161.02,
+    slDist: 9.57,
+    pbEntry: 4156.24,
+    pbSlDist: 6.12,
+    decimals: 2,
+    unitVi: 'Lot (Vàng CFD)',
+    unitEn: 'Lots (Gold CFD)',
+    distUnitVi: 'giá',
+    distUnitEn: 'pts',
+    lotFactor: 100 // 1 lot = $100 per $1 move
+  },
+  btc: {
+    setup: '☀ SUNNY BUY · GRADE A (88/100)',
+    vol: 'BINANCE:BTCUSDT.P · OI +4.2%',
+    entry: 94250.0,
+    slDist: 420.0,
+    pbEntry: 94040.0,
+    pbSlDist: 275.0,
+    decimals: 1,
+    unitVi: 'BTC (Perpetual)',
+    unitEn: 'BTC (Perpetual)',
+    distUnitVi: 'USD',
+    distUnitEn: 'USD',
+    lotFactor: 1 // 1 BTC = $1 per $1 move
+  },
+  eur: {
+    setup: '⚡ 1st BREAK BUY · GRADE B (76/100)',
+    vol: 'LONDON–NY SESSION (+10 PTS)',
+    entry: 1.08420,
+    slDist: 0.00180,
+    pbEntry: 1.08330,
+    pbSlDist: 0.00115,
+    decimals: 5,
+    unitVi: 'Lot chuẩn (Forex)',
+    unitEn: 'Std Lots (Forex)',
+    distUnitVi: 'pips',
+    distUnitEn: 'pips',
+    lotFactor: 100000 // 1 std lot = $100,000
+  },
+  vn: {
+    setup: '⚡ 1st BREAK BUY · STOCK MODE (82/100)',
+    vol: 'HOSE:FPT · RVOL 2.15 (D1)',
+    entry: 138.50,
+    slDist: 4.20,
+    pbEntry: 136.40,
+    pbSlDist: 2.75,
+    decimals: 2,
+    unitVi: 'Cổ phiếu (Quy đổi)',
+    unitEn: 'Shares (Scaled)',
+    distUnitVi: 'nghìn đ',
+    distUnitEn: 'k VND',
+    lotFactor: 0.4 // illustrative scaled lot
+  }
+};
+
+function setSimPreset(key) {
+  scSimState.preset = key;
+  var btns = document.querySelectorAll('#sim-preset-group .sc-sim-preset-btn');
+  btns.forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-preset') === key);
+  });
+  updateSimCalculations();
+}
+
+function setSimEntryMode(mode) {
+  scSimState.mode = mode;
+  var btnClose = document.getElementById('sim-mode-close');
+  var btnPb = document.getElementById('sim-mode-pb');
+  if (btnClose) btnClose.classList.toggle('active', mode === 'close');
+  if (btnPb) btnPb.classList.toggle('active', mode === 'pullback');
+  updateSimCalculations();
+}
+
+function updateSimCalculations() {
+  var capEl = document.getElementById('sim-cap-range');
+  var riskEl = document.getElementById('sim-risk-range');
+  if (!capEl || !riskEl) return;
+
+  var cap = parseFloat(capEl.value) || 10000;
+  var riskPct = parseFloat(riskEl.value) || 1.0;
+  var riskUsd = cap * (riskPct / 100);
+  var isEn = document.documentElement.lang === 'en';
+
+  var p = scPresets[scSimState.preset] || scPresets.xau;
+  var isPb = scSimState.mode === 'pullback';
+  var entry = isPb ? p.pbEntry : p.entry;
+  var slDist = isPb ? p.pbSlDist : p.slDist;
+
+  var slPrice = entry - slDist;
+  var tp1Price = entry + slDist;
+  var tp2Price = entry + (slDist * 2);
+  var slPct = ((slDist / entry) * 100).toFixed(2);
+
+  document.getElementById('sim-cap-label').textContent = '$' + cap.toLocaleString('en-US');
+  document.getElementById('sim-risk-label').textContent = riskPct.toFixed(2).replace(/\.00$/, '.0') + '% ($' + riskUsd.toLocaleString('en-US', {maximumFractionDigits: 0}) + ')';
+
+  document.getElementById('sim-badge-setup').textContent = p.setup;
+  document.getElementById('sim-badge-vol').textContent = p.vol;
+
+  var entryTag = document.getElementById('sim-entry-tag');
+  if (entryTag) {
+    entryTag.textContent = isPb ? (isEn ? '⏳ 50% PULLBACK' : '⏳ HỒI 50% ENTRY') : '▶ ENTRY';
+  }
+
+  document.getElementById('sim-price-entry').textContent = entry.toFixed(p.decimals);
+  document.getElementById('sim-price-sl').textContent = slPrice.toFixed(p.decimals);
+  document.getElementById('sim-price-tp1').textContent = tp1Price.toFixed(p.decimals);
+  document.getElementById('sim-price-tp2').textContent = tp2Price.toFixed(p.decimals);
+
+  document.getElementById('sim-loss-sl').textContent = '-$' + riskUsd.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' (-1.0R)';
+  document.getElementById('sim-gain-tp1').textContent = '+$' + riskUsd.toLocaleString('en-US', {maximumFractionDigits: 0}) + ' (+1.0R)';
+  document.getElementById('sim-gain-tp2').textContent = '+$' + (riskUsd * 2).toLocaleString('en-US', {maximumFractionDigits: 0}) + ' (+2.0R)';
+
+  var rawLot = riskUsd / (slDist * p.lotFactor);
+  var lotStr = scSimState.preset === 'vn'
+    ? Math.max(100, Math.round((riskUsd * 26) / slDist / 100) * 100).toLocaleString('en-US')
+    : Math.max(0.01, rawLot).toFixed(2);
+
+  document.getElementById('sim-lot-output').textContent = (isEn ? 'Size: ' : 'Khối lượng: ') + lotStr + ' ' + (isEn ? p.unitEn : p.unitVi);
+
+  var distLabel = scSimState.preset === 'eur'
+    ? (slDist * 10000).toFixed(1) + ' pips (' + slPct + '%)'
+    : slDist.toFixed(p.decimals) + ' ' + (isEn ? p.distUnitEn : p.distUnitVi) + ' (' + slPct + '%)';
+  document.getElementById('sim-sl-dist').textContent = distLabel;
+
+  var blendedUsd = riskUsd * 1.5;
+  document.getElementById('sim-blended-r').textContent = '+1.5R (+$' + blendedUsd.toLocaleString('en-US', {maximumFractionDigits: 0}) + ')';
+
+  /* Update Live Dynamic SVG Chart inside Simulator */
+  var tpBox = document.getElementById('sim-svg-tp-box');
+  var slBox = document.getElementById('sim-svg-sl-box');
+  var entLine = document.getElementById('sim-svg-entry-line');
+  var pathEl = document.getElementById('sim-svg-path');
+  var entTxt = document.getElementById('sim-svg-ent-txt');
+  var tp2Txt = document.getElementById('sim-svg-tp2-txt');
+  var slTxt = document.getElementById('sim-svg-sl-txt');
+  if (tpBox && slBox && entLine && pathEl) {
+    if (isPb) {
+      tpBox.setAttribute('y', '26');
+      tpBox.setAttribute('height', '72');
+      entLine.setAttribute('y1', '98');
+      entLine.setAttribute('y2', '98');
+      slBox.setAttribute('y', '98');
+      slBox.setAttribute('height', '26');
+      pathEl.setAttribute('d', 'M182 76 L218 98 L268 68 L330 58 L405 36 L485 26');
+      if (entTxt) entTxt.setAttribute('y', '94');
+    } else {
+      tpBox.setAttribute('y', '22');
+      tpBox.setAttribute('height', '68');
+      entLine.setAttribute('y1', '90');
+      entLine.setAttribute('y2', '90');
+      slBox.setAttribute('y', '90');
+      slBox.setAttribute('height', '36');
+      pathEl.setAttribute('d', 'M182 82 L225 90 L275 64 L335 56 L410 32 L485 22');
+      if (entTxt) entTxt.setAttribute('y', '86');
+    }
+    if (entTxt) entTxt.textContent = (isPb ? '⏳ 50% PB ' : '▶ ENTRY ') + entry.toFixed(p.decimals);
+    if (tp2Txt) tp2Txt.textContent = '🎯 TP2 ' + tp2Price.toFixed(p.decimals) + ' (+$' + (riskUsd * 2).toLocaleString('en-US', {maximumFractionDigits: 0}) + ')';
+    if (slTxt) slTxt.textContent = '🛑 F-SL ' + slPrice.toFixed(p.decimals) + ' (-$' + riskUsd.toLocaleString('en-US', {maximumFractionDigits: 0}) + ')';
+  }
+}
+
+/* 5. Interactive 4-Stage Algorithmic Pipeline Controller */
+var scPipeIdx = 0;
+var scPipeTimer = null;
+function selectPipeStage(idx) {
+  scPipeIdx = (idx + 4) % 4;
+  var tabs = document.querySelectorAll('#sc-pipeline .sc-pipe-tab');
+  var panels = document.querySelectorAll('#sc-pipeline .sc-pipe-stage');
+  tabs.forEach(function(t, i) { t.classList.toggle('active', i === scPipeIdx); });
+  panels.forEach(function(p, i) { p.classList.toggle('active', i === scPipeIdx); });
+}
+function startPipeTimer() {
+  if (scPipeTimer) clearInterval(scPipeTimer);
+  scPipeTimer = setInterval(function() {
+    selectPipeStage(scPipeIdx + 1);
+  }, 5500);
+}
+(function() {
+  var pipeEl = document.getElementById('sc-pipeline');
+  if (pipeEl) {
+    pipeEl.addEventListener('mouseenter', function() { if (scPipeTimer) clearInterval(scPipeTimer); });
+    pipeEl.addEventListener('mouseleave', startPipeTimer);
+    startPipeTimer();
+  }
+
+  /* 6. Animated Quantitative Number Counters */
+  var cntEls = document.querySelectorAll('.sc-count');
+  if ('IntersectionObserver' in window && cntEls.length) {
+    var cio = new IntersectionObserver(function(entries) {
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        cio.unobserve(el);
+        var target = parseInt(el.getAttribute('data-target') || '0', 10);
+        var pref = el.getAttribute('data-prefix') || '';
+        var suf = el.getAttribute('data-suffix') || '';
+        var start = performance.now();
+        var dur = 1200;
+        function tick(now) {
+          var p = Math.min(1, (now - start) / dur);
+          var ease = 1 - Math.pow(1 - p, 3);
+          el.textContent = pref + Math.round(target * ease) + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.25 });
+    cntEls.forEach(function(c) { cio.observe(c); });
+  }
+
+  /* 7. Interactive Hero Quantum Particle Constellation Canvas */
+  var cvs = document.getElementById('sc-particle-canvas');
+  if (cvs && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var ctx = cvs.getContext('2d');
+    var w = 0, h = 0, nodes = [], mouse = { x: -9999, y: -9999 };
+    function resize() {
+      var rect = cvs.parentElement.getBoundingClientRect();
+      w = cvs.width = rect.width;
+      h = cvs.height = rect.height;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    cvs.parentElement.addEventListener('pointermove', function(e) {
+      var r = cvs.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    }, { passive: true });
+    cvs.parentElement.addEventListener('pointerleave', function() {
+      mouse.x = -9999; mouse.y = -9999;
+    });
+    var count = window.innerWidth < 768 ? 22 : 42;
+    for (var i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * (w || 1200),
+        y: Math.random() * (h || 700),
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 1.8 + 1,
+        gold: i % 5 === 0
+      });
+    }
+    function drawParticles() {
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = n.gold ? 'rgba(243,190,98,0.75)' : 'rgba(56,213,231,0.65)';
+        ctx.fill();
+        for (var j = i + 1; j < nodes.length; j++) {
+          var m = nodes[j];
+          var dx = n.x - m.x, dy = n.y - m.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 135) {
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(m.x, m.y);
+            ctx.strokeStyle = 'rgba(56,213,231,' + ((1 - dist / 135) * 0.18).toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+        var mdx = n.x - mouse.x, mdy = n.y - mouse.y;
+        var mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < 170) {
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = 'rgba(243,190,98,' + ((1 - mdist / 170) * 0.35).toFixed(3) + ')';
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        }
+      }
+      requestAnimationFrame(drawParticles);
+    }
+    requestAnimationFrame(drawParticles);
+  }
+})();
+
+document.addEventListener('kz:lang', updateSimCalculations);
+window.addEventListener('DOMContentLoaded', updateSimCalculations);
 </script>
 </body>
 </html>
