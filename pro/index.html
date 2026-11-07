@@ -331,14 +331,103 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 
 /* ===== SCROLL CRAFT PRO MOTION UPGRADE FOR AURORA PRO ===== */
 #sc-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:100;background:linear-gradient(90deg,#F3BE62 0%,#38D5E7 55%,#B9A8F5 100%);box-shadow:0 0 12px rgba(243,190,98,.75);transition:width .08s linear;pointer-events:none}
-.sc-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
-.sc-reveal.sc-visible{opacity:1;transform:translateY(0)}
+/* Fail-safe Reveal Choreography: Always visible by default (Never Blank) */
+.sc-reveal{opacity:1;transform:none;transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.sc-motion .sc-reveal:not(.sc-visible):not(.is-visible){opacity:0;transform:translateY(24px)}
+.sc-reveal.sc-visible,.sc-reveal.is-visible{opacity:1!important;transform:none!important}
 .instrument{position:relative;overflow:hidden;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s cubic-bezier(.16,1,.3,1)}
 .instrument::before{content:"";position:absolute;left:0;right:0;height:2px;top:-4px;background:linear-gradient(90deg,transparent,rgba(243,190,98,.8),rgba(56,213,231,.85),transparent);z-index:5;pointer-events:none;animation:scProScan 6.5s ease-in-out infinite}
 @keyframes scProScan{0%{top:0%;opacity:0}12%{opacity:.85}88%{opacity:.85}100%{top:100%;opacity:0}}
 .setup,.layer-card,.plan,.shot{transition:transform .32s cubic-bezier(.16,1,.3,1),box-shadow .32s cubic-bezier(.16,1,.3,1),border-color .28s}
 .setup:hover,.layer-card:hover,.plan:hover,.shot:hover{transform:translateY(-5px);box-shadow:0 20px 42px -16px rgba(2,8,20,.6),0 0 28px -8px rgba(243,190,98,.22);border-color:rgba(243,190,98,.45)}
 @media (prefers-reduced-motion:reduce){.sc-reveal{opacity:1!important;transform:none!important;transition:none!important}.instrument::before{display:none}}
+
+/* =====================================================================
+   SCROLL CRAFT V3 · AURORA PRO "INSTITUTIONAL ORDER-FLOW THEATER"
+   Gold × Violet identity · 100% hand-written CSS · zero dependencies
+   ===================================================================== */
+#pr-hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.8}
+#pr-cursor-aura{position:fixed;left:0;top:0;width:560px;height:560px;border-radius:50%;pointer-events:none;z-index:1;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s;background:radial-gradient(circle,rgba(243,190,98,.09),rgba(185,168,245,.05) 40%,transparent 70%);mix-blend-mode:screen}
+html[data-theme="light"] #pr-cursor-aura{mix-blend-mode:multiply;background:radial-gradient(circle,rgba(168,106,6,.07),rgba(109,79,208,.05) 40%,transparent 70%)}
+@media (pointer:coarse),(max-width:900px){#pr-cursor-aura{display:none}}
+
+/* Kinetic quant strip */
+.pr-quant{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:1160px;margin:-10px auto 0;padding:0 28px 30px;position:relative;z-index:2}
+@media(min-width:900px){.pr-quant{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:560px){.pr-quant{padding:0 18px 24px}}
+.pr-q{position:relative;border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;background:linear-gradient(160deg,var(--kz-surface),var(--kz-deep));overflow:hidden}
+.pr-q::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#F3BE62,#B9A8F5,transparent);opacity:.7}
+.pr-q b{display:block;font-size:clamp(24px,3vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1;background:linear-gradient(90deg,#F3BE62,#38D5E7 60%,#B9A8F5);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+.pr-q span{font-size:13.5px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+
+/* Replay theater */
+.pr-replay{padding:84px 0;position:relative;overflow:hidden;background:radial-gradient(900px 420px at 12% 0%,rgba(243,190,98,.10),transparent 65%),radial-gradient(800px 400px at 90% 100%,rgba(185,168,245,.12),transparent 65%),var(--bg)}
+.pr-eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;padding:6px 12px;border-radius:999px;border:1px solid rgba(243,190,98,.45);color:var(--kz-gold);font-size:12.5px;font-weight:800;letter-spacing:.04em}
+.pr-eyebrow i{width:8px;height:8px;border-radius:50%;background:#34D399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:prPing 1.8s infinite}
+@keyframes prPing{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+@property --pr-ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+.pr-shell{position:relative;border-radius:24px;padding:18px;background:#0A1222;color:#E6EEF8;border:1px solid rgba(243,190,98,.28);box-shadow:0 34px 90px -24px rgba(0,0,0,.75),0 0 46px -10px rgba(243,190,98,.18)}
+.pr-shell::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--pr-ang),transparent 0 68%,#F3BE62 80%,#B9A8F5 90%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:prSpin 7s linear infinite;pointer-events:none}
+@keyframes prSpin{to{--pr-ang:360deg}}
+@media(min-width:768px){.pr-shell{padding:26px}}
+.pr-shell strong{color:#fff}
+.pr-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.pr-scens,.pr-tools{display:flex;flex-wrap:wrap;gap:8px}
+.pr-btn{font:700 12.5px/1.2 var(--font);padding:9px 13px;border-radius:11px;border:1px solid rgba(255,255,255,.13);background:rgba(18,29,52,.9);color:#A9B8CC;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s;white-space:nowrap}
+.pr-btn:hover{color:#fff;border-color:rgba(243,190,98,.55);transform:translateY(-1px)}
+.pr-btn.active{color:#fff;border-color:#F3BE62;background:linear-gradient(135deg,rgba(243,190,98,.26),rgba(185,168,245,.16));box-shadow:0 8px 24px -8px rgba(243,190,98,.45)}
+.pr-btn.active[data-scen="ghost"]{border-color:#FB7185;background:linear-gradient(135deg,rgba(244,63,94,.28),rgba(225,29,72,.14));box-shadow:0 8px 24px -8px rgba(244,63,94,.45)}
+.pr-btn.gold{background:linear-gradient(135deg,#F3BE62,#FFD98A);color:#2A1B00;border-color:transparent;box-shadow:0 8px 22px -6px rgba(243,190,98,.55)}
+.pr-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+@media(min-width:1024px){.pr-grid{grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:22px}}
+.pr-stage{position:relative;border-radius:18px;overflow:hidden;background:#050B17;border:1px solid rgba(243,190,98,.22);display:flex;flex-direction:column}
+#pr-canvas{display:block;width:100%;height:auto;aspect-ratio:820/360;cursor:crosshair;touch-action:pan-y}
+.pr-hud{position:absolute;top:10px;left:12px;right:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;pointer-events:none}
+.pr-pill{font:700 11px/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:5px 9px;border-radius:8px;background:rgba(5,11,23,.85);border:1px solid rgba(243,190,98,.3);color:#E6EEF8;backdrop-filter:blur(6px)}
+@media(max-width:640px){.pr-hud{display:none}}
+.pr-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;justify-content:space-between;padding:12px 14px;background:rgba(10,18,34,.96);border-top:1px solid rgba(255,255,255,.08);margin-top:auto}
+.pr-ctrl-l{display:flex;gap:8px;flex-wrap:wrap}
+.pr-scrub{flex:1;min-width:190px;display:flex;align-items:center;gap:10px;font:600 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#94A3B8}
+.pr-scrub b{color:#fff;min-width:30px;text-align:right}
+.pr-range{-webkit-appearance:none;appearance:none;flex:1;height:6px;border-radius:999px;background:linear-gradient(90deg,#F3BE62 var(--p,50%),#22314C var(--p,50%));outline:none;cursor:pointer}
+.pr-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:#F3BE62;border:2px solid #1A1200;box-shadow:0 0 12px rgba(243,190,98,.85)}
+.pr-range::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#F3BE62;border:2px solid #1A1200}
+.pr-side{display:flex;flex-direction:column;gap:12px}
+.pr-card{border-radius:15px;padding:14px 15px;background:rgba(14,24,44,.92);border:1px solid rgba(255,255,255,.08)}
+.pr-cap{font:700 10.5px/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.05em;text-transform:uppercase;color:#8FA3BF;margin-bottom:10px;display:flex;justify-content:space-between;gap:8px}
+.pr-cap em{font-style:normal;color:#F3BE62}
+.pr-layer{display:grid;grid-template-columns:100px minmax(0,1fr) 30px;align-items:center;gap:8px;margin:7px 0;font-size:12.5px;color:#C9D5E4}
+.pr-layer .t{height:7px;border-radius:4px;background:#1C2A45;overflow:hidden}
+.pr-layer .t i{display:block;height:100%;width:0;border-radius:4px;transition:width .6s cubic-bezier(.16,1,.3,1)}
+.pr-layer b{text-align:right;color:#fff;font-variant-numeric:tabular-nums}
+.pr-verdict{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;gap:8px;font-weight:700;font-size:12.5px}
+.pr-log{font-size:12.5px;line-height:1.55;color:#DCE6F2;min-height:58px}
+.pr-split{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4px;margin-top:10px}
+.pr-split.two{grid-template-columns:1fr 1fr}
+.pr-split span{font:700 10.5px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;text-align:center;padding:7px 2px;border-radius:7px;background:#16233C;color:#8FA3BF;border:1px solid transparent;transition:all .3s}
+.pr-split span.on{background:rgba(31,203,142,.18);color:#34D399;border-color:rgba(31,203,142,.45)}
+.pr-split span.run.on{background:rgba(185,168,245,.2);color:#D4C8FF;border-color:rgba(185,168,245,.5)}
+.pr-split span.off{background:rgba(244,63,94,.14);color:#FB7185;border-color:rgba(244,63,94,.4)}
+.pr-stream{font:600 11px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#050B17;border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:8px 10px;height:128px;overflow:auto;color:#7F93AD}
+.pr-stream div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:prIn .35s ease}
+.pr-stream .ev{color:#F3BE62}
+.pr-stream .bl{color:#FB7185}
+@keyframes prIn{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.pr-replay .cap{margin-top:14px}
+
+/* 3D holographic foil */
+.pr-holo{position:relative;transform-style:preserve-3d;will-change:transform;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .3s,border-color .3s}
+.pr-holo::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:linear-gradient(115deg,transparent 30%,rgba(243,190,98,.10) 45%,rgba(185,168,245,.13) 52%,transparent 66%);background-size:220% 220%;background-position:var(--hx,50%) var(--hy,50%);z-index:1}
+.pr-holo:hover::before{opacity:1}
+
+/* Floating command dock */
+.pr-dock{position:fixed;left:50%;bottom:18px;transform:translate(-50%,24px);z-index:55;display:flex;gap:4px;align-items:center;padding:6px;border-radius:999px;background:rgba(8,14,28,.88);border:1px solid rgba(243,190,98,.38);box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 30px -6px rgba(243,190,98,.25);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);opacity:0;pointer-events:none;transition:opacity .3s,transform .35s cubic-bezier(.16,1,.3,1);max-width:calc(100vw - 20px);overflow-x:auto;scrollbar-width:none}
+.pr-dock::-webkit-scrollbar{display:none}
+.pr-dock.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.pr-dock a{font:700 12.5px/1 var(--font);color:#C9D5E4;text-decoration:none;padding:9px 13px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+.pr-dock a:hover{background:rgba(243,190,98,.14);color:#fff}
+.pr-dock a.cta{background:linear-gradient(135deg,#F3BE62,#FFD98A);color:#2A1B00}
+@media (prefers-reduced-motion:reduce){.pr-shell::before,.pr-eyebrow i{animation:none}}
 </style>
 </head>
 <body>
@@ -352,7 +441,7 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </header>
 <main id="top">
 <!-- HERO -->
-<section aria-labelledby="hero-title" class="hero kz-has-aurora"><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
+<section aria-labelledby="hero-title" class="hero kz-has-aurora"><canvas aria-hidden="true" id="pr-hero-canvas"></canvas><div aria-hidden="true" class="kz-aurora"><i></i><i></i><i></i></div>
 <div class="wrap">
 <div>
 <p data-i18n="k114" style="display:inline-block;margin:0 0 14px;padding:5px 12px;border-radius:999px;border:1px solid color-mix(in srgb,var(--kz-gold,#E9B949) 45%,transparent);color:var(--kz-gold,#E9B949);font-size:13px;font-weight:700;letter-spacing:.02em">Phiên bản V15.4 · Core Parity &amp; SMC Hardened</p>
@@ -427,6 +516,116 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <div class="verdict"><span data-i18n="k11">Volume · Phiên</span><span data-i18n="k12">✓ đạt</span></div>
 </div>
 </figure>
+</div>
+</section>
+<!-- KINETIC QUANT STRIP -->
+<div class="pr-quant sc-reveal">
+<div class="pr-q kz-spot pr-holo">
+<b>3 HỌ SETUP</b>
+<span data-i18n="pr_q1">BREAK · SUNNY · SMC ngang hàng, đồng bộ một cách quản trị lệnh</span>
+</div>
+<div class="pr-q kz-spot pr-holo">
+<b>3 TẦNG ĐIỂM</b>
+<span data-i18n="pr_q2">Base (0–100) + Setup Quality riêng + Tier 3 Institutional Flow</span>
+</div>
+<div class="pr-q kz-spot pr-holo">
+<b>3 LỰA CHỌN</b>
+<span data-i18n="pr_q3">Market Preset × Trading Style × Entry Filter Profile độc lập hoàn toàn</span>
+</div>
+<div class="pr-q kz-spot pr-holo">
+<b>100% CLOSED</b>
+<span data-i18n="pr_q4">Chốt nến mới kích hoạt lệnh · Swing SMC chuẩn xác sau 3 nến</span>
+</div>
+</div>
+<!-- LIVE BAR-BY-BAR SMC REPLAY THEATER -->
+<section aria-labelledby="pr-replay-title" class="pr-replay" id="pr-live-replay">
+<div class="wrap">
+<div class="head sc-reveal" style="text-align:center;max-width:760px;margin:0 auto 36px">
+<span class="pr-eyebrow"><i></i><span data-i18n="pr_r_eye">INSTITUTIONAL ORDER-FLOW THEATER · TUA TỪNG CÂY NẾN</span></span>
+<h2 data-i18n="pr_r_h" id="pr-replay-title">Xem AURORA PRO Quét Thanh Khoản, Bắt MSS &amp; Kéo Runner</h2>
+<p class="lede" data-i18n="pr_r_p" style="margin:0 auto">Bấm <strong>▶ Chạy Replay</strong> hoặc kéo thanh trượt nến để trải nghiệm cách <strong>SMC SWEEP + MSS</strong>, lệnh chờ <strong>Pullback 50%</strong>, tính năng <strong>Runner sau TP2</strong> và bộ lọc <strong>Cảnh báo ⚠SL &gt; 4 ATR</strong> hoạt động ngay trên chart thật.</p>
+</div>
+<div class="pr-shell pr-holo sc-reveal">
+<div class="pr-top">
+<div class="pr-scens" id="prScenGroup">
+<button class="pr-btn active" data-scen="sweep" onclick="setPrScenario('sweep')" type="button">
+<span>💧</span><span data-i18n="pr_s_sweep">XAUUSD · SMC SWEEP + MSS (+2.5R Runner)</span>
+</button>
+<button class="pr-btn" data-scen="pullback" onclick="setPrScenario('pullback')" type="button">
+<span>⚡</span><span data-i18n="pr_s_pb">NQ1! · 1st BREAK + PULLBACK 50% (+2.0R)</span>
+</button>
+<button class="pr-btn" data-scen="ghost" onclick="setPrScenario('ghost')" type="button">
+<span>⛔</span><span data-i18n="pr_s_ghost">EURUSD · CHẶN LỆNH MA: ⚠SL &gt; 4 ATR (CỨU -1R)</span>
+</button>
+</div>
+<div class="pr-tools">
+<button class="pr-btn" id="prSoundBtn" onclick="togglePrSound()" type="button">
+<span id="prSoundIco">🔇</span><span data-i18n="pr_snd_off" id="prSoundTxt">Âm thanh: Tắt</span>
+</button>
+<button class="pr-btn" onclick="cyclePrSpeed()" type="button">
+<span>⚡</span><span id="prSpeedTxt">1.0x</span>
+</button>
+</div>
+</div>
+<div class="pr-grid">
+<div class="pr-stage">
+<div class="pr-hud">
+<span class="pr-pill" id="prHudSym">🥇 OANDA:XAUUSD · M15 · Futures COMEX:GC1!</span>
+<span class="pr-pill" id="prHudBar">NẾN #26 / 38 · BARSTATE.ISCONFIRMED ✓</span>
+</div>
+<canvas aria-label="Biểu đồ tương tác tua từng nến của Aurora PRO" height="360" id="pr-canvas" width="820"></canvas>
+<div class="pr-ctrl">
+<div class="pr-ctrl-l">
+<button class="pr-btn gold" id="prPlayBtn" onclick="togglePrPlay()" type="button">
+<span id="prPlayIco">▶</span><span data-i18n="pr_play" id="prPlayLbl">Chạy Replay</span>
+</button>
+<button class="pr-btn" onclick="stepPrBar(1)" title="Đóng cây nến kế tiếp" type="button">
+<span data-i18n="pr_step">⏭ +1 Nến</span>
+</button>
+<button class="pr-btn" onclick="resetPrBar()" title="Quay về đầu sóng" type="button">
+<span>⏮</span>
+</button>
+</div>
+<div class="pr-scrub">
+<span data-i18n="pr_scrub">Tua nến:</span>
+<input class="pr-range" id="prScrubber" max="38" min="8" oninput="scrubPrBar(this.value)" step="1" type="range" value="26"/>
+<b id="prScrubVal">#26</b>
+</div>
+</div>
+</div>
+<div class="pr-side">
+<div class="pr-card">
+<div class="pr-cap"><span data-i18n="pr_c1">ĐÁNH GIÁ ĐA TẦNG (MULTI-LAYER)</span><em id="prGradeTag">BUY A · 84 · Q76</em></div>
+<div class="pr-layer"><span>Base Score</span><div class="t"><i id="prBarBase" style="width:84%;background:#38D5E7"></i></div><b id="prValBase">84</b></div>
+<div class="pr-layer"><span id="prLblQ">SMC Quality</span><div class="t"><i id="prBarQ" style="width:76%;background:#F3BE62"></i></div><b id="prValQ">76</b></div>
+<div class="pr-layer"><span>Tier 3 Flow</span><div class="t"><i id="prBarT3" style="width:71%;background:#B9A8F5"></i></div><b id="prValT3">71</b></div>
+<div class="pr-verdict">
+<span data-i18n="pr_vd">Volume &amp; Phiên</span>
+<span id="prVerdict" style="color:#34D399">✓ ĐẠT (TOD 1.68x)</span>
+</div>
+</div>
+<div class="pr-card">
+<div class="pr-cap"><span data-i18n="pr_c2">KẾ HOẠCH LỆNH &amp; RUNNER</span><strong id="prRStat" style="color:#34D399">+2.5R TOTAL</strong></div>
+<div class="pr-log" id="prLog">💧 Nến #19: Quét râu qua Swing Low, đóng cửa rút chân và phá vỡ MSS! Tự động khóa hộp lệnh Entry 2,412.6 · SL Cấu Trúc 2,398.1.</div>
+<div class="pr-split" id="prSplitBox">
+<span class="on" id="prSplitTP1">TP1: 50% (+1R)</span>
+<span class="on" id="prSplitTP2">TP2: 25% (+2R)</span>
+<span class="run on" id="prSplitRun">RUN: 25% (+4R)</span>
+</div>
+</div>
+<div class="pr-card">
+<div class="pr-cap"><span data-i18n="pr_c3">WEBHOOK JSON LIFECYCLE EVENT</span><em>V15.4</em></div>
+<div class="pr-stream" id="prStream">
+<div class="ev">● ENTRY_MARKET · SMC SWEEP · 2412.6</div>
+<div>&nbsp;↳ TP1 50% · TP2 25% · RUN 25%</div>
+<div class="ev">● TP1_HIT · 2427.1 · SL -&gt; BE</div>
+<div class="ev">● RUNNER_ACTIVATED · Trailing on</div>
+</div>
+</div>
+</div>
+</div>
+<p class="cap fineprint" data-i18n="pr_r_foot" style="margin-top:14px;color:#8FA3BF;text-align:center">Mô phỏng thuật toán trực quan trên canvas 60fps · Số liệu minh họa giao diện, không phải kết quả cam kết đầu tư.</p>
+</div>
 </div>
 </section>
 <!-- SETUPS -->
@@ -690,6 +889,16 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </div>
 </section>
 </main>
+<!-- CURSOR AURA & FLOATING COMMAND DOCK -->
+<div aria-hidden="true" id="pr-cursor-aura"></div>
+<nav aria-label="Thanh điều hướng nhanh PRO" class="pr-dock" id="prDock">
+<a data-i18n="pr_d1" href="#pr-live-replay">🎬 Replay SMC</a>
+<a data-i18n="pr_d2" href="#setup">⚡ 3 Setup</a>
+<a data-i18n="pr_d3" href="#cham-diem">⭐ Chấm Điểm</a>
+<a data-i18n="pr_d4" href="#cai-dat">⚙️ Cài Đặt</a>
+<a data-i18n="pr_d5" href="#goi">💎 So Sánh</a>
+<a class="cta" data-i18n="k5" href="#dang-ky">Đăng ký dùng thử</a>
+</nav>
 <footer>
 <div class="wrap">
 <div>
@@ -890,7 +1099,31 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 "k116": "Pullback limit valid for",
 "k117": "How is V15.4 different from V15.2?",
 "k118": "The Trading Style now only adjusts trade management; entry filters move to a separate Entry Filter Profile box, so choosing Scalping or Prop Firm no longer silently removes setups. SUNNY and SMC have their own volume filters, SMC warns when its structural Stoploss is too wide, and filtered setups in all three families show their reason. After updating, click Defaults to get the new settings and recreate all alerts.",
-"k119": "Runner after TP2"
+"k119": "Runner after TP2",
+"pr_q1": "BREAK · SUNNY · SMC as first-class setups under a unified trade management policy",
+"pr_q2": "Base (0–100) + Setup Quality score + Tier 3 Institutional Flow",
+"pr_q3": "Market Preset × Trading Style × Entry Filter Profile completely decoupled",
+"pr_q4": "Confirmed on candle close · SMC swings verified after 3 bars",
+"pr_r_eye": "INSTITUTIONAL ORDER-FLOW THEATER · BAR-BY-BAR REPLAY",
+"pr_r_h": "Watch AURORA PRO Sweep Liquidity, Confirm MSS &amp; Trail Runners",
+"pr_r_p": "Click <strong>▶ Play Replay</strong> or drag the bar slider to experience how <strong>SMC SWEEP + MSS</strong>, <strong>50% Pullback limits</strong>, <strong>Post-TP2 Runners</strong> and the <strong>Structural ⚠SL &gt; 4 ATR guard</strong> execute on real chart data.",
+"pr_s_sweep": "XAUUSD · SMC SWEEP + MSS (+2.5R Runner)",
+"pr_s_pb": "NQ1! · 1st BREAK + PULLBACK 50% (+2.0R)",
+"pr_s_ghost": "EURUSD · GHOST FILTER: ⚠SL &gt; 4 ATR (SAVED -1R)",
+"pr_snd_off": "Sound: Off",
+"pr_play": "Play Replay",
+"pr_step": "⏭ +1 Bar",
+"pr_scrub": "Scrub bar:",
+"pr_c1": "MULTI-LAYER RATING",
+"pr_c2": "TRADE PLAN &amp; RUNNER",
+"pr_c3": "WEBHOOK JSON LIFECYCLE EVENT",
+"pr_vd": "Volume &amp; Session",
+"pr_r_foot": "60fps canvas simulation · Interface illustration, not investment advice.",
+"pr_d1": "🎬 Replay SMC",
+"pr_d2": "⚡ 3 Setups",
+"pr_d3": "⭐ Scoring",
+"pr_d4": "⚙️ Settings",
+"pr_d5": "💎 Compare"
 };</script>
 <script>
 /* ===== KENVINZONE LANGUAGE ENGINE (VI / EN) =====
@@ -962,8 +1195,24 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
   window.addEventListener('scroll',onScroll,{passive:true});
   onScroll();
 
-  var cards=document.querySelectorAll('.setup, .layer-card, .plan, .shot, .band, .cta, .sec-head');
+  var cards=document.querySelectorAll('.setup, .layer-card, .plan, .shot, .pr-q, .pr-card');
   cards.forEach(function(el){el.classList.add('kz-spot','sc-reveal');});
+
+  var revEls=document.querySelectorAll('.sc-reveal');
+  function revealInView(){
+    var vh=window.innerHeight||800;
+    revEls.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top<vh+100 && r.bottom>-100){
+        el.classList.add('sc-visible');
+      }
+    });
+  }
+
+  // Safely activate CSS motion animations
+  document.documentElement.classList.add('sc-motion');
+  revealInView();
+
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
@@ -972,11 +1221,15 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
           io.unobserve(en.target);
         }
       });
-    },{threshold:0.1,rootMargin:'0px 0px -35px 0px'});
-    cards.forEach(function(el){io.observe(el);});
+    },{threshold:0.05,rootMargin:'80px 0px 80px 0px'});
+    revEls.forEach(function(el){io.observe(el);});
   } else {
-    cards.forEach(function(el){el.classList.add('sc-visible');});
+    revEls.forEach(function(el){el.classList.add('sc-visible');});
   }
+
+  window.addEventListener('scroll',revealInView,{passive:true});
+  window.addEventListener('load',revealInView);
+  window.addEventListener('hashchange',function(){setTimeout(revealInView,60);});
 
   var inst=document.querySelector('.instrument');
   if(inst&&window.matchMedia('(pointer:fine)').matches){
@@ -1034,6 +1287,640 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
       showErr(tr('fail')); window.open(tg,'_blank','noopener');
     }
   });
+})();
+</script>
+
+<script>
+/* =====================================================================
+   SCROLL CRAFT V3 · AURORA PRO FLAGSHIP ENGINE
+   1. Quantum Particle Constellation (Gold × Violet)
+   2. Live Bar-by-Bar SMC Replay Engine with Web Audio Synth
+   3. 3D Holographic Foil Glare & Perspective Tilt
+   4. Floating Command Dock & Ambient Cursor Aura
+   ===================================================================== */
+
+/* 1. Quantum Particle Constellation (Gold × Violet) */
+(function(){
+  var cvs=document.getElementById('pr-hero-canvas');
+  if(!cvs||window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var ctx=cvs.getContext('2d'), w=0, h=0, pts=[], mouse={x:-9999,y:-9999};
+  function resize(){
+    var r=cvs.parentElement.getBoundingClientRect();
+    w=cvs.width=r.width; h=cvs.height=r.height;
+  }
+  resize(); window.addEventListener('resize',resize,{passive:true});
+  cvs.parentElement.addEventListener('pointermove',function(e){
+    var r=cvs.getBoundingClientRect();
+    mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+  },{passive:true});
+  cvs.parentElement.addEventListener('pointerleave',function(){mouse.x=-9999;mouse.y=-9999;});
+  var cnt=window.innerWidth<768?20:38;
+  for(var i=0;i<cnt;i++){
+    pts.push({
+      x:Math.random()*(w||1000),y:Math.random()*(h||600),
+      vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,
+      r:Math.random()*1.8+1,
+      violet:i%3===0
+    });
+  }
+  function loop(){
+    ctx.clearRect(0,0,w,h);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>w) p.vx*=-1;
+      if(p.y<0||p.y>h) p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.violet?'rgba(185,168,245,0.7)':'rgba(243,190,98,0.7)';
+      ctx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j];
+        var dx=p.x-q.x, dy=p.y-q.y, d=Math.sqrt(dx*dx+dy*dy);
+        if(d<130){
+          ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle=p.violet?'rgba(185,168,245,'+((1-d/130)*.18).toFixed(3)+')':'rgba(243,190,98,'+((1-d/130)*.16).toFixed(3)+')';
+          ctx.lineWidth=1; ctx.stroke();
+        }
+      }
+      var mx=p.x-mouse.x, my=p.y-mouse.y, md=Math.sqrt(mx*mx+my*my);
+      if(md<160){
+        ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(mouse.x,mouse.y);
+        ctx.strokeStyle='rgba(56,213,231,'+((1-md/160)*.3).toFixed(3)+')';
+        ctx.lineWidth=1.2; ctx.stroke();
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* 2. Live Bar-by-Bar SMC Replay Engine with Web Audio Synth */
+var prReplay = {
+  scen: 'sweep',
+  bar: 26,
+  maxBar: 38,
+  playing: false,
+  timer: null,
+  speedIdx: 0,
+  speeds: [1.0, 2.0, 4.0],
+  soundOn: false,
+  audioCtx: null
+};
+
+var prData = {
+  sweep: {
+    sym: '🥇 OANDA:XAUUSD · M15 · Futures COMEX:GC1!',
+    lblQ: 'SMC Quality',
+    sigBar: 19,
+    tp1Bar: 27,
+    tp2Bar: 33,
+    runBar: 37,
+    baseScore: 84,
+    qScore: 76,
+    t3Score: 71,
+    gradeTag: 'BUY A · 84 · Q76',
+    verdictVi: '✓ ĐẠT (TOD 1.68x · London-NY)',
+    verdictEn: '✓ PASSED (TOD 1.68x · London-NY)',
+    rStatVi: '+2.5R TOTAL (RUNNER ✓)',
+    rStatEn: '+2.5R TOTAL (RUNNER ✓)',
+    split: { tp1: 'TP1: 50% (+1R)', tp2: 'TP2: 25% (+2R)', run: 'RUN: 25% (+4R)' },
+    logVi: '💧 Nến #19: Quét râu qua Swing Low, đóng cửa rút chân và phá vỡ MSS! Tự động khóa hộp lệnh Entry 2,412.6 · SL Cấu Trúc 2,398.1. TP1 chốt 50% dời SL về BE, TP2 chốt 25%, kích hoạt Runner 25% bám theo Trailing!',
+    logEn: '💧 Bar #19: Swept swing low liquidity, closed back inside, and confirmed MSS! Auto-locked Entry 2,412.6 · Structural SL 2,398.1. TP1 +1R locked 50%, SL to BE, Runner trailing toward +2.5R!',
+    stream: [
+      '● ENTRY_MARKET · SMC SWEEP · 2412.6',
+      '  ↳ TP1 50% · TP2 25% · RUN 25%',
+      '● TP1_HIT (+1R) · 2427.1 · SL -> BE',
+      '● TP2_HIT (+2R) · 2441.6 · Lock 25%',
+      '● RUNNER_ACTIVATED · Trailing step-line'
+    ],
+    sweepY: 292,
+    mssY: 236,
+    entryY: 216,
+    slY: 270,
+    tp1Y: 162,
+    tp2Y: 108,
+    runY: 66,
+    candles: [
+      [220,208,230,224,0.38],[224,218,236,232,0.40],[232,222,240,226,0.35],[226,216,234,220,0.42],
+      [220,212,230,228,0.46],[228,222,238,234,0.39],[234,228,245,240,0.45],[240,230,248,236,0.41],
+      [236,226,242,230,0.48],[230,218,236,222,0.52],[222,212,228,218,0.55],[218,206,224,212,0.60],
+      [212,202,220,216,0.50],[216,210,226,222,0.44],[222,216,235,230,0.48],[230,220,245,242,0.58],
+      [242,235,296,252,0.92], /* #17: Sweeps below swing low (292) */
+      [252,238,260,244,0.72],
+      [244,208,248,216,0.98], /* #19: MSS Breakout Candle (breaks 236 MSS line) */
+      [216,204,222,210,0.70],[210,198,218,204,0.65],[204,192,210,196,0.68],[196,182,202,188,0.74],
+      [188,174,194,180,0.78],[180,166,186,172,0.82],[172,158,178,164,0.85],[164,152,170,158,0.94], /* #27 TP1 hit */
+      [158,146,164,150,0.72],[150,136,156,142,0.76],[142,128,148,134,0.80],[134,120,140,126,0.82],
+      [126,112,132,118,0.88],[118,102,124,106,0.96], /* #33 TP2 hit */
+      [106,94,112,98,0.80],[98,84,104,88,0.84],[88,74,94,78,0.86],[78,60,84,66,0.92], /* #37 Runner hit */
+      [66,54,72,60,0.75]
+    ]
+  },
+  pullback: {
+    sym: '📈 CME_MINI:NQ1! · H1 · Intraday Momentum',
+    lblQ: 'Break Quality',
+    sigBar: 18,
+    tp1Bar: 28,
+    tp2Bar: 35,
+    runBar: 99,
+    baseScore: 88,
+    qScore: 82,
+    t3Score: 68,
+    gradeTag: 'BUY A · 88 · Q82',
+    verdictVi: '✓ ĐẠT (TOD 1.95x · Volume Gate Passed)',
+    verdictEn: '✓ PASSED (TOD 1.95x · Volume Gate Passed)',
+    rStatVi: '+2.0R (Pullback Limit Fill)',
+    rStatEn: '+2.0R (Pullback Limit Fill)',
+    split: { tp1: 'TP1: 50% (+1R)', tp2: 'TP2: 50% (+2R)', run: 'RUN: Off' },
+    logVi: '⚡ Nến #18: Nến 1st Break dài 2.2 ATR! Hệ thống KHÔNG mua đuổi đỉnh mà tự động đặt LIMIT PULLBACK 50% tại 20,410. Khớp lệnh tối ưu ở nến #21 và chạy thẳng tới TP1, TP2!',
+    logEn: '⚡ Bar #18: 1st Break candle range 2.2 ATR! System avoided chasing top and placed a 50% PULLBACK LIMIT order at 20,410. Filled at bar #21 and hit TP1, TP2!',
+    stream: [
+      '● PLACE_LIMIT · PULLBACK 50% · 20410.0',
+      '● LIMIT_TOUCH_SIM · Order filled at bar #21',
+      '● TP1_HIT (+1R) · 20490.0 · SL -> BE',
+      '● TP2_HIT (+2R) · 20570.0 · +2.0R win'
+    ],
+    sweepY: null,
+    mssY: null,
+    entryY: 210,
+    slY: 254,
+    tp1Y: 166,
+    tp2Y: 122,
+    runY: null,
+    candles: [
+      [260,250,270,265,0.4],[265,255,274,260,0.45],[260,252,268,256,0.38],[256,248,262,252,0.44],
+      [252,244,258,248,0.48],[248,240,254,244,0.42],[244,236,250,240,0.46],[240,232,246,236,0.50],
+      [236,228,242,232,0.52],[232,224,238,228,0.55],[228,220,234,224,0.54],[224,216,230,220,0.58],
+      [220,212,226,218,0.56],[218,210,224,214,0.60],[214,206,220,210,0.62],[210,202,216,206,0.65],
+      [206,198,212,202,0.70],
+      [202,158,206,164,0.98], /* #18: Huge Break Candle > 2 ATR */
+      [164,156,182,176,0.68],
+      [176,168,198,192,0.62],
+      [192,185,214,210,0.75], /* #21: Pullback 50% Touch & Fill */
+      [210,198,216,202,0.72],[202,190,208,194,0.74],[194,180,200,186,0.78],[186,172,192,178,0.80],
+      [178,164,184,170,0.85],[170,158,176,164,0.88],[164,150,170,156,0.92], /* #28 TP1 hit */
+      [156,144,162,148,0.75],[148,136,154,140,0.78],[140,128,146,134,0.82],[134,120,140,126,0.85],
+      [126,114,132,120,0.88],[120,108,126,114,0.90],[114,100,120,106,0.95], /* #35 TP2 hit */
+      [106,94,112,100,0.80],[100,88,106,92,0.78],[92,80,98,84,0.82]
+    ]
+  },
+  ghost: {
+    sym: '⛔ FX:EURUSD · M15 · ⚠SL > 4 ATR Guard',
+    lblQ: 'SMC Quality',
+    sigBar: 19,
+    tp1Bar: 99,
+    tp2Bar: 99,
+    runBar: 99,
+    baseScore: 42,
+    qScore: 38,
+    t3Score: 35,
+    gradeTag: '⛔ BLOCKED (⚠SL 4.8 ATR)',
+    verdictVi: '✗ BỊ CHẶN (SL > 4 ATR & RVOL 0.58x)',
+    verdictEn: '✗ BLOCKED (SL > 4 ATR & RVOL 0.58x)',
+    rStatVi: '🛡 CỨU THUA +1.0R',
+    rStatEn: '🛡 SAVED -1.0R LOSS',
+    split: { tp1: 'TP1: BLOCKED', tp2: 'TP2: BLOCKED', run: 'RUN: BLOCKED' },
+    logVi: '⛔ Nến #19: Phát hiện tín hiệu bung nhưng khoảng cách SL cấu trúc tới 4.8 ATR (vượt trần 4.0 ATR)! AURORA PRO kích hoạt nhãn ⚠SL và CHẶN LỆNH MA, cứu tài khoản khỏi cú sập -1.0R!',
+    logEn: '⛔ Bar #19: Weak impulse with structural SL distance 4.8 ATR (exceeds 4.0 ATR cap)! AURORA PRO flagged ⚠SL and BLOCKED ghost trade, saving -1.0R loss!',
+    stream: [
+      '● SETUP_BLOCKED · EURUSD · 1.0825',
+      '  ↳ REASON: STRUCTURAL_SL_TOO_WIDE (4.8 ATR)',
+      '  ↳ REASON: LOW_RVOL (0.58x)',
+      '● GHOST_TRADE_SAVED · Saved -1.0R'
+    ],
+    sweepY: null,
+    mssY: null,
+    entryY: 200,
+    slY: 310,
+    tp1Y: 145,
+    tp2Y: 90,
+    runY: null,
+    candles: [
+      [220,214,228,224,0.35],[224,218,230,222,0.32],[222,215,226,218,0.30],[218,210,222,214,0.28],
+      [214,208,220,216,0.30],[216,210,224,219,0.26],[219,212,225,215,0.29],[215,208,220,212,0.31],
+      [212,205,216,209,0.27],[209,202,214,206,0.33],[206,198,210,202,0.28],[202,196,208,204,0.25],
+      [204,198,209,201,0.30],[201,194,205,198,0.29],[198,192,202,195,0.31],[195,188,199,192,0.34],
+      [192,186,196,190,0.36],[190,175,194,182,0.38],
+      [182,174,196,192,0.45], /* #19: Fake break, huge distance from swing SL */
+      [192,185,210,205,0.55],[205,198,222,218,0.68],[218,212,234,230,0.75],[230,224,248,242,0.85],
+      [242,236,260,255,0.82],[255,248,272,268,0.76],[268,260,284,278,0.72],[278,270,294,290,0.68],
+      [290,282,305,300,0.62],[300,292,312,308,0.58],[308,300,320,314,0.54],[314,306,325,320,0.50],
+      [320,312,328,324,0.48],[324,316,330,326,0.46],[326,318,332,328,0.44],[328,320,335,330,0.42],
+      [330,322,336,332,0.40],[332,324,338,334,0.38],[334,326,340,335,0.36]
+    ]
+  }
+};
+
+function playPrTone(freq, dur, type){
+  if(!prReplay.soundOn) return;
+  try{
+    var AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC) return;
+    if(!prReplay.audioCtx) prReplay.audioCtx=new AC();
+    var ctx=prReplay.audioCtx;
+    if(ctx.state==='suspended') ctx.resume();
+    var osc=ctx.createOscillator(), gain=ctx.createGain();
+    osc.type=type||'sine';
+    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+    gain.gain.setValueAtTime(0.09, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+(dur||0.2));
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime+(dur||0.2));
+  }catch(e){}
+}
+
+function togglePrSound(){
+  prReplay.soundOn=!prReplay.soundOn;
+  var isEn=document.documentElement.lang==='en';
+  var ico=document.getElementById('prSoundIco');
+  var txt=document.getElementById('prSoundTxt');
+  if(ico) ico.textContent=prReplay.soundOn?'🔊':'🔇';
+  if(txt) txt.textContent=prReplay.soundOn?(isEn?'Sound: On':'Âm thanh: Bật'):(isEn?'Sound: Off':'Âm thanh: Tắt');
+  if(prReplay.soundOn) playPrTone(720, 0.14, 'triangle');
+}
+
+function cyclePrSpeed(){
+  prReplay.speedIdx=(prReplay.speedIdx+1)%prReplay.speeds.length;
+  var s=prReplay.speeds[prReplay.speedIdx];
+  var el=document.getElementById('prSpeedTxt');
+  if(el) el.textContent=s.toFixed(1)+'x';
+  if(prReplay.playing){
+    stopPrLoop(); startPrLoop();
+  }
+}
+
+function setPrScenario(key){
+  prReplay.scen=key;
+  document.querySelectorAll('#prScenGroup .pr-btn').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-scen')===key);
+  });
+  prReplay.bar=12;
+  renderPrFrame();
+  if(!prReplay.playing) togglePrPlay();
+}
+
+function togglePrPlay(){
+  prReplay.playing=!prReplay.playing;
+  var isEn=document.documentElement.lang==='en';
+  var ico=document.getElementById('prPlayIco');
+  var lbl=document.getElementById('prPlayLbl');
+  if(prReplay.playing){
+    if(prReplay.bar>=prReplay.maxBar) prReplay.bar=8;
+    if(ico) ico.textContent='⏸';
+    if(lbl) lbl.textContent=isEn?'Pause':'Tạm dừng';
+    startPrLoop();
+  } else {
+    if(ico) ico.textContent='▶';
+    if(lbl) lbl.textContent=isEn?'Play Replay':'Chạy Replay';
+    stopPrLoop();
+  }
+}
+
+function startPrLoop(){
+  stopPrLoop();
+  var spd=prReplay.speeds[prReplay.speedIdx]||1.0;
+  var interval=Math.round(440/spd);
+  prReplay.timer=setInterval(function(){
+    if(prReplay.bar<prReplay.maxBar){
+      prReplay.bar++;
+      var d=prData[prReplay.scen];
+      if(prReplay.bar===d.sigBar) playPrTone(prReplay.scen==='ghost'?230:784, 0.22, 'triangle');
+      else if(prReplay.bar===d.tp1Bar) playPrTone(880, 0.16, 'sine');
+      else if(prReplay.bar===d.tp2Bar) playPrTone(1046, 0.22, 'sine');
+      else if(prReplay.bar===d.runBar) playPrTone(1318, 0.32, 'sine');
+      renderPrFrame();
+    } else {
+      togglePrPlay();
+    }
+  }, interval);
+}
+
+function stopPrLoop(){
+  if(prReplay.timer){ clearInterval(prReplay.timer); prReplay.timer=null; }
+}
+
+function stepPrBar(delta){
+  if(prReplay.playing) togglePrPlay();
+  prReplay.bar=Math.max(8, Math.min(prReplay.maxBar, prReplay.bar+delta));
+  renderPrFrame();
+}
+
+function resetPrBar(){
+  if(prReplay.playing) togglePrPlay();
+  prReplay.bar=10;
+  renderPrFrame();
+}
+
+function scrubPrBar(val){
+  if(prReplay.playing) togglePrPlay();
+  prReplay.bar=parseInt(val,10)||18;
+  renderPrFrame();
+}
+
+function renderPrFrame(){
+  var cvs=document.getElementById('pr-canvas');
+  if(!cvs) return;
+  var ctx=cvs.getContext('2d');
+  var W=cvs.width, H=cvs.height;
+  var d=prData[prReplay.scen]||prData.sweep;
+  var b=prReplay.bar;
+  var isEn=document.documentElement.lang==='en';
+
+  /* Sync Scrubber & HUD */
+  var sc=document.getElementById('prScrubber');
+  var scVal=document.getElementById('prScrubVal');
+  if(sc) {
+    sc.value=b;
+    var pct=((b-8)/(38-8))*100;
+    sc.style.setProperty('--p', pct+'%');
+  }
+  if(scVal) scVal.textContent='#'+b;
+  var symEl=document.getElementById('prHudSym');
+  if(symEl) symEl.textContent=d.sym;
+  var barEl=document.getElementById('prHudBar');
+  if(barEl) {
+    barEl.textContent='NẾN #'+b+' / '+prReplay.maxBar+(b>=d.sigBar?' · CONFIRMED ✓':' · QUÉT LỰC...');
+  }
+
+  /* Clear Canvas & Grid */
+  ctx.clearRect(0,0,W,H);
+  ctx.strokeStyle='rgba(255,255,255,0.04)';
+  ctx.lineWidth=1;
+  for(var y=45; y<H-35; y+=45){
+    ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+  }
+  for(var x=50; x<W; x+=70){
+    ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H-35); ctx.stroke();
+  }
+
+  var padL=24, stepX=20;
+  var sigX=padL+(d.sigBar-1)*stepX;
+
+  /* SMC Annotations: Sweep Level & MSS Line */
+  if(prReplay.scen==='sweep'){
+    ctx.font='700 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+    if(d.sweepY){
+      ctx.strokeStyle='rgba(243,190,98,0.7)';
+      ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(padL+10*stepX, d.sweepY); ctx.lineTo(sigX+60, d.sweepY); ctx.stroke();
+      ctx.fillStyle='#F3BE62';
+      ctx.fillText('SWING LOW LIQUIDITY SWEPT', padL+10*stepX, d.sweepY-6);
+    }
+    if(b>=d.sigBar && d.mssY){
+      ctx.strokeStyle='rgba(185,168,245,0.85)';
+      ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(padL+14*stepX, d.mssY); ctx.lineTo(sigX+140, d.mssY); ctx.stroke();
+      ctx.fillStyle='#B9A8F5';
+      ctx.fillText('MSS CONFIRMED ▲', padL+14*stepX, d.mssY-6);
+    }
+    ctx.setLineDash([]);
+  }
+
+  /* Draw Plan Boxes on Signal Bar */
+  if(b>=d.sigBar){
+    var boxEndBar=Math.min(b+3, prReplay.maxBar);
+    var boxW=Math.max(120, (boxEndBar-d.sigBar+2)*stepX);
+
+    if(prReplay.scen==='ghost'){
+      ctx.fillStyle='rgba(244,63,94,0.12)';
+      ctx.fillRect(sigX, d.entryY, boxW, d.slY-d.entryY);
+      ctx.strokeStyle='rgba(244,63,94,0.6)';
+      ctx.setLineDash([5,4]);
+      ctx.strokeRect(sigX, d.entryY, boxW, d.slY-d.entryY);
+      ctx.setLineDash([]);
+      ctx.font='800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+      ctx.fillStyle='#FB7185';
+      ctx.fillText('🛑 STRUCTURAL SL 4.8 ATR > 4.0 ATR MAX (⚠SL GUARD)', sigX+8, d.slY-8);
+    } else {
+      /* Vertical Highlight Strip */
+      ctx.fillStyle='rgba(243,190,98,0.08)';
+      ctx.fillRect(sigX-7, 0, 14, H-35);
+
+      /* TP Zone (Green) */
+      ctx.fillStyle='rgba(31,203,142,0.12)';
+      ctx.fillRect(sigX, d.tp2Y, boxW, d.entryY-d.tp2Y);
+      ctx.strokeStyle='rgba(31,203,142,0.55)';
+      ctx.lineWidth=1.2;
+      ctx.strokeRect(sigX, d.tp2Y, boxW, d.entryY-d.tp2Y);
+
+      /* TP1 Line */
+      ctx.strokeStyle='#1FCB8E';
+      ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(sigX, d.tp1Y); ctx.lineTo(sigX+boxW, d.tp1Y); ctx.stroke();
+
+      /* Entry Line */
+      ctx.strokeStyle='#F3BE62';
+      ctx.setLineDash([3,3]);
+      ctx.beginPath(); ctx.moveTo(sigX, d.entryY); ctx.lineTo(sigX+boxW, d.entryY); ctx.stroke();
+      ctx.setLineDash([]);
+
+      /* F-SL Zone */
+      ctx.fillStyle='rgba(255,77,106,0.12)';
+      ctx.fillRect(sigX, d.entryY, boxW, d.slY-d.entryY);
+      ctx.strokeStyle='rgba(255,77,106,0.55)';
+      ctx.strokeRect(sigX, d.entryY, boxW, d.slY-d.entryY);
+
+      /* Level Labels */
+      ctx.font='700 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+      ctx.fillStyle='#34D399';
+      ctx.fillText('🎯 TP2 (2R · 25%)', sigX+8, d.tp2Y+14);
+      ctx.fillText('🎯 TP1 (1R · 50%)', sigX+8, d.tp1Y-6);
+      ctx.fillStyle='#F3BE62';
+      ctx.fillText('▶ ENTRY', sigX+8, d.entryY-6);
+      ctx.fillStyle='#FF6B81';
+      ctx.fillText('🛑 SL CẤU TRÚC (-1R)', sigX+8, d.slY-6);
+
+      if(d.runY && b>=d.tp2Bar){
+        ctx.strokeStyle='rgba(185,168,245,0.7)';
+        ctx.setLineDash([5,3]);
+        ctx.beginPath(); ctx.moveTo(sigX+boxW-40, d.runY); ctx.lineTo(sigX+boxW+80, d.runY); ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle='#B9A8F5';
+        ctx.fillText('🚀 RUNNER TARGET +4R', sigX+boxW-30, d.runY-6);
+      }
+    }
+  }
+
+  /* Trailing Line */
+  ctx.beginPath();
+  for(var i=0; i<b; i++){
+    var cx=padL+i*stepX;
+    var c=d.candles[i];
+    var trailY = (i<d.sigBar-1)
+      ? c[2]-24
+      : (prReplay.scen==='ghost' && i>=d.sigBar ? c[2]-20 : c[3]+24);
+    if(i===0) ctx.moveTo(cx, trailY);
+    else ctx.lineTo(cx, trailY);
+  }
+  ctx.strokeStyle = prReplay.scen==='ghost'&&b>=d.sigBar ? '#FF4D6A' : '#34B8D4';
+  ctx.lineWidth=2.2;
+  ctx.stroke();
+
+  /* Draw Candles + Volume */
+  for(var k=0; k<b; k++){
+    var x=padL+k*stepX;
+    var cd=d.candles[k];
+    var openY=cd[0], highY=cd[1], lowY=cd[2], closeY=cd[3], volRatio=cd[4];
+    var isBull=closeY<=openY;
+    var isSig=(k+1)===d.sigBar;
+
+    var col=isBull?'#1FCB8E':'#FF4D6A';
+    if(isSig){
+      col = prReplay.scen==='ghost'?'#FB7185':'#F3BE62';
+    }
+
+    /* Wick */
+    ctx.strokeStyle=col;
+    ctx.lineWidth=isSig?2.2:1.4;
+    ctx.beginPath(); ctx.moveTo(x,highY); ctx.lineTo(x,lowY); ctx.stroke();
+
+    /* Body */
+    var topY=Math.min(openY,closeY);
+    var bodyH=Math.max(4, Math.abs(closeY-openY));
+    ctx.fillStyle=col;
+    if(isSig){
+      ctx.shadowColor=col;
+      ctx.shadowBlur=12;
+    }
+    ctx.fillRect(x-4.5, topY, 9, bodyH);
+    ctx.shadowBlur=0;
+
+    /* Volume bar */
+    var vH=Math.round(volRatio*30);
+    ctx.fillStyle=isSig
+      ?(prReplay.scen==='ghost'?'rgba(244,63,94,.75)':'rgba(243,190,98,.85)')
+      :(isBull?'rgba(31,203,142,.32)':'rgba(255,77,106,.28)');
+    ctx.fillRect(x-3.5, H-4-vH, 7, vH);
+  }
+
+  /* Signal Callout Badge */
+  if(b>=d.sigBar){
+    ctx.font='800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace';
+    var badgeW=prReplay.scen==='ghost'?210:200;
+    var bx=Math.max(12, Math.min(W-badgeW-12, sigX-30));
+    var by=prReplay.scen==='ghost'?d.entryY-36:d.slY+10;
+    ctx.fillStyle=prReplay.scen==='ghost'?'#E11D48':'#B388FF';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx, by, badgeW, 24, 6) : ctx.rect(bx, by, badgeW, 24);
+    ctx.fill();
+    ctx.fillStyle='#06131D';
+    var title = prReplay.scen==='sweep'?'💧 SMC SWEEP · BUY A (84)'
+      :(prReplay.scen==='pullback'?'⚡ 1st BREAK · PULLBACK 50%':'⛔ GHOST TRADE BLOCKED (⚠SL)');
+    ctx.fillText(title, bx+8, by+16);
+  }
+
+  /* Update Side UI */
+  var gTag=document.getElementById('prGradeTag');
+  var bBase=document.getElementById('prBarBase'), vBase=document.getElementById('prValBase');
+  var bQ=document.getElementById('prBarQ'), vQ=document.getElementById('prValQ'), lblQ=document.getElementById('prLblQ');
+  var bT3=document.getElementById('prBarT3'), vT3=document.getElementById('prValT3');
+  var vVerdict=document.getElementById('prVerdict');
+  var rStat=document.getElementById('prRStat');
+  var prLogEl=document.getElementById('prLog');
+  var streamEl=document.getElementById('prStream');
+
+  if(gTag) gTag.textContent=d.gradeTag;
+  if(bBase) bBase.style.width=d.baseScore+'%';
+  if(vBase) vBase.textContent=d.baseScore;
+  if(lblQ) lblQ.textContent=d.lblQ;
+  if(bQ) bQ.style.width=d.qScore+'%';
+  if(vQ) vQ.textContent=d.qScore;
+  if(bT3) bT3.style.width=d.t3Score+'%';
+  if(vT3) vT3.textContent=d.t3Score;
+  if(vVerdict) {
+    vVerdict.textContent=isEn?d.verdictEn:d.verdictVi;
+    vVerdict.style.color=prReplay.scen==='ghost'?'#FB7185':'#34D399';
+  }
+  if(rStat) {
+    rStat.textContent=isEn?d.rStatEn:d.rStatVi;
+    rStat.style.color=prReplay.scen==='ghost'?'#FB7185':'#34D399';
+  }
+  if(prLogEl) prLogEl.textContent=isEn?d.logEn:d.logVi;
+
+  var s1=document.getElementById('prSplitTP1');
+  var s2=document.getElementById('prSplitTP2');
+  var sR=document.getElementById('prSplitRun');
+  if(s1&&s2&&sR){
+    s1.textContent=d.split.tp1;
+    s2.textContent=d.split.tp2;
+    sR.textContent=d.split.run;
+    var isOff=prReplay.scen==='ghost';
+    s1.className=isOff?'off':'on';
+    s2.className=isOff?'off':'on';
+    sR.className=isOff?'off':(d.split.run.indexOf('Off')!==-1?'off':'run on');
+  }
+
+  if(streamEl){
+    var lines=d.stream.map(function(s){
+      var isEv=s.indexOf('●')===0;
+      var isBl=s.indexOf('BLOCKED')!==-1||s.indexOf('REASON')!==-1;
+      return '<div class="'+(isBl?'bl':(isEv?'ev':''))+'">'+s+'</div>';
+    }).join('');
+    streamEl.innerHTML=lines;
+  }
+}
+
+/* 3. 3D Holographic Foil Glare & Perspective Tilt */
+(function(){
+  if(!window.matchMedia('(pointer:fine)').matches) return;
+  var cards=document.querySelectorAll('.pr-holo');
+  cards.forEach(function(card){
+    card.addEventListener('pointermove',function(e){
+      var r=card.getBoundingClientRect();
+      var x=e.clientX-r.left, y=e.clientY-r.top;
+      var px=Math.round((x/r.width)*100), py=Math.round((y/r.height)*100);
+      card.style.setProperty('--hx',px+'%');
+      card.style.setProperty('--hy',py+'%');
+      var rx=(((y/r.height)-.5)*-4.2).toFixed(2);
+      var ry=(((x/r.width)-.5)*4.2).toFixed(2);
+      card.style.transform='perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
+    },{passive:true});
+    card.addEventListener('pointerleave',function(){
+      card.style.transform='';
+    });
+  });
+})();
+
+/* 4. Floating Command Dock & Ambient Cursor Aura */
+(function(){
+  var aura=document.getElementById('pr-cursor-aura');
+  var dock=document.getElementById('prDock');
+  if(aura && window.matchMedia('(pointer:fine)').matches){
+    document.addEventListener('pointermove',function(e){
+      aura.style.opacity='1';
+      aura.style.left=e.clientX+'px';
+      aura.style.top=e.clientY+'px';
+    },{passive:true});
+  }
+  window.addEventListener('scroll',function(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    if(dock) dock.classList.toggle('on', st>420);
+  },{passive:true});
+
+  /* Auto-init Replay Canvas */
+  function initPrReplay(){
+    renderPrFrame();
+    var rep=document.getElementById('pr-live-replay');
+    if('IntersectionObserver' in window && rep){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting && !prReplay.playing && prReplay.bar===26){
+            prReplay.bar=12;
+            togglePrPlay();
+            io.unobserve(rep);
+          }
+        });
+      },{threshold:0.25, rootMargin:'50px 0px 50px 0px'});
+      io.observe(rep);
+    }
+  }
+  if(document.readyState==='loading'){
+    window.addEventListener('DOMContentLoaded',initPrReplay);
+  } else {
+    initPrReplay();
+  }
+  document.addEventListener('kz:lang', renderPrFrame);
 })();
 </script>
 </body>

@@ -287,13 +287,87 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 
 /* ===== SCROLL CRAFT PRO MOTION UPGRADE FOR PRO DOCS ===== */
 #sc-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:100;background:linear-gradient(90deg,#F3BE62 0%,#38D5E7 55%,#B9A8F5 100%);box-shadow:0 0 12px rgba(243,190,98,.75);transition:width .08s linear;pointer-events:none}
-.sc-reveal{opacity:0;transform:translateY(20px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
-.sc-reveal.sc-visible{opacity:1;transform:translateY(0)}
+/* Fail-safe Reveal Choreography: Always visible by default (Never Blank) */
+.sc-reveal{opacity:1;transform:none;transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.sc-motion .sc-reveal:not(.sc-visible):not(.is-visible){opacity:0;transform:translateY(20px)}
+.sc-reveal.sc-visible,.sc-reveal.is-visible{opacity:1!important;transform:none!important}
 .spec,.note,.warn,details,.fig{transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s cubic-bezier(.16,1,.3,1),border-color .25s}
 .spec:hover{transform:translateY(-4px);box-shadow:0 16px 34px -14px rgba(2,8,20,.45),0 0 22px -6px rgba(243,190,98,.2)}
 .fig:hover{box-shadow:0 18px 38px -16px rgba(2,8,20,.55),0 0 24px -6px rgba(243,190,98,.18)}
 .toc ol a{transition:all .2s ease}
 .toc ol a.active{transform:translateX(3px);box-shadow:inset 3px 0 0 var(--gold)}
+
+/* ===== SCROLL CRAFT V3 ACADEMY UPGRADE FOR PRO DOCS ===== */
+.sc-doc-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:14px 0 22px;padding:12px 16px;border-radius:14px;background:var(--kz-surface);border:1px solid var(--kz-line);box-shadow:0 14px 32px -14px rgba(2,8,20,.45)}
+.sc-doc-search-wrap{position:relative;flex:1 1 260px;display:flex;align-items:center}
+.sc-doc-search{width:100%;padding:9px 70px 9px 36px;border-radius:10px;border:1px solid var(--kz-line2);background:var(--kz-deep);color:var(--kz-text);font:500 14px/1.4 'Be Vietnam Pro',system-ui,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.sc-doc-search:focus{border-color:var(--kz-gold);box-shadow:0 0 0 3px rgba(243,190,98,.18)}
+.sc-doc-search-ico{position:absolute;left:11px;color:var(--kz-muted);pointer-events:none;font-size:14px}
+.sc-doc-kbd{position:absolute;right:10px;font:700 11px/1 'JetBrains Mono',monospace;padding:4px 7px;border-radius:6px;background:var(--kz-surface);border:1px solid var(--kz-line);color:var(--kz-muted);pointer-events:none}
+.sc-doc-badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12.5px;color:var(--kz-muted)}
+.sc-doc-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;background:var(--kz-deep);border:1px solid var(--kz-line);color:var(--kz-text2);font-weight:600}
+.sc-doc-pill b{color:var(--kz-gold)}
+
+/* Pre-trade 5-Step Checklist */
+.sc-chk-card{margin:26px 0;padding:22px 24px;border-radius:18px;background:linear-gradient(160deg,var(--kz-surface),var(--kz-deep));border:1px solid rgba(243,190,98,.38);box-shadow:0 22px 48px -16px rgba(2,8,20,.55)}
+.sc-chk-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.sc-chk-title{font-weight:800;font-size:17px;color:var(--kz-strong);display:flex;align-items:center;gap:8px;margin:0}
+.sc-chk-prog-wrap{height:7px;border-radius:999px;background:var(--kz-deep);border:1px solid var(--kz-line);overflow:hidden;margin-bottom:16px}
+.sc-chk-prog-bar{height:100%;width:0%;background:linear-gradient(90deg,#F3BE62,#38D5E7);transition:width .3s cubic-bezier(.16,1,.3,1)}
+.sc-chk-list{display:grid;gap:9px}
+.sc-chk-item{display:flex;align-items:flex-start;gap:11px;padding:11px 14px;border-radius:12px;background:var(--kz-surface2);border:1px solid var(--kz-line);cursor:pointer;transition:all .2s ease;user-select:none}
+.sc-chk-item:hover{border-color:var(--kz-gold)}
+.sc-chk-item.done{background:rgba(31,203,142,.1);border-color:rgba(31,203,142,.45)}
+.sc-chk-box{width:20px;height:20px;border-radius:6px;border:2px solid var(--kz-muted);display:inline-grid;place-items:center;flex:0 0 20px;margin-top:2px;font-size:12px;font-weight:900;color:#041E15;transition:all .2s}
+.sc-chk-item.done .sc-chk-box{background:#1FCB8E;border-color:#1FCB8E}
+.sc-chk-txt{font-size:14.5px;line-height:1.5;color:var(--kz-text)}
+.sc-chk-status{font:700 12px/1 'JetBrains Mono',monospace;padding:6px 11px;border-radius:999px;background:var(--kz-deep);border:1px solid var(--kz-line);color:var(--kz-gold)}
+
+/* Interactive Chart Hotspot Legend */
+.sc-hotspot-bar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.sc-hs-btn{font:700 12px/1.2 'Be Vietnam Pro',system-ui,sans-serif;padding:7px 12px;border-radius:999px;border:1px solid var(--kz-line);background:var(--kz-surface);color:var(--kz-text2);cursor:pointer;transition:all .2s}
+.sc-hs-btn:hover,.sc-hs-btn.active{border-color:var(--kz-gold);background:rgba(243,190,98,.15);color:var(--kz-strong)}
+.sc-hs-info{padding:11px 14px;border-radius:11px;background:var(--kz-surface);border-left:3px solid var(--kz-gold);font-size:13.5px;color:var(--kz-text2);margin-bottom:10px}
+
+/* Code Copy Button & Back to Top */
+pre{position:relative}
+.sc-copy-code{position:absolute;top:10px;right:10px;font:700 11px/1 'JetBrains Mono',monospace;padding:6px 10px;border-radius:7px;border:1px solid var(--kz-line2);background:var(--kz-surface);color:var(--kz-gold);cursor:pointer;transition:all .2s}
+.sc-copy-code:hover{background:var(--kz-gold);color:#04131C}
+#sc-doc-top{position:fixed;right:20px;bottom:20px;z-index:50;width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,190,98,.45);background:var(--kz-surface);color:var(--kz-gold);font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 12px 28px rgba(0,0,0,.45);opacity:0;transform:translateY(12px);pointer-events:none;transition:all .25s}
+#sc-doc-top.sc-visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#sc-doc-top:hover{background:var(--kz-gold);color:#04131C;transform:translateY(-3px)}
+.sc-search-hide{display:none!important}
+
+/* 3-Tier Multi-Layer Scoring Playground */
+.pr-lab-card{margin:24px 0;padding:22px;border-radius:18px;background:linear-gradient(155deg,var(--kz-surface),var(--kz-deep));border:1px solid rgba(243,190,98,.38);box-shadow:0 24px 54px -18px rgba(2,8,20,.65)}
+.pr-lab-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:14px;align-items:center}
+@media (min-width:860px){.pr-lab-grid{grid-template-columns:7fr 5fr}}
+.pr-fam-list{display:grid;grid-template-columns:1fr;gap:8px}
+@media (min-width:560px){.pr-fam-list{grid-template-columns:1fr 1fr}}
+.pr-fam-btn{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;border-radius:11px;border:1px solid var(--kz-line);background:var(--kz-surface2);color:var(--kz-muted);font:600 13px/1.35 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer;text-align:left;transition:all .2s ease}
+.pr-fam-btn:hover{border-color:var(--kz-gold);color:var(--kz-text)}
+.pr-fam-btn.active{background:rgba(243,190,98,.14);border-color:var(--kz-gold);color:var(--kz-strong);box-shadow:0 8px 20px -8px rgba(243,190,98,.35)}
+.pr-fam-btn.active.violet{background:rgba(185,168,245,.16);border-color:#B9A8F5;color:#EDE9FE}
+.pr-fam-btn.danger.active{background:rgba(244,63,94,.16);border-color:#FB7185;color:#FFE4E6}
+.pr-fam-pts{font:700 11px/1 'JetBrains Mono',monospace;padding:4px 7px;border-radius:6px;background:var(--kz-deep);color:var(--kz-gold);white-space:nowrap}
+.pr-fam-btn.violet .pr-fam-pts{color:#B9A8F5}
+.pr-fam-btn.danger .pr-fam-pts{color:#FB7185}
+.pr-lab-out{padding:18px;border-radius:15px;background:#060C18;border:1px solid rgba(243,190,98,.3);color:#E6EEF8;text-align:center}
+.pr-lab-dial{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
+.pr-lab-preview-tag{display:inline-block;font:800 13px/1.2 'JetBrains Mono',monospace;padding:8px 14px;border-radius:9px;margin:8px 0;transition:all .25s ease}
+
+/* PRO Mastery Quiz */
+.pr-quiz-card{margin:24px 0;padding:22px;border-radius:18px;background:linear-gradient(155deg,var(--kz-surface),var(--kz-deep));border:1px solid rgba(185,168,245,.38);box-shadow:0 24px 54px -18px rgba(2,8,20,.6)}
+.pr-quiz-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 14px}
+.pr-q-tab{font:700 12px/1 'JetBrains Mono',monospace;padding:8px 13px;border-radius:9px;border:1px solid var(--kz-line);background:var(--kz-surface2);color:var(--kz-muted);cursor:pointer;transition:all .2s}
+.pr-q-tab.active{background:rgba(185,168,245,.18);border-color:#B9A8F5;color:var(--kz-strong)}
+.pr-q-opts{display:grid;gap:8px;margin-top:12px}
+.pr-q-opt{padding:11px 14px;border-radius:11px;border:1px solid var(--kz-line);background:var(--kz-surface2);color:var(--kz-text);font:600 13.5px/1.4 'Be Vietnam Pro',system-ui,sans-serif;text-align:left;cursor:pointer;transition:all .2s}
+.pr-q-opt:hover{border-color:var(--kz-gold)}
+.pr-q-opt.correct{background:rgba(31,203,142,.15);border-color:#1FCB8E;color:#34D399}
+.pr-q-opt.wrong{background:rgba(244,63,94,.14);border-color:#F43F5E;color:#FB7185}
+.pr-q-fb{margin-top:12px;padding:12px 14px;border-radius:11px;background:var(--kz-deep);border-left:3px solid #B9A8F5;font-size:13.5px;color:var(--kz-text2);display:none}
+.pr-q-fb.show{display:block}
 @media (prefers-reduced-motion:reduce){.sc-reveal{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
@@ -362,8 +436,20 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <h1 data-i18n="k21">KENVINZONE AURORA PRO<br/>Hướng dẫn sử dụng</h1>
 <p class="lead" data-i18n="k22" style="margin-top:-6px"><span class="tag buyB">Phiên bản V15.4</span> Cập nhật theo V15.4: Trading Style chỉ còn quản lý lệnh, bộ lọc vào lệnh tách sang Entry Filter Profile.</p>
 <p class="lead" data-i18n="k23">Hệ thống giao dịch theo xu hướng với ba nhóm setup ngang hàng: BREAK, SUNNY và SMC thuận xu hướng. Mỗi tín hiệu có kế hoạch Entry, Stoploss, chốt lời rõ ràng, được chấm điểm nhiều tầng và thống kê minh bạch để bạn biết setup nào thực sự hiệu quả.</p>
+<div class="sc-doc-toolbar">
+<div class="sc-doc-search-wrap">
+<span class="sc-doc-search-ico">🔍</span>
+<input class="sc-doc-search" id="sc-doc-search" oninput="filterProDoc(this.value)" placeholder="Tìm kiếm nhanh kiến thức PRO (ví dụ: SMC, Tier 3, 4 ATR, Runner)..." type="search"/>
+<kbd class="sc-doc-kbd">Ctrl+K</kbd>
+</div>
+<div class="sc-doc-badges">
+<span class="sc-doc-pill">⏱ <b>14 phút</b> đọc</span>
+<span class="sc-doc-pill">📖 Đã đọc: <b id="sc-read-pct">0%</b></span>
+<span class="sc-doc-pill" style="border-color:rgba(185,168,245,.45);color:#D8B4FE">💠 <b>V15.4 Architecture</b></span>
+</div>
+</div>
 <figure aria-label="Minh họa một setup 1st Break trên biểu đồ" class="chart" data-i18n-aria="Illustration of a 1st Break setup on the chart">
-<svg role="img" viewbox="0 0 780 360">
+<svg role="img" viewBox="0 0 780 360">
 <defs>
 <filter height="200%" id="glow" width="140%" x="-20%" y="-50%"><fegaussianblur result="b" stddeviation="4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <lineargradient id="ribbon" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#34B8D4" stop-opacity=".45"></stop><stop offset="1" stop-color="#34B8D4" stop-opacity="0"></stop></lineargradient>
@@ -405,6 +491,15 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </g>
 </svg>
 </figure>
+<div class="sc-hotspot-bar">
+<button class="sc-hs-btn active" onclick="showProChartHotspot(0, this)" type="button">⚡ 1. Nến Break Vàng &amp; Dải Dọc</button>
+<button class="sc-hs-btn" onclick="showProChartHotspot(1, this)" type="button">🛑 2. F-SL &amp; Cảnh Báo 4 ATR</button>
+<button class="sc-hs-btn" onclick="showProChartHotspot(2, this)" type="button">🎯 3. Hộp Mục Tiêu TP1 &amp; TP2</button>
+<button class="sc-hs-btn" onclick="showProChartHotspot(3, this)" type="button">🛡 4. T-SL Động &amp; Runner 25%</button>
+</div>
+<div class="sc-hs-info" id="sc-hs-desc">
+⚡ <strong>Nến Break Vàng &amp; Dải Dọc:</strong> Tự động đổi màu nến sang Vàng kim và kéo dải màu dọc ngay khi nến tín hiệu đóng cửa hoàn tất (<code>barstate.isconfirmed</code>). Điểm số hiển thị gồm Tầng 1 Base (72), Hạng tín hiệu BUY B và chi tiết 6 họ động lượng.
+</div>
 </header>
 <section id="gioi-thieu">
 <h2 data-i18n="k5">AURORA PRO là gì</h2>
@@ -432,6 +527,40 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 </section>
 <section id="bat-dau">
 <h2 data-i18n="k6">Bắt đầu nhanh trong 5 bước</h2>
+<div class="sc-chk-card">
+<div class="sc-chk-head">
+<div class="sc-chk-title">
+<span>⚡</span>
+<span>Checklist 5 Bước Chuẩn Bị Vào Lệnh (PRO Cockpit)</span>
+</div>
+<span class="sc-chk-status" id="sc-chk-status">0/5 HOÀN TẤT</span>
+</div>
+<div class="sc-chk-prog-wrap">
+<div class="sc-chk-prog-bar" id="sc-chk-bar"></div>
+</div>
+<div class="sc-chk-list">
+<div class="sc-chk-item" onclick="toggleChecklistItem(this)">
+<span class="sc-chk-box">✓</span>
+<div class="sc-chk-txt"><strong>1. Kiểm tra 9 Khung MTF &amp; Dải Mây:</strong> Xác nhận xu hướng chính trên nến đã đóng (Closed Bar) đồng thuận ≥ 65% để không đánh ngược bão lớn.</div>
+</div>
+<div class="sc-chk-item" onclick="toggleChecklistItem(this)">
+<span class="sc-chk-box">✓</span>
+<div class="sc-chk-txt"><strong>2. Đồng Bộ Bộ 3 Lựa Chọn:</strong> Đã chọn đúng <em>Market Preset</em> (Forex/CFD/Crypto/Stock) × <em>Trading Style</em> (Scalp/Intraday/Swing/Prop) × <em>Entry Filter Profile</em> (Balanced/Strict).</div>
+</div>
+<div class="sc-chk-item" onclick="toggleChecklistItem(this)">
+<span class="sc-chk-box">✓</span>
+<div class="sc-chk-txt"><strong>3. Kiểm Tra Điểm 3 Tầng:</strong> Base Score ≥ 70 (Grade A/B), Setup Quality (BreakQ, SunnyQ hoặc SMCQ) và dòng tiền Tier 3 (FVG còn tươi, Liquidity Sweep).</div>
+</div>
+<div class="sc-chk-item" onclick="toggleChecklistItem(this)">
+<span class="sc-chk-box">✓</span>
+<div class="sc-chk-txt"><strong>4. Kiểm Soát Cảnh Báo Rủi Ro (⚠SL &gt; 4 ATR):</strong> Nếu Stoploss cấu trúc quá rộng vượt quá 4 ATR, bật Pullback 50% hoặc bỏ qua để bảo vệ hạn mức Drawdown quỹ.</div>
+</div>
+<div class="sc-chk-item" onclick="toggleChecklistItem(this)">
+<span class="sc-chk-box">✓</span>
+<div class="sc-chk-txt"><strong>5. Khóa Kế Hoạch 1R &amp; Quản Trị Runner:</strong> Tính Lot chính xác theo khoảng cách Entry → F-SL, chốt 50% tại TP1 (dời SL về Hòa vốn), 25% tại TP2 và giữ Runner 25% nếu xu hướng mạnh.</div>
+</div>
+</div>
+</div>
 <ol class="steps">
 <li data-i18n="k44"><strong>Thêm chỉ báo lên chart.</strong> Mở <kbd>Indicators</kbd> → tab <kbd>Invite-only scripts</kbd> → chọn <strong>KENVINZONE AURORA PRO</strong>.</li>
 <li data-i18n="k45"><strong>Chọn Market Preset</strong> đúng loại tài sản: STOCK, FOREX, CFD hoặc CRYPTO (xem mục Cài đặt nhanh).</li>
@@ -600,6 +729,86 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <div class="note"><p data-i18n="k175"><strong>Ba chế độ</strong> cho Setup Quality và Tier 3: <kbd>Off</kbd> · <kbd>Stats only</kbd> (mặc định: chấm và thống kê, không đổi tín hiệu) · <kbd>Filter (experimental)</kbd> (chặn setup dưới ngưỡng). Một tầng điểm có giá trị khi R trung bình <strong>tăng dần</strong> từ nhóm điểm thấp lên nhóm điểm cao, và lặp lại trên nhiều mã. Từ V15.4, phân tích theo nhóm điểm làm trên file CSV của Strategy Validator (tên lệnh có sẵn điểm Q và T3). <kbd>SMC Quality mode</kbd> cũng có hai chế độ Stats only (mặc định) và Filter.</p></div>
 <h3 data-i18n="k306">Runner sau TP2</h3>
 <p data-i18n="k176">Ô <kbd>⑤ Runner sau TP2</kbd> (nhóm Tier 3): <strong>Off</strong> chốt 50% TP1 · 50% TP2. <strong>Always 25%</strong>: 50% TP1 · 25% TP2 · 25% chạy tiếp, SL của phần này khóa tại TP1 rồi kéo theo đường Trailing (chỉ kéo về phía có lợi). <strong>Adaptive</strong>: chỉ giữ Runner khi Runner suitability lúc vào lệnh đạt ngưỡng.</p>
+<div class="pr-lab-card">
+<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;">
+<div>
+<div style="font:800 16px/1.2 'Be Vietnam Pro',sans-serif;color:var(--kz-strong);display:flex;align-items:center;gap:8px;">
+<span>🧪</span>
+<span>Phòng Thí Nghiệm Đánh Giá 3 Tầng PRO (V15.4 Scoring Simulator)</span>
+</div>
+<div style="font-size:12.5px;color:var(--kz-muted);margin-top:3px;">
+        Bật/tắt các điều kiện thực tế để kiểm tra cách Tầng 1 (Base), Tầng 2 (Setup Quality), Tầng 3 (Dòng tiền lớn) và Bộ chặn Rủi ro (⚠SL) quyết định đóng lệnh.
+      </div>
+</div>
+<span class="tag buyB" style="border-color:rgba(243,190,98,.5);color:#F3BE62">Interactive Live Simulator</span>
+</div>
+<div class="pr-lab-grid">
+<div style="display:grid;gap:12px;">
+<div>
+<div style="font:700 11px/1 'JetBrains Mono',monospace;color:var(--kz-cyan);text-transform:uppercase;margin-bottom:6px;">TẦNG 1 · BASE SCORE (0–100 PTS)</div>
+<div class="pr-fam-list">
+<button class="pr-fam-btn active" data-pts="35" data-type="base" onclick="togglePrScore(this)" type="button">
+<span>▲ Xu hướng chính + Mây Kenvin</span>
+<span class="pr-fam-pts">+35</span>
+</button>
+<button class="pr-fam-btn active" data-pts="25" data-type="base" onclick="togglePrScore(this)" type="button">
+<span>▲ Đồng thuận 9 Khung MTF</span>
+<span class="pr-fam-pts">+25</span>
+</button>
+<button class="pr-fam-btn active" data-pts="20" data-type="base" onclick="togglePrScore(this)" type="button">
+<span>🔊 RVOL Time-Of-Day ≥ 1.5x</span>
+<span class="pr-fam-pts">+20</span>
+</button>
+<button class="pr-fam-btn active" data-pts="20" data-type="base" onclick="togglePrScore(this)" type="button">
+<span>🛡 Vị trí giá thuận Trailing</span>
+<span class="pr-fam-pts">+20</span>
+</button>
+</div>
+</div>
+<div>
+<div style="font:700 11px/1 'JetBrains Mono',monospace;color:var(--kz-gold);text-transform:uppercase;margin-bottom:6px;">TẦNG 2 &amp; 3 · SETUP QUALITY &amp; DÒNG TIỀN TIER 3</div>
+<div class="pr-fam-list">
+<button class="pr-fam-btn active violet" data-pts="15" data-type="qual" onclick="togglePrScore(this)" type="button">
+<span>💎 FVG Tươi Chưa Bị Lấp (Fresh)</span>
+<span class="pr-fam-pts">+15</span>
+</button>
+<button class="pr-fam-btn active violet" data-pts="15" data-type="qual" onclick="togglePrScore(this)" type="button">
+<span>💧 Liquidity Sweep + MSS Đảo Chiều</span>
+<span class="pr-fam-pts">+15</span>
+</button>
+<button class="pr-fam-btn violet" data-pts="10" data-type="qual" onclick="togglePrScore(this)" type="button">
+<span>📊 CVD Tích Lũy Dương &amp; Hấp Thụ</span>
+<span class="pr-fam-pts">+10</span>
+</button>
+<button class="pr-fam-btn danger" data-type="block" onclick="togglePrScore(this)" type="button">
+<span>⚠ Cảnh Báo SL &gt; 4 ATR (Quá Rộng)</span>
+<span class="pr-fam-pts">CHẶN LỆNH</span>
+</button>
+</div>
+</div>
+</div>
+<div class="pr-lab-out">
+<div style="font:700 11px/1 'JetBrains Mono',monospace;color:var(--kz-muted);text-transform:uppercase;">KẾT QUẢ ĐỒNG THUẬN 3 TẦNG</div>
+<div class="pr-lab-dial">
+<svg style="width:72px;height:72px;" viewBox="0 0 76 76">
+<circle cx="38" cy="38" fill="none" r="30" stroke="rgba(255,255,255,.08)" stroke-width="7"></circle>
+<circle cx="38" cy="38" fill="none" id="pr-lab-circle" r="30" stroke="#F3BE62" stroke-dasharray="188" stroke-dashoffset="28" stroke-linecap="round" stroke-width="7" style="transition:stroke-dashoffset .3s ease, stroke .3s ease;" transform="rotate(-90 38 38)"></circle>
+<text fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="19" font-weight="800" id="pr-lab-score" text-anchor="middle" x="38" y="44">85</text>
+</svg>
+<div style="text-align:left;">
+<div id="pr-lab-grade" style="font:800 14px/1 'JetBrains Mono',monospace;color:#34D399;">GRADE A · PASS</div>
+<div id="pr-lab-status" style="font-size:12px;color:var(--kz-muted);margin-top:4px;">Đủ chuẩn mở hộp kế hoạch 1:2 R:R khi đóng nến.</div>
+</div>
+</div>
+<div>
+<div style="font:600 11px/1 'JetBrains Mono',monospace;color:var(--kz-muted);margin-bottom:4px;">NHÃN HIỂN THỊ TRÊN BIỂU ĐỒ TRADINGVIEW:</div>
+<div class="pr-lab-preview-tag" id="pr-lab-tag" style="background:#0F1D35;border:1px solid #38D5E7;color:#38D5E7;">
+          ⚡ 1st BREAK BUY · GRADE A (85) · FVG+SWEEP ✓
+        </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="dashboard">
 <h2 data-i18n="k13">Dashboard thống kê</h2>
@@ -791,6 +1000,29 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
 <li data-i18n="k286"><strong>Chuỗi thua là một phần bình thường</strong> của hệ theo xu hướng. Xem dòng chuỗi thua và Max Drawdown trong Validator để chọn mức rủi ro mỗi lệnh phù hợp.</li>
 <li data-i18n="k287"><strong>Thống kê chưa tính phí</strong> và trượt giá. Dùng Validator để có con số sau chi phí.</li>
 </ul>
+<div class="pr-quiz-card">
+<div style="font:800 16px/1.2 'Be Vietnam Pro',sans-serif;color:var(--kz-strong);display:flex;align-items:center;gap:8px;">
+<span>🎯</span>
+<span>Trắc Nghiệm Kỷ Luật Quản Trị Rủi Ro PRO (3 Tình Huống Thực Chiến)</span>
+</div>
+<p style="font-size:13px;color:var(--kz-muted);margin:4px 0 10px;">Thử sức xử lý 3 tình huống nhạy cảm nhất mà trader chuyên nghiệp thường đối mặt trên AURORA PRO:</p>
+<div class="pr-quiz-tabs">
+<button class="pr-q-tab active" onclick="loadProQuiz(0, this)" type="button">Tình huống 1: Nến Break Bung &gt; 2.5 ATR</button>
+<button class="pr-q-tab" onclick="loadProQuiz(1, this)" type="button">Tình huống 2: Cảnh Báo ⚠SL &gt; 4 ATR</button>
+<button class="pr-q-tab" onclick="loadProQuiz(2, this)" type="button">Tình huống 3: Quản Trị Runner 25% Sau TP2</button>
+</div>
+<div id="pr-quiz-body">
+<div id="pr-q-scenario" style="font-weight:700;font-size:14px;color:var(--kz-text);margin-bottom:8px;">
+      Nến 1st Break BUY đóng cửa với độ dài lên tới 2.8 ATR. Hệ thống hiển thị cảnh báo nến bung quá dài. Bạn xử lý thế nào?
+    </div>
+<div class="pr-q-opts" id="pr-q-options">
+<button class="pr-q-opt" onclick="answerProQuiz(0, false, this)">A. Vào lệnh BUY Market ngay tại giá đóng nến để không bị lỡ sóng tăng mạnh.</button>
+<button class="pr-q-opt" onclick="answerProQuiz(0, true, this)">B. Bật chế độ Pullback 50% Limit: Chờ giá hồi về nửa thân nến để F-SL gần hơn ~35% và TP khả thi hơn.</button>
+<button class="pr-q-opt" onclick="answerProQuiz(0, false, this)">C. Mở thêm lệnh BUY x2 volume vì nến to chứng tỏ phe mua cực mạnh.</button>
+</div>
+<div class="pr-q-fb" id="pr-q-feedback"></div>
+</div>
+</div>
 <div class="warn"><p data-i18n="k288">KENVINZONE AURORA là công cụ hỗ trợ phân tích, không phải lời khuyên đầu tư và không cam kết lợi nhuận. Kết quả quá khứ không đảm bảo tương lai. Giao dịch có rủi ro mất vốn.</p></div>
 </section>
 <section id="faq">
@@ -1218,34 +1450,315 @@ dialog.kz-lb button{border:1px solid var(--kz-line);background:var(--kz-surface)
     img.src=src;
   });
 })();
+</script>
 
-/* ===== SCROLL CRAFT PRO DOCS MOTION ENGINE ===== */
+<button aria-label="Lên đầu trang" id="sc-doc-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" type="button">↑</button>
+
+<script>
+/* ===== SCROLL CRAFT PRO DOCS MOTION & INTERACTIVE ENGINE (AMAZING V15.4) ===== */
 (function(){
-  var prog=document.getElementById('sc-scroll-progress');
+  var prog = document.getElementById('sc-scroll-progress');
+  var topBtn = document.getElementById('sc-doc-top');
+  var readPct = document.getElementById('sc-read-pct');
+
   function onScroll(){
-    var st=window.scrollY||document.documentElement.scrollTop;
-    var dh=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-    if(prog&&dh>0){prog.style.width=Math.min(100,Math.max(0,(st/dh)*100))+'%';}
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var dh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var p = dh > 0 ? Math.min(100, Math.max(0, (st / dh) * 100)) : 0;
+    if (prog) prog.style.width = p + '%';
+    if (readPct) readPct.textContent = Math.round(p) + '%';
+    if (topBtn) topBtn.classList.toggle('sc-visible', st > 420);
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  var secs=document.querySelectorAll('main > section, .spec, .fig');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(entries){
+  /* Fail-safe Reveal Choreography */
+  var revEls = document.querySelectorAll('.sc-reveal, .spec, .fig');
+  function checkReveal(){
+    var vh = window.innerHeight || 800;
+    revEls.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < vh + 120 && r.bottom > -120) {
+        el.classList.add('sc-visible');
+      }
+    });
+  }
+  // Safely activate CSS motion animations
+  document.documentElement.classList.add('sc-motion');
+  checkReveal();
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){
+        if (en.isIntersecting) {
           en.target.classList.add('sc-visible');
           io.unobserve(en.target);
         }
       });
-    },{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-    secs.forEach(function(el){
-      el.classList.add('sc-reveal');
-      io.observe(el);
+    }, { threshold: 0.05, rootMargin: '100px 0px 100px 0px' });
+    revEls.forEach(function(el){
+      if (!el.classList.contains('sc-visible')) io.observe(el);
     });
   }
+  window.addEventListener('hashchange', function(){ setTimeout(checkReveal, 60); });
+
+  /* 1-Click Code Copy for Pre blocks */
+  document.querySelectorAll('pre').forEach(function(pre){
+    if (pre.querySelector('.sc-copy-code')) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sc-copy-code';
+    btn.textContent = 'Sao Chép JSON';
+    btn.onclick = function(){
+      var code = pre.querySelector('code') ? pre.querySelector('code').innerText : pre.innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(function(){
+          btn.textContent = '✓ Đã Chép!';
+          setTimeout(function(){ btn.textContent = 'Sao Chép JSON'; }, 2000);
+        });
+      }
+    };
+    pre.appendChild(btn);
+  });
+
+  /* Keyboard Shortcut Ctrl+K for Search */
+  window.addEventListener('keydown', function(e){
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault();
+      var s = document.getElementById('sc-doc-search');
+      if (s) { s.focus(); s.select(); }
+    }
+  });
 })();
+
+/* Hotspot Explorer Handler */
+var proHotspots = [
+  '⚡ <strong>Nến Break Vàng & Dải Dọc:</strong> Tự động đổi màu nến sang Vàng kim và kéo dải màu dọc ngay khi nến tín hiệu đóng cửa hoàn tất (<code>barstate.isconfirmed</code>). Điểm số hiển thị gồm Tầng 1 Base (72), Hạng tín hiệu BUY B và chi tiết 6 họ động lượng.',
+  '🛑 <strong>F-SL & Cảnh Báo 4 ATR:</strong> Stoploss cố định được tính theo đường Trailing Stoploss tại thời điểm vào lệnh. Nếu khoảng cách F-SL vượt quá 4 ATR, hệ thống hiển thị nhãn cảnh báo <code>⚠SL</code> để bảo vệ drawdown tài khoản/quỹ Prop Firm.',
+  '🎯 <strong>Hộp Mục Tiêu TP1 & TP2:</strong> Hộp lệnh vẽ sẵn mức chốt 50% tại TP1 (+1.0R), đồng thời dời SL về Hòa vốn (Breakeven) để triệt tiêu hoàn toàn rủi ro cho phần vị thế còn lại hướng đến TP2 (+2.0R).',
+  '🛡 <strong>T-SL Động & Runner 25%:</strong> Đường bậc thang Kenvin Super Trailing Stop tự thích ứng tịnh tiến theo giá. Với tùy chọn Runner 25%, sau khi chốt TP2, 25% vị thế còn lại tiếp tục bám theo T-SL để gặt hái siêu sóng lớn.'
+];
+
+function showProChartHotspot(idx, btn) {
+  var btns = document.querySelectorAll('.sc-hotspot-bar .sc-hs-btn');
+  btns.forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+  var desc = document.getElementById('sc-hs-desc');
+  if (desc && proHotspots[idx]) {
+    desc.innerHTML = proHotspots[idx];
+  }
+}
+
+/* 5-Step Checklist Handler */
+function toggleChecklistItem(el) {
+  el.classList.toggle('done');
+  var items = document.querySelectorAll('.sc-chk-list .sc-chk-item');
+  var done = document.querySelectorAll('.sc-chk-list .sc-chk-item.done').length;
+  var total = items.length;
+  var bar = document.getElementById('sc-chk-bar');
+  var status = document.getElementById('sc-chk-status');
+  var pct = Math.round((done / total) * 100);
+  if (bar) bar.style.width = pct + '%';
+  if (status) {
+    status.textContent = done === total ? '✓ HOÀN TẤT 5/5 BƯỚC' : (done + '/' + total + ' HOÀN TẤT');
+    status.style.color = done === total ? '#34D399' : 'var(--kz-gold)';
+  }
+}
+
+/* Quick Search Filter */
+function filterProDoc(q) {
+  var term = (q || '').trim().toLowerCase();
+  var sections = document.querySelectorAll('main > section');
+  sections.forEach(function(sec){
+    if (!term) {
+      sec.classList.remove('sc-search-hide');
+      return;
+    }
+    var text = sec.innerText.toLowerCase();
+    if (text.indexOf(term) >= 0) {
+      sec.classList.remove('sc-search-hide');
+    } else {
+      sec.classList.add('sc-search-hide');
+    }
+  });
+}
+
+/* 3-Tier Multi-Layer Scoring Simulator */
+function togglePrScore(btn) {
+  btn.classList.toggle('active');
+  updatePrLabOutput();
+}
+
+function updatePrLabOutput() {
+  var btns = document.querySelectorAll('.pr-fam-list .pr-fam-btn.active');
+  var baseScore = 0;
+  var qualBonus = 0;
+  var isBlocked = false;
+
+  btns.forEach(function(b){
+    var type = b.getAttribute('data-type');
+    var pts = parseInt(b.getAttribute('data-pts') || '0', 10);
+    if (type === 'base') baseScore += pts;
+    if (type === 'qual') qualBonus += pts;
+    if (type === 'block') isBlocked = true;
+  });
+
+  var total = Math.min(100, baseScore + qualBonus);
+  var circle = document.getElementById('pr-lab-circle');
+  var scoreTxt = document.getElementById('pr-lab-score');
+  var gradeTxt = document.getElementById('pr-lab-grade');
+  var statTxt = document.getElementById('pr-lab-status');
+  var tagEl = document.getElementById('pr-lab-tag');
+
+  if (isBlocked) {
+    if (circle) {
+      circle.setAttribute('stroke', '#F43F5E');
+      circle.setAttribute('stroke-dashoffset', '188');
+    }
+    if (scoreTxt) scoreTxt.textContent = '⛔';
+    if (gradeTxt) {
+      gradeTxt.textContent = 'BLOCKED · ⚠SL > 4 ATR';
+      gradeTxt.style.color = '#FB7185';
+    }
+    if (statTxt) statTxt.textContent = 'Stoploss cấu trúc quá rộng. Lệnh bị chặn để bảo vệ tài khoản quỹ khỏi sụt giảm vốn quá mức.';
+    if (tagEl) {
+      tagEl.textContent = '⛔ CHẶN LỆNH: ⚠SL > 4 ATR (QUÁ RỘNG) · CỨU -1.0R';
+      tagEl.style.background = 'rgba(244,63,94,.16)';
+      tagEl.style.borderColor = '#F43F5E';
+      tagEl.style.color = '#FB7185';
+    }
+    return;
+  }
+
+  if (circle) {
+    var offset = Math.round(188 - (188 * total) / 100);
+    circle.setAttribute('stroke-dashoffset', String(offset));
+    circle.setAttribute('stroke', total >= 80 ? '#34D399' : (total >= 70 ? '#F3BE62' : '#94A3B8'));
+  }
+  if (scoreTxt) scoreTxt.textContent = String(total);
+  if (gradeTxt) {
+    if (total >= 85) {
+      gradeTxt.textContent = 'GRADE A+ · PASS ELITE';
+      gradeTxt.style.color = '#34D399';
+    } else if (total >= 75) {
+      gradeTxt.textContent = 'GRADE A · PASS';
+      gradeTxt.style.color = '#34D399';
+    } else if (total >= 60) {
+      gradeTxt.textContent = 'GRADE B · PASS BALANCED';
+      gradeTxt.style.color = '#F3BE62';
+    } else {
+      gradeTxt.textContent = 'UNDER THRESHOLD · NO ENTRY';
+      gradeTxt.style.color = '#94A3B8';
+    }
+  }
+  if (statTxt) {
+    statTxt.textContent = total >= 60
+      ? 'Đủ điều kiện mở hộp kế hoạch 1:2 R:R khi nến đóng cửa (barstate.isconfirmed).'
+      : 'Điểm chưa đạt ngưỡng tối thiểu của Entry Filter Profile. Hệ thống tự động đứng ngoài.';
+  }
+  if (tagEl) {
+    if (total >= 75) {
+      tagEl.textContent = '⚡ 1st BREAK BUY · GRADE A (' + total + ') · FVG+SWEEP ✓';
+      tagEl.style.background = '#0F1D35';
+      tagEl.style.borderColor = '#38D5E7';
+      tagEl.style.color = '#38D5E7';
+    } else if (total >= 60) {
+      tagEl.textContent = '☀ SUNNY BUY · GRADE B (' + total + ') · BALANCED ✓';
+      tagEl.style.background = '#1A180E';
+      tagEl.style.borderColor = '#F3BE62';
+      tagEl.style.color = '#F3BE62';
+    } else {
+      tagEl.textContent = '⏳ WAITING SETUP · SCORE ' + total + ' < 60';
+      tagEl.style.background = '#111827';
+      tagEl.style.borderColor = '#475569';
+      tagEl.style.color = '#94A3B8';
+    }
+  }
+}
+
+/* PRO Mastery Quiz Engine */
+var proQuizData = [
+  {
+    q: 'Nến 1st Break BUY đóng cửa với độ dài lên tới 2.8 ATR (> ngưỡng 1.8 ATR). Bạn nên xử lý thế nào?',
+    options: [
+      { t: 'A. Vào lệnh BUY Market ngay tại giá đóng nến để không bị lỡ sóng tăng mạnh.', ok: false },
+      { t: 'B. Bật chế độ Pullback 50% Limit: Chờ giá hồi về nửa thân nến để khoảng cách F-SL gần hơn ~35% và TP khả thi hơn.', ok: true },
+      { t: 'C. Mở thêm lệnh BUY x2 volume vì nến to chứng tỏ phe mua cực mạnh.', ok: false }
+    ],
+    feedback: '✓ CHÍNH XÁC! Khi nến Break bung dài > 1.8 ATR, đu đỉnh tại giá đóng cửa sẽ khiến Stoploss rất xa và TP2 khó đạt. Bật Pullback 50% giúp bạn có giá vốn tối ưu hoặc tự hủy an toàn nếu giá không hồi.'
+  },
+  {
+    q: 'Tín hiệu SMC SWEEP xuất hiện nhưng khoảng cách SL cấu trúc đo được tới 4.8 ATR (vượt ngưỡng 4 ATR và hiện cảnh báo ⚠SL). Hành động chuẩn là gì?',
+    options: [
+      { t: 'A. Chấp nhận vào lệnh và nới rộng rủi ro lên 3% tài khoản để gồng lỗ.', ok: false },
+      { t: 'B. Bỏ qua setup này (hoặc bật Strict Profile để chặn) vì khoảng cách quá xa sẽ vi phạm giới hạn Drawdown quỹ.', ok: true },
+      { t: 'C. Tự kéo F-SL lại thật gần 1 ATR bất chấp đáy cấu trúc để được vào lệnh.', ok: false }
+    ],
+    feedback: '✓ CHÍNH XÁC! Cảnh báo ⚠SL > 4 ATR được thiết kế để bảo vệ trader thi quỹ Prop Firm. Vào lệnh khi SL quá rộng sẽ khiến khối lượng bị thu nhỏ quá mức hoặc dễ dính chuỗi trượt giá nghiêm trọng.'
+  },
+  {
+    q: 'Lệnh đã chạm TP1 (+1R, dời SL về BE) và TP2 (+2.0R). Ở chế độ Always 25%, phần vị thế Runner còn lại được quản trị ra sao?',
+    options: [
+      { t: 'A. Thả trôi không cần SL và gồng qua đêm vô thời hạn.', ok: false },
+      { t: 'B. Khóa SL của Runner tại TP1, sau đó kéo tịnh tiến theo đường Trailing Stoploss để bảo vệ trọn vẹn lợi nhuận khi có bão.', ok: true },
+      { t: 'C. Đóng ngay lập tức toàn bộ vì thị trường chắc chắn sẽ quay đầu giảm.', ok: false }
+    ],
+    feedback: '✓ CHÍNH XÁC! Runner 25% là vũ khí gặt hái tỷ lệ R:R cao của PRO V15.4: Stoploss của Runner được khóa cứng tại TP1 (+1.0R) rồi trailing theo đường bậc thang Kenvin Super Trailing Stop.'
+  }
+];
+
+var curProQuiz = 0;
+function loadProQuiz(idx, btn) {
+  curProQuiz = idx;
+  var tabs = document.querySelectorAll('.pr-quiz-tabs .pr-q-tab');
+  tabs.forEach(function(t, i){ t.classList.toggle('active', i === idx); });
+
+  var d = proQuizData[idx];
+  document.getElementById('pr-q-scenario').textContent = d.q;
+  var optBox = document.getElementById('pr-q-options');
+  optBox.innerHTML = '';
+  d.options.forEach(function(opt, optIdx){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'pr-q-opt';
+    b.textContent = opt.t;
+    b.onclick = function(){ answerProQuiz(idx, opt.ok, b); };
+    optBox.appendChild(b);
+  });
+  var fb = document.getElementById('pr-q-feedback');
+  fb.className = 'pr-q-fb';
+  fb.style.display = 'none';
+}
+
+function answerProQuiz(qIdx, isOk, btn) {
+  var opts = document.querySelectorAll('#pr-q-options .pr-q-opt');
+  opts.forEach(function(o){ o.disabled = true; });
+  btn.classList.add(isOk ? 'correct' : 'wrong');
+  var fb = document.getElementById('pr-q-feedback');
+  fb.style.display = 'block';
+  if (isOk) {
+    fb.innerHTML = proQuizData[qIdx].feedback;
+    fb.style.borderLeftColor = '#1FCB8E';
+    fb.style.color = '#34D399';
+  } else {
+    fb.innerHTML = '✕ Chưa chính xác! Hãy đọc kỹ nguyên tắc quản lý rủi ro và bấm chọn lại phương án kỷ luật hơn.';
+    fb.style.borderLeftColor = '#F43F5E';
+    fb.style.color = '#FB7185';
+    setTimeout(function(){
+      opts.forEach(function(o){ o.disabled = false; });
+      btn.classList.remove('wrong');
+    }, 1800);
+  }
+}
+
+if (document.readyState === 'loading') {
+  window.addEventListener('DOMContentLoaded', function(){
+    updatePrLabOutput();
+    loadProQuiz(0);
+  });
+} else {
+  updatePrLabOutput();
+  loadProQuiz(0);
+}
 </script>
 </body>
 </html>
